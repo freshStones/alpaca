@@ -1,4 +1,4 @@
-tPrice = function(price, pos, num) {
+var editPrice = function(price, pos, num) {
 var t = price.split("");
 t[t.length - pos] = num;
 return t.join("");
