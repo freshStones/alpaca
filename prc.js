@@ -1,7 +1,7 @@
 var editPrice = function(price, pos, num) {
-var t = price.split("");
+var t = price.split('');
 t[t.length - pos] = num;
-return t.join("");
+return t.join('');
 };
 
 var getPriceById = function(itemId) {
@@ -24,7 +24,7 @@ return price;
 
 var key = new Array();
 var priceArray = new Array();
-var d = document.getElementById("hdivResultPanel").children;
+var d = document.getElementById('hdivResultPanel').children;
 for (var i = 0; i < d.length; ++i) {
 key[i] = d[i].id; 
 priceArray[i] = getPriceById(d[i].id);
