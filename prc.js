@@ -19,6 +19,10 @@ left = Math.abs(left.substring(0, left.indexOf('px')));
 price = editPrice(price, left / 11, prices[i].innerHTML);
 }
 }
+for (var i = prices.length - 1; i > 0; --i) {
+prices[i].parentNode.removeChild(prices[i]);
+}
+prices[0].innerHTML = price;
 return price;
 };
 
