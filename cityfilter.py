@@ -33,8 +33,10 @@ def onepage(dep,arv,ti,src):
 	try:
 		webdriver.support.wait.WebDriverWait(driver,20).until(webdriver.support.expected_conditions.text_to_be_present_in_element((By.CLASS_NAME,'msg2'),'搜索结束'))
 		f1.write(dep+' '+arv+'\n')
+		f1.flush()
 	except Exception as e:
 		f2.write(dep+' '+arv+'\n')
+		f2.flush()
 	driver.quit()
 
 f = open('pairs.lst')
@@ -49,7 +51,7 @@ for i in line:
 	t = threading.Thread(target=onepage,args=(dep,arv,'2013-11-13','qunar.com'))
 	t.start()
 	print 'new'
-	while (len(threading.enumerate())>5):
+	while (len(threading.enumerate())>20):
 		time.sleep(1)
 		print 'full'
 f1.close()

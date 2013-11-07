@@ -36,5 +36,20 @@ def doitbabe():
 		conn.commit()
 	return
 
+def qunarCityMark():
+
+	conn = MySQLdb.connect(host='localhost',user='root',passwd='root',db='airTicketOnline',port=3306,charset='utf8')
+	cur = conn.cursor()
+	
+	file_object = open('city.lst')
+	try:
+		list_of_all_lines = file_object.readlines()
+	finally:
+		file_object.close()
+
+#	for i in range(0, len(list_of_all_lines)):
+#		update
+	
+
 doitbabe()
 
