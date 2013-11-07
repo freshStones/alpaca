@@ -12,6 +12,14 @@ from selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait 
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.common.by import By
+
+def dbinsert(conn,cur,flightNo,isTransferred,flightSequence,airplaneType,flightDate,departureTime,arrivalTime,departureAirport,arrivalAirport,lowestPrice,quatationSource):	
+	today = datetime.datetime.now()
+	query ="insert into onlinePrice(flightNo,isTransferred,flightSequence,airplaneType,flightDate,departureTime,arrivalTime,departureAirport,arrivalAirport,lowestPrice,quatationSource,accquiredTime) values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,from_unixtime(%s))"
+	value = (flightNo,isTransferred,flightSequance,airplaneType,flightDate,departureTime,arrivalTime,departureAirport,arrivalAirport,lowestPrice,quatationSource,time.mktime(today.timetuple())
+	cur.execute(query,value);
+	conn.commit()
+
 def calcnode(node,src):
 	fl = node.find_element_by_class_name('c1')
 	tm = node.find_element_by_class_name('c2')
@@ -48,35 +56,26 @@ def onepage(dep,arv,ti,src):
 		try:
 			driver.execute_script(script)
 			result = driver.find_element_by_id('hdivResultPanel').find_elements_by_class_name('avt_column')
-#conn = MySQLdb.connect(host='162.105.30.55',user='remote',passwd='alpaca',db='airTicketOnline',port=3306,charset='utf8')
-#		cur = conn.cursor()
+
+			conn = MySQLdb.connect(host='162.105.30.115',user='remote',passwd='alpaca',db='airTicketOnline',port=3306,charset='utf8')
+			cur = conn.cursor()
+
 			for i in range(0,len(result)):
-				today = datetime.datetime.now()
 				istrans = 0
 				c6 = result[i].find_element_by_class_name('c6')
 				prc = c6.find_element_by_class_name('prc').text
 				try:	
 					first = result[i].find_element_by_class_name('avt_column_1st')
 					(fl_name,fl_model,tm_dep,tm_arv,local_dep,local_arv)=calcnode(first,src)
-					print fl_name+fl_model+tm_dep+tm_arv+local_dep+local_arv+prc
 
 					istrans = 1
-
-					query ="insert into onlinePrice(flightNo,airplaneType,departureTime,arrivalTime,departureAirport,arrivalAirport,lowestPrice,webSource,accquiredTime) values(%s,%s,%s,%s,%s,%s,%s,'qunar.com',from_unixtime(%s))"
-					value = (fl_name,fl_model,tm_dep,tm_arv,local_dep,local_arv,prc,time.mktime(today.timetuple()))
-#					cur.execute(query,value);
-#					conn.commit()
+					dbinsert(conn,cur,fl_name,istrans,'FIRST',fl_model,ti,tm_dep,tm_arv,local_dep,local_arv,prc,src)
 
 					transcity  = result[i].find_element_by_class_name('avt_column_sp').text
-					print transcity
 
 					second = result[i].find_element_by_class_name('avt_column_2nd')
 					(fl_name,fl_model,tm_dep,tm_arv,local_dep,local_arv)=calcnode(second,src)
-					print fl_name+fl_model+tm_dep+tm_arv+local_dep+local_arv+prc
-					query ="insert into onlinePrice(flightNo,airplaneType,departureTime,arrivalTime,departureAirport,arrivalAirport,lowestPrice,webSource,accquiredTime) values(%s,%s,%s,%s,%s,%s,%s,'qunar.com',from_unixtime(%s))"
-					value = (fl_name,fl_model,tm_dep,tm_arv,local_dep,local_arv,prc,time.mktime(today.timetuple()))
-#					cur.execute(query,value);
-#					conn.commit()
+					dbinsert(conn,cur,fl_name,istrans,'SECOND',fl_model,ti,tm_dep,tm_arv,local_dep,local_arv,prc,src)
 
 				except Exception as e:
 					print 'origin';
@@ -85,15 +84,9 @@ def onepage(dep,arv,ti,src):
 					try:
 						origin = result[i].find_element_by_class_name('b_avt_lst')	
 						(fl_name,fl_model,tm_dep,tm_arv,local_dep,local_arv)=calcnode(origin,src)
-						print fl_name+fl_model+tm_dep+tm_arv+local_dep+local_arv+prc
-						query ="insert into onlinePrice(flightNo,airplaneType,departureTime,arrivalTime,departureAirport,arrivalAirport,lowestPrice,webSource,accquiredTime) values(%s,%s,%s,%s,%s,%s,%s,'qunar.com',from_unixtime(%s))"
-						value = (fl_name,fl_model,tm_dep,tm_arv,local_dep,local_arv,prc,time.mktime(today.timetuple()))
-#						cur.execute(query,value);
-#						conn.commit()
+						dbinsert(conn,cur,fl_name,istrans,'FIRST',fl_model,ti,tm_dep,tm_arv,local_dep,local_arv,prc,src)
 					except Exception as e:
-						print 'trans'
-
-					
+						print 'trans'	
 
 			nextp = driver.find_element_by_id('nextXI3')
 			nextp.click()
@@ -103,4 +96,10 @@ def onepage(dep,arv,ti,src):
 			
 	driver.quit()
 
+
+f = open('city.lst')
+text = f.read();
+line = text.split('\n')
+print line
+return 
 onepage('北京','上海','2013-11-16','qunar.com')
