@@ -53,11 +53,11 @@ DROP TABLE IF EXISTS `FlightPriceQuotation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `FlightPriceQuotation` (
-  `idFlightPriceQuotation` int(11) NOT NULL,
+  `idFlightPriceQuotation` int(11) NOT NULL AUTO_INCREMENT,
   `fightQuotationUUID` varbinary(16) NOT NULL,
   `flightNo` varchar(100) COLLATE utf8_bin NOT NULL,
   `isTransferred` tinyint(4) NOT NULL DEFAULT '0',
-  `flightSequance` enum('FIRST','SECOND','THIRD') COLLATE utf8_bin NOT NULL DEFAULT 'FIRST',
+  `flightSequence` enum('FIRST','SECOND','THIRD') COLLATE utf8_bin NOT NULL DEFAULT 'FIRST',
   `airplaneType` varchar(100) COLLATE utf8_bin NOT NULL,
   `flightDate` date DEFAULT NULL,
   `departureTime` time NOT NULL,
@@ -91,4 +91,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-11-07 22:06:16
+-- Dump completed on 2013-11-07 22:13:49
