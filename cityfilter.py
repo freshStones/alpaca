@@ -49,7 +49,8 @@ for i in line:
 	t = threading.Thread(target=onepage,args=(dep,arv,'2013-11-13','qunar.com'))
 	t.start()
 	print 'new'
-#	while (len(threading.enumerate())>2):
-#		print 'full'
+	while (len(threading.enumerate())>5):
+		time.sleep(1)
+		print 'full'
 f1.close()
 f2.close()
