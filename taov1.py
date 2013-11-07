@@ -38,8 +38,8 @@ if  a == 1:
 			
 			(fl_name,fl_model,tm_dep,tm_arv,local_dep,local_arv)=calcnode(result[i])
 			print fl_name+fl_model+tm_dep+tm_arv+local_dep+local_arv+prc
-		query ="insert into onlinePrice(flightNo,airplaneType,departureTime,arrivalTime,departureAirport,arrivalAirport,lowestPrice,webSource,accquiredTime) values(%s,%s,%s,%s,%s,%s,%s,'qunar.com',from_unixtime(%s))"
-		value = (fl_name,fl_model,tm_dep,tm_arv,local_dep,local_arv,prc,time.mktime(today.timetuple()))
+			query ="insert into onlinePrice(flightNo,airplaneType,departureTime,arrivalTime,departureAirport,arrivalAirport,lowestPrice,webSource,accquiredTime) values(%s,%s,%s,%s,%s,%s,%s,'qunar.com',from_unixtime(%s))"
+			value = (fl_name,fl_model,tm_dep,tm_arv,local_dep,local_arv,prc,time.mktime(today.timetuple()))
 #cur.execute(query,value);
 #			conn.commit()
 	except Exception as e:
