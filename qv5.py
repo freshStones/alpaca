@@ -1,5 +1,6 @@
 #coding=utf-8
 from urllib import urlencode
+import uuid
 import sys
 import types
 import datetime
@@ -15,8 +16,8 @@ from selenium.webdriver.common.by import By
 
 def dbinsert(conn,cur,flightNo,isTransferred,flightSequence,airplaneType,flightDate,departureTime,arrivalTime,departureAirport,arrivalAirport,lowestPrice,quotationSource):	
 	today = datetime.datetime.now()
-	query ="insert into FlightPriceQuotation(flightNo,isTransferred,flightSequence,airplaneType,flightDate,departureTime,arrivalTime,departureAirport,arrivalAirport,lowestPrice,quotationSource,accquiredTime) values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,from_unixtime(%s))"
-	value = (flightNo,isTransferred,flightSequence,airplaneType,flightDate,departureTime,arrivalTime,departureAirport,arrivalAirport,lowestPrice,quotationSource,time.mktime(today.timetuple()))
+	query ="insert into FlightPriceQuotation(flightNo,isTransferred,flightSequence,airplaneType,flightDate,departureTime,arrivalTime,departureAirport,arrivalAirport,lowestPrice,quotationSource,accquiredTime,flightQuotationUUID) values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,from_unixtime(%s),%s)"
+	value = (flightNo,isTransferred,flightSequence,airplaneType,flightDate,departureTime,arrivalTime,departureAirport,arrivalAirport,lowestPrice,quotationSource,time.mktime(today.timetuple()),uuid.uuid1())
 	cur.execute(query,value);
 	conn.commit()
 
@@ -85,8 +86,8 @@ def onepage(dep,arv,ti,src):
 					dbinsert(conn,cur,fl_name,istrans,'SECOND',fl_model,ti,tm_dep,tm_arv,local_dep,local_arv,prc,src)
 
 				except Exception as e:
-					print e
-					print 'origin';
+#					print e
+					print 'straight';
 #print e
 				if istrans == 0:
 					try:
@@ -100,18 +101,20 @@ def onepage(dep,arv,ti,src):
 			nextp = driver.find_element_by_id('nextXI3')
 			nextp.click()
 		except Exception as e:
-			print e
+#			print e
 			a = 0
 			
 	driver.quit()
 
 
-f = open('city.lst')
+f = open('pairs.lst')
 text = f.read();
 line = text.split('\n')
-print line
-onepage('北京','上海','2013-11-16','qunar.com')
+line.pop()
+j = 0
 for i in line:
-	for j in line:
-		if i!=j:
-			onepage(i,j,2013-11-15,'qunar.com')
+	j = j + 1
+	print j
+	[dep,arv] = i.split(' ')
+	print datetime.datetime.now()
+	onepage(dep,arv,'2013-11-13','qunar.com')
