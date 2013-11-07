@@ -19,9 +19,11 @@ def calcnode(node):
 
 	return (fl_name,fl_model,tm_dep,tm_arv,local_dep,local_arv)
 
-def onepage(dep,arv,ti,src)
-
+def onepage(dep,arv,ti,src):
 	driver = webdriver.Firefox()
+	data = {
+		'spm':'181.1113091.a1z0v.1',
+		'searchBy':'1280',
 	driver.get('http://s.jipiao.trip.taobao.com/flight_search_result.htm?searchBy=1280&spm=181.1113091.a1z0v.1&depCityName=%B1%B1%BE%A9&depCity=BJS&arrCityName=%C9%CF%BA%A3&arrCity=SHA&tripType=0&depDate=2013-11-12&arrDate=')
 	time.sleep(20)
 
