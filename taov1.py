@@ -8,18 +8,16 @@ reload(sys)
 sys.setdefaultencoding('utf-8')
 from selenium import webdriver
 def calcnode(node):
-	fl = node.find_element_by_class_name('company').text
+	fl = node.find_element_by_class_name('company').find_element_by_class_name('ne-flag').text
 	tm = node.find_element_by_class_name('time').text
 	local = node.find_element_by_class_name('port').text
 
-	print fl
-	print fl.split('\n');
-#	(fl_name ,fl_model) = fl.split('\n')
-#	(tm_dep,tm_arv) = tm.split('\n')
-#	(local_dep ,local_arv) = local.split('\n')
+	print type(fl.split('\n'))
+	(fl_name ,fl_model) = fl.split('\n')
+	(tm_dep,tm_arv) = tm.split('\n')
+	(local_dep ,local_arv) = local.split('\n')
 
-#	return (fl_name,fl_model,tm_dep,tm_arv,local_dep,local_arv)
-	return (fl,fl,tm,tm,local,local)
+	return (fl_name,fl_model,tm_dep,tm_arv,local_dep,local_arv)
 
 driver = webdriver.Firefox()
 driver.get('http://s.jipiao.trip.taobao.com/flight_search_result.htm?searchBy=1280&spm=181.1113091.a1z0v.1&depCityName=%B1%B1%BE%A9&depCity=BJS&arrCityName=%C9%CF%BA%A3&arrCity=SHA&tripType=0&depDate=2013-11-12&arrDate=')
