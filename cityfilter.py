@@ -16,6 +16,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.common.by import By
 
+
 def onepage(dep,arv,ti,src):
 	data = {
 	'searchDepartureAirport' : dep,
@@ -27,8 +28,12 @@ def onepage(dep,arv,ti,src):
 	'from' : 'qunarindex'
 	}
 	url = 'http://flight.qunar.com/site/oneway_list.htm?' + urlencode(data)
+	fp = webdriver.FirefoxProfile()
+	fp.set_preference("network.proxy.type",1)
+	fp.set_preference("network.proxy.http",'116.226.49.175')
+	fp.set_preference("network.proxy.http_port",8080)
 
-	driver = webdriver.Firefox()
+	driver = webdriver.Firefox(firefox_profile=fp)
 	driver.get(url)
 	try:
 		webdriver.support.wait.WebDriverWait(driver,20).until(webdriver.support.expected_conditions.text_to_be_present_in_element((By.CLASS_NAME,'msg2'),'搜索结束'))
