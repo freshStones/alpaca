@@ -31,8 +31,6 @@ def onepage(dep,arv,ti,src):
 	'from' : 'qunarindex'
 	}
 	url = 'http://flight.qunar.com/site/oneway_list.htm?' + urlencode(data)
-	print ip
-	print port
 
 	fp = webdriver.FirefoxProfile()
 	fp.set_preference("network.proxy.type",1)
