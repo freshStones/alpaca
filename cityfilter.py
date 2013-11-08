@@ -60,10 +60,10 @@ def onepage(dep,arv,ti,src):
 
 	driver.quit()
 
-f = open('lst/pairs.lst')
-f1 = open('lst/exclude.lst','w')
-f2 = open('lst/include.lst','w')
-f3 = open('lst/unhandle.lst','w')
+f = open('lst/piece1.lst')
+f1 = open('lst/exclude1.lst','w')
+f2 = open('lst/include1.lst','w')
+f3 = open('lst/unhandle1.lst','w')
 fpro = open('lst/proxyIP.lst')
 iplist = fpro.read()
 ipline = iplist.split('\n')
