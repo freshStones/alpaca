@@ -34,6 +34,8 @@ def onepage(ip,port,dep,arv,ti,src):
 	fp.set_preference("network.proxy.type",1)
 	fp.set_preference("network.proxy.http",ip)
 	fp.set_preference("network.proxy.http_port",port)
+	fp.set_preference("network.proxy.share_proxy_settings",1)
+	fp.set_preference("network.proxy.no_proxies_on","localhost")
 
 	driver = webdriver.Firefox(firefox_profile=fp)
 	driver.get(url)
@@ -46,10 +48,10 @@ def onepage(ip,port,dep,arv,ti,src):
 		f2.flush()
 	driver.quit()
 
-f = open('pairs.lst')
-f1 = open('exclude.lst','w')
-f2 = open('include.lst','w')
-fpro = open('proxyIP.txt')
+f = open('lst/pairs.lst')
+f1 = open('lst/exclude.lst','w')
+f2 = open('lst/include.lst','w')
+fpro = open('lst/proxyIP.lst')
 iplist = fpro.read()
 ipline = iplist.split('\n')
 ipline.pop()
@@ -66,7 +68,7 @@ for i in line:
 	t = threading.Thread(target=onepage,args=(ip,port,dep,arv,'2013-11-13','qunar.com'))
 	t.start()
 	print 'new'
-	while (len(threading.enumerate())>3):
+	while (len(threading.enumerate())>2):
 		time.sleep(1)
 		print 'full'
 f1.close()
