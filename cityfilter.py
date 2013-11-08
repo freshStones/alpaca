@@ -38,8 +38,8 @@ def onepage(dep,arv,ti,src):
 
 	driver = webdriver.Firefox(None,None,30,None,pro)
 	driver.get('http://www.ip38.com')
-	print fp.path
-	time.sleep(300)
+
+	time.sleep(5)
 	driver.get(url)
 	try:
 		webdriver.support.wait.WebDriverWait(driver,20).until(webdriver.support.expected_conditions.text_to_be_present_in_element((By.CLASS_NAME,'msg2'),'搜索结束'))
