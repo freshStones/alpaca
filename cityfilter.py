@@ -17,8 +17,9 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.support.wait import WebDriverWait 
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.proxy import Proxy
+from selenium.webdriver.common.proxy import ProxyType
 
+from selenium.webdriver.common.proxy import Proxy
 
 def onepage(dep,arv,ti,src):
 	data = {
@@ -31,13 +32,13 @@ def onepage(dep,arv,ti,src):
 	'from' : 'qunarindex'
 	}
 	url = 'http://flight.qunar.com/site/oneway_list.htm?' + urlencode(data)
+	pro = Proxy()
+	pro.httpProxy = PROXY
+	pro.proxyType = ProxyType.MANUAL
 
-	fp = webdriver.FirefoxProfile()
-	fp.set_preference("network.proxy.type",1)
-	fp.set_preference("network.proxy.http",ip)
-	fp.set_preference("network.proxy.http_port",string.atoi(port))
-	driver = webdriver.Firefox(fp)
+	driver = webdriver.Firefox(None,None,30,None,pro)
 	driver.get('http://www.ip38.com')
+	print fp.path
 	time.sleep(300)
 	driver.get(url)
 	try:
@@ -70,8 +71,9 @@ for i in line:
 	t = threading.Thread(target=onepage,args=(dep,arv,'2013-11-13','qunar.com'))
 	t.start()
 	print 'new'
+	time.sleep(1)
 	while (len(threading.enumerate())>5):
-		time.sleep(1)
+		time.sleep(2)
 		print 'full'
 f1.close()
 f2.close()
