@@ -58,12 +58,12 @@ def onepage(dep,arv,ti,src):
 	if (flagin == 0 and flagex ==0):
 		f3.write(dep+' '+arv+'\n')
 
-	driver.quit()
+	driver.quit():
 
-f = open('lst/pairs.lst')
-f1 = open('lst/exclude.lst','w')
-f2 = open('lst/include.lst','w')
-f3 = open('lst/unhandle.lst','w')
+f = open('lst/piece2.lst')
+f1 = open('lst/exclude2.lst','w')
+f2 = open('lst/include2.lst','w')
+f3 = open('lst/unhandle2.lst','w')
 fpro = open('lst/proxyIP.lst')
 iplist = fpro.read()
 ipline = iplist.split('\n')
