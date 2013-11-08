@@ -9,6 +9,7 @@ import datetime
 import time
 import MySQLdb
 import math
+import string
 reload(sys)
 sys.setdefaultencoding('utf-8')
 from selenium import webdriver
@@ -30,20 +31,16 @@ def onepage(dep,arv,ti,src):
 	'from' : 'qunarindex'
 	}
 	url = 'http://flight.qunar.com/site/oneway_list.htm?' + urlencode(data)
-	print PROXY
+	print ip
+	print port
 
 	fp = webdriver.FirefoxProfile()
-	pro = Proxy()
-	pro.httpProxy = PROXY
-	pro.ftpProxy = PROXY
-	pro.socksProxy = PROXY
-	pro.sslProxy = PROXY
-	fp.set_proxy(pro)
 	fp.set_preference("network.proxy.type",1)
+	fp.set_preference("network.proxy.http",ip)
+	fp.set_preference("network.proxy.http_port",string.atoi(port))
 	driver = webdriver.Firefox(fp)
 	driver.get('http://www.ip38.com')
-	time.sleep(30)
-	return
+	time.sleep(300)
 	driver.get(url)
 	try:
 		webdriver.support.wait.WebDriverWait(driver,20).until(webdriver.support.expected_conditions.text_to_be_present_in_element((By.CLASS_NAME,'msg2'),'搜索结束'))
@@ -75,7 +72,7 @@ for i in line:
 	t = threading.Thread(target=onepage,args=(dep,arv,'2013-11-13','qunar.com'))
 	t.start()
 	print 'new'
-	while (len(threading.enumerate())>2):
+	while (len(threading.enumerate())>5):
 		time.sleep(1)
 		print 'full'
 f1.close()
