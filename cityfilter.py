@@ -34,7 +34,7 @@ def onepage(proxy,dep,arv,ti,src):
 	url = 'http://flight.qunar.com/site/oneway_list.htm?' + urlencode(data)
 	pro = Proxy()
 	pro.httpProxy = proxy
-	pro.noProxy = "api.qunar.com hotel.qunar.com img1.qunarzz.com simg4.qunarzz.com source.qunar.com userimg.qunar.com history.qunar.com"
+	pro.noProxy = "api.qunar.com hotel.qunar.com img1.qunarzz.com simg4.qunarzz.com source.qunar.com userimg.qunar.com history.qunar.com qunarzz.com"
 	pro.proxyType = ProxyType.MANUAL
 	
 	fp = webdriver.FirefoxProfile()
@@ -44,7 +44,16 @@ def onepage(proxy,dep,arv,ti,src):
 #	driver.get('http://www.ip38.com')
 #	url = "http://www.facebook.com"
 #	time.sleep(50)
-	driver.get(url)
+	driver.set_page_load_timeout(45)
+	try:
+		driver.get(url)
+	except Exception as e:
+		print "bad proxy"
+		fuh.write(dep+' '+arv+'\n')
+		fuh.flush()
+		driver.quit()
+		return "bad proxy"
+
 	flag= 0
 	cururl = driver.current_url
 	if 'busy' in cururl:
@@ -131,7 +140,7 @@ for i in line:
 	time.sleep(1)
 	while (len(threading.enumerate())>1):
 		time.sleep(2)
-		print 'full'
+#		print 'full'
 fex.close()
 fin.close()
 fuh.close()
