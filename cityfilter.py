@@ -43,14 +43,6 @@ def onepage(proxy,dep,arv,ti,src):
 #	time.sleep(50)
 	driver.get(url)
 	flag= 0
-	try:
-		driver.support.wait.WebDriverWait(driver,1).until(webdriver.support.expected_conditions.text_to_be_present_in_element((By.ID,'errorPageContainer'),'搜索结束'))
-		fuh.write(dep+' '+arv+'\n')
-		fuh.flush()
-		driver.quit()
-		return 'errorPage'
-	except Exception as e:
-		print "good network"
 	cururl = driver.current_url
 	if 'busy' in cururl:
 		print "identify code found"
@@ -98,7 +90,11 @@ def onepage(proxy,dep,arv,ti,src):
 #		print e
 		a = 1
 	if flag == 0:
-		print "amazing!!"
+		print "bad network"
+		fuh.write(dep+' '+arv+'\n')
+		fuh.flush()
+		driver.quit()
+		return 'errorPage'
 
 	driver.quit()
 	return "the end"
