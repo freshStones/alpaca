@@ -46,8 +46,26 @@ def onepage(dep,arv,ti,src):
 	flagin = 0
 	try:
 		webdriver.support.wait.WebDriverWait(driver,3).until(webdriver.support.expected_conditions.text_to_be_present_in_element((By.ID,'errorPageContainer'),'搜索结束'))
+		fuh.write(dep+' '+arv+'\n')
+		fuh.flush()
+		driver.quit()
+		return
 	except Exception as e:
 		print "good network"
+	cururl = driver.current_url
+	busy = 'busy'
+	if busy in cururl:
+		isbusy = True
+	else:
+		isbusy = False
+	if isbusy:
+		print "busy"
+		fuh.write(dep+' '+arv+'\n')
+		fuh.flush()
+		driver.quit()
+		return
+	else:
+		print "not busy"
 	try:
 		webdriver.support.wait.WebDriverWait(driver,20).until(webdriver.support.expected_conditions.text_to_be_present_in_element((By.CLASS_NAME,'msg2'),'搜索结束'))
 		flagex = 1
@@ -55,6 +73,8 @@ def onepage(dep,arv,ti,src):
 		fact.write(proxy+'\n')
 		fex.flush()
 		fact.flush()
+		driver.quit()
+		return
 	except Exception as e:
 		print 'not empty'
 	try:	
@@ -64,6 +84,8 @@ def onepage(dep,arv,ti,src):
 		fin.write(dep+' '+arv+'\n')
 		fin.flush()
 		fact.flush()
+		driver.quit()
+		return
 	except Exception as e:
 		print "no flight"
 	if (flagin == 0 and flagex ==0):
