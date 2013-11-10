@@ -36,8 +36,11 @@ def onepage(proxy,dep,arv,ti,src):
 	pro.httpProxy = proxy
 	pro.noProxy = "api.qunar.com hotel.qunar.com img1.qunarzz.com simg4.qunarzz.com source.qunar.com userimg.qunar.com history.qunar.com"
 	pro.proxyType = ProxyType.MANUAL
+	
+	fp = webdriver.FirefoxProfile()
+#	fp.set_preference("network.http.keep-alive.timeout",45)
 
-	driver = webdriver.Firefox(None,None,30,None,pro)
+	driver = webdriver.Firefox(fp,None,30,None,pro)
 #	driver.get('http://www.ip38.com')
 #	url = "http://www.facebook.com"
 #	time.sleep(50)
@@ -54,7 +57,7 @@ def onepage(proxy,dep,arv,ti,src):
 		print "not busy"
 
 	try:
-		driver.support.wait.WebDriverWait(driver,60).until_not(webdriver.support.expected_conditions.text_to_be_present_in_element((By.CLASS_NAME,'msg'),'请稍等'))
+		webdriver.support.wait.WebDriverWait(driver,60).until_not(webdriver.support.expected_conditions.text_to_be_present_in_element((By.CLASS_NAME,'msg'),'请稍等'))
 	except Exception as e:
 		print 'time exceeded'
 		fuh.write(dep+' '+arv+'\n')
