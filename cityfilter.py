@@ -34,7 +34,7 @@ def onepage(proxy,dep,arv,ti,src):
 	url = 'http://flight.qunar.com/site/oneway_list.htm?' + urlencode(data)
 	pro = Proxy()
 	pro.httpProxy = proxy
-	pro.noProxy = "hotel.qunar.com img1.qunarzz.com simg4.qunarzz.com source.qunar.com userimg.qunar.com"
+	pro.noProxy = "api.qunar.com hotel.qunar.com img1.qunarzz.com simg4.qunarzz.com source.qunar.com userimg.qunar.com"
 	pro.proxyType = ProxyType.MANUAL
 
 	driver = webdriver.Firefox(None,None,30,None,pro)
@@ -70,12 +70,13 @@ def onepage(proxy,dep,arv,ti,src):
 		webdriver.support.wait.WebDriverWait(driver,20).until(webdriver.support.expected_conditions.text_to_be_present_in_element((By.CLASS_NAME,'msg2'),'搜索结束'))
 		flagex = 1
 		fex.write(dep+' '+arv+'\n')
-		fact.write(proxy+'\n')
+		fact.write(str(proxy)+'\n')
 		fex.flush()
 		fact.flush()
 		driver.quit()
 		return
 	except Exception as e:
+		print e
 		print 'not empty'
 	try:	
 		webdriver.support.wait.WebDriverWait(driver,30).until(webdriver.support.expected_conditions.text_to_be_present_in_element((By.CLASS_NAME,'dec'),'搜索结束'))
