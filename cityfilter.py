@@ -35,12 +35,13 @@ def onepage(dep,arv,ti,src):
 	proxy = PROXY
 	pro = Proxy()
 	pro.httpProxy = PROXY
+	pro.noProxy = "hotel.qunar.com img1.qunarzz.com simg4.qunarzz.com source.qunar.com userimg.qunar.com"
 	pro.proxyType = ProxyType.MANUAL
 
 	driver = webdriver.Firefox(None,None,30,None,pro)
 #	driver.get('http://www.ip38.com')
 #	url = "http://www.facebook.com"
-#	time.sleep(5)
+#	time.sleep(50)
 	driver.get(url)
 	flagex = 0
 	flagin = 0
