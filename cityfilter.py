@@ -21,7 +21,7 @@ from selenium.webdriver.common.proxy import ProxyType
 
 from selenium.webdriver.common.proxy import Proxy
 
-def onepage(dep,arv,ti,src):
+def onepage(proxy,dep,arv,ti,src):
 	data = {
 	'searchDepartureAirport' : dep,
 	'searchArrivalAirport' : arv,
@@ -32,9 +32,8 @@ def onepage(dep,arv,ti,src):
 	'from' : 'qunarindex'
 	}
 	url = 'http://flight.qunar.com/site/oneway_list.htm?' + urlencode(data)
-	proxy = PROXY
 	pro = Proxy()
-	pro.httpProxy = PROXY
+	pro.httpProxy = proxy
 	pro.noProxy = "hotel.qunar.com img1.qunarzz.com simg4.qunarzz.com source.qunar.com userimg.qunar.com"
 	pro.proxyType = ProxyType.MANUAL
 
@@ -116,7 +115,7 @@ for i in line:
 	[ip,port] = ipline[j].split(':')
 	PROXY = ipline[j]
 #	thread.start_new_thread(onepage,(dep,arv,'2013-11-13','qunar.com'))
-	t = threading.Thread(target=onepage,args=(dep,arv,'2013-11-13','qunar.com'))
+	t = threading.Thread(target=onepage,args=(PROXY,dep,arv,'2013-11-13','qunar.com'))
 	t.start()
 	print 'new'
 	time.sleep(1)
