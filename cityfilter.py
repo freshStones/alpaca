@@ -21,7 +21,7 @@ from selenium.webdriver.common.proxy import ProxyType
 
 from selenium.webdriver.common.proxy import Proxy
 
-def onepage(dep,arv,ti,src):
+def onepage(proxy,dep,arv,ti,src):
 	data = {
 	'searchDepartureAirport' : dep,
 	'searchArrivalAirport' : arv,
@@ -32,10 +32,9 @@ def onepage(dep,arv,ti,src):
 	'from' : 'qunarindex'
 	}
 	url = 'http://flight.qunar.com/site/oneway_list.htm?' + urlencode(data)
-	proxy = PROXY
 	pro = Proxy()
-	pro.httpProxy = PROXY
-	pro.noProxy = "hotel.qunar.com img1.qunarzz.com simg4.qunarzz.com source.qunar.com userimg.qunar.com"
+	pro.httpProxy = proxy
+	pro.noProxy = "api.qunar.com hotel.qunar.com img1.qunarzz.com simg4.qunarzz.com source.qunar.com userimg.qunar.com"
 	pro.proxyType = ProxyType.MANUAL
 
 	driver = webdriver.Firefox(None,None,30,None,pro)
@@ -43,58 +42,71 @@ def onepage(dep,arv,ti,src):
 #	url = "http://www.facebook.com"
 #	time.sleep(50)
 	driver.get(url)
-	flagex = 0
-	flagin = 0
+	flag= 0
 	try:
-		webdriver.support.wait.WebDriverWait(driver,3).until(webdriver.support.expected_conditions.text_to_be_present_in_element((By.ID,'errorPageContainer'),'搜索结束'))
+		webdriver.support.wait.WebDriverWait(driver,1).until(webdriver.support.expected_conditions.text_to_be_present_in_element((By.ID,'errorPageContainer'),'搜索结束'))
 		fuh.write(dep+' '+arv+'\n')
 		fuh.flush()
 		driver.quit()
-		return
+		return 'errorPage'
 	except Exception as e:
 		print "good network"
 	cururl = driver.current_url
-	busy = 'busy'
-	if busy in cururl:
-		isbusy = True
-	else:
-		isbusy = False
-	if isbusy:
-		print "busy"
+	if 'busy' in cururl:
+		print "identify code found"
 		fuh.write(dep+' '+arv+'\n')
 		fuh.flush()
 		driver.quit()
-		return
+		return "busy"
 	else:
 		print "not busy"
+
 	try:
-		webdriver.support.wait.WebDriverWait(driver,20).until(webdriver.support.expected_conditions.text_to_be_present_in_element((By.CLASS_NAME,'msg2'),'搜索结束'))
-		flagex = 1
+		webdriver.support.wait.WebDriverWait(driver,60).until_not(webdriver.support.expected_conditions.text_to_be_present_in_element((By.CLASS_NAME,'msg'),'请稍等'))
+	except Exception as e:
+		print 'time exceeded'
+		fuh.write(dep+' '+arv+'\n')
+		fuh.flush()
+		driver.quit()
+		return "time exceeded"
+
+	try:	
+		driver.find_element_by_class_name('msg2')
+		print 'no flight'
+		flag = 1
 		fex.write(dep+' '+arv+'\n')
-		fact.write(proxy+'\n')
+		fact.write(''.join(proxy)+'\n')
 		fex.flush()
 		fact.flush()
 		driver.quit()
-		return
+		return 'no flight'
 	except Exception as e:
-		print 'not empty'
-	try:	
-		webdriver.support.wait.WebDriverWait(driver,50).until(webdriver.support.expected_conditions.text_to_be_present_in_element((By.CLASS_NAME,'dec'),'搜索结束'))
-		flagin = 1
-		fact.write(proxy+'\n')
+#		print e
+		a = 1
+		
+	try:
+		driver.find_element_by_class_name('dec')
+		flag = 1
+		print 'have flight'
+		fact.write(''.join(proxy)+'\n')
 		fin.write(dep+' '+arv+'\n')
 		fin.flush()
 		fact.flush()
 		driver.quit()
-		return
+		return 'have flight'
 	except Exception as e:
-		print "no flight"
-	if (flagin == 0 and flagex ==0):
-		fuh.write(dep+' '+arv+'\n')
-		fuh.flush()
-		print "bad network"
+#		print e
+		a = 1
+	if flag == 0:
+		print "amazing!!"
 
 	driver.quit()
+	return "the end"
+
+def oneip(proxy,dep,arv,ti,src):
+	res = onepage(proxy,dep,arv,ti,src)
+	while 'busy' not in res:
+		res = onepage(proxy,dep,arv,ti,src)
 
 f = open('lst/piece1.lst')
 fex = open('lst/exclude1.lst','w')
@@ -113,12 +125,10 @@ j = 0
 for i in line:
 	j = j+ 1
 	[dep,arv] = i.split(' ')
-	[ip,port] = ipline[j].split(':')
-	PROXY = ipline[j]
-#	thread.start_new_thread(onepage,(dep,arv,'2013-11-13','qunar.com'))
-	t = threading.Thread(target=onepage,args=(dep,arv,'2013-11-13','qunar.com'))
+	t = threading.Thread(target=onepage,args=(ipline[j],dep,arv,'2013-11-13','qunar.com'))
 	t.start()
-	print 'new'
+	print 'new'  + dep +' '+arv+' '
+	print datetime.datetime.now()
 	time.sleep(1)
 	while (len(threading.enumerate())>1):
 		time.sleep(2)
