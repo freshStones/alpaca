@@ -34,7 +34,7 @@ def onepage(proxy,dep,arv,ti,src):
 	url = 'http://flight.qunar.com/site/oneway_list.htm?' + urlencode(data)
 	pro = Proxy()
 	pro.httpProxy = proxy
-	pro.noProxy = "api.qunar.com hotel.qunar.com img1.qunarzz.com simg4.qunarzz.com source.qunar.com userimg.qunar.com"
+	pro.noProxy = "api.qunar.com hotel.qunar.com img1.qunarzz.com simg4.qunarzz.com source.qunar.com userimg.qunar.com history.qunar.com"
 	pro.proxyType = ProxyType.MANUAL
 
 	driver = webdriver.Firefox(None,None,30,None,pro)
