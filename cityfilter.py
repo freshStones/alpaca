@@ -44,7 +44,7 @@ def onepage(proxy,dep,arv,ti,src):
 	driver.get(url)
 	flag= 0
 	try:
-		webdriver.support.wait.WebDriverWait(driver,1).until(webdriver.support.expected_conditions.text_to_be_present_in_element((By.ID,'errorPageContainer'),'搜索结束'))
+		driver.support.wait.WebDriverWait(driver,1).until(webdriver.support.expected_conditions.text_to_be_present_in_element((By.ID,'errorPageContainer'),'搜索结束'))
 		fuh.write(dep+' '+arv+'\n')
 		fuh.flush()
 		driver.quit()
@@ -62,7 +62,7 @@ def onepage(proxy,dep,arv,ti,src):
 		print "not busy"
 
 	try:
-		webdriver.support.wait.WebDriverWait(driver,60).until_not(webdriver.support.expected_conditions.text_to_be_present_in_element((By.CLASS_NAME,'msg'),'请稍等'))
+		driver.support.wait.WebDriverWait(driver,60).until_not(webdriver.support.expected_conditions.text_to_be_present_in_element((By.CLASS_NAME,'msg'),'请稍等'))
 	except Exception as e:
 		print 'time exceeded'
 		fuh.write(dep+' '+arv+'\n')
