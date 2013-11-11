@@ -45,44 +45,49 @@ def onepage(proxy,dep,arv,ti,src):
 #	url = "http://www.facebook.com"
 #	time.sleep(50)
 	driver.set_page_load_timeout(45)
+	driver.set_script_timeout(60)
 	try:
 		driver.get(url)
 	except Exception as e:
+		driver.quit()
 		print "bad proxy"
 		fuh.write(dep+' '+arv+'\n')
 		fuh.flush()
-		driver.quit()
+		deadIP.append(proxy)
 		return "bad proxy"
 
 	flag= 0
 	cururl = driver.current_url
 	if 'busy' in cururl:
+		driver.quit()
 		print "identify code found"
 		fuh.write(dep+' '+arv+'\n')
 		fuh.flush()
-		driver.quit()
+		lockIP.append(proxy)
 		return "busy"
 	else:
 		print "not busy"
 
 	try:
 		webdriver.support.wait.WebDriverWait(driver,60).until_not(webdriver.support.expected_conditions.text_to_be_present_in_element((By.CLASS_NAME,'msg'),'请稍等'))
+		activeIP.append(proxy)
 	except Exception as e:
+		driver.quit()
 		print 'time exceeded'
 		fuh.write(dep+' '+arv+'\n')
 		fuh.flush()
-		driver.quit()
+		slowIP.append(proxy)
 		return "time exceeded"
 
 	try:	
 		driver.find_element_by_class_name('msg2')
+		driver.quit()
 		print 'no flight'
 		flag = 1
 		fex.write(dep+' '+arv+'\n')
-		fact.write(''.join(proxy)+'\n')
+#		fact.write(''.join(proxy)+'\n')
 		fex.flush()
-		fact.flush()
-		driver.quit()
+#		fact.flush()
 		return 'no flight'
 	except Exception as e:
 #		print e
@@ -90,22 +95,22 @@ def onepage(proxy,dep,arv,ti,src):
 		
 	try:
 		driver.find_element_by_class_name('dec')
+		driver.quit()
 		flag = 1
 		print 'have flight'
-		fact.write(''.join(proxy)+'\n')
+#		fact.write(''.join(proxy)+'\n')
 		fin.write(dep+' '+arv+'\n')
 		fin.flush()
-		fact.flush()
-		driver.quit()
+#		fact.flush()
 		return 'have flight'
 	except Exception as e:
 #		print e
 		a = 1
 	if flag == 0:
+		driver.quit()
 		print "bad network"
 		fuh.write(dep+' '+arv+'\n')
 		fuh.flush()
-		driver.quit()
 		return 'errorPage'
 
 	driver.quit()
@@ -116,12 +121,53 @@ def oneip(proxy,dep,arv,ti,src):
 	while 'busy' not in res:
 		res = onepage(proxy,dep,arv,ti,src)
 
-f = open('lst/piece1.lst')
-fex = open('lst/exclude1.lst','w')
-fin = open('lst/include1.lst','w')
-fuh = open('lst/unhandle1.lst','w')
-fpro = open('lst/newIP.lst')
-fact = open('lst/activeIP.lst','w')
+def wrapitup():
+	f0 = open(SOURCEFILE,'r')
+	lst0 = f0.read()
+	f0.close()
+	lines0 = lst0.split('\n')
+	f1 = open(EXCLUDEFILE,'r')
+	lst1 = f1.read()
+	f1.close()
+	lines1 = lst1.split('\n')
+	f2 = open(INCLUDEFILE,'r')
+	lst2 = f2.read()
+	f2.close()
+	lines2 = lst2.split('\n')
+	f3 = open(UNHANDLEFILE,'r')
+	lst3 = f3.read()
+	f3.close()
+	lines3 = lst3.split('\n')
+	for i in lines0:
+		if len(i) == 0: 
+			lines0.remove(i)
+			continue 
+		if i in lines1 or i in lines2:	
+			lines0.remove(i)
+			print i
+	f4 = open(SOURCEFILE,'w')
+	for i  in lines0:
+		f4.write(i+'\n')
+	f4.close()
+	return
+
+SOURCEFILE = 'lst/piece2.lst'
+EXCLUDEFILE = 'lst/exclude2.lst'
+INCLUDEFILE = 'lst/include2.lst'
+UNHANDLEFILE = 'lst/unhandle2.lst'
+IPSOURCEFILE = 'lst/newIP.lst'
+
+f = open(SOURCEFILE)
+fpro = open(IPSOURCEFILE)
+fex = open(EXCLUDEFILE,'w')
+fin = open(INCLUDEFILE,'w')
+fuh = open(UNHANDLEFILE,'w')
+
+activeIP = []
+lockIP = []
+slowIP = []
+deadIP = []
+
 iplist = fpro.read()
 ipline = iplist.split('\n')
 ipline.pop()
@@ -131,7 +177,7 @@ line = text.split('\n')
 line.pop()
 j = 0
 for i in line:
-	j = j+ 1
+#	j = j+ 1
 	[dep,arv] = i.split(' ')
 	t = threading.Thread(target=onepage,args=(ipline[j],dep,arv,'2013-11-13','qunar.com'))
 	t.start()
@@ -141,7 +187,12 @@ for i in line:
 	while (len(threading.enumerate())>1):
 		time.sleep(2)
 #		print 'full'
+	j = j + 1
+	if j == len(ipline):
+		print "ip runs out"
+		break;
 fex.close()
 fin.close()
 fuh.close()
-fact.close()
+
+wrapitup()
