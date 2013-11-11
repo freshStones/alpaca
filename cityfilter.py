@@ -44,6 +44,11 @@ def filewriter(fileid,strtow):
 
 def onedriver(ti,src):
 	fp = webdriver.FirefoxProfile()
+	proxy = ipline.pop()
+	[ip,port] = proxy.split(':')
+	print ip + ' ' + port
+	fp.set_preference("network.proxy.http",ip)
+	fp.set_preference("network.proxy.http_port",string.atoi(port))
 	fp.set_preference('network.proxy.type',1)
 	fp.set_preference('network.proxy.no_proxies_on', "api.qunar.com hotel.qunar.com img1.qunarzz.com simg4.qunarzz.com source.qunar.com userimg.qunar.com history.qunar.com qunarzz.com")
 	driver = webdriver.Firefox(fp)
@@ -52,12 +57,6 @@ def onedriver(ti,src):
 
 	while line:
 		[dep,arv]=line.pop().split(' ')
-		proxy = ipline.pop()
-		[ip,port] = proxy.split(':')
-		print ip + ' ' + port
-#		fp.set_preference("network.proxy.http",ip)
-#		fp.set_preference("network.proxy.http_port",string.atoi(port))
-#		fp.update_preferences()
 		print 'new '  + dep +' '+arv+' '
 		print datetime.datetime.now()
 		res = onepage(driver,dep,arv,ti,src)
@@ -67,6 +66,7 @@ def onedriver(ti,src):
 		elif 'identify code' in res:
 			filewriter('fuh',dep+' '+arv+'\n')
 			lockIP.append(proxy)
+			break
 		elif 'time exceeded' in res:
 			filewriter('fuh',dep+' '+arv+'\n')
 			slowIP.append(proxy)
@@ -90,7 +90,6 @@ def onepage(driver,dep,arv,ti,src):
 		driver.get(url)
 	except Exception as e:
 		return "bad proxy"
-	time.sleep(40)
 	cururl = driver.current_url
 	if 'busy' in cururl:
 		return "identify code found"
@@ -150,13 +149,12 @@ ipline.pop()
 text = f.read();
 line = text.split('\n')
 line.pop()
-
-for i in range(0,1):
+while (len(threading.enumerate())<11): 
 	t = threading.Thread(target=onedriver,args=('2013-11-13','qunar.com'))
 	t.start()
 	time.sleep(2)
-while line:
-	time.sleep(60)
+	if not line:
+		break
 fex.close()
 fin.close()
 fuh.close()
