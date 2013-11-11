@@ -18,10 +18,9 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.proxy import ProxyType
-
 from selenium.webdriver.common.proxy import Proxy
 
-def onepage(proxy,dep,arv,ti,src):
+def genurl(dep,arv,ti):
 	data = {
 	'searchDepartureAirport' : dep,
 	'searchArrivalAirport' : arv,
@@ -32,124 +31,85 @@ def onepage(proxy,dep,arv,ti,src):
 	'from' : 'qunarindex'
 	}
 	url = 'http://flight.qunar.com/site/oneway_list.htm?' + urlencode(data)
+	return url
+
+def filewriter(fileid,strtow):
+	while fileflag[fileid] == 1:
+		time.sleep(2)
+	fileflag[fileid] = 1
+	filelist[fileid].write(strtow)
+	filelist[fileid].flush()
+	fileflag[fileid] = 0
+
+
+def onedriver(proxy,ti,src):
 	pro = Proxy()
 	pro.httpProxy = proxy
 	pro.noProxy = "api.qunar.com hotel.qunar.com img1.qunarzz.com simg4.qunarzz.com source.qunar.com userimg.qunar.com history.qunar.com qunarzz.com"
 	pro.proxyType = ProxyType.MANUAL
-	
 	fp = webdriver.FirefoxProfile()
-#	fp.set_preference("network.http.keep-alive.timeout",45)
-
 	driver = webdriver.Firefox(fp,None,30,None,pro)
-#	driver.get('http://www.ip38.com')
-#	url = "http://www.facebook.com"
-#	time.sleep(50)
 	driver.set_page_load_timeout(45)
 	driver.set_script_timeout(60)
+
+	while line:
+		[dep,arv]=line.pop().split(' ')
+		curip = ipline.pop()
+		[ip,port] = curip.split(':')
+		fp.set_preference("network.proxy.http",ip)
+		fp.set_preference("network.proxy.http_port",string.atoi(port))
+		print 'new'  + dep +' '+arv+' '
+		print datetime.datetime.now()
+		res = onepage(driver,dep,arv,ti,src)
+		if 'bad proxy' in res:
+			filewriter('fuh',dep+' '+arv+'\n')
+			deadIP.append(proxy)
+		elif 'identify code' in res:
+			filewriter('fuh',dep+' '+arv+'\n')
+			lockIP.append(proxy)
+		elif 'time exceeded' in res:
+			filewriter('fuh',dep+' '+arv+'\n')
+			slowIP.append(proxy)
+		elif 'no flight' in res:
+			filewriter('fex',dep+' '+arv+'\n')
+			activeIP.append(proxy)
+		elif 'have flight' in res:	
+			filewriter('fin',dep+' '+arv+'\n')
+			activeIP.append(proxy)
+		elif 'errorPage' in res:
+			filewriter('fuh',dep+' '+arv+'\n')
+			deadIP.append(proxy)
+		else:
+			print 'amazing!!'	
+		print res
+	driver.quit()
+
+def onepage(driver,dep,arv,ti,src):
+	url = genurl(dep,arv,ti)	
 	try:
 		driver.get(url)
 	except Exception as e:
-		driver.quit()
-		print "bad proxy"
-		fuh.write(dep+' '+arv+'\n')
-		fuh.flush()
-		deadIP.append(proxy)
 		return "bad proxy"
-
-	flag= 0
 	cururl = driver.current_url
 	if 'busy' in cururl:
-		driver.quit()
-		print "identify code found"
-		fuh.write(dep+' '+arv+'\n')
-		fuh.flush()
-		lockIP.append(proxy)
-		return "busy"
-	else:
-		print "not busy"
-
+		return "identify code found"
 	try:
 		webdriver.support.wait.WebDriverWait(driver,60).until_not(webdriver.support.expected_conditions.text_to_be_present_in_element((By.CLASS_NAME,'msg'),'请稍等'))
-		activeIP.append(proxy)
 	except Exception as e:
-		driver.quit()
-		print 'time exceeded'
-		fuh.write(dep+' '+arv+'\n')
-		fuh.flush()
-		slowIP.append(proxy)
 		return "time exceeded"
-
 	try:	
 		driver.find_element_by_class_name('msg2')
-		driver.quit()
-		print 'no flight'
-		flag = 1
-		fex.write(dep+' '+arv+'\n')
-#		fact.write(''.join(proxy)+'\n')
-		fex.flush()
-#		fact.flush()
 		return 'no flight'
 	except Exception as e:
 #		print e
 		a = 1
-		
 	try:
 		driver.find_element_by_class_name('dec')
-		driver.quit()
-		flag = 1
-		print 'have flight'
-#		fact.write(''.join(proxy)+'\n')
-		fin.write(dep+' '+arv+'\n')
-		fin.flush()
-#		fact.flush()
 		return 'have flight'
 	except Exception as e:
 #		print e
 		a = 1
-	if flag == 0:
-		driver.quit()
-		print "bad network"
-		fuh.write(dep+' '+arv+'\n')
-		fuh.flush()
-		return 'errorPage'
-
-	driver.quit()
-	return "the end"
-
-def oneip(proxy,dep,arv,ti,src):
-	res = onepage(proxy,dep,arv,ti,src)
-	while 'busy' not in res:
-		res = onepage(proxy,dep,arv,ti,src)
-
-def wrapitup():
-	f0 = open(SOURCEFILE,'r')
-	lst0 = f0.read()
-	f0.close()
-	lines0 = lst0.split('\n')
-	f1 = open(EXCLUDEFILE,'r')
-	lst1 = f1.read()
-	f1.close()
-	lines1 = lst1.split('\n')
-	f2 = open(INCLUDEFILE,'r')
-	lst2 = f2.read()
-	f2.close()
-	lines2 = lst2.split('\n')
-	f3 = open(UNHANDLEFILE,'r')
-	lst3 = f3.read()
-	f3.close()
-	lines3 = lst3.split('\n')
-	for i in lines0:
-		if len(i) == 0: 
-			lines0.remove(i)
-			continue 
-		if i in lines1 or i in lines2:	
-			lines0.remove(i)
-			print i
-	f4 = open(SOURCEFILE,'w')
-	for i  in lines0:
-		f4.write(i+'\n')
-	f4.close()
-	return
+	return 'errorPage'
 
 SOURCEFILE = 'lst/piece2.lst'
 EXCLUDEFILE = 'lst/exclude2.lst'
@@ -162,6 +122,20 @@ fpro = open(IPSOURCEFILE)
 fex = open(EXCLUDEFILE,'w')
 fin = open(INCLUDEFILE,'w')
 fuh = open(UNHANDLEFILE,'w')
+filelist = {
+	'f':f,
+	'fpro':fpro,
+	'fex':fex,
+	'fin':fin,
+	'fuh':fuh
+}
+fileflag ={ 
+	'f':0,
+	'fpro':0,
+	'fex':0,
+	'fin':0,
+	'fuh':0
+}
 
 activeIP = []
 lockIP = []
@@ -175,24 +149,13 @@ ipline.pop()
 text = f.read();
 line = text.split('\n')
 line.pop()
-j = 0
-for i in line:
-#	j = j+ 1
-	[dep,arv] = i.split(' ')
-	t = threading.Thread(target=onepage,args=(ipline[j],dep,arv,'2013-11-13','qunar.com'))
+
+for i in range(0,2):
+	t = threading.Thread(target=onedriver,args=(ipline[i],'2013-11-13','qunar.com'))
 	t.start()
-	print 'new'  + dep +' '+arv+' '
-	print datetime.datetime.now()
-	time.sleep(1)
-	while (len(threading.enumerate())>1):
-		time.sleep(2)
-#		print 'full'
-	j = j + 1
-	if j == len(ipline):
-		print "ip runs out"
-		break;
+	time.sleep(2)
+while line:
+	time.sleep(60)
 fex.close()
 fin.close()
 fuh.close()
-
-wrapitup()
