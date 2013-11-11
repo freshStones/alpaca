@@ -42,23 +42,23 @@ def filewriter(fileid,strtow):
 	fileflag[fileid] = 0
 
 
-def onedriver(proxy,ti,src):
-	pro = Proxy()
-	pro.httpProxy = proxy
-	pro.noProxy = "api.qunar.com hotel.qunar.com img1.qunarzz.com simg4.qunarzz.com source.qunar.com userimg.qunar.com history.qunar.com qunarzz.com"
-	pro.proxyType = ProxyType.MANUAL
+def onedriver(ti,src):
 	fp = webdriver.FirefoxProfile()
-	driver = webdriver.Firefox(fp,None,30,None,pro)
+	fp.set_preference('network.proxy.type',1)
+	fp.set_preference('network.proxy.no_proxies_on', "api.qunar.com hotel.qunar.com img1.qunarzz.com simg4.qunarzz.com source.qunar.com userimg.qunar.com history.qunar.com qunarzz.com")
+	driver = webdriver.Firefox(fp)
 	driver.set_page_load_timeout(45)
 	driver.set_script_timeout(60)
 
 	while line:
 		[dep,arv]=line.pop().split(' ')
-		curip = ipline.pop()
-		[ip,port] = curip.split(':')
-		fp.set_preference("network.proxy.http",ip)
-		fp.set_preference("network.proxy.http_port",string.atoi(port))
-		print 'new'  + dep +' '+arv+' '
+		proxy = ipline.pop()
+		[ip,port] = proxy.split(':')
+		print ip + ' ' + port
+#		fp.set_preference("network.proxy.http",ip)
+#		fp.set_preference("network.proxy.http_port",string.atoi(port))
+#		fp.update_preferences()
+		print 'new '  + dep +' '+arv+' '
 		print datetime.datetime.now()
 		res = onepage(driver,dep,arv,ti,src)
 		if 'bad proxy' in res:
@@ -90,6 +90,7 @@ def onepage(driver,dep,arv,ti,src):
 		driver.get(url)
 	except Exception as e:
 		return "bad proxy"
+	time.sleep(40)
 	cururl = driver.current_url
 	if 'busy' in cururl:
 		return "identify code found"
@@ -150,8 +151,8 @@ text = f.read();
 line = text.split('\n')
 line.pop()
 
-for i in range(0,2):
-	t = threading.Thread(target=onedriver,args=(ipline[i],'2013-11-13','qunar.com'))
+for i in range(0,1):
+	t = threading.Thread(target=onedriver,args=('2013-11-13','qunar.com'))
 	t.start()
 	time.sleep(2)
 while line:
