@@ -63,6 +63,7 @@ def onedriver(ti,src):
 		if 'bad proxy' in res:
 			filewriter('fuh',dep+' '+arv+'\n')
 			deadIP.append(proxy)
+			break
 		elif 'identify code' in res:
 			filewriter('fuh',dep+' '+arv+'\n')
 			lockIP.append(proxy)
@@ -70,6 +71,7 @@ def onedriver(ti,src):
 		elif 'time exceeded' in res:
 			filewriter('fuh',dep+' '+arv+'\n')
 			slowIP.append(proxy)
+			break
 		elif 'no flight' in res:
 			filewriter('fex',dep+' '+arv+'\n')
 			activeIP.append(proxy)
@@ -79,6 +81,7 @@ def onedriver(ti,src):
 		elif 'errorPage' in res:
 			filewriter('fuh',dep+' '+arv+'\n')
 			deadIP.append(proxy)
+			break
 		else:
 			print 'amazing!!'	
 		print res
@@ -149,12 +152,13 @@ ipline.pop()
 text = f.read();
 line = text.split('\n')
 line.pop()
-while (len(threading.enumerate())<11): 
-	t = threading.Thread(target=onedriver,args=('2013-11-13','qunar.com'))
-	t.start()
-	time.sleep(2)
-	if not line:
-		break
+while line:
+	if (len(threading.enumerate())<6): 
+		t = threading.Thread(target=onedriver,args=('2013-11-13','qunar.com'))
+		t.start()
+		time.sleep(2)
+	else:
+		time.sleep(5)
 fex.close()
 fin.close()
 fuh.close()
