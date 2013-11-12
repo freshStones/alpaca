@@ -55,7 +55,7 @@ def onedriver(ti,src):
 		print 'new '  + dep +' '+arv+' '
 		print datetime.datetime.now()
 		res = onepage(driver,dep,arv,ti,src)
-		print res
+		print dep+' '+arv+' '+res
 		if 'bad proxy' in res:
 			filewriter('fuh',dep+' '+arv+'\n')
 			deadIP.append(proxy)
