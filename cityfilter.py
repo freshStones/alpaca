@@ -32,9 +32,8 @@ def filewriter(fileid,strtow):
 	filelist[fileid].flush()
 	fileflag[fileid] = 0
 
-def getfpconfig():
+def getfpconfig(proxy):
 	fp = webdriver.FirefoxProfile()
-	proxy = ipline.pop()
 	[ip,port] = proxy.split(':')
 	fp.set_preference("network.proxy.http",ip)
 	fp.set_preference("network.proxy.http_port",string.atoi(port))
@@ -43,7 +42,8 @@ def getfpconfig():
 	return fp
 
 def onedriver(ti,src):
-	fp = getfpconfig()
+	proxy = ipline.pop()
+	fp = getfpconfig(proxy)
 	driver = webdriver.Firefox(fp)
 	driver.set_page_load_timeout(45)
 	driver.set_script_timeout(60)
@@ -53,6 +53,7 @@ def onedriver(ti,src):
 		print 'new '  + dep +' '+arv+' '
 		print datetime.datetime.now()
 		res = onepage(driver,dep,arv,ti,src)
+		print res
 		if 'bad proxy' in res:
 			filewriter('fuh',dep+' '+arv+'\n')
 			deadIP.append(proxy)
@@ -77,7 +78,6 @@ def onedriver(ti,src):
 			break
 		else:
 			print 'amazing!!'	
-		print res
 	driver.quit()
 
 def onepage(driver,dep,arv,ti,src):
@@ -116,11 +116,10 @@ startp = 0
 endp = 50000
 opts,args = getopt.getopt(sys.argv[1:],"s:e:")
 for op,value in opts:
-	if op == "s":
+	if op == "-s":
 		startp = string.atoi(value)
-	if op == "e":
+	if op == "-e":
 		endp = string.atoi(value)
-		
 
 f = open(SOURCEFILE)
 fpro = open(IPSOURCEFILE)
@@ -156,7 +155,7 @@ line = text.split('\n')
 line.pop()
 line = line[startp:endp]
 while line:
-	if (len(threading.enumerate())<6): 
+	if (len(threading.enumerate())<2): 
 		t = threading.Thread(target=onedriver,args=('2013-11-13','qunar.com'))
 		t.start()
 	time.sleep(2)
