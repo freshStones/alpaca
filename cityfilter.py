@@ -154,11 +154,16 @@ text = f.read();
 line = text.split('\n')
 line.pop()
 line = line[startp:endp]
-while line:
-	if (len(threading.enumerate())<2): 
-		t = threading.Thread(target=onedriver,args=('2013-11-13','qunar.com'))
-		t.start()
-	time.sleep(2)
-fex.close()
-fin.close()
-fuh.close()
+try:
+	while line:
+		if (len(threading.enumerate())<2): 
+			t = threading.Thread(target=onedriver,args=('2013-11-13','qunar.com'))
+			t.start()
+		time.sleep(2)
+finally:
+	print 'finally'
+	for i in line:
+		filewriter('fuh',i+'\n')
+	fex.close()
+	fin.close()
+	fuh.close()
