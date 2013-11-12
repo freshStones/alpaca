@@ -44,6 +44,8 @@ def getfpconfig(proxy):
 def onedriver(ti,src):
 	proxy = ipline.pop()
 	fp = getfpconfig(proxy)
+#	fp = webdriver.FirefoxProfile()
+
 	driver = webdriver.Firefox(fp)
 	driver.set_page_load_timeout(45)
 	driver.set_script_timeout(60)
@@ -107,11 +109,6 @@ def onepage(driver,dep,arv,ti,src):
 		a = 1
 	return 'errorPage'
 
-SOURCEFILE = 'lst/originPairs.lst'
-EXCLUDEFILE = 'lst/exclude.lst'
-INCLUDEFILE = 'lst/include.lst'
-UNHANDLEFILE = 'lst/unhandle.lst'
-IPSOURCEFILE = 'lst/newIP.lst'
 startp = 0
 endp = 50000
 opts,args = getopt.getopt(sys.argv[1:],"s:e:")
@@ -121,10 +118,21 @@ for op,value in opts:
 	if op == "-e":
 		endp = string.atoi(value)
 
+SOURCEFILE = 'lst/source.lst'
+EXCLUDEFILE = 'lst/exclude%d-%d.lst'%(startp,endp)
+INCLUDEFILE = 'lst/include%d-%d.lst'%(startp,endp)
+UNHANDLEFILE = 'lst/unhandle%d-%d.lst'%(startp,endp)
+IPSOURCEFILE = 'lst/newIP.lst'
+
 f = open(SOURCEFILE)
+text = f.read();
+line = text.split('\n')
+line.pop()
+line = line[startp:endp]
+f.close()
 fpro = open(IPSOURCEFILE)
-fex = open(EXCLUDEFILE,'w')
-fin = open(INCLUDEFILE,'w')
+fex = open(EXCLUDEFILE,'a')
+fin = open(INCLUDEFILE,'a')
 fuh = open(UNHANDLEFILE,'w')
 filelist = {
 	'f':f,
@@ -149,21 +157,23 @@ deadIP = []
 iplist = fpro.read()
 ipline = iplist.split('\n')
 ipline.pop()
-
-text = f.read();
-line = text.split('\n')
-line.pop()
-line = line[startp:endp]
+threads=[]
 try:
 	while line:
 		if (len(threading.enumerate())<2): 
 			t = threading.Thread(target=onedriver,args=('2013-11-13','qunar.com'))
 			t.start()
+			threads.append(t)
 		time.sleep(2)
+except Exception as e:
+	print e
 finally:
+	for t in threads:
+		t.join()
 	print 'finally'
 	for i in line:
 		filewriter('fuh',i+'\n')
+	print 'closing file'
 	fex.close()
 	fin.close()
 	fuh.close()
