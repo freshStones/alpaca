@@ -1,15 +1,6 @@
 #coding=utf-8
 from urllib import urlencode
-import uuid
-import threading
-import thread
-import sys
-import types
-import datetime
-import time
-import MySQLdb
-import math
-import string
+import uuid, threading, thread, sys, getopt, types, datetime, time, MySQLdb, string
 reload(sys)
 sys.setdefaultencoding('utf-8')
 from selenium import webdriver
@@ -41,16 +32,18 @@ def filewriter(fileid,strtow):
 	filelist[fileid].flush()
 	fileflag[fileid] = 0
 
-
-def onedriver(ti,src):
+def getfpconfig():
 	fp = webdriver.FirefoxProfile()
 	proxy = ipline.pop()
 	[ip,port] = proxy.split(':')
-	print ip + ' ' + port
 	fp.set_preference("network.proxy.http",ip)
 	fp.set_preference("network.proxy.http_port",string.atoi(port))
 	fp.set_preference('network.proxy.type',1)
 	fp.set_preference('network.proxy.no_proxies_on', "api.qunar.com hotel.qunar.com img1.qunarzz.com simg4.qunarzz.com source.qunar.com userimg.qunar.com history.qunar.com qunarzz.com")
+	return fp
+
+def onedriver(ti,src):
+	fp = getfpconfig()
 	driver = webdriver.Firefox(fp)
 	driver.set_page_load_timeout(45)
 	driver.set_script_timeout(60)
@@ -114,11 +107,20 @@ def onepage(driver,dep,arv,ti,src):
 		a = 1
 	return 'errorPage'
 
-SOURCEFILE = 'lst/piece2.lst'
-EXCLUDEFILE = 'lst/exclude2.lst'
-INCLUDEFILE = 'lst/include2.lst'
-UNHANDLEFILE = 'lst/unhandle2.lst'
+SOURCEFILE = 'lst/originPairs.lst'
+EXCLUDEFILE = 'lst/exclude.lst'
+INCLUDEFILE = 'lst/include.lst'
+UNHANDLEFILE = 'lst/unhandle.lst'
 IPSOURCEFILE = 'lst/newIP.lst'
+startp = 0
+endp = 50000
+opts,args = getopt.getopt(sys.argv[1:],"s:e:")
+for op,value in opts:
+	if op == "s":
+		startp = string.atoi(value)
+	if op == "e":
+		endp = string.atoi(value)
+		
 
 f = open(SOURCEFILE)
 fpro = open(IPSOURCEFILE)
@@ -152,13 +154,12 @@ ipline.pop()
 text = f.read();
 line = text.split('\n')
 line.pop()
+line = line[startp:endp]
 while line:
 	if (len(threading.enumerate())<6): 
 		t = threading.Thread(target=onedriver,args=('2013-11-13','qunar.com'))
 		t.start()
-		time.sleep(2)
-	else:
-		time.sleep(5)
+	time.sleep(2)
 fex.close()
 fin.close()
 fuh.close()
