@@ -131,8 +131,8 @@ line.pop()
 line = line[startp:endp]
 f.close()
 fpro = open(IPSOURCEFILE)
-fex = open(EXCLUDEFILE,'a')
-fin = open(INCLUDEFILE,'a')
+fex = open(EXCLUDEFILE,'w')
+fin = open(INCLUDEFILE,'w')
 fuh = open(UNHANDLEFILE,'w')
 filelist = {
 	'f':f,
@@ -160,7 +160,7 @@ ipline.pop()
 threads=[]
 try:
 	while line:
-		if (len(threading.enumerate())<2): 
+		if (len(threading.enumerate())<5): 
 			t = threading.Thread(target=onedriver,args=('2013-11-13','qunar.com'))
 			t.start()
 			threads.append(t)
