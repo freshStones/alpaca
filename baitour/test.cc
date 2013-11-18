@@ -3,6 +3,8 @@
 #include<string>
 #include "gsoap/soapBaitourServiceSoapProxy.h"
 #include "gsoap/BaitourServiceSoap.nsmap"
+#include "gsoap/soapStub.h"
+#include "gsoap/soapH.h"
 
 using namespace std;
 int main(int argc, const char *argv[])
