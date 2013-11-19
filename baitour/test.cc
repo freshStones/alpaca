@@ -11,8 +11,11 @@ int main(int argc, const char *argv[])
 {
 	BaitourServiceSoapProxy proxy;
 	_ns1__GetAllCommonPolicy ns1__GetAllCommonPolicy;
+	string a = "0",b = "0";
+	ns1__GetAllCommonPolicy.tripType = &a;
+	ns1__GetAllCommonPolicy.ticketType = &b;
 	_ns1__GetAllCommonPolicyResponse ns1__GetAllCommonPolicyResponse;
 	proxy.GetAllCommonPolicy(&ns1__GetAllCommonPolicy,&ns1__GetAllCommonPolicyResponse);
-	cout << ns1__GetAllCommonPolicyResponse.GetAllCommonPolicyResult;
+	cout << *(ns1__GetAllCommonPolicyResponse.GetAllCommonPolicyResult);
 	return 0;
 }

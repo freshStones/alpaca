@@ -4,18 +4,18 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
-AgentCode	gsoap/baitour.h	/^    std::string*                         AgentCode                      0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetInvalidationProviders
-AgentCode	gsoap/baitour.h	/^    std::string*                         AgentCode                      0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetOrderInfo
 AgentCode	gsoap/soapStub.h	/^	std::string *AgentCode;	\/* optional element of type xsd:string *\/$/;"	m	class:_ns1__GetInvalidationProviders
 AgentCode	gsoap/soapStub.h	/^	std::string *AgentCode;	\/* optional element of type xsd:string *\/$/;"	m	class:_ns1__GetOrderInfo
-AgentPwd	gsoap/baitour.h	/^    std::string*                         AgentPwd                       0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetInvalidationProviders
-AgentPwd	gsoap/baitour.h	/^    std::string*                         AgentPwd                       0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetOrderInfo
+AgentCode	gsoap/temp.h	/^    std::string*                         AgentCode                      0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetInvalidationProviders
+AgentCode	gsoap/temp.h	/^    std::string*                         AgentCode                      0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetOrderInfo
 AgentPwd	gsoap/soapStub.h	/^	std::string *AgentPwd;	\/* optional element of type xsd:string *\/$/;"	m	class:_ns1__GetInvalidationProviders
 AgentPwd	gsoap/soapStub.h	/^	std::string *AgentPwd;	\/* optional element of type xsd:string *\/$/;"	m	class:_ns1__GetOrderInfo
-AgentUserName	gsoap/baitour.h	/^    std::string*                         AgentUserName                  0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetInvalidationProviders
-AgentUserName	gsoap/baitour.h	/^    std::string*                         AgentUserName                  0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetOrderInfo
+AgentPwd	gsoap/temp.h	/^    std::string*                         AgentPwd                       0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetInvalidationProviders
+AgentPwd	gsoap/temp.h	/^    std::string*                         AgentPwd                       0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetOrderInfo
 AgentUserName	gsoap/soapStub.h	/^	std::string *AgentUserName;	\/* optional element of type xsd:string *\/$/;"	m	class:_ns1__GetInvalidationProviders
 AgentUserName	gsoap/soapStub.h	/^	std::string *AgentUserName;	\/* optional element of type xsd:string *\/$/;"	m	class:_ns1__GetOrderInfo
+AgentUserName	gsoap/temp.h	/^    std::string*                         AgentUserName                  0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetInvalidationProviders
+AgentUserName	gsoap/temp.h	/^    std::string*                         AgentUserName                  0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetOrderInfo
 BaitourServiceSoapProxy	gsoap/soapBaitourServiceSoapProxy.cpp	/^BaitourServiceSoapProxy::BaitourServiceSoapProxy()$/;"	f	class:BaitourServiceSoapProxy
 BaitourServiceSoapProxy	gsoap/soapBaitourServiceSoapProxy.cpp	/^BaitourServiceSoapProxy::BaitourServiceSoapProxy(const char *url)$/;"	f	class:BaitourServiceSoapProxy
 BaitourServiceSoapProxy	gsoap/soapBaitourServiceSoapProxy.cpp	/^BaitourServiceSoapProxy::BaitourServiceSoapProxy(const char *url, soap_mode iomode)$/;"	f	class:BaitourServiceSoapProxy
@@ -24,12 +24,10 @@ BaitourServiceSoapProxy	gsoap/soapBaitourServiceSoapProxy.cpp	/^BaitourServiceSo
 BaitourServiceSoapProxy	gsoap/soapBaitourServiceSoapProxy.cpp	/^BaitourServiceSoapProxy::BaitourServiceSoapProxy(struct soap *_soap)$/;"	f	class:BaitourServiceSoapProxy
 BaitourServiceSoapProxy	gsoap/soapBaitourServiceSoapProxy.h	/^class SOAP_CMAC BaitourServiceSoapProxy$/;"	c
 BaitourServiceSoapProxy_init	gsoap/soapBaitourServiceSoapProxy.cpp	/^void BaitourServiceSoapProxy::BaitourServiceSoapProxy_init(soap_mode imode, soap_mode omode)$/;"	f	class:BaitourServiceSoapProxy
-BaitourServiceSoapService	gsoap/soapBaitourServiceSoapService.cpp	/^BaitourServiceSoapService::BaitourServiceSoapService()$/;"	f	class:BaitourServiceSoapService
-BaitourServiceSoapService	gsoap/soapBaitourServiceSoapService.cpp	/^BaitourServiceSoapService::BaitourServiceSoapService(soap_mode imode, soap_mode omode)$/;"	f	class:BaitourServiceSoapService
-BaitourServiceSoapService	gsoap/soapBaitourServiceSoapService.cpp	/^BaitourServiceSoapService::BaitourServiceSoapService(soap_mode iomode)$/;"	f	class:BaitourServiceSoapService
-BaitourServiceSoapService	gsoap/soapBaitourServiceSoapService.cpp	/^BaitourServiceSoapService::BaitourServiceSoapService(struct soap *_soap)$/;"	f	class:BaitourServiceSoapService
-BaitourServiceSoapService	gsoap/soapBaitourServiceSoapService.h	/^class SOAP_CMAC BaitourServiceSoapService$/;"	c
-BaitourServiceSoapService_init	gsoap/soapBaitourServiceSoapService.cpp	/^void BaitourServiceSoapService::BaitourServiceSoapService_init(soap_mode imode, soap_mode omode)$/;"	f	class:BaitourServiceSoapService
+CFLAGS	Makefile	/^CFLAGS := -O2 -Wall -Wno-deprecated-declarations$/;"	m
+COM_OBJS	Makefile	/^COM_OBJS := $(COM_SOURCES:.cpp=.o)$/;"	m
+COM_SOURCES	Makefile	/^COM_SOURCES := soapC.cpp  $(GSOAP_DIR)\/gsoap\/stdsoap2.cpp$/;"	m
+CORSS_COMPILER	Makefile	/^CORSS_COMPILER = $/;"	m
 CYGWIN	gsoap/stdsoap2.h	163;"	d
 DBGFUN	gsoap/stdsoap2.h	1571;"	d
 DBGFUN	gsoap/stdsoap2.h	1593;"	d
@@ -59,8 +57,8 @@ DBL_PINFTY	gsoap/stdsoap2.h	588;"	d
 DEBUG	gsoap/stdsoap2.h	1431;"	d
 DetailCreateOrder	gsoap/soapBaitourServiceSoapProxy.cpp	/^int BaitourServiceSoapProxy::DetailCreateOrder(const char *endpoint, const char *soap_action, _ns1__DetailCreateOrder *ns1__DetailCreateOrder, _ns1__DetailCreateOrderResponse *ns1__DetailCreateOrderResponse)$/;"	f	class:BaitourServiceSoapProxy
 DetailCreateOrder	gsoap/soapBaitourServiceSoapProxy.h	/^	virtual	int DetailCreateOrder(_ns1__DetailCreateOrder *ns1__DetailCreateOrder, _ns1__DetailCreateOrderResponse *ns1__DetailCreateOrderResponse) { return this->DetailCreateOrder(NULL, NULL, ns1__DetailCreateOrder, ns1__DetailCreateOrderResponse); }$/;"	f	class:BaitourServiceSoapProxy
-DetailCreateOrderResult	gsoap/baitour.h	/^    std::string*                         DetailCreateOrderResult        0;	\/\/\/< Optional element.$/;"	m	class:_ns1__DetailCreateOrderResponse
 DetailCreateOrderResult	gsoap/soapStub.h	/^	std::string *DetailCreateOrderResult;	\/* SOAP 1.2 RPC return element (when namespace qualified) *\/	\/* optional element of type xsd:string *\/$/;"	m	class:_ns1__DetailCreateOrderResponse
+DetailCreateOrderResult	gsoap/temp.h	/^    std::string*                         DetailCreateOrderResult        0;	\/\/\/< Optional element.$/;"	m	class:_ns1__DetailCreateOrderResponse
 FD_SETSIZE	gsoap/stdsoap2.h	866;"	d
 FLT_MAX	gsoap/stdsoap2.h	1150;"	d
 FLT_NAN	gsoap/stdsoap2.h	1158;"	d
@@ -70,41 +68,43 @@ FLT_PINFTY	gsoap/stdsoap2.h	1165;"	d
 FLT_PINFTY	gsoap/stdsoap2.h	1167;"	d
 FLT_PINFTY	gsoap/stdsoap2.h	1169;"	d
 FLT_PINFTY	gsoap/stdsoap2.h	1171;"	d
+GSOAP_DIR	Makefile	/^GSOAP_DIR=\/home\/daniel\/Documents\/gsoap-2.8$/;"	m
+GSOAP_FILES	Makefile	/^GSOAP_FILES := soapClient.cpp soapServer.cpp soapC.cpp soapH.h soapStub.h$/;"	m
 GSOAP_LIB_VERSION	gsoap/stdsoap2.c	54;"	d	file:
 GSOAP_LIB_VERSION	gsoap/stdsoap2.cpp	54;"	d	file:
 GSOAP_VERSION	gsoap/stdsoap2.h	54;"	d
 GetAVPolicy	gsoap/soapBaitourServiceSoapProxy.cpp	/^int BaitourServiceSoapProxy::GetAVPolicy(const char *endpoint, const char *soap_action, _ns1__GetAVPolicy *ns1__GetAVPolicy, _ns1__GetAVPolicyResponse *ns1__GetAVPolicyResponse)$/;"	f	class:BaitourServiceSoapProxy
 GetAVPolicy	gsoap/soapBaitourServiceSoapProxy.h	/^	virtual	int GetAVPolicy(_ns1__GetAVPolicy *ns1__GetAVPolicy, _ns1__GetAVPolicyResponse *ns1__GetAVPolicyResponse) { return this->GetAVPolicy(NULL, NULL, ns1__GetAVPolicy, ns1__GetAVPolicyResponse); }$/;"	f	class:BaitourServiceSoapProxy
-GetAVPolicyResult	gsoap/baitour.h	/^    std::string*                         GetAVPolicyResult              0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetAVPolicyResponse
 GetAVPolicyResult	gsoap/soapStub.h	/^	std::string *GetAVPolicyResult;	\/* SOAP 1.2 RPC return element (when namespace qualified) *\/	\/* optional element of type xsd:string *\/$/;"	m	class:_ns1__GetAVPolicyResponse
+GetAVPolicyResult	gsoap/temp.h	/^    std::string*                         GetAVPolicyResult              0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetAVPolicyResponse
 GetAllCommonPolicy	gsoap/soapBaitourServiceSoapProxy.cpp	/^int BaitourServiceSoapProxy::GetAllCommonPolicy(const char *endpoint, const char *soap_action, _ns1__GetAllCommonPolicy *ns1__GetAllCommonPolicy, _ns1__GetAllCommonPolicyResponse *ns1__GetAllCommonPolicyResponse)$/;"	f	class:BaitourServiceSoapProxy
 GetAllCommonPolicy	gsoap/soapBaitourServiceSoapProxy.h	/^	virtual	int GetAllCommonPolicy(_ns1__GetAllCommonPolicy *ns1__GetAllCommonPolicy, _ns1__GetAllCommonPolicyResponse *ns1__GetAllCommonPolicyResponse) { return this->GetAllCommonPolicy(NULL, NULL, ns1__GetAllCommonPolicy, ns1__GetAllCommonPolicyResponse); }$/;"	f	class:BaitourServiceSoapProxy
-GetAllCommonPolicyResult	gsoap/baitour.h	/^    std::string*                         GetAllCommonPolicyResult       0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetAllCommonPolicyResponse
 GetAllCommonPolicyResult	gsoap/soapStub.h	/^	std::string *GetAllCommonPolicyResult;	\/* SOAP 1.2 RPC return element (when namespace qualified) *\/	\/* optional element of type xsd:string *\/$/;"	m	class:_ns1__GetAllCommonPolicyResponse
+GetAllCommonPolicyResult	gsoap/temp.h	/^    std::string*                         GetAllCommonPolicyResult       0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetAllCommonPolicyResponse
 GetAllCommonPolicyZIP	gsoap/soapBaitourServiceSoapProxy.cpp	/^int BaitourServiceSoapProxy::GetAllCommonPolicyZIP(const char *endpoint, const char *soap_action, _ns1__GetAllCommonPolicyZIP *ns1__GetAllCommonPolicyZIP, _ns1__GetAllCommonPolicyZIPResponse *ns1__GetAllCommonPolicyZIPResponse)$/;"	f	class:BaitourServiceSoapProxy
 GetAllCommonPolicyZIP	gsoap/soapBaitourServiceSoapProxy.h	/^	virtual	int GetAllCommonPolicyZIP(_ns1__GetAllCommonPolicyZIP *ns1__GetAllCommonPolicyZIP, _ns1__GetAllCommonPolicyZIPResponse *ns1__GetAllCommonPolicyZIPResponse) { return this->GetAllCommonPolicyZIP(NULL, NULL, ns1__GetAllCommonPolicyZIP, ns1__GetAllCommonPolicyZIPResponse); }$/;"	f	class:BaitourServiceSoapProxy
-GetAllCommonPolicyZIPResult	gsoap/baitour.h	/^    std::string*                         GetAllCommonPolicyZIPResult    0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetAllCommonPolicyZIPResponse
 GetAllCommonPolicyZIPResult	gsoap/soapStub.h	/^	std::string *GetAllCommonPolicyZIPResult;	\/* SOAP 1.2 RPC return element (when namespace qualified) *\/	\/* optional element of type xsd:string *\/$/;"	m	class:_ns1__GetAllCommonPolicyZIPResponse
+GetAllCommonPolicyZIPResult	gsoap/temp.h	/^    std::string*                         GetAllCommonPolicyZIPResult    0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetAllCommonPolicyZIPResponse
 GetAlterCommonPolicy	gsoap/soapBaitourServiceSoapProxy.cpp	/^int BaitourServiceSoapProxy::GetAlterCommonPolicy(const char *endpoint, const char *soap_action, _ns1__GetAlterCommonPolicy *ns1__GetAlterCommonPolicy, _ns1__GetAlterCommonPolicyResponse *ns1__GetAlterCommonPolicyResponse)$/;"	f	class:BaitourServiceSoapProxy
 GetAlterCommonPolicy	gsoap/soapBaitourServiceSoapProxy.h	/^	virtual	int GetAlterCommonPolicy(_ns1__GetAlterCommonPolicy *ns1__GetAlterCommonPolicy, _ns1__GetAlterCommonPolicyResponse *ns1__GetAlterCommonPolicyResponse) { return this->GetAlterCommonPolicy(NULL, NULL, ns1__GetAlterCommonPolicy, ns1__GetAlterCommonPolicyResponse); }$/;"	f	class:BaitourServiceSoapProxy
-GetAlterCommonPolicyResult	gsoap/baitour.h	/^    std::string*                         GetAlterCommonPolicyResult     0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetAlterCommonPolicyResponse
 GetAlterCommonPolicyResult	gsoap/soapStub.h	/^	std::string *GetAlterCommonPolicyResult;	\/* SOAP 1.2 RPC return element (when namespace qualified) *\/	\/* optional element of type xsd:string *\/$/;"	m	class:_ns1__GetAlterCommonPolicyResponse
+GetAlterCommonPolicyResult	gsoap/temp.h	/^    std::string*                         GetAlterCommonPolicyResult     0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetAlterCommonPolicyResponse
 GetChangeFlightDate	gsoap/soapBaitourServiceSoapProxy.cpp	/^int BaitourServiceSoapProxy::GetChangeFlightDate(const char *endpoint, const char *soap_action, _ns1__GetChangeFlightDate *ns1__GetChangeFlightDate, _ns1__GetChangeFlightDateResponse *ns1__GetChangeFlightDateResponse)$/;"	f	class:BaitourServiceSoapProxy
 GetChangeFlightDate	gsoap/soapBaitourServiceSoapProxy.h	/^	virtual	int GetChangeFlightDate(_ns1__GetChangeFlightDate *ns1__GetChangeFlightDate, _ns1__GetChangeFlightDateResponse *ns1__GetChangeFlightDateResponse) { return this->GetChangeFlightDate(NULL, NULL, ns1__GetChangeFlightDate, ns1__GetChangeFlightDateResponse); }$/;"	f	class:BaitourServiceSoapProxy
-GetChangeFlightDateResult	gsoap/baitour.h	/^    std::string*                         GetChangeFlightDateResult      0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetChangeFlightDateResponse
 GetChangeFlightDateResult	gsoap/soapStub.h	/^	std::string *GetChangeFlightDateResult;	\/* SOAP 1.2 RPC return element (when namespace qualified) *\/	\/* optional element of type xsd:string *\/$/;"	m	class:_ns1__GetChangeFlightDateResponse
+GetChangeFlightDateResult	gsoap/temp.h	/^    std::string*                         GetChangeFlightDateResult      0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetChangeFlightDateResponse
 GetDomesticMatchNormalZRateByID	gsoap/soapBaitourServiceSoapProxy.cpp	/^int BaitourServiceSoapProxy::GetDomesticMatchNormalZRateByID(const char *endpoint, const char *soap_action, _ns1__GetDomesticMatchNormalZRateByID *ns1__GetDomesticMatchNormalZRateByID, _ns1__GetDomesticMatchNormalZRateByIDResponse *ns1__GetDomesticMatchNormalZRateByIDResponse)$/;"	f	class:BaitourServiceSoapProxy
 GetDomesticMatchNormalZRateByID	gsoap/soapBaitourServiceSoapProxy.h	/^	virtual	int GetDomesticMatchNormalZRateByID(_ns1__GetDomesticMatchNormalZRateByID *ns1__GetDomesticMatchNormalZRateByID, _ns1__GetDomesticMatchNormalZRateByIDResponse *ns1__GetDomesticMatchNormalZRateByIDResponse) { return this->GetDomesticMatchNormalZRateByID(NULL, NULL, ns1__GetDomesticMatchNormalZRateByID, ns1__GetDomesticMatchNormalZRateByIDResponse); }$/;"	f	class:BaitourServiceSoapProxy
-GetDomesticMatchNormalZRateByIDResult	gsoap/baitour.h	/^    std::string*                         GetDomesticMatchNormalZRateByIDResult 0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetDomesticMatchNormalZRateByIDResponse
 GetDomesticMatchNormalZRateByIDResult	gsoap/soapStub.h	/^	std::string *GetDomesticMatchNormalZRateByIDResult;	\/* SOAP 1.2 RPC return element (when namespace qualified) *\/	\/* optional element of type xsd:string *\/$/;"	m	class:_ns1__GetDomesticMatchNormalZRateByIDResponse
+GetDomesticMatchNormalZRateByIDResult	gsoap/temp.h	/^    std::string*                         GetDomesticMatchNormalZRateByIDResult 0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetDomesticMatchNormalZRateByIDResponse
 GetInvalidationProviders	gsoap/soapBaitourServiceSoapProxy.cpp	/^int BaitourServiceSoapProxy::GetInvalidationProviders(const char *endpoint, const char *soap_action, _ns1__GetInvalidationProviders *ns1__GetInvalidationProviders, _ns1__GetInvalidationProvidersResponse *ns1__GetInvalidationProvidersResponse)$/;"	f	class:BaitourServiceSoapProxy
 GetInvalidationProviders	gsoap/soapBaitourServiceSoapProxy.h	/^	virtual	int GetInvalidationProviders(_ns1__GetInvalidationProviders *ns1__GetInvalidationProviders, _ns1__GetInvalidationProvidersResponse *ns1__GetInvalidationProvidersResponse) { return this->GetInvalidationProviders(NULL, NULL, ns1__GetInvalidationProviders, ns1__GetInvalidationProvidersResponse); }$/;"	f	class:BaitourServiceSoapProxy
-GetInvalidationProvidersResult	gsoap/baitour.h	/^    std::string*                         GetInvalidationProvidersResult 0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetInvalidationProvidersResponse
 GetInvalidationProvidersResult	gsoap/soapStub.h	/^	std::string *GetInvalidationProvidersResult;	\/* SOAP 1.2 RPC return element (when namespace qualified) *\/	\/* optional element of type xsd:string *\/$/;"	m	class:_ns1__GetInvalidationProvidersResponse
+GetInvalidationProvidersResult	gsoap/temp.h	/^    std::string*                         GetInvalidationProvidersResult 0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetInvalidationProvidersResponse
 GetOrderInfo	gsoap/soapBaitourServiceSoapProxy.cpp	/^int BaitourServiceSoapProxy::GetOrderInfo(const char *endpoint, const char *soap_action, _ns1__GetOrderInfo *ns1__GetOrderInfo, _ns1__GetOrderInfoResponse *ns1__GetOrderInfoResponse)$/;"	f	class:BaitourServiceSoapProxy
 GetOrderInfo	gsoap/soapBaitourServiceSoapProxy.h	/^	virtual	int GetOrderInfo(_ns1__GetOrderInfo *ns1__GetOrderInfo, _ns1__GetOrderInfoResponse *ns1__GetOrderInfoResponse) { return this->GetOrderInfo(NULL, NULL, ns1__GetOrderInfo, ns1__GetOrderInfoResponse); }$/;"	f	class:BaitourServiceSoapProxy
-GetOrderInfoResult	gsoap/baitour.h	/^    std::string*                         GetOrderInfoResult             0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetOrderInfoResponse
 GetOrderInfoResult	gsoap/soapStub.h	/^	std::string *GetOrderInfoResult;	\/* SOAP 1.2 RPC return element (when namespace qualified) *\/	\/* optional element of type xsd:string *\/$/;"	m	class:_ns1__GetOrderInfoResponse
+GetOrderInfoResult	gsoap/temp.h	/^    std::string*                         GetOrderInfoResult             0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetOrderInfoResponse
 HAVE_FTIME	gsoap/stdsoap2.h	232;"	d
 HAVE_FTIME	gsoap/stdsoap2.h	247;"	d
 HAVE_FTIME	gsoap/stdsoap2.h	282;"	d
@@ -379,7 +379,9 @@ HAVE_WCTOMB	gsoap/stdsoap2.h	516;"	d
 HAVE_WCTOMB	gsoap/stdsoap2.h	590;"	d
 HP_UX	gsoap/stdsoap2.h	180;"	d
 IGNORE_STDIO_STUBS	gsoap/stdsoap2.h	417;"	d
+INCLS	Makefile	/^INCLS := -I .\/ -I $(GSOAP_DIR)\/gsoap$/;"	m
 INET_ERROR	gsoap/stdsoap2.h	609;"	d
+LIBS	Makefile	/^LIBS:=  -lpthread -lm$/;"	m
 LONG64	gsoap/stdsoap2.h	586;"	d
 LONG64	gsoap/stdsoap2.h	882;"	d
 LONG64	gsoap/stdsoap2.h	891;"	d
@@ -392,23 +394,25 @@ LONG64	gsoap/stdsoap2.h	922;"	d
 LONG64	gsoap/stdsoap2.h	925;"	d
 MatchCommonPolicy	gsoap/soapBaitourServiceSoapProxy.cpp	/^int BaitourServiceSoapProxy::MatchCommonPolicy(const char *endpoint, const char *soap_action, _ns1__MatchCommonPolicy *ns1__MatchCommonPolicy, _ns1__MatchCommonPolicyResponse *ns1__MatchCommonPolicyResponse)$/;"	f	class:BaitourServiceSoapProxy
 MatchCommonPolicy	gsoap/soapBaitourServiceSoapProxy.h	/^	virtual	int MatchCommonPolicy(_ns1__MatchCommonPolicy *ns1__MatchCommonPolicy, _ns1__MatchCommonPolicyResponse *ns1__MatchCommonPolicyResponse) { return this->MatchCommonPolicy(NULL, NULL, ns1__MatchCommonPolicy, ns1__MatchCommonPolicyResponse); }$/;"	f	class:BaitourServiceSoapProxy
-MatchCommonPolicyResult	gsoap/baitour.h	/^    std::string*                         MatchCommonPolicyResult        0;	\/\/\/< Optional element.$/;"	m	class:_ns1__MatchCommonPolicyResponse
 MatchCommonPolicyResult	gsoap/soapStub.h	/^	std::string *MatchCommonPolicyResult;	\/* SOAP 1.2 RPC return element (when namespace qualified) *\/	\/* optional element of type xsd:string *\/$/;"	m	class:_ns1__MatchCommonPolicyResponse
+MatchCommonPolicyResult	gsoap/temp.h	/^    std::string*                         MatchCommonPolicyResult        0;	\/\/\/< Optional element.$/;"	m	class:_ns1__MatchCommonPolicyResponse
 Namespace	gsoap/stdsoap2.h	/^struct Namespace$/;"	s
+OBJS	Makefile	/^OBJS := $(OBJ_SOURCES:.cpp=.o) $(COM_OBJS)$/;"	m
+OBJ_SOURCES	Makefile	/^OBJ_SOURCES := $(server).cpp soapServer.cpp $(client).cpp soapClient.cpp $(test).cpp$/;"	m
 OPENSSL_NO_KRB5	gsoap/stdsoap2.h	771;"	d
 OS390	gsoap/stdsoap2.h	192;"	d
 O_NONBLOCK	gsoap/stdsoap2.h	419;"	d
-OrderID	gsoap/baitour.h	/^    std::string*                         OrderID                        0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetOrderInfo
 OrderID	gsoap/soapStub.h	/^	std::string *OrderID;	\/* optional element of type xsd:string *\/$/;"	m	class:_ns1__GetOrderInfo
+OrderID	gsoap/temp.h	/^    std::string*                         OrderID                        0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetOrderInfo
 PALM	gsoap/stdsoap2.h	174;"	d
 RTCreateOrder	gsoap/soapBaitourServiceSoapProxy.cpp	/^int BaitourServiceSoapProxy::RTCreateOrder(const char *endpoint, const char *soap_action, _ns1__RTCreateOrder *ns1__RTCreateOrder, _ns1__RTCreateOrderResponse *ns1__RTCreateOrderResponse)$/;"	f	class:BaitourServiceSoapProxy
 RTCreateOrder	gsoap/soapBaitourServiceSoapProxy.h	/^	virtual	int RTCreateOrder(_ns1__RTCreateOrder *ns1__RTCreateOrder, _ns1__RTCreateOrderResponse *ns1__RTCreateOrderResponse) { return this->RTCreateOrder(NULL, NULL, ns1__RTCreateOrder, ns1__RTCreateOrderResponse); }$/;"	f	class:BaitourServiceSoapProxy
-RTCreateOrderResult	gsoap/baitour.h	/^    std::string*                         RTCreateOrderResult            0;	\/\/\/< Optional element.$/;"	m	class:_ns1__RTCreateOrderResponse
 RTCreateOrderResult	gsoap/soapStub.h	/^	std::string *RTCreateOrderResult;	\/* SOAP 1.2 RPC return element (when namespace qualified) *\/	\/* optional element of type xsd:string *\/$/;"	m	class:_ns1__RTCreateOrderResponse
+RTCreateOrderResult	gsoap/temp.h	/^    std::string*                         RTCreateOrderResult            0;	\/\/\/< Optional element.$/;"	m	class:_ns1__RTCreateOrderResponse
 RefundOrder	gsoap/soapBaitourServiceSoapProxy.cpp	/^int BaitourServiceSoapProxy::RefundOrder(const char *endpoint, const char *soap_action, _ns1__RefundOrder *ns1__RefundOrder, _ns1__RefundOrderResponse *ns1__RefundOrderResponse)$/;"	f	class:BaitourServiceSoapProxy
 RefundOrder	gsoap/soapBaitourServiceSoapProxy.h	/^	virtual	int RefundOrder(_ns1__RefundOrder *ns1__RefundOrder, _ns1__RefundOrderResponse *ns1__RefundOrderResponse) { return this->RefundOrder(NULL, NULL, ns1__RefundOrder, ns1__RefundOrderResponse); }$/;"	f	class:BaitourServiceSoapProxy
-RefundOrderResult	gsoap/baitour.h	/^    std::string*                         RefundOrderResult              0;	\/\/\/< Optional element.$/;"	m	class:_ns1__RefundOrderResponse
 RefundOrderResult	gsoap/soapStub.h	/^	std::string *RefundOrderResult;	\/* SOAP 1.2 RPC return element (when namespace qualified) *\/	\/* optional element of type xsd:string *\/$/;"	m	class:_ns1__RefundOrderResponse
+RefundOrderResult	gsoap/temp.h	/^    std::string*                         RefundOrderResult              0;	\/\/\/< Optional element.$/;"	m	class:_ns1__RefundOrderResponse
 SOAP_AP	gsoap/stdsoap2.c	98;"	d	file:
 SOAP_AP	gsoap/stdsoap2.cpp	98;"	d	file:
 SOAP_BEGIN	gsoap/stdsoap2.h	1410;"	d
@@ -500,8 +504,6 @@ SOAP_FD_EXCEEDED	gsoap/stdsoap2.h	1282;"	d
 SOAP_FILE	gsoap/stdsoap2.h	1302;"	d
 SOAP_FMAC1	gsoap/stdsoap2.h	71;"	d
 SOAP_FMAC2	gsoap/stdsoap2.h	75;"	d
-SOAP_FMAC3	gsoap/soapClientLib.cpp	16;"	d	file:
-SOAP_FMAC3	gsoap/soapServerLib.cpp	16;"	d	file:
 SOAP_FMAC3	gsoap/stdsoap2.h	79;"	d
 SOAP_FMAC3S	gsoap/stdsoap2.h	83;"	d
 SOAP_FMAC4	gsoap/stdsoap2.h	87;"	d
@@ -582,8 +584,8 @@ SOAP_MISSING_ID	gsoap/stdsoap2.h	1261;"	d
 SOAP_MOE	gsoap/stdsoap2.h	1257;"	d
 SOAP_MUSTUNDERSTAND	gsoap/stdsoap2.h	1244;"	d
 SOAP_NAMESPACE	gsoap/stdsoap2.h	1245;"	d
-SOAP_NAMESPACE_OF_ns1	gsoap/baitour.h	119;"	d
 SOAP_NAMESPACE_OF_ns1	gsoap/soapStub.h	14;"	d
+SOAP_NAMESPACE_OF_ns1	gsoap/temp.h	119;"	d
 SOAP_NEW	gsoap/stdsoap2.h	1472;"	d
 SOAP_NEW	gsoap/stdsoap2.h	1483;"	d
 SOAP_NEW_ARRAY	gsoap/stdsoap2.h	1475;"	d
@@ -613,19 +615,6 @@ SOAP_PROHIBITED	gsoap/stdsoap2.h	1279;"	d
 SOAP_PTRBLK	gsoap/stdsoap2.h	1019;"	d
 SOAP_PTRHASH	gsoap/stdsoap2.h	1023;"	d
 SOAP_PTRHASH	gsoap/stdsoap2.h	1025;"	d
-SOAP_PURE_VIRTUAL	gsoap/soapBaitourServiceSoapService.h	/^	virtual	BaitourServiceSoapService *copy() SOAP_PURE_VIRTUAL;$/;"	m	class:BaitourServiceSoapService
-SOAP_PURE_VIRTUAL	gsoap/soapBaitourServiceSoapService.h	/^	virtual	int DetailCreateOrder(_ns1__DetailCreateOrder *ns1__DetailCreateOrder, _ns1__DetailCreateOrderResponse *ns1__DetailCreateOrderResponse) SOAP_PURE_VIRTUAL;$/;"	m	class:BaitourServiceSoapService
-SOAP_PURE_VIRTUAL	gsoap/soapBaitourServiceSoapService.h	/^	virtual	int GetAVPolicy(_ns1__GetAVPolicy *ns1__GetAVPolicy, _ns1__GetAVPolicyResponse *ns1__GetAVPolicyResponse) SOAP_PURE_VIRTUAL;$/;"	m	class:BaitourServiceSoapService
-SOAP_PURE_VIRTUAL	gsoap/soapBaitourServiceSoapService.h	/^	virtual	int GetAllCommonPolicy(_ns1__GetAllCommonPolicy *ns1__GetAllCommonPolicy, _ns1__GetAllCommonPolicyResponse *ns1__GetAllCommonPolicyResponse) SOAP_PURE_VIRTUAL;$/;"	m	class:BaitourServiceSoapService
-SOAP_PURE_VIRTUAL	gsoap/soapBaitourServiceSoapService.h	/^	virtual	int GetAllCommonPolicyZIP(_ns1__GetAllCommonPolicyZIP *ns1__GetAllCommonPolicyZIP, _ns1__GetAllCommonPolicyZIPResponse *ns1__GetAllCommonPolicyZIPResponse) SOAP_PURE_VIRTUAL;$/;"	m	class:BaitourServiceSoapService
-SOAP_PURE_VIRTUAL	gsoap/soapBaitourServiceSoapService.h	/^	virtual	int GetAlterCommonPolicy(_ns1__GetAlterCommonPolicy *ns1__GetAlterCommonPolicy, _ns1__GetAlterCommonPolicyResponse *ns1__GetAlterCommonPolicyResponse) SOAP_PURE_VIRTUAL;$/;"	m	class:BaitourServiceSoapService
-SOAP_PURE_VIRTUAL	gsoap/soapBaitourServiceSoapService.h	/^	virtual	int GetChangeFlightDate(_ns1__GetChangeFlightDate *ns1__GetChangeFlightDate, _ns1__GetChangeFlightDateResponse *ns1__GetChangeFlightDateResponse) SOAP_PURE_VIRTUAL;$/;"	m	class:BaitourServiceSoapService
-SOAP_PURE_VIRTUAL	gsoap/soapBaitourServiceSoapService.h	/^	virtual	int GetDomesticMatchNormalZRateByID(_ns1__GetDomesticMatchNormalZRateByID *ns1__GetDomesticMatchNormalZRateByID, _ns1__GetDomesticMatchNormalZRateByIDResponse *ns1__GetDomesticMatchNormalZRateByIDResponse) SOAP_PURE_VIRTUAL;$/;"	m	class:BaitourServiceSoapService
-SOAP_PURE_VIRTUAL	gsoap/soapBaitourServiceSoapService.h	/^	virtual	int GetInvalidationProviders(_ns1__GetInvalidationProviders *ns1__GetInvalidationProviders, _ns1__GetInvalidationProvidersResponse *ns1__GetInvalidationProvidersResponse) SOAP_PURE_VIRTUAL;$/;"	m	class:BaitourServiceSoapService
-SOAP_PURE_VIRTUAL	gsoap/soapBaitourServiceSoapService.h	/^	virtual	int GetOrderInfo(_ns1__GetOrderInfo *ns1__GetOrderInfo, _ns1__GetOrderInfoResponse *ns1__GetOrderInfoResponse) SOAP_PURE_VIRTUAL;$/;"	m	class:BaitourServiceSoapService
-SOAP_PURE_VIRTUAL	gsoap/soapBaitourServiceSoapService.h	/^	virtual	int MatchCommonPolicy(_ns1__MatchCommonPolicy *ns1__MatchCommonPolicy, _ns1__MatchCommonPolicyResponse *ns1__MatchCommonPolicyResponse) SOAP_PURE_VIRTUAL;$/;"	m	class:BaitourServiceSoapService
-SOAP_PURE_VIRTUAL	gsoap/soapBaitourServiceSoapService.h	/^	virtual	int RTCreateOrder(_ns1__RTCreateOrder *ns1__RTCreateOrder, _ns1__RTCreateOrderResponse *ns1__RTCreateOrderResponse) SOAP_PURE_VIRTUAL;$/;"	m	class:BaitourServiceSoapService
-SOAP_PURE_VIRTUAL	gsoap/soapBaitourServiceSoapService.h	/^	virtual	int RefundOrder(_ns1__RefundOrder *ns1__RefundOrder, _ns1__RefundOrderResponse *ns1__RefundOrderResponse) SOAP_PURE_VIRTUAL;$/;"	m	class:BaitourServiceSoapService
 SOAP_PURE_VIRTUAL	gsoap/stdsoap2.h	549;"	d
 SOAP_PURE_VIRTUAL	gsoap/stdsoap2.h	551;"	d
 SOAP_PUT	gsoap/stdsoap2.h	1309;"	d
@@ -867,7 +856,10 @@ SOAP_ZLIB_INFLATE	gsoap/stdsoap2.h	1326;"	d
 SOAP_ZLIB_NONE	gsoap/stdsoap2.h	1324;"	d
 STDSOAP_H	gsoap/stdsoap2.h	120;"	d
 SYMBIAN	gsoap/stdsoap2.h	168;"	d
+Server	Makefile	/^Server := myServer$/;"	m
 TRU64	gsoap/stdsoap2.h	186;"	d
+TYPEMAP	Makefile	/^TYPEMAP = $(GSOAP_DIR)\/gsoap\/typemap.dat$/;"	m
+TYPEMAP	Makefile	/^TYPEMAP = $(wildcard *typemap.dat)$/;"	m
 ULONG64	gsoap/stdsoap2.h	587;"	d
 ULONG64	gsoap/stdsoap2.h	883;"	d
 ULONG64	gsoap/stdsoap2.h	892;"	d
@@ -898,8 +890,6 @@ WITH_LEAN	gsoap/stdsoap2.h	423;"	d
 WITH_LEAN	gsoap/stdsoap2.h	533;"	d
 WITH_NOEMPTYSTRUCT	gsoap/stdsoap2.h	545;"	d
 WITH_NOEMPTYSTRUCT	gsoap/stdsoap2.h	589;"	d
-WITH_NOGLOBAL	gsoap/soapClientLib.cpp	14;"	d	file:
-WITH_NOGLOBAL	gsoap/soapServerLib.cpp	14;"	d	file:
 WITH_NOIO	gsoap/stdsoap2.h	394;"	d
 WITH_NOIO	gsoap/stdsoap2.h	583;"	d
 WITH_NOIO	gsoap/stdsoap2.h	641;"	d
@@ -907,6 +897,9 @@ WITH_NONAMESPACES	gsoap/stdsoap2.h	424;"	d
 WITH_OPENSSL	gsoap/stdsoap2.h	200;"	d
 WITH_ZLIB	gsoap/stdsoap2.h	210;"	d
 WITH_ZLIB	gsoap/stdsoap2.h	800;"	d
+WSDL_FILES	Makefile	/^WSDL_FILES := temp.h$/;"	m
+WSDL_SOURCE	Makefile	/^WSDL_SOURCE := $(wildcard *.wsdl)$/;"	m
+WSDL_SOURCE	Makefile	/^WSDL_SOURCE := \/home\/daniel\/Documents\/qqWebService\/qqOnlineWebService.wsdl$/;"	m
 _POSIX_THREADS	gsoap/stdsoap2.h	430;"	d
 _QName	gsoap/soapStub.h	/^typedef char *_QName;$/;"	t
 _REENTRANT	gsoap/stdsoap2.h	66;"	d
@@ -932,90 +925,89 @@ __ns1__RefundOrder	gsoap/soapStub.h	/^struct __ns1__RefundOrder$/;"	s
 __ptr	gsoap/stdsoap2.h	/^{ void *__ptr;$/;"	m	struct:soap_array
 __size	gsoap/stdsoap2.h	/^  int __size;$/;"	m	struct:soap_array
 __type	gsoap/soapStub.h	/^	int __type;	\/* any type of element <fault> (defined below) *\/$/;"	m	struct:SOAP_ENV__Detail
-_ns1__DetailCreateOrder	gsoap/baitour.h	/^class _ns1__DetailCreateOrder$/;"	c
 _ns1__DetailCreateOrder	gsoap/soapStub.h	/^	         _ns1__DetailCreateOrder() { _ns1__DetailCreateOrder::soap_default(NULL); }$/;"	f	class:_ns1__DetailCreateOrder
 _ns1__DetailCreateOrder	gsoap/soapStub.h	/^class SOAP_CMAC _ns1__DetailCreateOrder$/;"	c
-_ns1__DetailCreateOrderResponse	gsoap/baitour.h	/^class _ns1__DetailCreateOrderResponse$/;"	c
+_ns1__DetailCreateOrder	gsoap/temp.h	/^class _ns1__DetailCreateOrder$/;"	c
 _ns1__DetailCreateOrderResponse	gsoap/soapStub.h	/^	         _ns1__DetailCreateOrderResponse() { _ns1__DetailCreateOrderResponse::soap_default(NULL); }$/;"	f	class:_ns1__DetailCreateOrderResponse
 _ns1__DetailCreateOrderResponse	gsoap/soapStub.h	/^class SOAP_CMAC _ns1__DetailCreateOrderResponse$/;"	c
-_ns1__GetAVPolicy	gsoap/baitour.h	/^class _ns1__GetAVPolicy$/;"	c
+_ns1__DetailCreateOrderResponse	gsoap/temp.h	/^class _ns1__DetailCreateOrderResponse$/;"	c
 _ns1__GetAVPolicy	gsoap/soapStub.h	/^	         _ns1__GetAVPolicy() { _ns1__GetAVPolicy::soap_default(NULL); }$/;"	f	class:_ns1__GetAVPolicy
 _ns1__GetAVPolicy	gsoap/soapStub.h	/^class SOAP_CMAC _ns1__GetAVPolicy$/;"	c
-_ns1__GetAVPolicyResponse	gsoap/baitour.h	/^class _ns1__GetAVPolicyResponse$/;"	c
+_ns1__GetAVPolicy	gsoap/temp.h	/^class _ns1__GetAVPolicy$/;"	c
 _ns1__GetAVPolicyResponse	gsoap/soapStub.h	/^	         _ns1__GetAVPolicyResponse() { _ns1__GetAVPolicyResponse::soap_default(NULL); }$/;"	f	class:_ns1__GetAVPolicyResponse
 _ns1__GetAVPolicyResponse	gsoap/soapStub.h	/^class SOAP_CMAC _ns1__GetAVPolicyResponse$/;"	c
-_ns1__GetAllCommonPolicy	gsoap/baitour.h	/^class _ns1__GetAllCommonPolicy$/;"	c
+_ns1__GetAVPolicyResponse	gsoap/temp.h	/^class _ns1__GetAVPolicyResponse$/;"	c
 _ns1__GetAllCommonPolicy	gsoap/soapStub.h	/^	         _ns1__GetAllCommonPolicy() { _ns1__GetAllCommonPolicy::soap_default(NULL); }$/;"	f	class:_ns1__GetAllCommonPolicy
 _ns1__GetAllCommonPolicy	gsoap/soapStub.h	/^class SOAP_CMAC _ns1__GetAllCommonPolicy$/;"	c
-_ns1__GetAllCommonPolicyResponse	gsoap/baitour.h	/^class _ns1__GetAllCommonPolicyResponse$/;"	c
+_ns1__GetAllCommonPolicy	gsoap/temp.h	/^class _ns1__GetAllCommonPolicy$/;"	c
 _ns1__GetAllCommonPolicyResponse	gsoap/soapStub.h	/^	         _ns1__GetAllCommonPolicyResponse() { _ns1__GetAllCommonPolicyResponse::soap_default(NULL); }$/;"	f	class:_ns1__GetAllCommonPolicyResponse
 _ns1__GetAllCommonPolicyResponse	gsoap/soapStub.h	/^class SOAP_CMAC _ns1__GetAllCommonPolicyResponse$/;"	c
-_ns1__GetAllCommonPolicyZIP	gsoap/baitour.h	/^class _ns1__GetAllCommonPolicyZIP$/;"	c
+_ns1__GetAllCommonPolicyResponse	gsoap/temp.h	/^class _ns1__GetAllCommonPolicyResponse$/;"	c
 _ns1__GetAllCommonPolicyZIP	gsoap/soapStub.h	/^	         _ns1__GetAllCommonPolicyZIP() { _ns1__GetAllCommonPolicyZIP::soap_default(NULL); }$/;"	f	class:_ns1__GetAllCommonPolicyZIP
 _ns1__GetAllCommonPolicyZIP	gsoap/soapStub.h	/^class SOAP_CMAC _ns1__GetAllCommonPolicyZIP$/;"	c
-_ns1__GetAllCommonPolicyZIPResponse	gsoap/baitour.h	/^class _ns1__GetAllCommonPolicyZIPResponse$/;"	c
+_ns1__GetAllCommonPolicyZIP	gsoap/temp.h	/^class _ns1__GetAllCommonPolicyZIP$/;"	c
 _ns1__GetAllCommonPolicyZIPResponse	gsoap/soapStub.h	/^	         _ns1__GetAllCommonPolicyZIPResponse() { _ns1__GetAllCommonPolicyZIPResponse::soap_default(NULL); }$/;"	f	class:_ns1__GetAllCommonPolicyZIPResponse
 _ns1__GetAllCommonPolicyZIPResponse	gsoap/soapStub.h	/^class SOAP_CMAC _ns1__GetAllCommonPolicyZIPResponse$/;"	c
-_ns1__GetAlterCommonPolicy	gsoap/baitour.h	/^class _ns1__GetAlterCommonPolicy$/;"	c
+_ns1__GetAllCommonPolicyZIPResponse	gsoap/temp.h	/^class _ns1__GetAllCommonPolicyZIPResponse$/;"	c
 _ns1__GetAlterCommonPolicy	gsoap/soapStub.h	/^	         _ns1__GetAlterCommonPolicy() { _ns1__GetAlterCommonPolicy::soap_default(NULL); }$/;"	f	class:_ns1__GetAlterCommonPolicy
 _ns1__GetAlterCommonPolicy	gsoap/soapStub.h	/^class SOAP_CMAC _ns1__GetAlterCommonPolicy$/;"	c
-_ns1__GetAlterCommonPolicyResponse	gsoap/baitour.h	/^class _ns1__GetAlterCommonPolicyResponse$/;"	c
+_ns1__GetAlterCommonPolicy	gsoap/temp.h	/^class _ns1__GetAlterCommonPolicy$/;"	c
 _ns1__GetAlterCommonPolicyResponse	gsoap/soapStub.h	/^	         _ns1__GetAlterCommonPolicyResponse() { _ns1__GetAlterCommonPolicyResponse::soap_default(NULL); }$/;"	f	class:_ns1__GetAlterCommonPolicyResponse
 _ns1__GetAlterCommonPolicyResponse	gsoap/soapStub.h	/^class SOAP_CMAC _ns1__GetAlterCommonPolicyResponse$/;"	c
-_ns1__GetChangeFlightDate	gsoap/baitour.h	/^class _ns1__GetChangeFlightDate$/;"	c
+_ns1__GetAlterCommonPolicyResponse	gsoap/temp.h	/^class _ns1__GetAlterCommonPolicyResponse$/;"	c
 _ns1__GetChangeFlightDate	gsoap/soapStub.h	/^	         _ns1__GetChangeFlightDate() { _ns1__GetChangeFlightDate::soap_default(NULL); }$/;"	f	class:_ns1__GetChangeFlightDate
 _ns1__GetChangeFlightDate	gsoap/soapStub.h	/^class SOAP_CMAC _ns1__GetChangeFlightDate$/;"	c
-_ns1__GetChangeFlightDateResponse	gsoap/baitour.h	/^class _ns1__GetChangeFlightDateResponse$/;"	c
+_ns1__GetChangeFlightDate	gsoap/temp.h	/^class _ns1__GetChangeFlightDate$/;"	c
 _ns1__GetChangeFlightDateResponse	gsoap/soapStub.h	/^	         _ns1__GetChangeFlightDateResponse() { _ns1__GetChangeFlightDateResponse::soap_default(NULL); }$/;"	f	class:_ns1__GetChangeFlightDateResponse
 _ns1__GetChangeFlightDateResponse	gsoap/soapStub.h	/^class SOAP_CMAC _ns1__GetChangeFlightDateResponse$/;"	c
-_ns1__GetDomesticMatchNormalZRateByID	gsoap/baitour.h	/^class _ns1__GetDomesticMatchNormalZRateByID$/;"	c
+_ns1__GetChangeFlightDateResponse	gsoap/temp.h	/^class _ns1__GetChangeFlightDateResponse$/;"	c
 _ns1__GetDomesticMatchNormalZRateByID	gsoap/soapStub.h	/^	         _ns1__GetDomesticMatchNormalZRateByID() { _ns1__GetDomesticMatchNormalZRateByID::soap_default(NULL); }$/;"	f	class:_ns1__GetDomesticMatchNormalZRateByID
 _ns1__GetDomesticMatchNormalZRateByID	gsoap/soapStub.h	/^class SOAP_CMAC _ns1__GetDomesticMatchNormalZRateByID$/;"	c
-_ns1__GetDomesticMatchNormalZRateByIDResponse	gsoap/baitour.h	/^class _ns1__GetDomesticMatchNormalZRateByIDResponse$/;"	c
+_ns1__GetDomesticMatchNormalZRateByID	gsoap/temp.h	/^class _ns1__GetDomesticMatchNormalZRateByID$/;"	c
 _ns1__GetDomesticMatchNormalZRateByIDResponse	gsoap/soapStub.h	/^	         _ns1__GetDomesticMatchNormalZRateByIDResponse() { _ns1__GetDomesticMatchNormalZRateByIDResponse::soap_default(NULL); }$/;"	f	class:_ns1__GetDomesticMatchNormalZRateByIDResponse
 _ns1__GetDomesticMatchNormalZRateByIDResponse	gsoap/soapStub.h	/^class SOAP_CMAC _ns1__GetDomesticMatchNormalZRateByIDResponse$/;"	c
-_ns1__GetInvalidationProviders	gsoap/baitour.h	/^class _ns1__GetInvalidationProviders$/;"	c
+_ns1__GetDomesticMatchNormalZRateByIDResponse	gsoap/temp.h	/^class _ns1__GetDomesticMatchNormalZRateByIDResponse$/;"	c
 _ns1__GetInvalidationProviders	gsoap/soapStub.h	/^	         _ns1__GetInvalidationProviders() { _ns1__GetInvalidationProviders::soap_default(NULL); }$/;"	f	class:_ns1__GetInvalidationProviders
 _ns1__GetInvalidationProviders	gsoap/soapStub.h	/^class SOAP_CMAC _ns1__GetInvalidationProviders$/;"	c
-_ns1__GetInvalidationProvidersResponse	gsoap/baitour.h	/^class _ns1__GetInvalidationProvidersResponse$/;"	c
+_ns1__GetInvalidationProviders	gsoap/temp.h	/^class _ns1__GetInvalidationProviders$/;"	c
 _ns1__GetInvalidationProvidersResponse	gsoap/soapStub.h	/^	         _ns1__GetInvalidationProvidersResponse() { _ns1__GetInvalidationProvidersResponse::soap_default(NULL); }$/;"	f	class:_ns1__GetInvalidationProvidersResponse
 _ns1__GetInvalidationProvidersResponse	gsoap/soapStub.h	/^class SOAP_CMAC _ns1__GetInvalidationProvidersResponse$/;"	c
-_ns1__GetOrderInfo	gsoap/baitour.h	/^class _ns1__GetOrderInfo$/;"	c
+_ns1__GetInvalidationProvidersResponse	gsoap/temp.h	/^class _ns1__GetInvalidationProvidersResponse$/;"	c
 _ns1__GetOrderInfo	gsoap/soapStub.h	/^	         _ns1__GetOrderInfo() { _ns1__GetOrderInfo::soap_default(NULL); }$/;"	f	class:_ns1__GetOrderInfo
 _ns1__GetOrderInfo	gsoap/soapStub.h	/^class SOAP_CMAC _ns1__GetOrderInfo$/;"	c
-_ns1__GetOrderInfoResponse	gsoap/baitour.h	/^class _ns1__GetOrderInfoResponse$/;"	c
+_ns1__GetOrderInfo	gsoap/temp.h	/^class _ns1__GetOrderInfo$/;"	c
 _ns1__GetOrderInfoResponse	gsoap/soapStub.h	/^	         _ns1__GetOrderInfoResponse() { _ns1__GetOrderInfoResponse::soap_default(NULL); }$/;"	f	class:_ns1__GetOrderInfoResponse
 _ns1__GetOrderInfoResponse	gsoap/soapStub.h	/^class SOAP_CMAC _ns1__GetOrderInfoResponse$/;"	c
-_ns1__MatchCommonPolicy	gsoap/baitour.h	/^class _ns1__MatchCommonPolicy$/;"	c
+_ns1__GetOrderInfoResponse	gsoap/temp.h	/^class _ns1__GetOrderInfoResponse$/;"	c
 _ns1__MatchCommonPolicy	gsoap/soapStub.h	/^	         _ns1__MatchCommonPolicy() { _ns1__MatchCommonPolicy::soap_default(NULL); }$/;"	f	class:_ns1__MatchCommonPolicy
 _ns1__MatchCommonPolicy	gsoap/soapStub.h	/^class SOAP_CMAC _ns1__MatchCommonPolicy$/;"	c
-_ns1__MatchCommonPolicyResponse	gsoap/baitour.h	/^class _ns1__MatchCommonPolicyResponse$/;"	c
+_ns1__MatchCommonPolicy	gsoap/temp.h	/^class _ns1__MatchCommonPolicy$/;"	c
 _ns1__MatchCommonPolicyResponse	gsoap/soapStub.h	/^	         _ns1__MatchCommonPolicyResponse() { _ns1__MatchCommonPolicyResponse::soap_default(NULL); }$/;"	f	class:_ns1__MatchCommonPolicyResponse
 _ns1__MatchCommonPolicyResponse	gsoap/soapStub.h	/^class SOAP_CMAC _ns1__MatchCommonPolicyResponse$/;"	c
-_ns1__RTCreateOrder	gsoap/baitour.h	/^class _ns1__RTCreateOrder$/;"	c
+_ns1__MatchCommonPolicyResponse	gsoap/temp.h	/^class _ns1__MatchCommonPolicyResponse$/;"	c
 _ns1__RTCreateOrder	gsoap/soapStub.h	/^	         _ns1__RTCreateOrder() { _ns1__RTCreateOrder::soap_default(NULL); }$/;"	f	class:_ns1__RTCreateOrder
 _ns1__RTCreateOrder	gsoap/soapStub.h	/^class SOAP_CMAC _ns1__RTCreateOrder$/;"	c
-_ns1__RTCreateOrderResponse	gsoap/baitour.h	/^class _ns1__RTCreateOrderResponse$/;"	c
+_ns1__RTCreateOrder	gsoap/temp.h	/^class _ns1__RTCreateOrder$/;"	c
 _ns1__RTCreateOrderResponse	gsoap/soapStub.h	/^	         _ns1__RTCreateOrderResponse() { _ns1__RTCreateOrderResponse::soap_default(NULL); }$/;"	f	class:_ns1__RTCreateOrderResponse
 _ns1__RTCreateOrderResponse	gsoap/soapStub.h	/^class SOAP_CMAC _ns1__RTCreateOrderResponse$/;"	c
-_ns1__RefundOrder	gsoap/baitour.h	/^class _ns1__RefundOrder$/;"	c
+_ns1__RTCreateOrderResponse	gsoap/temp.h	/^class _ns1__RTCreateOrderResponse$/;"	c
 _ns1__RefundOrder	gsoap/soapStub.h	/^	         _ns1__RefundOrder() { _ns1__RefundOrder::soap_default(NULL); }$/;"	f	class:_ns1__RefundOrder
 _ns1__RefundOrder	gsoap/soapStub.h	/^class SOAP_CMAC _ns1__RefundOrder$/;"	c
-_ns1__RefundOrderResponse	gsoap/baitour.h	/^class _ns1__RefundOrderResponse$/;"	c
+_ns1__RefundOrder	gsoap/temp.h	/^class _ns1__RefundOrder$/;"	c
 _ns1__RefundOrderResponse	gsoap/soapStub.h	/^	         _ns1__RefundOrderResponse() { _ns1__RefundOrderResponse::soap_default(NULL); }$/;"	f	class:_ns1__RefundOrderResponse
 _ns1__RefundOrderResponse	gsoap/soapStub.h	/^class SOAP_CMAC _ns1__RefundOrderResponse$/;"	c
-accept	gsoap/soapBaitourServiceSoapService.cpp	/^SOAP_SOCKET BaitourServiceSoapService::accept()$/;"	f	class:BaitourServiceSoapService
+_ns1__RefundOrderResponse	gsoap/temp.h	/^class _ns1__RefundOrderResponse$/;"	c
 accept_flags	gsoap/stdsoap2.h	/^  int accept_flags;		\/* accept() SOL_SOCKET sockopt flags *\/$/;"	m	struct:soap
 accept_timeout	gsoap/stdsoap2.h	/^  int accept_timeout;		\/* when > 0, gives socket accept() timeout in seconds, < 0 in usec *\/$/;"	m	struct:soap
 acred	gsoap/stdsoap2.h	/^  gnutls_anon_client_credentials_t acred;	\/* anon pointer *\/$/;"	m	struct:soap
 action	gsoap/stdsoap2.h	/^  char *action;$/;"	m	struct:soap
 actor	gsoap/stdsoap2.h	/^  const char *actor;		\/* SOAP-ENV:actor or role attribute value *\/$/;"	m	struct:soap
-agentUserName	gsoap/baitour.h	/^    std::string*                         agentUserName                  0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetAllCommonPolicy
-agentUserName	gsoap/baitour.h	/^    std::string*                         agentUserName                  0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetAllCommonPolicyZIP
-agentUserName	gsoap/baitour.h	/^    std::string*                         agentUserName                  0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetAlterCommonPolicy
 agentUserName	gsoap/soapStub.h	/^	std::string *agentUserName;	\/* optional element of type xsd:string *\/$/;"	m	class:_ns1__GetAllCommonPolicy
 agentUserName	gsoap/soapStub.h	/^	std::string *agentUserName;	\/* optional element of type xsd:string *\/$/;"	m	class:_ns1__GetAllCommonPolicyZIP
 agentUserName	gsoap/soapStub.h	/^	std::string *agentUserName;	\/* optional element of type xsd:string *\/$/;"	m	class:_ns1__GetAlterCommonPolicy
+agentUserName	gsoap/temp.h	/^    std::string*                         agentUserName                  0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetAllCommonPolicy
+agentUserName	gsoap/temp.h	/^    std::string*                         agentUserName                  0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetAllCommonPolicyZIP
+agentUserName	gsoap/temp.h	/^    std::string*                         agentUserName                  0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetAlterCommonPolicy
 ahead	gsoap/stdsoap2.h	/^  soap_wchar ahead;	\/* parser lookahead *\/$/;"	m	struct:soap
 alist	gsoap/stdsoap2.h	/^  void *alist;			\/* memory allocation (malloc) list *\/$/;"	m	struct:soap
 alloced	gsoap/stdsoap2.h	/^  short alloced;$/;"	m	struct:soap
@@ -1029,7 +1021,6 @@ atts	gsoap/stdsoap2.h	/^  struct soap_dom_attribute *atts;	\/* list of attribute
 authrealm	gsoap/stdsoap2.h	/^  const char *authrealm;	\/* HTTP authentication realm (NTLM domain) *\/$/;"	m	struct:soap
 begin	gsoap/stdsoap2.h	/^  soap_multipart_iterator begin()$/;"	f	struct:soap_dime
 begin	gsoap/stdsoap2.h	/^  soap_multipart_iterator begin()$/;"	f	struct:soap_mime
-bind	gsoap/soapBaitourServiceSoapService.cpp	/^SOAP_SOCKET BaitourServiceSoapService::bind(const char *host, int port, int backlog)$/;"	f	class:BaitourServiceSoapService
 bind_flags	gsoap/stdsoap2.h	/^  int bind_flags;		\/* bind() SOL_SOCKET sockopt flags, e.g. set to SO_REUSEADDR to enable reuse *\/$/;"	m	struct:soap
 bio	gsoap/stdsoap2.h	/^  BIO *bio;$/;"	m	struct:soap
 bio	gsoap/stdsoap2.h	/^  void *bio;$/;"	m	struct:soap
@@ -1051,6 +1042,7 @@ cdata	gsoap/stdsoap2.h	/^  short cdata;		\/* CDATA parser state *\/$/;"	m	struct
 chunkbuflen	gsoap/stdsoap2.h	/^  size_t chunkbuflen;$/;"	m	struct:soap
 chunksize	gsoap/stdsoap2.h	/^  size_t chunksize;$/;"	m	struct:soap
 chunksize	gsoap/stdsoap2.h	/^  size_t chunksize;$/;"	m	struct:soap_dime
+client	Makefile	/^client := myClient$/;"	m
 clist	gsoap/stdsoap2.h	/^  struct soap_clist *clist;	\/* class instance allocation list *\/$/;"	m	struct:soap	typeref:struct:soap::soap_clist
 code	gsoap/stdsoap2.h	/^{ long code;$/;"	m	struct:soap_code_map
 connect_flags	gsoap/stdsoap2.h	/^  int connect_flags;		\/* connect() SOL_SOCKET sockopt flags, e.g. set to SO_DEBUG to debug socket *\/$/;"	m	struct:soap
@@ -1060,7 +1052,6 @@ cookie_domain	gsoap/stdsoap2.h	/^  const char *cookie_domain;$/;"	m	struct:soap
 cookie_max	gsoap/stdsoap2.h	/^  int cookie_max;$/;"	m	struct:soap
 cookie_path	gsoap/stdsoap2.h	/^  const char *cookie_path;$/;"	m	struct:soap
 cookies	gsoap/stdsoap2.h	/^  struct soap_cookie *cookies;$/;"	m	struct:soap	typeref:struct:soap::soap_cookie
-copy	gsoap/soapBaitourServiceSoapService.cpp	/^BaitourServiceSoapService *BaitourServiceSoapService::copy()$/;"	f	class:BaitourServiceSoapService
 copy	gsoap/stdsoap2.h	/^  void *copy;$/;"	m	struct:soap_ilist
 count	gsoap/stdsoap2.h	/^  size_t count;		\/* message length counter *\/$/;"	m	struct:soap
 count	gsoap/stdsoap2.h	/^{ size_t count;$/;"	m	struct:soap_dime
@@ -1075,14 +1066,12 @@ data	gsoap/stdsoap2.h	/^  void *data;$/;"	m	struct:soap_plugin
 data	gsoap/stdsoap2.h	/^  void *data[4];		\/* extension data = {smdevp, mecevp, ...} *\/$/;"	m	struct:soap
 description	gsoap/stdsoap2.h	/^  const char *description;		\/* MIME Content-Description (optional) *\/$/;"	m	struct:soap_multipart
 destroy	gsoap/soapBaitourServiceSoapProxy.cpp	/^void BaitourServiceSoapProxy::destroy()$/;"	f	class:BaitourServiceSoapProxy
-destroy	gsoap/soapBaitourServiceSoapService.cpp	/^void BaitourServiceSoapService::destroy()$/;"	f	class:BaitourServiceSoapService
 detail	gsoap/soapStub.h	/^	struct SOAP_ENV__Detail *detail;	\/* optional element of type SOAP-ENV:Detail *\/$/;"	m	struct:SOAP_ENV__Fault	typeref:struct:SOAP_ENV__Fault::SOAP_ENV__Detail
 dh_params	gsoap/stdsoap2.h	/^  gnutls_dh_params_t dh_params;$/;"	m	struct:soap
 dh_params	gsoap/stdsoap2.h	/^  void *dh_params;$/;"	m	struct:soap
 dhfile	gsoap/stdsoap2.h	/^  const char *dhfile;$/;"	m	struct:soap
 dime	gsoap/stdsoap2.h	/^  struct soap_dime dime;$/;"	m	struct:soap	typeref:struct:soap::soap_dime
 dime_id_format	gsoap/stdsoap2.h	/^  const char *dime_id_format;	\/* user-definable format string for integer DIME id (<SOAP_TAGLEN chars) *\/$/;"	m	struct:soap
-dispatch	gsoap/soapBaitourServiceSoapService.cpp	/^int BaitourServiceSoapService::dispatch()$/;"	f	class:BaitourServiceSoapService
 dom	gsoap/stdsoap2.h	/^  struct soap_dom_element *dom;$/;"	m	struct:soap	typeref:struct:soap::soap_dom_element
 domain	gsoap/stdsoap2.h	/^  char *domain;$/;"	m	struct:soap_cookie
 double_format	gsoap/stdsoap2.h	/^  const char *double_format;	\/* user-definable format string for doubles (<1024 chars) *\/$/;"	m	struct:soap
@@ -1349,7 +1338,6 @@ os	gsoap/stdsoap2.h	/^  void *os;		\/* preserve struct size *\/$/;"	m	struct:soa
 other	gsoap/stdsoap2.h	/^  short other;$/;"	m	struct:soap
 out	gsoap/stdsoap2.h	/^  char *out;$/;"	m	struct:Namespace
 own	gsoap/soapBaitourServiceSoapProxy.h	/^	bool own;$/;"	m	class:BaitourServiceSoapProxy
-own	gsoap/soapBaitourServiceSoapService.h	/^	bool own;$/;"	m	class:BaitourServiceSoapService
 part	gsoap/stdsoap2.h	/^  short part;		\/* SOAP part state (header or body) *\/$/;"	m	struct:soap
 passwd	gsoap/stdsoap2.h	/^  const char *passwd;		\/* HTTP Basic authorization passwd *\/$/;"	m	struct:soap
 password	gsoap/stdsoap2.h	/^  const char *password;$/;"	m	struct:soap
@@ -1384,44 +1372,29 @@ ptr	gsoap/stdsoap2.h	/^  unsigned char **ptr;$/;"	m	struct:soap_xlist
 ptr	gsoap/stdsoap2.h	/^  void *ptr;$/;"	m	struct:soap_clist
 ptr	gsoap/stdsoap2.h	/^  void *ptr;$/;"	m	struct:soap_flist
 ptr	gsoap/stdsoap2.h	/^  void *ptr;$/;"	m	struct:soap_ilist
-pwd	gsoap/baitour.h	/^    std::string*                         pwd                            0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetAllCommonPolicy
-pwd	gsoap/baitour.h	/^    std::string*                         pwd                            0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetAllCommonPolicyZIP
-pwd	gsoap/baitour.h	/^    std::string*                         pwd                            0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetAlterCommonPolicy
 pwd	gsoap/soapStub.h	/^	std::string *pwd;	\/* optional element of type xsd:string *\/$/;"	m	class:_ns1__GetAllCommonPolicy
 pwd	gsoap/soapStub.h	/^	std::string *pwd;	\/* optional element of type xsd:string *\/$/;"	m	class:_ns1__GetAllCommonPolicyZIP
 pwd	gsoap/soapStub.h	/^	std::string *pwd;	\/* optional element of type xsd:string *\/$/;"	m	class:_ns1__GetAlterCommonPolicy
-rQStartDateTime	gsoap/baitour.h	/^    std::string*                         rQStartDateTime                0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetAlterCommonPolicy
+pwd	gsoap/temp.h	/^    std::string*                         pwd                            0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetAllCommonPolicy
+pwd	gsoap/temp.h	/^    std::string*                         pwd                            0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetAllCommonPolicyZIP
+pwd	gsoap/temp.h	/^    std::string*                         pwd                            0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetAlterCommonPolicy
 rQStartDateTime	gsoap/soapStub.h	/^	std::string *rQStartDateTime;	\/* optional element of type xsd:string *\/$/;"	m	class:_ns1__GetAlterCommonPolicy
+rQStartDateTime	gsoap/temp.h	/^    std::string*                         rQStartDateTime                0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetAlterCommonPolicy
 randfile	gsoap/stdsoap2.h	/^  const char *randfile;$/;"	m	struct:soap
 recv_timeout	gsoap/stdsoap2.h	/^  int recv_timeout;		\/* when > 0, gives socket recv timeout in seconds, < 0 in usec *\/$/;"	m	struct:soap
 recvfd	gsoap/stdsoap2.h	/^  FILE *recvfd;		\/* FD to receive *\/$/;"	m	struct:soap
 recvfd	gsoap/stdsoap2.h	/^  int recvfd;		\/* WinCE FD to receive *\/$/;"	m	struct:soap
 recvsk	gsoap/stdsoap2.h	/^  SOAP_SOCKET recvsk;	\/* socket to receive (overrides ::socket) *\/$/;"	m	struct:soap
 reset	gsoap/soapBaitourServiceSoapProxy.cpp	/^void BaitourServiceSoapProxy::reset()$/;"	f	class:BaitourServiceSoapProxy
-reset	gsoap/soapBaitourServiceSoapService.cpp	/^void BaitourServiceSoapService::reset()$/;"	f	class:BaitourServiceSoapService
 root	gsoap/stdsoap2.h	/^  short root;$/;"	m	struct:soap
 rpmreqid	gsoap/stdsoap2.h	/^  void *rpmreqid;$/;"	m	struct:soap
 rsa_params	gsoap/stdsoap2.h	/^  gnutls_rsa_params_t rsa_params;$/;"	m	struct:soap
 rsa_params	gsoap/stdsoap2.h	/^  void *rsa_params;$/;"	m	struct:soap
-run	gsoap/soapBaitourServiceSoapService.cpp	/^int BaitourServiceSoapService::run(int port)$/;"	f	class:BaitourServiceSoapService
 secure	gsoap/stdsoap2.h	/^  short secure;$/;"	m	struct:soap_cookie
 send_timeout	gsoap/stdsoap2.h	/^  int send_timeout;		\/* when > 0, gives socket send timeout in seconds, < 0 in usec *\/$/;"	m	struct:soap
 sendfd	gsoap/stdsoap2.h	/^  FILE *sendfd;		\/* FD to send *\/$/;"	m	struct:soap
 sendfd	gsoap/stdsoap2.h	/^  int sendfd;		\/* WinCE FD to send *\/$/;"	m	struct:soap
 sendsk	gsoap/stdsoap2.h	/^  SOAP_SOCKET sendsk;	\/* socket to send (overrides ::socket) *\/$/;"	m	struct:soap
-serve	gsoap/soapBaitourServiceSoapService.cpp	/^int BaitourServiceSoapService::serve()$/;"	f	class:BaitourServiceSoapService
-serve___ns1__DetailCreateOrder	gsoap/soapBaitourServiceSoapService.cpp	/^static int serve___ns1__DetailCreateOrder(BaitourServiceSoapService *service)$/;"	f	file:
-serve___ns1__GetAVPolicy	gsoap/soapBaitourServiceSoapService.cpp	/^static int serve___ns1__GetAVPolicy(BaitourServiceSoapService *service)$/;"	f	file:
-serve___ns1__GetAllCommonPolicy	gsoap/soapBaitourServiceSoapService.cpp	/^static int serve___ns1__GetAllCommonPolicy(BaitourServiceSoapService *service)$/;"	f	file:
-serve___ns1__GetAllCommonPolicyZIP	gsoap/soapBaitourServiceSoapService.cpp	/^static int serve___ns1__GetAllCommonPolicyZIP(BaitourServiceSoapService *service)$/;"	f	file:
-serve___ns1__GetAlterCommonPolicy	gsoap/soapBaitourServiceSoapService.cpp	/^static int serve___ns1__GetAlterCommonPolicy(BaitourServiceSoapService *service)$/;"	f	file:
-serve___ns1__GetChangeFlightDate	gsoap/soapBaitourServiceSoapService.cpp	/^static int serve___ns1__GetChangeFlightDate(BaitourServiceSoapService *service)$/;"	f	file:
-serve___ns1__GetDomesticMatchNormalZRateByID	gsoap/soapBaitourServiceSoapService.cpp	/^static int serve___ns1__GetDomesticMatchNormalZRateByID(BaitourServiceSoapService *service)$/;"	f	file:
-serve___ns1__GetInvalidationProviders	gsoap/soapBaitourServiceSoapService.cpp	/^static int serve___ns1__GetInvalidationProviders(BaitourServiceSoapService *service)$/;"	f	file:
-serve___ns1__GetOrderInfo	gsoap/soapBaitourServiceSoapService.cpp	/^static int serve___ns1__GetOrderInfo(BaitourServiceSoapService *service)$/;"	f	file:
-serve___ns1__MatchCommonPolicy	gsoap/soapBaitourServiceSoapService.cpp	/^static int serve___ns1__MatchCommonPolicy(BaitourServiceSoapService *service)$/;"	f	file:
-serve___ns1__RTCreateOrder	gsoap/soapBaitourServiceSoapService.cpp	/^static int serve___ns1__RTCreateOrder(BaitourServiceSoapService *service)$/;"	f	file:
-serve___ns1__RefundOrder	gsoap/soapBaitourServiceSoapService.cpp	/^static int serve___ns1__RefundOrder(BaitourServiceSoapService *service)$/;"	f	file:
 session	gsoap/stdsoap2.h	/^  SSL_SESSION *session;$/;"	m	struct:soap
 session	gsoap/stdsoap2.h	/^  gnutls_session_t session;			\/* session pointer *\/$/;"	m	struct:soap
 session	gsoap/stdsoap2.h	/^  short session;	\/* server-side *\/$/;"	m	struct:soap_cookie
@@ -1435,32 +1408,7 @@ size	gsoap/stdsoap2.h	/^  size_t size;$/;"	m	struct:soap_attribute
 size	gsoap/stdsoap2.h	/^  size_t size;$/;"	m	struct:soap_blist
 size	gsoap/stdsoap2.h	/^  size_t size;$/;"	m	struct:soap_dime
 size	gsoap/stdsoap2.h	/^  size_t size;$/;"	m	struct:soap_ilist
-soap	gsoap/baitour.h	/^    struct soap                         *soap                          ;$/;"	m	class:_ns1__DetailCreateOrder	typeref:struct:_ns1__DetailCreateOrder::soap
-soap	gsoap/baitour.h	/^    struct soap                         *soap                          ;$/;"	m	class:_ns1__DetailCreateOrderResponse	typeref:struct:_ns1__DetailCreateOrderResponse::soap
-soap	gsoap/baitour.h	/^    struct soap                         *soap                          ;$/;"	m	class:_ns1__GetAVPolicy	typeref:struct:_ns1__GetAVPolicy::soap
-soap	gsoap/baitour.h	/^    struct soap                         *soap                          ;$/;"	m	class:_ns1__GetAVPolicyResponse	typeref:struct:_ns1__GetAVPolicyResponse::soap
-soap	gsoap/baitour.h	/^    struct soap                         *soap                          ;$/;"	m	class:_ns1__GetAllCommonPolicy	typeref:struct:_ns1__GetAllCommonPolicy::soap
-soap	gsoap/baitour.h	/^    struct soap                         *soap                          ;$/;"	m	class:_ns1__GetAllCommonPolicyResponse	typeref:struct:_ns1__GetAllCommonPolicyResponse::soap
-soap	gsoap/baitour.h	/^    struct soap                         *soap                          ;$/;"	m	class:_ns1__GetAllCommonPolicyZIP	typeref:struct:_ns1__GetAllCommonPolicyZIP::soap
-soap	gsoap/baitour.h	/^    struct soap                         *soap                          ;$/;"	m	class:_ns1__GetAllCommonPolicyZIPResponse	typeref:struct:_ns1__GetAllCommonPolicyZIPResponse::soap
-soap	gsoap/baitour.h	/^    struct soap                         *soap                          ;$/;"	m	class:_ns1__GetAlterCommonPolicy	typeref:struct:_ns1__GetAlterCommonPolicy::soap
-soap	gsoap/baitour.h	/^    struct soap                         *soap                          ;$/;"	m	class:_ns1__GetAlterCommonPolicyResponse	typeref:struct:_ns1__GetAlterCommonPolicyResponse::soap
-soap	gsoap/baitour.h	/^    struct soap                         *soap                          ;$/;"	m	class:_ns1__GetChangeFlightDate	typeref:struct:_ns1__GetChangeFlightDate::soap
-soap	gsoap/baitour.h	/^    struct soap                         *soap                          ;$/;"	m	class:_ns1__GetChangeFlightDateResponse	typeref:struct:_ns1__GetChangeFlightDateResponse::soap
-soap	gsoap/baitour.h	/^    struct soap                         *soap                          ;$/;"	m	class:_ns1__GetDomesticMatchNormalZRateByID	typeref:struct:_ns1__GetDomesticMatchNormalZRateByID::soap
-soap	gsoap/baitour.h	/^    struct soap                         *soap                          ;$/;"	m	class:_ns1__GetDomesticMatchNormalZRateByIDResponse	typeref:struct:_ns1__GetDomesticMatchNormalZRateByIDResponse::soap
-soap	gsoap/baitour.h	/^    struct soap                         *soap                          ;$/;"	m	class:_ns1__GetInvalidationProviders	typeref:struct:_ns1__GetInvalidationProviders::soap
-soap	gsoap/baitour.h	/^    struct soap                         *soap                          ;$/;"	m	class:_ns1__GetInvalidationProvidersResponse	typeref:struct:_ns1__GetInvalidationProvidersResponse::soap
-soap	gsoap/baitour.h	/^    struct soap                         *soap                          ;$/;"	m	class:_ns1__GetOrderInfo	typeref:struct:_ns1__GetOrderInfo::soap
-soap	gsoap/baitour.h	/^    struct soap                         *soap                          ;$/;"	m	class:_ns1__GetOrderInfoResponse	typeref:struct:_ns1__GetOrderInfoResponse::soap
-soap	gsoap/baitour.h	/^    struct soap                         *soap                          ;$/;"	m	class:_ns1__MatchCommonPolicy	typeref:struct:_ns1__MatchCommonPolicy::soap
-soap	gsoap/baitour.h	/^    struct soap                         *soap                          ;$/;"	m	class:_ns1__MatchCommonPolicyResponse	typeref:struct:_ns1__MatchCommonPolicyResponse::soap
-soap	gsoap/baitour.h	/^    struct soap                         *soap                          ;$/;"	m	class:_ns1__RTCreateOrder	typeref:struct:_ns1__RTCreateOrder::soap
-soap	gsoap/baitour.h	/^    struct soap                         *soap                          ;$/;"	m	class:_ns1__RTCreateOrderResponse	typeref:struct:_ns1__RTCreateOrderResponse::soap
-soap	gsoap/baitour.h	/^    struct soap                         *soap                          ;$/;"	m	class:_ns1__RefundOrder	typeref:struct:_ns1__RefundOrder::soap
-soap	gsoap/baitour.h	/^    struct soap                         *soap                          ;$/;"	m	class:_ns1__RefundOrderResponse	typeref:struct:_ns1__RefundOrderResponse::soap
 soap	gsoap/soapBaitourServiceSoapProxy.h	/^	struct soap *soap;$/;"	m	class:BaitourServiceSoapProxy	typeref:struct:BaitourServiceSoapProxy::soap
-soap	gsoap/soapBaitourServiceSoapService.h	/^	struct soap *soap;$/;"	m	class:BaitourServiceSoapService	typeref:struct:BaitourServiceSoapService::soap
 soap	gsoap/soapStub.h	/^	struct soap *soap;	\/* transient *\/$/;"	m	class:_ns1__DetailCreateOrder	typeref:struct:_ns1__DetailCreateOrder::soap
 soap	gsoap/soapStub.h	/^	struct soap *soap;	\/* transient *\/$/;"	m	class:_ns1__DetailCreateOrderResponse	typeref:struct:_ns1__DetailCreateOrderResponse::soap
 soap	gsoap/soapStub.h	/^	struct soap *soap;	\/* transient *\/$/;"	m	class:_ns1__GetAVPolicy	typeref:struct:_ns1__GetAVPolicy::soap
@@ -1496,8 +1444,31 @@ soap	gsoap/stdsoap2.cpp	/^soap::soap(soap_mode m)$/;"	f	class:soap
 soap	gsoap/stdsoap2.h	/^  struct soap *soap;			\/* soap context that manages this node *\/$/;"	m	struct:soap_dom_element	typeref:struct:soap_dom_element::soap
 soap	gsoap/stdsoap2.h	/^  struct soap *soap;$/;"	m	struct:soap_dom_attribute	typeref:struct:soap_dom_attribute::soap
 soap	gsoap/stdsoap2.h	/^struct SOAP_STD_API soap$/;"	s
+soap	gsoap/temp.h	/^    struct soap                         *soap                          ;$/;"	m	class:_ns1__DetailCreateOrder	typeref:struct:_ns1__DetailCreateOrder::soap
+soap	gsoap/temp.h	/^    struct soap                         *soap                          ;$/;"	m	class:_ns1__DetailCreateOrderResponse	typeref:struct:_ns1__DetailCreateOrderResponse::soap
+soap	gsoap/temp.h	/^    struct soap                         *soap                          ;$/;"	m	class:_ns1__GetAVPolicy	typeref:struct:_ns1__GetAVPolicy::soap
+soap	gsoap/temp.h	/^    struct soap                         *soap                          ;$/;"	m	class:_ns1__GetAVPolicyResponse	typeref:struct:_ns1__GetAVPolicyResponse::soap
+soap	gsoap/temp.h	/^    struct soap                         *soap                          ;$/;"	m	class:_ns1__GetAllCommonPolicy	typeref:struct:_ns1__GetAllCommonPolicy::soap
+soap	gsoap/temp.h	/^    struct soap                         *soap                          ;$/;"	m	class:_ns1__GetAllCommonPolicyResponse	typeref:struct:_ns1__GetAllCommonPolicyResponse::soap
+soap	gsoap/temp.h	/^    struct soap                         *soap                          ;$/;"	m	class:_ns1__GetAllCommonPolicyZIP	typeref:struct:_ns1__GetAllCommonPolicyZIP::soap
+soap	gsoap/temp.h	/^    struct soap                         *soap                          ;$/;"	m	class:_ns1__GetAllCommonPolicyZIPResponse	typeref:struct:_ns1__GetAllCommonPolicyZIPResponse::soap
+soap	gsoap/temp.h	/^    struct soap                         *soap                          ;$/;"	m	class:_ns1__GetAlterCommonPolicy	typeref:struct:_ns1__GetAlterCommonPolicy::soap
+soap	gsoap/temp.h	/^    struct soap                         *soap                          ;$/;"	m	class:_ns1__GetAlterCommonPolicyResponse	typeref:struct:_ns1__GetAlterCommonPolicyResponse::soap
+soap	gsoap/temp.h	/^    struct soap                         *soap                          ;$/;"	m	class:_ns1__GetChangeFlightDate	typeref:struct:_ns1__GetChangeFlightDate::soap
+soap	gsoap/temp.h	/^    struct soap                         *soap                          ;$/;"	m	class:_ns1__GetChangeFlightDateResponse	typeref:struct:_ns1__GetChangeFlightDateResponse::soap
+soap	gsoap/temp.h	/^    struct soap                         *soap                          ;$/;"	m	class:_ns1__GetDomesticMatchNormalZRateByID	typeref:struct:_ns1__GetDomesticMatchNormalZRateByID::soap
+soap	gsoap/temp.h	/^    struct soap                         *soap                          ;$/;"	m	class:_ns1__GetDomesticMatchNormalZRateByIDResponse	typeref:struct:_ns1__GetDomesticMatchNormalZRateByIDResponse::soap
+soap	gsoap/temp.h	/^    struct soap                         *soap                          ;$/;"	m	class:_ns1__GetInvalidationProviders	typeref:struct:_ns1__GetInvalidationProviders::soap
+soap	gsoap/temp.h	/^    struct soap                         *soap                          ;$/;"	m	class:_ns1__GetInvalidationProvidersResponse	typeref:struct:_ns1__GetInvalidationProvidersResponse::soap
+soap	gsoap/temp.h	/^    struct soap                         *soap                          ;$/;"	m	class:_ns1__GetOrderInfo	typeref:struct:_ns1__GetOrderInfo::soap
+soap	gsoap/temp.h	/^    struct soap                         *soap                          ;$/;"	m	class:_ns1__GetOrderInfoResponse	typeref:struct:_ns1__GetOrderInfoResponse::soap
+soap	gsoap/temp.h	/^    struct soap                         *soap                          ;$/;"	m	class:_ns1__MatchCommonPolicy	typeref:struct:_ns1__MatchCommonPolicy::soap
+soap	gsoap/temp.h	/^    struct soap                         *soap                          ;$/;"	m	class:_ns1__MatchCommonPolicyResponse	typeref:struct:_ns1__MatchCommonPolicyResponse::soap
+soap	gsoap/temp.h	/^    struct soap                         *soap                          ;$/;"	m	class:_ns1__RTCreateOrder	typeref:struct:_ns1__RTCreateOrder::soap
+soap	gsoap/temp.h	/^    struct soap                         *soap                          ;$/;"	m	class:_ns1__RTCreateOrderResponse	typeref:struct:_ns1__RTCreateOrderResponse::soap
+soap	gsoap/temp.h	/^    struct soap                         *soap                          ;$/;"	m	class:_ns1__RefundOrder	typeref:struct:_ns1__RefundOrder::soap
+soap	gsoap/temp.h	/^    struct soap                         *soap                          ;$/;"	m	class:_ns1__RefundOrderResponse	typeref:struct:_ns1__RefundOrderResponse::soap
 soapBaitourServiceSoapProxy_H	gsoap/soapBaitourServiceSoapProxy.h	12;"	d
-soapBaitourServiceSoapService_H	gsoap/soapBaitourServiceSoapService.h	12;"	d
 soapH_H	gsoap/soapH.h	12;"	d
 soapStub_H	gsoap/soapStub.h	12;"	d
 soap_LONG642s	gsoap/stdsoap2.c	/^soap_LONG642s(struct soap *soap, LONG64 n)$/;"	f
@@ -1558,18 +1529,6 @@ soap_body_end_out	gsoap/stdsoap2.c	/^soap_body_end_out(struct soap *soap)$/;"	f
 soap_body_end_out	gsoap/stdsoap2.cpp	/^soap_body_end_out(struct soap *soap)$/;"	f
 soap_byte2s	gsoap/stdsoap2.c	/^soap_byte2s(struct soap *soap, char n)$/;"	f
 soap_byte2s	gsoap/stdsoap2.cpp	/^soap_byte2s(struct soap *soap, char n)$/;"	f
-soap_call___ns1__DetailCreateOrder	gsoap/soapClient.cpp	/^SOAP_FMAC5 int SOAP_FMAC6 soap_call___ns1__DetailCreateOrder(struct soap *soap, const char *soap_endpoint, const char *soap_action, _ns1__DetailCreateOrder *ns1__DetailCreateOrder, _ns1__DetailCreateOrderResponse *ns1__DetailCreateOrderResponse)$/;"	f
-soap_call___ns1__GetAVPolicy	gsoap/soapClient.cpp	/^SOAP_FMAC5 int SOAP_FMAC6 soap_call___ns1__GetAVPolicy(struct soap *soap, const char *soap_endpoint, const char *soap_action, _ns1__GetAVPolicy *ns1__GetAVPolicy, _ns1__GetAVPolicyResponse *ns1__GetAVPolicyResponse)$/;"	f
-soap_call___ns1__GetAllCommonPolicy	gsoap/soapClient.cpp	/^SOAP_FMAC5 int SOAP_FMAC6 soap_call___ns1__GetAllCommonPolicy(struct soap *soap, const char *soap_endpoint, const char *soap_action, _ns1__GetAllCommonPolicy *ns1__GetAllCommonPolicy, _ns1__GetAllCommonPolicyResponse *ns1__GetAllCommonPolicyResponse)$/;"	f
-soap_call___ns1__GetAllCommonPolicyZIP	gsoap/soapClient.cpp	/^SOAP_FMAC5 int SOAP_FMAC6 soap_call___ns1__GetAllCommonPolicyZIP(struct soap *soap, const char *soap_endpoint, const char *soap_action, _ns1__GetAllCommonPolicyZIP *ns1__GetAllCommonPolicyZIP, _ns1__GetAllCommonPolicyZIPResponse *ns1__GetAllCommonPolicyZIPResponse)$/;"	f
-soap_call___ns1__GetAlterCommonPolicy	gsoap/soapClient.cpp	/^SOAP_FMAC5 int SOAP_FMAC6 soap_call___ns1__GetAlterCommonPolicy(struct soap *soap, const char *soap_endpoint, const char *soap_action, _ns1__GetAlterCommonPolicy *ns1__GetAlterCommonPolicy, _ns1__GetAlterCommonPolicyResponse *ns1__GetAlterCommonPolicyResponse)$/;"	f
-soap_call___ns1__GetChangeFlightDate	gsoap/soapClient.cpp	/^SOAP_FMAC5 int SOAP_FMAC6 soap_call___ns1__GetChangeFlightDate(struct soap *soap, const char *soap_endpoint, const char *soap_action, _ns1__GetChangeFlightDate *ns1__GetChangeFlightDate, _ns1__GetChangeFlightDateResponse *ns1__GetChangeFlightDateResponse)$/;"	f
-soap_call___ns1__GetDomesticMatchNormalZRateByID	gsoap/soapClient.cpp	/^SOAP_FMAC5 int SOAP_FMAC6 soap_call___ns1__GetDomesticMatchNormalZRateByID(struct soap *soap, const char *soap_endpoint, const char *soap_action, _ns1__GetDomesticMatchNormalZRateByID *ns1__GetDomesticMatchNormalZRateByID, _ns1__GetDomesticMatchNormalZRateByIDResponse *ns1__GetDomesticMatchNormalZRateByIDResponse)$/;"	f
-soap_call___ns1__GetInvalidationProviders	gsoap/soapClient.cpp	/^SOAP_FMAC5 int SOAP_FMAC6 soap_call___ns1__GetInvalidationProviders(struct soap *soap, const char *soap_endpoint, const char *soap_action, _ns1__GetInvalidationProviders *ns1__GetInvalidationProviders, _ns1__GetInvalidationProvidersResponse *ns1__GetInvalidationProvidersResponse)$/;"	f
-soap_call___ns1__GetOrderInfo	gsoap/soapClient.cpp	/^SOAP_FMAC5 int SOAP_FMAC6 soap_call___ns1__GetOrderInfo(struct soap *soap, const char *soap_endpoint, const char *soap_action, _ns1__GetOrderInfo *ns1__GetOrderInfo, _ns1__GetOrderInfoResponse *ns1__GetOrderInfoResponse)$/;"	f
-soap_call___ns1__MatchCommonPolicy	gsoap/soapClient.cpp	/^SOAP_FMAC5 int SOAP_FMAC6 soap_call___ns1__MatchCommonPolicy(struct soap *soap, const char *soap_endpoint, const char *soap_action, _ns1__MatchCommonPolicy *ns1__MatchCommonPolicy, _ns1__MatchCommonPolicyResponse *ns1__MatchCommonPolicyResponse)$/;"	f
-soap_call___ns1__RTCreateOrder	gsoap/soapClient.cpp	/^SOAP_FMAC5 int SOAP_FMAC6 soap_call___ns1__RTCreateOrder(struct soap *soap, const char *soap_endpoint, const char *soap_action, _ns1__RTCreateOrder *ns1__RTCreateOrder, _ns1__RTCreateOrderResponse *ns1__RTCreateOrderResponse)$/;"	f
-soap_call___ns1__RefundOrder	gsoap/soapClient.cpp	/^SOAP_FMAC5 int SOAP_FMAC6 soap_call___ns1__RefundOrder(struct soap *soap, const char *soap_endpoint, const char *soap_action, _ns1__RefundOrder *ns1__RefundOrder, _ns1__RefundOrderResponse *ns1__RefundOrderResponse)$/;"	f
 soap_char	gsoap/stdsoap2.c	/^soap_char(struct soap *soap)$/;"	f	file:
 soap_char	gsoap/stdsoap2.cpp	/^soap_char(struct soap *soap)$/;"	f	file:
 soap_check_faultdetail	gsoap/soapC.cpp	/^SOAP_FMAC3 const char * SOAP_FMAC4 soap_check_faultdetail(struct soap *soap)$/;"	f
@@ -1588,7 +1547,6 @@ soap_close_logfile	gsoap/stdsoap2.cpp	/^soap_close_logfile(struct soap *soap, in
 soap_close_logfiles	gsoap/stdsoap2.c	/^soap_close_logfiles(struct soap *soap)$/;"	f
 soap_close_logfiles	gsoap/stdsoap2.cpp	/^soap_close_logfiles(struct soap *soap)$/;"	f
 soap_close_socket	gsoap/soapBaitourServiceSoapProxy.cpp	/^int BaitourServiceSoapProxy::soap_close_socket()$/;"	f	class:BaitourServiceSoapProxy
-soap_close_socket	gsoap/soapBaitourServiceSoapService.cpp	/^int BaitourServiceSoapService::soap_close_socket()$/;"	f	class:BaitourServiceSoapService
 soap_closesock	gsoap/stdsoap2.c	/^soap_closesock(struct soap *soap)$/;"	f
 soap_closesock	gsoap/stdsoap2.cpp	/^soap_closesock(struct soap *soap)$/;"	f
 soap_closesocket	gsoap/stdsoap2.h	848;"	d
@@ -1902,7 +1860,6 @@ soap_flush	gsoap/stdsoap2.cpp	/^soap_flush(struct soap *soap)$/;"	f
 soap_flush_raw	gsoap/stdsoap2.c	/^soap_flush_raw(struct soap *soap, const char *s, size_t n)$/;"	f
 soap_flush_raw	gsoap/stdsoap2.cpp	/^soap_flush_raw(struct soap *soap, const char *s, size_t n)$/;"	f
 soap_force_close_socket	gsoap/soapBaitourServiceSoapProxy.cpp	/^int BaitourServiceSoapProxy::soap_force_close_socket()$/;"	f	class:BaitourServiceSoapProxy
-soap_force_close_socket	gsoap/soapBaitourServiceSoapService.cpp	/^int BaitourServiceSoapService::soap_force_close_socket()$/;"	f	class:BaitourServiceSoapService
 soap_force_closesock	gsoap/stdsoap2.c	/^soap_force_closesock(struct soap *soap)$/;"	f
 soap_force_closesock	gsoap/stdsoap2.cpp	/^soap_force_closesock(struct soap *soap)$/;"	f
 soap_free	gsoap/stdsoap2.c	/^soap_free(struct soap *soap)$/;"	f
@@ -2085,7 +2042,6 @@ soap_hash	gsoap/stdsoap2.cpp	/^soap_hash(register const char *s)$/;"	f
 soap_hash_ptr	gsoap/stdsoap2.c	104;"	d	file:
 soap_hash_ptr	gsoap/stdsoap2.cpp	104;"	d	file:
 soap_header	gsoap/soapBaitourServiceSoapProxy.cpp	/^const SOAP_ENV__Header *BaitourServiceSoapProxy::soap_header()$/;"	f	class:BaitourServiceSoapProxy
-soap_header	gsoap/soapBaitourServiceSoapService.cpp	/^const SOAP_ENV__Header *BaitourServiceSoapService::soap_header()$/;"	f	class:BaitourServiceSoapService
 soap_header	gsoap/soapC.cpp	/^SOAP_FMAC3 void SOAP_FMAC4 soap_header(struct soap *soap)$/;"	f
 soap_hex2s	gsoap/stdsoap2.c	/^soap_hex2s(struct soap *soap, const char *s, char *t, size_t l, int *n)$/;"	f
 soap_hex2s	gsoap/stdsoap2.cpp	/^soap_hex2s(struct soap *soap, const char *s, char *t, size_t l, int *n)$/;"	f
@@ -2499,7 +2455,6 @@ soap_next_multipart	gsoap/stdsoap2.c	/^soap_next_multipart(struct soap_multipart
 soap_next_multipart	gsoap/stdsoap2.cpp	/^soap_next_multipart(struct soap_multipart *content)$/;"	f
 soap_nlist	gsoap/stdsoap2.h	/^struct soap_nlist$/;"	s
 soap_noheader	gsoap/soapBaitourServiceSoapProxy.cpp	/^void BaitourServiceSoapProxy::soap_noheader()$/;"	f	class:BaitourServiceSoapProxy
-soap_noheader	gsoap/soapBaitourServiceSoapService.cpp	/^void BaitourServiceSoapService::soap_noheader()$/;"	f	class:BaitourServiceSoapService
 soap_notblank	gsoap/stdsoap2.c	101;"	d	file:
 soap_notblank	gsoap/stdsoap2.cpp	101;"	d	file:
 soap_ntlm_handshake	gsoap/stdsoap2.c	/^soap_ntlm_handshake(struct soap *soap, int command, const char *endpoint, const char *host, int port)$/;"	f	file:
@@ -2659,7 +2614,6 @@ soap_pop_namespace	gsoap/stdsoap2.cpp	/^soap_pop_namespace(struct soap *soap)$/;
 soap_post_check_mime_attachments	gsoap/stdsoap2.c	/^soap_post_check_mime_attachments(struct soap *soap)$/;"	f
 soap_post_check_mime_attachments	gsoap/stdsoap2.cpp	/^soap_post_check_mime_attachments(struct soap *soap)$/;"	f
 soap_print_fault	gsoap/soapBaitourServiceSoapProxy.cpp	/^void BaitourServiceSoapProxy::soap_print_fault(FILE *fd)$/;"	f	class:BaitourServiceSoapProxy
-soap_print_fault	gsoap/soapBaitourServiceSoapService.cpp	/^void BaitourServiceSoapService::soap_print_fault(FILE *fd)$/;"	f	class:BaitourServiceSoapService
 soap_print_fault	gsoap/stdsoap2.c	/^soap_print_fault(struct soap *soap, FILE *fd)$/;"	f
 soap_print_fault	gsoap/stdsoap2.cpp	/^soap_print_fault(struct soap *soap, FILE *fd)$/;"	f
 soap_print_fault_location	gsoap/stdsoap2.c	/^soap_print_fault_location(struct soap *soap, FILE *fd)$/;"	f
@@ -2864,8 +2818,6 @@ soap_receiver_fault	gsoap/stdsoap2.c	/^soap_receiver_fault(struct soap *soap, co
 soap_receiver_fault	gsoap/stdsoap2.cpp	/^soap_receiver_fault(struct soap *soap, const char *faultstring, const char *faultdetailXML)$/;"	f
 soap_receiver_fault_subcode	gsoap/stdsoap2.c	/^soap_receiver_fault_subcode(struct soap *soap, const char *faultsubcodeQName, const char *faultstring, const char *faultdetailXML)$/;"	f
 soap_receiver_fault_subcode	gsoap/stdsoap2.cpp	/^soap_receiver_fault_subcode(struct soap *soap, const char *faultsubcodeQName, const char *faultstring, const char *faultdetailXML)$/;"	f
-soap_receiverfault	gsoap/soapBaitourServiceSoapService.cpp	/^int BaitourServiceSoapService::soap_receiverfault(const char *string, const char *detailXML)$/;"	f	class:BaitourServiceSoapService
-soap_receiverfault	gsoap/soapBaitourServiceSoapService.cpp	/^int BaitourServiceSoapService::soap_receiverfault(const char *subcodeQName, const char *string, const char *detailXML)$/;"	f	class:BaitourServiceSoapService
 soap_recv	gsoap/stdsoap2.c	/^soap_recv(struct soap *soap)$/;"	f
 soap_recv	gsoap/stdsoap2.cpp	/^soap_recv(struct soap *soap)$/;"	f
 soap_recv_empty_response	gsoap/stdsoap2.c	/^soap_recv_empty_response(struct soap *soap)$/;"	f
@@ -2955,8 +2907,6 @@ soap_sender_fault	gsoap/stdsoap2.c	/^soap_sender_fault(struct soap *soap, const 
 soap_sender_fault	gsoap/stdsoap2.cpp	/^soap_sender_fault(struct soap *soap, const char *faultstring, const char *faultdetailXML)$/;"	f
 soap_sender_fault_subcode	gsoap/stdsoap2.c	/^soap_sender_fault_subcode(struct soap *soap, const char *faultsubcodeQName, const char *faultstring, const char *faultdetailXML)$/;"	f
 soap_sender_fault_subcode	gsoap/stdsoap2.cpp	/^soap_sender_fault_subcode(struct soap *soap, const char *faultsubcodeQName, const char *faultstring, const char *faultdetailXML)$/;"	f
-soap_senderfault	gsoap/soapBaitourServiceSoapService.cpp	/^int BaitourServiceSoapService::soap_senderfault(const char *string, const char *detailXML)$/;"	f	class:BaitourServiceSoapService
-soap_senderfault	gsoap/soapBaitourServiceSoapService.cpp	/^int BaitourServiceSoapService::soap_senderfault(const char *subcodeQName, const char *string, const char *detailXML)$/;"	f	class:BaitourServiceSoapService
 soap_serialize	gsoap/soapC.cpp	/^void _ns1__DetailCreateOrder::soap_serialize(struct soap *soap) const$/;"	f	class:_ns1__DetailCreateOrder
 soap_serialize	gsoap/soapC.cpp	/^void _ns1__DetailCreateOrderResponse::soap_serialize(struct soap *soap) const$/;"	f	class:_ns1__DetailCreateOrderResponse
 soap_serialize	gsoap/soapC.cpp	/^void _ns1__GetAVPolicy::soap_serialize(struct soap *soap) const$/;"	f	class:_ns1__GetAVPolicy
@@ -3031,20 +2981,6 @@ soap_serialize_std__string	gsoap/soapC.cpp	/^SOAP_FMAC3 void SOAP_FMAC4 soap_ser
 soap_serialize_string	gsoap/soapC.cpp	/^SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_string(struct soap *soap, char *const*a)$/;"	f
 soap_serializefault	gsoap/soapC.cpp	/^SOAP_FMAC3 void SOAP_FMAC4 soap_serializefault(struct soap *soap)$/;"	f
 soap_serializeheader	gsoap/soapC.cpp	/^SOAP_FMAC3 void SOAP_FMAC4 soap_serializeheader(struct soap *soap)$/;"	f
-soap_serve	gsoap/soapServer.cpp	/^extern "C" SOAP_FMAC5 int SOAP_FMAC6 soap_serve(struct soap *soap)$/;"	f
-soap_serve___ns1__DetailCreateOrder	gsoap/soapServer.cpp	/^SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__DetailCreateOrder(struct soap *soap)$/;"	f
-soap_serve___ns1__GetAVPolicy	gsoap/soapServer.cpp	/^SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__GetAVPolicy(struct soap *soap)$/;"	f
-soap_serve___ns1__GetAllCommonPolicy	gsoap/soapServer.cpp	/^SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__GetAllCommonPolicy(struct soap *soap)$/;"	f
-soap_serve___ns1__GetAllCommonPolicyZIP	gsoap/soapServer.cpp	/^SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__GetAllCommonPolicyZIP(struct soap *soap)$/;"	f
-soap_serve___ns1__GetAlterCommonPolicy	gsoap/soapServer.cpp	/^SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__GetAlterCommonPolicy(struct soap *soap)$/;"	f
-soap_serve___ns1__GetChangeFlightDate	gsoap/soapServer.cpp	/^SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__GetChangeFlightDate(struct soap *soap)$/;"	f
-soap_serve___ns1__GetDomesticMatchNormalZRateByID	gsoap/soapServer.cpp	/^SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__GetDomesticMatchNormalZRateByID(struct soap *soap)$/;"	f
-soap_serve___ns1__GetInvalidationProviders	gsoap/soapServer.cpp	/^SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__GetInvalidationProviders(struct soap *soap)$/;"	f
-soap_serve___ns1__GetOrderInfo	gsoap/soapServer.cpp	/^SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__GetOrderInfo(struct soap *soap)$/;"	f
-soap_serve___ns1__MatchCommonPolicy	gsoap/soapServer.cpp	/^SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__MatchCommonPolicy(struct soap *soap)$/;"	f
-soap_serve___ns1__RTCreateOrder	gsoap/soapServer.cpp	/^SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__RTCreateOrder(struct soap *soap)$/;"	f
-soap_serve___ns1__RefundOrder	gsoap/soapServer.cpp	/^SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__RefundOrder(struct soap *soap)$/;"	f
-soap_serve_request	gsoap/soapServer.cpp	/^extern "C" SOAP_FMAC5 int SOAP_FMAC6 soap_serve_request(struct soap *soap)$/;"	f
 soap_set_attr	gsoap/stdsoap2.c	/^soap_set_attr(struct soap *soap, const char *name, const char *value, int flag)$/;"	f
 soap_set_attr	gsoap/stdsoap2.cpp	/^soap_set_attr(struct soap *soap, const char *name, const char *value, int flag)$/;"	f
 soap_set_cookie	gsoap/stdsoap2.c	/^soap_set_cookie(struct soap *soap, const char *name, const char *value, const char *domain, const char *path)$/;"	f
@@ -3106,7 +3042,6 @@ soap_socket_errno	gsoap/stdsoap2.h	989;"	d
 soap_socket_errno	gsoap/stdsoap2.h	993;"	d
 soap_socket_errno	gsoap/stdsoap2.h	999;"	d
 soap_sprint_fault	gsoap/soapBaitourServiceSoapProxy.cpp	/^char *BaitourServiceSoapProxy::soap_sprint_fault(char *buf, size_t len)$/;"	f	class:BaitourServiceSoapProxy
-soap_sprint_fault	gsoap/soapBaitourServiceSoapService.cpp	/^char *BaitourServiceSoapService::soap_sprint_fault(char *buf, size_t len)$/;"	f	class:BaitourServiceSoapService
 soap_sprint_fault	gsoap/stdsoap2.c	/^soap_sprint_fault(struct soap *soap, char *buf, size_t len)$/;"	f
 soap_sprint_fault	gsoap/stdsoap2.cpp	/^soap_sprint_fault(struct soap *soap, char *buf, size_t len)$/;"	f
 soap_ssl_accept	gsoap/stdsoap2.c	/^soap_ssl_accept(struct soap *soap)$/;"	f
@@ -3128,7 +3063,6 @@ soap_store_lab	gsoap/stdsoap2.cpp	/^soap_store_lab(struct soap *soap, const char
 soap_strdup	gsoap/stdsoap2.c	/^soap_strdup(struct soap *soap, const char *s)$/;"	f
 soap_strdup	gsoap/stdsoap2.cpp	/^soap_strdup(struct soap *soap, const char *s)$/;"	f
 soap_stream_fault	gsoap/soapBaitourServiceSoapProxy.cpp	/^void BaitourServiceSoapProxy::soap_stream_fault(std::ostream& os)$/;"	f	class:BaitourServiceSoapProxy
-soap_stream_fault	gsoap/soapBaitourServiceSoapService.cpp	/^void BaitourServiceSoapService::soap_stream_fault(std::ostream& os)$/;"	f	class:BaitourServiceSoapService
 soap_stream_fault	gsoap/stdsoap2.c	/^soap_stream_fault(struct soap *soap, std::ostream& os)$/;"	f
 soap_stream_fault	gsoap/stdsoap2.cpp	/^soap_stream_fault(struct soap *soap, std::ostream& os)$/;"	f
 soap_strerror	gsoap/stdsoap2.c	/^soap_strerror(struct soap *soap)$/;"	f	file:
@@ -3326,7 +3260,6 @@ socket	gsoap/stdsoap2.h	/^  SOAP_SOCKET socket;	\/* socket to send and receive *
 socket_flags	gsoap/stdsoap2.h	/^  int socket_flags;		\/* socket recv() and send() flags, e.g. set to MSG_NOSIGNAL to disable sigpipe *\/$/;"	m	struct:soap
 ssl	gsoap/stdsoap2.h	/^  SSL *ssl;$/;"	m	struct:soap
 ssl	gsoap/stdsoap2.h	/^  void *ssl;$/;"	m	struct:soap
-ssl_accept	gsoap/soapBaitourServiceSoapService.cpp	/^int BaitourServiceSoapService::ssl_accept()$/;"	f	class:BaitourServiceSoapService
 ssl_auth_init	gsoap/stdsoap2.c	/^ssl_auth_init(struct soap *soap)$/;"	f	file:
 ssl_auth_init	gsoap/stdsoap2.cpp	/^ssl_auth_init(struct soap *soap)$/;"	f	file:
 ssl_flags	gsoap/stdsoap2.h	/^  unsigned short ssl_flags;$/;"	m	struct:soap
@@ -3368,19 +3301,20 @@ tcp_select	gsoap/stdsoap2.c	/^tcp_select(struct soap *soap, SOAP_SOCKET sk, int 
 tcp_select	gsoap/stdsoap2.cpp	/^tcp_select(struct soap *soap, SOAP_SOCKET sk, int flags, int timeout)$/;"	f	file:
 tcp_shutdownsocket	gsoap/stdsoap2.c	/^tcp_shutdownsocket(struct soap *soap, SOAP_SOCKET sk, int how)$/;"	f	file:
 tcp_shutdownsocket	gsoap/stdsoap2.cpp	/^tcp_shutdownsocket(struct soap *soap, SOAP_SOCKET sk, int how)$/;"	f	file:
-ticketType	gsoap/baitour.h	/^    std::string*                         ticketType                     0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetAllCommonPolicy
-ticketType	gsoap/baitour.h	/^    std::string*                         ticketType                     0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetAllCommonPolicyZIP
-ticketType	gsoap/baitour.h	/^    std::string*                         ticketType                     0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetAlterCommonPolicy
+test	Makefile	/^test := soapTester$/;"	m
 ticketType	gsoap/soapStub.h	/^	std::string *ticketType;	\/* optional element of type xsd:string *\/$/;"	m	class:_ns1__GetAllCommonPolicy
 ticketType	gsoap/soapStub.h	/^	std::string *ticketType;	\/* optional element of type xsd:string *\/$/;"	m	class:_ns1__GetAllCommonPolicyZIP
 ticketType	gsoap/soapStub.h	/^	std::string *ticketType;	\/* optional element of type xsd:string *\/$/;"	m	class:_ns1__GetAlterCommonPolicy
+ticketType	gsoap/temp.h	/^    std::string*                         ticketType                     0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetAllCommonPolicy
+ticketType	gsoap/temp.h	/^    std::string*                         ticketType                     0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetAllCommonPolicyZIP
+ticketType	gsoap/temp.h	/^    std::string*                         ticketType                     0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetAlterCommonPolicy
 tmpbuf	gsoap/stdsoap2.h	/^  char tmpbuf[1024];	\/* in\/out buffer for HTTP\/MIME headers, simpleType values, element and attribute tag names, and DIME must be >=1024 bytes *\/$/;"	m	struct:soap
-tripType	gsoap/baitour.h	/^    std::string*                         tripType                       0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetAllCommonPolicy
-tripType	gsoap/baitour.h	/^    std::string*                         tripType                       0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetAllCommonPolicyZIP
-tripType	gsoap/baitour.h	/^    std::string*                         tripType                       0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetAlterCommonPolicy
 tripType	gsoap/soapStub.h	/^	std::string *tripType;	\/* optional element of type xsd:string *\/$/;"	m	class:_ns1__GetAllCommonPolicy
 tripType	gsoap/soapStub.h	/^	std::string *tripType;	\/* optional element of type xsd:string *\/$/;"	m	class:_ns1__GetAllCommonPolicyZIP
 tripType	gsoap/soapStub.h	/^	std::string *tripType;	\/* optional element of type xsd:string *\/$/;"	m	class:_ns1__GetAlterCommonPolicy
+tripType	gsoap/temp.h	/^    std::string*                         tripType                       0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetAllCommonPolicy
+tripType	gsoap/temp.h	/^    std::string*                         tripType                       0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetAllCommonPolicyZIP
+tripType	gsoap/temp.h	/^    std::string*                         tripType                       0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetAlterCommonPolicy
 type	gsoap/stdsoap2.h	/^  char **type;$/;"	m	struct:soap_xlist
 type	gsoap/stdsoap2.h	/^  char type[SOAP_TAGLEN];$/;"	m	struct:soap
 type	gsoap/stdsoap2.h	/^  const char *type;			\/* DIME\/MIME type (MIME type format) *\/$/;"	m	struct:soap_multipart
@@ -3403,13 +3337,6 @@ wide	gsoap/stdsoap2.h	/^  wchar_t *wide;$/;"	m	struct:soap_dom_attribute
 wsuid	gsoap/stdsoap2.h	/^  const char *wsuid;		\/* space-separated string of element tags *\/$/;"	m	struct:soap
 xcred	gsoap/stdsoap2.h	/^  gnutls_certificate_credentials_t xcred;	\/* cert pointer *\/$/;"	m	struct:soap
 xlist	gsoap/stdsoap2.h	/^  struct soap_xlist *xlist;$/;"	m	struct:soap	typeref:struct:soap::soap_xlist
-xmlDoc	gsoap/baitour.h	/^    std::string*                         xmlDoc                         0;	\/\/\/< Optional element.$/;"	m	class:_ns1__DetailCreateOrder
-xmlDoc	gsoap/baitour.h	/^    std::string*                         xmlDoc                         0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetAVPolicy
-xmlDoc	gsoap/baitour.h	/^    std::string*                         xmlDoc                         0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetChangeFlightDate
-xmlDoc	gsoap/baitour.h	/^    std::string*                         xmlDoc                         0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetDomesticMatchNormalZRateByID
-xmlDoc	gsoap/baitour.h	/^    std::string*                         xmlDoc                         0;	\/\/\/< Optional element.$/;"	m	class:_ns1__MatchCommonPolicy
-xmlDoc	gsoap/baitour.h	/^    std::string*                         xmlDoc                         0;	\/\/\/< Optional element.$/;"	m	class:_ns1__RTCreateOrder
-xmlDoc	gsoap/baitour.h	/^    std::string*                         xmlDoc                         0;	\/\/\/< Optional element.$/;"	m	class:_ns1__RefundOrder
 xmlDoc	gsoap/soapStub.h	/^	std::string *xmlDoc;	\/* optional element of type xsd:string *\/$/;"	m	class:_ns1__DetailCreateOrder
 xmlDoc	gsoap/soapStub.h	/^	std::string *xmlDoc;	\/* optional element of type xsd:string *\/$/;"	m	class:_ns1__GetAVPolicy
 xmlDoc	gsoap/soapStub.h	/^	std::string *xmlDoc;	\/* optional element of type xsd:string *\/$/;"	m	class:_ns1__GetChangeFlightDate
@@ -3417,6 +3344,13 @@ xmlDoc	gsoap/soapStub.h	/^	std::string *xmlDoc;	\/* optional element of type xsd
 xmlDoc	gsoap/soapStub.h	/^	std::string *xmlDoc;	\/* optional element of type xsd:string *\/$/;"	m	class:_ns1__MatchCommonPolicy
 xmlDoc	gsoap/soapStub.h	/^	std::string *xmlDoc;	\/* optional element of type xsd:string *\/$/;"	m	class:_ns1__RTCreateOrder
 xmlDoc	gsoap/soapStub.h	/^	std::string *xmlDoc;	\/* optional element of type xsd:string *\/$/;"	m	class:_ns1__RefundOrder
+xmlDoc	gsoap/temp.h	/^    std::string*                         xmlDoc                         0;	\/\/\/< Optional element.$/;"	m	class:_ns1__DetailCreateOrder
+xmlDoc	gsoap/temp.h	/^    std::string*                         xmlDoc                         0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetAVPolicy
+xmlDoc	gsoap/temp.h	/^    std::string*                         xmlDoc                         0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetChangeFlightDate
+xmlDoc	gsoap/temp.h	/^    std::string*                         xmlDoc                         0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetDomesticMatchNormalZRateByID
+xmlDoc	gsoap/temp.h	/^    std::string*                         xmlDoc                         0;	\/\/\/< Optional element.$/;"	m	class:_ns1__MatchCommonPolicy
+xmlDoc	gsoap/temp.h	/^    std::string*                         xmlDoc                         0;	\/\/\/< Optional element.$/;"	m	class:_ns1__RTCreateOrder
+xmlDoc	gsoap/temp.h	/^    std::string*                         xmlDoc                         0;	\/\/\/< Optional element.$/;"	m	class:_ns1__RefundOrder
 z_buf	gsoap/stdsoap2.h	/^  char *z_buf;			\/* buffer *\/$/;"	m	struct:soap
 z_buflen	gsoap/stdsoap2.h	/^  size_t z_buflen;$/;"	m	struct:soap
 z_crc	gsoap/stdsoap2.h	/^  soap_int32 z_crc;$/;"	m	struct:soap
@@ -3426,13 +3360,12 @@ z_dict_len	gsoap/stdsoap2.h	/^  unsigned int z_dict_len;$/;"	m	struct:soap
 z_level	gsoap/stdsoap2.h	/^  unsigned short z_level;	\/* compression level to be used (0=none, 1=fast to 9=best) *\/$/;"	m	struct:soap
 z_ratio_in	gsoap/stdsoap2.h	/^  float z_ratio_in;		\/* detected compression ratio compressed_length\/length of inbound message *\/$/;"	m	struct:soap
 z_ratio_out	gsoap/stdsoap2.h	/^  float z_ratio_out;		\/* detected compression ratio compressed_length\/length of outbound message *\/$/;"	m	struct:soap
-zip	gsoap/baitour.h	/^    std::string*                         zip                            0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetAllCommonPolicyZIP
 zip	gsoap/soapStub.h	/^	std::string *zip;	\/* optional element of type xsd:string *\/$/;"	m	class:_ns1__GetAllCommonPolicyZIP
+zip	gsoap/temp.h	/^    std::string*                         zip                            0;	\/\/\/< Optional element.$/;"	m	class:_ns1__GetAllCommonPolicyZIP
 zlib_in	gsoap/stdsoap2.h	/^  short zlib_in;		\/* SOAP_ZLIB_NONE, SOAP_ZLIB_DEFLATE, or SOAP_ZLIB_GZIP *\/$/;"	m	struct:soap
 zlib_out	gsoap/stdsoap2.h	/^  short zlib_out;		\/* SOAP_ZLIB_NONE, SOAP_ZLIB_DEFLATE, or SOAP_ZLIB_GZIP *\/$/;"	m	struct:soap
 zlib_state	gsoap/stdsoap2.h	/^  short zlib_state;		\/* SOAP_ZLIB_NONE, SOAP_ZLIB_DEFLATE, or SOAP_ZLIB_INFLATE *\/$/;"	m	struct:soap
 ~BaitourServiceSoapProxy	gsoap/soapBaitourServiceSoapProxy.cpp	/^BaitourServiceSoapProxy::~BaitourServiceSoapProxy()$/;"	f	class:BaitourServiceSoapProxy
-~BaitourServiceSoapService	gsoap/soapBaitourServiceSoapService.cpp	/^BaitourServiceSoapService::~BaitourServiceSoapService()$/;"	f	class:BaitourServiceSoapService
 ~_ns1__DetailCreateOrder	gsoap/soapStub.h	/^	virtual ~_ns1__DetailCreateOrder() { }$/;"	f	class:_ns1__DetailCreateOrder
 ~_ns1__DetailCreateOrderResponse	gsoap/soapStub.h	/^	virtual ~_ns1__DetailCreateOrderResponse() { }$/;"	f	class:_ns1__DetailCreateOrderResponse
 ~_ns1__GetAVPolicy	gsoap/soapStub.h	/^	virtual ~_ns1__GetAVPolicy() { }$/;"	f	class:_ns1__GetAVPolicy
