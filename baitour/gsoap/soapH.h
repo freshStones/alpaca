@@ -817,7 +817,7 @@ SOAP_FMAC3 void SOAP_FMAC4 soap_copy__ns1__GetAllCommonPolicy(struct soap*, int,
 #ifndef WITH_NOGLOBAL
 
 #ifndef SOAP_TYPE_SOAP_ENV__Fault
-#define SOAP_TYPE_SOAP_ENV__Fault (90)
+#define SOAP_TYPE_SOAP_ENV__Fault (114)
 #endif
 SOAP_FMAC3 void SOAP_FMAC4 soap_default_SOAP_ENV__Fault(struct soap*, struct SOAP_ENV__Fault *);
 SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_SOAP_ENV__Fault(struct soap*, const struct SOAP_ENV__Fault *);
@@ -853,7 +853,7 @@ SOAP_FMAC3 void SOAP_FMAC4 soap_copy_SOAP_ENV__Fault(struct soap*, int, int, voi
 #ifndef WITH_NOGLOBAL
 
 #ifndef SOAP_TYPE_SOAP_ENV__Reason
-#define SOAP_TYPE_SOAP_ENV__Reason (89)
+#define SOAP_TYPE_SOAP_ENV__Reason (113)
 #endif
 SOAP_FMAC3 void SOAP_FMAC4 soap_default_SOAP_ENV__Reason(struct soap*, struct SOAP_ENV__Reason *);
 SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_SOAP_ENV__Reason(struct soap*, const struct SOAP_ENV__Reason *);
@@ -889,7 +889,7 @@ SOAP_FMAC3 void SOAP_FMAC4 soap_copy_SOAP_ENV__Reason(struct soap*, int, int, vo
 #ifndef WITH_NOGLOBAL
 
 #ifndef SOAP_TYPE_SOAP_ENV__Detail
-#define SOAP_TYPE_SOAP_ENV__Detail (86)
+#define SOAP_TYPE_SOAP_ENV__Detail (110)
 #endif
 SOAP_FMAC3 void SOAP_FMAC4 soap_default_SOAP_ENV__Detail(struct soap*, struct SOAP_ENV__Detail *);
 SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_SOAP_ENV__Detail(struct soap*, const struct SOAP_ENV__Detail *);
@@ -925,7 +925,7 @@ SOAP_FMAC3 void SOAP_FMAC4 soap_copy_SOAP_ENV__Detail(struct soap*, int, int, vo
 #ifndef WITH_NOGLOBAL
 
 #ifndef SOAP_TYPE_SOAP_ENV__Code
-#define SOAP_TYPE_SOAP_ENV__Code (84)
+#define SOAP_TYPE_SOAP_ENV__Code (108)
 #endif
 SOAP_FMAC3 void SOAP_FMAC4 soap_default_SOAP_ENV__Code(struct soap*, struct SOAP_ENV__Code *);
 SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_SOAP_ENV__Code(struct soap*, const struct SOAP_ENV__Code *);
@@ -961,7 +961,7 @@ SOAP_FMAC3 void SOAP_FMAC4 soap_copy_SOAP_ENV__Code(struct soap*, int, int, void
 #ifndef WITH_NOGLOBAL
 
 #ifndef SOAP_TYPE_SOAP_ENV__Header
-#define SOAP_TYPE_SOAP_ENV__Header (83)
+#define SOAP_TYPE_SOAP_ENV__Header (107)
 #endif
 SOAP_FMAC3 void SOAP_FMAC4 soap_default_SOAP_ENV__Header(struct soap*, struct SOAP_ENV__Header *);
 SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_SOAP_ENV__Header(struct soap*, const struct SOAP_ENV__Header *);
@@ -993,6 +993,390 @@ inline void soap_delete_SOAP_ENV__Header(struct soap *soap, struct SOAP_ENV__Hea
 SOAP_FMAC3 void SOAP_FMAC4 soap_copy_SOAP_ENV__Header(struct soap*, int, int, void*, size_t, const void*, size_t);
 
 #endif
+
+#ifndef SOAP_TYPE___ns1__GetChangeFlightDate_
+#define SOAP_TYPE___ns1__GetChangeFlightDate_ (106)
+#endif
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___ns1__GetChangeFlightDate_(struct soap*, struct __ns1__GetChangeFlightDate_ *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___ns1__GetChangeFlightDate_(struct soap*, const struct __ns1__GetChangeFlightDate_ *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___ns1__GetChangeFlightDate_(struct soap*, const char*, int, const struct __ns1__GetChangeFlightDate_ *, const char*);
+SOAP_FMAC3 struct __ns1__GetChangeFlightDate_ * SOAP_FMAC4 soap_in___ns1__GetChangeFlightDate_(struct soap*, const char*, struct __ns1__GetChangeFlightDate_ *, const char*);
+
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___ns1__GetChangeFlightDate_(struct soap*, const struct __ns1__GetChangeFlightDate_ *, const char*, const char*);
+
+#ifndef soap_write___ns1__GetChangeFlightDate_
+#define soap_write___ns1__GetChangeFlightDate_(soap, data) ( soap_free_temp(soap), soap_begin_send(soap) || (soap_serialize___ns1__GetChangeFlightDate_(soap, data),0) || soap_put___ns1__GetChangeFlightDate_(soap, data, "-ns1:GetChangeFlightDate", NULL) || soap_end_send(soap), (soap)->error )
+#endif
+
+SOAP_FMAC3 struct __ns1__GetChangeFlightDate_ * SOAP_FMAC4 soap_get___ns1__GetChangeFlightDate_(struct soap*, struct __ns1__GetChangeFlightDate_ *, const char*, const char*);
+
+#ifndef soap_read___ns1__GetChangeFlightDate_
+#define soap_read___ns1__GetChangeFlightDate_(soap, data) ( soap_begin_recv(soap) || !soap_get___ns1__GetChangeFlightDate_(soap, data, NULL, NULL) || soap_end_recv(soap), (soap)->error )
+#endif
+
+SOAP_FMAC1 struct __ns1__GetChangeFlightDate_ * SOAP_FMAC2 soap_instantiate___ns1__GetChangeFlightDate_(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct __ns1__GetChangeFlightDate_ * soap_new___ns1__GetChangeFlightDate_(struct soap *soap, int n = -1) { return soap_instantiate___ns1__GetChangeFlightDate_(soap, n, NULL, NULL, NULL); }
+
+inline struct __ns1__GetChangeFlightDate_ * soap_new_req___ns1__GetChangeFlightDate_(struct soap *soap) { struct __ns1__GetChangeFlightDate_ *_p = soap_instantiate___ns1__GetChangeFlightDate_(soap, -1, NULL, NULL, NULL); if (_p) { soap_default___ns1__GetChangeFlightDate_(soap, _p); } return _p; }
+
+inline struct __ns1__GetChangeFlightDate_ * soap_new_set___ns1__GetChangeFlightDate_(struct soap *soap, _ns1__GetChangeFlightDate *ns1__GetChangeFlightDate) { struct __ns1__GetChangeFlightDate_ *_p = soap_instantiate___ns1__GetChangeFlightDate_(soap, -1, NULL, NULL, NULL); if (_p) { soap_default___ns1__GetChangeFlightDate_(soap, _p); _p->ns1__GetChangeFlightDate = ns1__GetChangeFlightDate; } return _p; }
+
+inline void soap_delete___ns1__GetChangeFlightDate_(struct soap *soap, struct __ns1__GetChangeFlightDate_ *p) { soap_delete(soap, p); }
+
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy___ns1__GetChangeFlightDate_(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE___ns1__RefundOrder_
+#define SOAP_TYPE___ns1__RefundOrder_ (104)
+#endif
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___ns1__RefundOrder_(struct soap*, struct __ns1__RefundOrder_ *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___ns1__RefundOrder_(struct soap*, const struct __ns1__RefundOrder_ *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___ns1__RefundOrder_(struct soap*, const char*, int, const struct __ns1__RefundOrder_ *, const char*);
+SOAP_FMAC3 struct __ns1__RefundOrder_ * SOAP_FMAC4 soap_in___ns1__RefundOrder_(struct soap*, const char*, struct __ns1__RefundOrder_ *, const char*);
+
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___ns1__RefundOrder_(struct soap*, const struct __ns1__RefundOrder_ *, const char*, const char*);
+
+#ifndef soap_write___ns1__RefundOrder_
+#define soap_write___ns1__RefundOrder_(soap, data) ( soap_free_temp(soap), soap_begin_send(soap) || (soap_serialize___ns1__RefundOrder_(soap, data),0) || soap_put___ns1__RefundOrder_(soap, data, "-ns1:RefundOrder", NULL) || soap_end_send(soap), (soap)->error )
+#endif
+
+SOAP_FMAC3 struct __ns1__RefundOrder_ * SOAP_FMAC4 soap_get___ns1__RefundOrder_(struct soap*, struct __ns1__RefundOrder_ *, const char*, const char*);
+
+#ifndef soap_read___ns1__RefundOrder_
+#define soap_read___ns1__RefundOrder_(soap, data) ( soap_begin_recv(soap) || !soap_get___ns1__RefundOrder_(soap, data, NULL, NULL) || soap_end_recv(soap), (soap)->error )
+#endif
+
+SOAP_FMAC1 struct __ns1__RefundOrder_ * SOAP_FMAC2 soap_instantiate___ns1__RefundOrder_(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct __ns1__RefundOrder_ * soap_new___ns1__RefundOrder_(struct soap *soap, int n = -1) { return soap_instantiate___ns1__RefundOrder_(soap, n, NULL, NULL, NULL); }
+
+inline struct __ns1__RefundOrder_ * soap_new_req___ns1__RefundOrder_(struct soap *soap) { struct __ns1__RefundOrder_ *_p = soap_instantiate___ns1__RefundOrder_(soap, -1, NULL, NULL, NULL); if (_p) { soap_default___ns1__RefundOrder_(soap, _p); } return _p; }
+
+inline struct __ns1__RefundOrder_ * soap_new_set___ns1__RefundOrder_(struct soap *soap, _ns1__RefundOrder *ns1__RefundOrder) { struct __ns1__RefundOrder_ *_p = soap_instantiate___ns1__RefundOrder_(soap, -1, NULL, NULL, NULL); if (_p) { soap_default___ns1__RefundOrder_(soap, _p); _p->ns1__RefundOrder = ns1__RefundOrder; } return _p; }
+
+inline void soap_delete___ns1__RefundOrder_(struct soap *soap, struct __ns1__RefundOrder_ *p) { soap_delete(soap, p); }
+
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy___ns1__RefundOrder_(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE___ns1__GetInvalidationProviders_
+#define SOAP_TYPE___ns1__GetInvalidationProviders_ (102)
+#endif
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___ns1__GetInvalidationProviders_(struct soap*, struct __ns1__GetInvalidationProviders_ *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___ns1__GetInvalidationProviders_(struct soap*, const struct __ns1__GetInvalidationProviders_ *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___ns1__GetInvalidationProviders_(struct soap*, const char*, int, const struct __ns1__GetInvalidationProviders_ *, const char*);
+SOAP_FMAC3 struct __ns1__GetInvalidationProviders_ * SOAP_FMAC4 soap_in___ns1__GetInvalidationProviders_(struct soap*, const char*, struct __ns1__GetInvalidationProviders_ *, const char*);
+
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___ns1__GetInvalidationProviders_(struct soap*, const struct __ns1__GetInvalidationProviders_ *, const char*, const char*);
+
+#ifndef soap_write___ns1__GetInvalidationProviders_
+#define soap_write___ns1__GetInvalidationProviders_(soap, data) ( soap_free_temp(soap), soap_begin_send(soap) || (soap_serialize___ns1__GetInvalidationProviders_(soap, data),0) || soap_put___ns1__GetInvalidationProviders_(soap, data, "-ns1:GetInvalidationProviders", NULL) || soap_end_send(soap), (soap)->error )
+#endif
+
+SOAP_FMAC3 struct __ns1__GetInvalidationProviders_ * SOAP_FMAC4 soap_get___ns1__GetInvalidationProviders_(struct soap*, struct __ns1__GetInvalidationProviders_ *, const char*, const char*);
+
+#ifndef soap_read___ns1__GetInvalidationProviders_
+#define soap_read___ns1__GetInvalidationProviders_(soap, data) ( soap_begin_recv(soap) || !soap_get___ns1__GetInvalidationProviders_(soap, data, NULL, NULL) || soap_end_recv(soap), (soap)->error )
+#endif
+
+SOAP_FMAC1 struct __ns1__GetInvalidationProviders_ * SOAP_FMAC2 soap_instantiate___ns1__GetInvalidationProviders_(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct __ns1__GetInvalidationProviders_ * soap_new___ns1__GetInvalidationProviders_(struct soap *soap, int n = -1) { return soap_instantiate___ns1__GetInvalidationProviders_(soap, n, NULL, NULL, NULL); }
+
+inline struct __ns1__GetInvalidationProviders_ * soap_new_req___ns1__GetInvalidationProviders_(struct soap *soap) { struct __ns1__GetInvalidationProviders_ *_p = soap_instantiate___ns1__GetInvalidationProviders_(soap, -1, NULL, NULL, NULL); if (_p) { soap_default___ns1__GetInvalidationProviders_(soap, _p); } return _p; }
+
+inline struct __ns1__GetInvalidationProviders_ * soap_new_set___ns1__GetInvalidationProviders_(struct soap *soap, _ns1__GetInvalidationProviders *ns1__GetInvalidationProviders) { struct __ns1__GetInvalidationProviders_ *_p = soap_instantiate___ns1__GetInvalidationProviders_(soap, -1, NULL, NULL, NULL); if (_p) { soap_default___ns1__GetInvalidationProviders_(soap, _p); _p->ns1__GetInvalidationProviders = ns1__GetInvalidationProviders; } return _p; }
+
+inline void soap_delete___ns1__GetInvalidationProviders_(struct soap *soap, struct __ns1__GetInvalidationProviders_ *p) { soap_delete(soap, p); }
+
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy___ns1__GetInvalidationProviders_(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE___ns1__GetOrderInfo_
+#define SOAP_TYPE___ns1__GetOrderInfo_ (100)
+#endif
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___ns1__GetOrderInfo_(struct soap*, struct __ns1__GetOrderInfo_ *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___ns1__GetOrderInfo_(struct soap*, const struct __ns1__GetOrderInfo_ *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___ns1__GetOrderInfo_(struct soap*, const char*, int, const struct __ns1__GetOrderInfo_ *, const char*);
+SOAP_FMAC3 struct __ns1__GetOrderInfo_ * SOAP_FMAC4 soap_in___ns1__GetOrderInfo_(struct soap*, const char*, struct __ns1__GetOrderInfo_ *, const char*);
+
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___ns1__GetOrderInfo_(struct soap*, const struct __ns1__GetOrderInfo_ *, const char*, const char*);
+
+#ifndef soap_write___ns1__GetOrderInfo_
+#define soap_write___ns1__GetOrderInfo_(soap, data) ( soap_free_temp(soap), soap_begin_send(soap) || (soap_serialize___ns1__GetOrderInfo_(soap, data),0) || soap_put___ns1__GetOrderInfo_(soap, data, "-ns1:GetOrderInfo", NULL) || soap_end_send(soap), (soap)->error )
+#endif
+
+SOAP_FMAC3 struct __ns1__GetOrderInfo_ * SOAP_FMAC4 soap_get___ns1__GetOrderInfo_(struct soap*, struct __ns1__GetOrderInfo_ *, const char*, const char*);
+
+#ifndef soap_read___ns1__GetOrderInfo_
+#define soap_read___ns1__GetOrderInfo_(soap, data) ( soap_begin_recv(soap) || !soap_get___ns1__GetOrderInfo_(soap, data, NULL, NULL) || soap_end_recv(soap), (soap)->error )
+#endif
+
+SOAP_FMAC1 struct __ns1__GetOrderInfo_ * SOAP_FMAC2 soap_instantiate___ns1__GetOrderInfo_(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct __ns1__GetOrderInfo_ * soap_new___ns1__GetOrderInfo_(struct soap *soap, int n = -1) { return soap_instantiate___ns1__GetOrderInfo_(soap, n, NULL, NULL, NULL); }
+
+inline struct __ns1__GetOrderInfo_ * soap_new_req___ns1__GetOrderInfo_(struct soap *soap) { struct __ns1__GetOrderInfo_ *_p = soap_instantiate___ns1__GetOrderInfo_(soap, -1, NULL, NULL, NULL); if (_p) { soap_default___ns1__GetOrderInfo_(soap, _p); } return _p; }
+
+inline struct __ns1__GetOrderInfo_ * soap_new_set___ns1__GetOrderInfo_(struct soap *soap, _ns1__GetOrderInfo *ns1__GetOrderInfo) { struct __ns1__GetOrderInfo_ *_p = soap_instantiate___ns1__GetOrderInfo_(soap, -1, NULL, NULL, NULL); if (_p) { soap_default___ns1__GetOrderInfo_(soap, _p); _p->ns1__GetOrderInfo = ns1__GetOrderInfo; } return _p; }
+
+inline void soap_delete___ns1__GetOrderInfo_(struct soap *soap, struct __ns1__GetOrderInfo_ *p) { soap_delete(soap, p); }
+
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy___ns1__GetOrderInfo_(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE___ns1__RTCreateOrder_
+#define SOAP_TYPE___ns1__RTCreateOrder_ (98)
+#endif
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___ns1__RTCreateOrder_(struct soap*, struct __ns1__RTCreateOrder_ *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___ns1__RTCreateOrder_(struct soap*, const struct __ns1__RTCreateOrder_ *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___ns1__RTCreateOrder_(struct soap*, const char*, int, const struct __ns1__RTCreateOrder_ *, const char*);
+SOAP_FMAC3 struct __ns1__RTCreateOrder_ * SOAP_FMAC4 soap_in___ns1__RTCreateOrder_(struct soap*, const char*, struct __ns1__RTCreateOrder_ *, const char*);
+
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___ns1__RTCreateOrder_(struct soap*, const struct __ns1__RTCreateOrder_ *, const char*, const char*);
+
+#ifndef soap_write___ns1__RTCreateOrder_
+#define soap_write___ns1__RTCreateOrder_(soap, data) ( soap_free_temp(soap), soap_begin_send(soap) || (soap_serialize___ns1__RTCreateOrder_(soap, data),0) || soap_put___ns1__RTCreateOrder_(soap, data, "-ns1:RTCreateOrder", NULL) || soap_end_send(soap), (soap)->error )
+#endif
+
+SOAP_FMAC3 struct __ns1__RTCreateOrder_ * SOAP_FMAC4 soap_get___ns1__RTCreateOrder_(struct soap*, struct __ns1__RTCreateOrder_ *, const char*, const char*);
+
+#ifndef soap_read___ns1__RTCreateOrder_
+#define soap_read___ns1__RTCreateOrder_(soap, data) ( soap_begin_recv(soap) || !soap_get___ns1__RTCreateOrder_(soap, data, NULL, NULL) || soap_end_recv(soap), (soap)->error )
+#endif
+
+SOAP_FMAC1 struct __ns1__RTCreateOrder_ * SOAP_FMAC2 soap_instantiate___ns1__RTCreateOrder_(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct __ns1__RTCreateOrder_ * soap_new___ns1__RTCreateOrder_(struct soap *soap, int n = -1) { return soap_instantiate___ns1__RTCreateOrder_(soap, n, NULL, NULL, NULL); }
+
+inline struct __ns1__RTCreateOrder_ * soap_new_req___ns1__RTCreateOrder_(struct soap *soap) { struct __ns1__RTCreateOrder_ *_p = soap_instantiate___ns1__RTCreateOrder_(soap, -1, NULL, NULL, NULL); if (_p) { soap_default___ns1__RTCreateOrder_(soap, _p); } return _p; }
+
+inline struct __ns1__RTCreateOrder_ * soap_new_set___ns1__RTCreateOrder_(struct soap *soap, _ns1__RTCreateOrder *ns1__RTCreateOrder) { struct __ns1__RTCreateOrder_ *_p = soap_instantiate___ns1__RTCreateOrder_(soap, -1, NULL, NULL, NULL); if (_p) { soap_default___ns1__RTCreateOrder_(soap, _p); _p->ns1__RTCreateOrder = ns1__RTCreateOrder; } return _p; }
+
+inline void soap_delete___ns1__RTCreateOrder_(struct soap *soap, struct __ns1__RTCreateOrder_ *p) { soap_delete(soap, p); }
+
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy___ns1__RTCreateOrder_(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE___ns1__DetailCreateOrder_
+#define SOAP_TYPE___ns1__DetailCreateOrder_ (96)
+#endif
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___ns1__DetailCreateOrder_(struct soap*, struct __ns1__DetailCreateOrder_ *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___ns1__DetailCreateOrder_(struct soap*, const struct __ns1__DetailCreateOrder_ *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___ns1__DetailCreateOrder_(struct soap*, const char*, int, const struct __ns1__DetailCreateOrder_ *, const char*);
+SOAP_FMAC3 struct __ns1__DetailCreateOrder_ * SOAP_FMAC4 soap_in___ns1__DetailCreateOrder_(struct soap*, const char*, struct __ns1__DetailCreateOrder_ *, const char*);
+
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___ns1__DetailCreateOrder_(struct soap*, const struct __ns1__DetailCreateOrder_ *, const char*, const char*);
+
+#ifndef soap_write___ns1__DetailCreateOrder_
+#define soap_write___ns1__DetailCreateOrder_(soap, data) ( soap_free_temp(soap), soap_begin_send(soap) || (soap_serialize___ns1__DetailCreateOrder_(soap, data),0) || soap_put___ns1__DetailCreateOrder_(soap, data, "-ns1:DetailCreateOrder", NULL) || soap_end_send(soap), (soap)->error )
+#endif
+
+SOAP_FMAC3 struct __ns1__DetailCreateOrder_ * SOAP_FMAC4 soap_get___ns1__DetailCreateOrder_(struct soap*, struct __ns1__DetailCreateOrder_ *, const char*, const char*);
+
+#ifndef soap_read___ns1__DetailCreateOrder_
+#define soap_read___ns1__DetailCreateOrder_(soap, data) ( soap_begin_recv(soap) || !soap_get___ns1__DetailCreateOrder_(soap, data, NULL, NULL) || soap_end_recv(soap), (soap)->error )
+#endif
+
+SOAP_FMAC1 struct __ns1__DetailCreateOrder_ * SOAP_FMAC2 soap_instantiate___ns1__DetailCreateOrder_(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct __ns1__DetailCreateOrder_ * soap_new___ns1__DetailCreateOrder_(struct soap *soap, int n = -1) { return soap_instantiate___ns1__DetailCreateOrder_(soap, n, NULL, NULL, NULL); }
+
+inline struct __ns1__DetailCreateOrder_ * soap_new_req___ns1__DetailCreateOrder_(struct soap *soap) { struct __ns1__DetailCreateOrder_ *_p = soap_instantiate___ns1__DetailCreateOrder_(soap, -1, NULL, NULL, NULL); if (_p) { soap_default___ns1__DetailCreateOrder_(soap, _p); } return _p; }
+
+inline struct __ns1__DetailCreateOrder_ * soap_new_set___ns1__DetailCreateOrder_(struct soap *soap, _ns1__DetailCreateOrder *ns1__DetailCreateOrder) { struct __ns1__DetailCreateOrder_ *_p = soap_instantiate___ns1__DetailCreateOrder_(soap, -1, NULL, NULL, NULL); if (_p) { soap_default___ns1__DetailCreateOrder_(soap, _p); _p->ns1__DetailCreateOrder = ns1__DetailCreateOrder; } return _p; }
+
+inline void soap_delete___ns1__DetailCreateOrder_(struct soap *soap, struct __ns1__DetailCreateOrder_ *p) { soap_delete(soap, p); }
+
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy___ns1__DetailCreateOrder_(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE___ns1__GetDomesticMatchNormalZRateByID_
+#define SOAP_TYPE___ns1__GetDomesticMatchNormalZRateByID_ (94)
+#endif
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___ns1__GetDomesticMatchNormalZRateByID_(struct soap*, struct __ns1__GetDomesticMatchNormalZRateByID_ *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___ns1__GetDomesticMatchNormalZRateByID_(struct soap*, const struct __ns1__GetDomesticMatchNormalZRateByID_ *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___ns1__GetDomesticMatchNormalZRateByID_(struct soap*, const char*, int, const struct __ns1__GetDomesticMatchNormalZRateByID_ *, const char*);
+SOAP_FMAC3 struct __ns1__GetDomesticMatchNormalZRateByID_ * SOAP_FMAC4 soap_in___ns1__GetDomesticMatchNormalZRateByID_(struct soap*, const char*, struct __ns1__GetDomesticMatchNormalZRateByID_ *, const char*);
+
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___ns1__GetDomesticMatchNormalZRateByID_(struct soap*, const struct __ns1__GetDomesticMatchNormalZRateByID_ *, const char*, const char*);
+
+#ifndef soap_write___ns1__GetDomesticMatchNormalZRateByID_
+#define soap_write___ns1__GetDomesticMatchNormalZRateByID_(soap, data) ( soap_free_temp(soap), soap_begin_send(soap) || (soap_serialize___ns1__GetDomesticMatchNormalZRateByID_(soap, data),0) || soap_put___ns1__GetDomesticMatchNormalZRateByID_(soap, data, "-ns1:GetDomesticMatchNormalZRateByID", NULL) || soap_end_send(soap), (soap)->error )
+#endif
+
+SOAP_FMAC3 struct __ns1__GetDomesticMatchNormalZRateByID_ * SOAP_FMAC4 soap_get___ns1__GetDomesticMatchNormalZRateByID_(struct soap*, struct __ns1__GetDomesticMatchNormalZRateByID_ *, const char*, const char*);
+
+#ifndef soap_read___ns1__GetDomesticMatchNormalZRateByID_
+#define soap_read___ns1__GetDomesticMatchNormalZRateByID_(soap, data) ( soap_begin_recv(soap) || !soap_get___ns1__GetDomesticMatchNormalZRateByID_(soap, data, NULL, NULL) || soap_end_recv(soap), (soap)->error )
+#endif
+
+SOAP_FMAC1 struct __ns1__GetDomesticMatchNormalZRateByID_ * SOAP_FMAC2 soap_instantiate___ns1__GetDomesticMatchNormalZRateByID_(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct __ns1__GetDomesticMatchNormalZRateByID_ * soap_new___ns1__GetDomesticMatchNormalZRateByID_(struct soap *soap, int n = -1) { return soap_instantiate___ns1__GetDomesticMatchNormalZRateByID_(soap, n, NULL, NULL, NULL); }
+
+inline struct __ns1__GetDomesticMatchNormalZRateByID_ * soap_new_req___ns1__GetDomesticMatchNormalZRateByID_(struct soap *soap) { struct __ns1__GetDomesticMatchNormalZRateByID_ *_p = soap_instantiate___ns1__GetDomesticMatchNormalZRateByID_(soap, -1, NULL, NULL, NULL); if (_p) { soap_default___ns1__GetDomesticMatchNormalZRateByID_(soap, _p); } return _p; }
+
+inline struct __ns1__GetDomesticMatchNormalZRateByID_ * soap_new_set___ns1__GetDomesticMatchNormalZRateByID_(struct soap *soap, _ns1__GetDomesticMatchNormalZRateByID *ns1__GetDomesticMatchNormalZRateByID) { struct __ns1__GetDomesticMatchNormalZRateByID_ *_p = soap_instantiate___ns1__GetDomesticMatchNormalZRateByID_(soap, -1, NULL, NULL, NULL); if (_p) { soap_default___ns1__GetDomesticMatchNormalZRateByID_(soap, _p); _p->ns1__GetDomesticMatchNormalZRateByID = ns1__GetDomesticMatchNormalZRateByID; } return _p; }
+
+inline void soap_delete___ns1__GetDomesticMatchNormalZRateByID_(struct soap *soap, struct __ns1__GetDomesticMatchNormalZRateByID_ *p) { soap_delete(soap, p); }
+
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy___ns1__GetDomesticMatchNormalZRateByID_(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE___ns1__GetAVPolicy_
+#define SOAP_TYPE___ns1__GetAVPolicy_ (92)
+#endif
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___ns1__GetAVPolicy_(struct soap*, struct __ns1__GetAVPolicy_ *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___ns1__GetAVPolicy_(struct soap*, const struct __ns1__GetAVPolicy_ *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___ns1__GetAVPolicy_(struct soap*, const char*, int, const struct __ns1__GetAVPolicy_ *, const char*);
+SOAP_FMAC3 struct __ns1__GetAVPolicy_ * SOAP_FMAC4 soap_in___ns1__GetAVPolicy_(struct soap*, const char*, struct __ns1__GetAVPolicy_ *, const char*);
+
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___ns1__GetAVPolicy_(struct soap*, const struct __ns1__GetAVPolicy_ *, const char*, const char*);
+
+#ifndef soap_write___ns1__GetAVPolicy_
+#define soap_write___ns1__GetAVPolicy_(soap, data) ( soap_free_temp(soap), soap_begin_send(soap) || (soap_serialize___ns1__GetAVPolicy_(soap, data),0) || soap_put___ns1__GetAVPolicy_(soap, data, "-ns1:GetAVPolicy", NULL) || soap_end_send(soap), (soap)->error )
+#endif
+
+SOAP_FMAC3 struct __ns1__GetAVPolicy_ * SOAP_FMAC4 soap_get___ns1__GetAVPolicy_(struct soap*, struct __ns1__GetAVPolicy_ *, const char*, const char*);
+
+#ifndef soap_read___ns1__GetAVPolicy_
+#define soap_read___ns1__GetAVPolicy_(soap, data) ( soap_begin_recv(soap) || !soap_get___ns1__GetAVPolicy_(soap, data, NULL, NULL) || soap_end_recv(soap), (soap)->error )
+#endif
+
+SOAP_FMAC1 struct __ns1__GetAVPolicy_ * SOAP_FMAC2 soap_instantiate___ns1__GetAVPolicy_(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct __ns1__GetAVPolicy_ * soap_new___ns1__GetAVPolicy_(struct soap *soap, int n = -1) { return soap_instantiate___ns1__GetAVPolicy_(soap, n, NULL, NULL, NULL); }
+
+inline struct __ns1__GetAVPolicy_ * soap_new_req___ns1__GetAVPolicy_(struct soap *soap) { struct __ns1__GetAVPolicy_ *_p = soap_instantiate___ns1__GetAVPolicy_(soap, -1, NULL, NULL, NULL); if (_p) { soap_default___ns1__GetAVPolicy_(soap, _p); } return _p; }
+
+inline struct __ns1__GetAVPolicy_ * soap_new_set___ns1__GetAVPolicy_(struct soap *soap, _ns1__GetAVPolicy *ns1__GetAVPolicy) { struct __ns1__GetAVPolicy_ *_p = soap_instantiate___ns1__GetAVPolicy_(soap, -1, NULL, NULL, NULL); if (_p) { soap_default___ns1__GetAVPolicy_(soap, _p); _p->ns1__GetAVPolicy = ns1__GetAVPolicy; } return _p; }
+
+inline void soap_delete___ns1__GetAVPolicy_(struct soap *soap, struct __ns1__GetAVPolicy_ *p) { soap_delete(soap, p); }
+
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy___ns1__GetAVPolicy_(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE___ns1__MatchCommonPolicy_
+#define SOAP_TYPE___ns1__MatchCommonPolicy_ (90)
+#endif
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___ns1__MatchCommonPolicy_(struct soap*, struct __ns1__MatchCommonPolicy_ *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___ns1__MatchCommonPolicy_(struct soap*, const struct __ns1__MatchCommonPolicy_ *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___ns1__MatchCommonPolicy_(struct soap*, const char*, int, const struct __ns1__MatchCommonPolicy_ *, const char*);
+SOAP_FMAC3 struct __ns1__MatchCommonPolicy_ * SOAP_FMAC4 soap_in___ns1__MatchCommonPolicy_(struct soap*, const char*, struct __ns1__MatchCommonPolicy_ *, const char*);
+
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___ns1__MatchCommonPolicy_(struct soap*, const struct __ns1__MatchCommonPolicy_ *, const char*, const char*);
+
+#ifndef soap_write___ns1__MatchCommonPolicy_
+#define soap_write___ns1__MatchCommonPolicy_(soap, data) ( soap_free_temp(soap), soap_begin_send(soap) || (soap_serialize___ns1__MatchCommonPolicy_(soap, data),0) || soap_put___ns1__MatchCommonPolicy_(soap, data, "-ns1:MatchCommonPolicy", NULL) || soap_end_send(soap), (soap)->error )
+#endif
+
+SOAP_FMAC3 struct __ns1__MatchCommonPolicy_ * SOAP_FMAC4 soap_get___ns1__MatchCommonPolicy_(struct soap*, struct __ns1__MatchCommonPolicy_ *, const char*, const char*);
+
+#ifndef soap_read___ns1__MatchCommonPolicy_
+#define soap_read___ns1__MatchCommonPolicy_(soap, data) ( soap_begin_recv(soap) || !soap_get___ns1__MatchCommonPolicy_(soap, data, NULL, NULL) || soap_end_recv(soap), (soap)->error )
+#endif
+
+SOAP_FMAC1 struct __ns1__MatchCommonPolicy_ * SOAP_FMAC2 soap_instantiate___ns1__MatchCommonPolicy_(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct __ns1__MatchCommonPolicy_ * soap_new___ns1__MatchCommonPolicy_(struct soap *soap, int n = -1) { return soap_instantiate___ns1__MatchCommonPolicy_(soap, n, NULL, NULL, NULL); }
+
+inline struct __ns1__MatchCommonPolicy_ * soap_new_req___ns1__MatchCommonPolicy_(struct soap *soap) { struct __ns1__MatchCommonPolicy_ *_p = soap_instantiate___ns1__MatchCommonPolicy_(soap, -1, NULL, NULL, NULL); if (_p) { soap_default___ns1__MatchCommonPolicy_(soap, _p); } return _p; }
+
+inline struct __ns1__MatchCommonPolicy_ * soap_new_set___ns1__MatchCommonPolicy_(struct soap *soap, _ns1__MatchCommonPolicy *ns1__MatchCommonPolicy) { struct __ns1__MatchCommonPolicy_ *_p = soap_instantiate___ns1__MatchCommonPolicy_(soap, -1, NULL, NULL, NULL); if (_p) { soap_default___ns1__MatchCommonPolicy_(soap, _p); _p->ns1__MatchCommonPolicy = ns1__MatchCommonPolicy; } return _p; }
+
+inline void soap_delete___ns1__MatchCommonPolicy_(struct soap *soap, struct __ns1__MatchCommonPolicy_ *p) { soap_delete(soap, p); }
+
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy___ns1__MatchCommonPolicy_(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE___ns1__GetAlterCommonPolicy_
+#define SOAP_TYPE___ns1__GetAlterCommonPolicy_ (88)
+#endif
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___ns1__GetAlterCommonPolicy_(struct soap*, struct __ns1__GetAlterCommonPolicy_ *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___ns1__GetAlterCommonPolicy_(struct soap*, const struct __ns1__GetAlterCommonPolicy_ *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___ns1__GetAlterCommonPolicy_(struct soap*, const char*, int, const struct __ns1__GetAlterCommonPolicy_ *, const char*);
+SOAP_FMAC3 struct __ns1__GetAlterCommonPolicy_ * SOAP_FMAC4 soap_in___ns1__GetAlterCommonPolicy_(struct soap*, const char*, struct __ns1__GetAlterCommonPolicy_ *, const char*);
+
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___ns1__GetAlterCommonPolicy_(struct soap*, const struct __ns1__GetAlterCommonPolicy_ *, const char*, const char*);
+
+#ifndef soap_write___ns1__GetAlterCommonPolicy_
+#define soap_write___ns1__GetAlterCommonPolicy_(soap, data) ( soap_free_temp(soap), soap_begin_send(soap) || (soap_serialize___ns1__GetAlterCommonPolicy_(soap, data),0) || soap_put___ns1__GetAlterCommonPolicy_(soap, data, "-ns1:GetAlterCommonPolicy", NULL) || soap_end_send(soap), (soap)->error )
+#endif
+
+SOAP_FMAC3 struct __ns1__GetAlterCommonPolicy_ * SOAP_FMAC4 soap_get___ns1__GetAlterCommonPolicy_(struct soap*, struct __ns1__GetAlterCommonPolicy_ *, const char*, const char*);
+
+#ifndef soap_read___ns1__GetAlterCommonPolicy_
+#define soap_read___ns1__GetAlterCommonPolicy_(soap, data) ( soap_begin_recv(soap) || !soap_get___ns1__GetAlterCommonPolicy_(soap, data, NULL, NULL) || soap_end_recv(soap), (soap)->error )
+#endif
+
+SOAP_FMAC1 struct __ns1__GetAlterCommonPolicy_ * SOAP_FMAC2 soap_instantiate___ns1__GetAlterCommonPolicy_(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct __ns1__GetAlterCommonPolicy_ * soap_new___ns1__GetAlterCommonPolicy_(struct soap *soap, int n = -1) { return soap_instantiate___ns1__GetAlterCommonPolicy_(soap, n, NULL, NULL, NULL); }
+
+inline struct __ns1__GetAlterCommonPolicy_ * soap_new_req___ns1__GetAlterCommonPolicy_(struct soap *soap) { struct __ns1__GetAlterCommonPolicy_ *_p = soap_instantiate___ns1__GetAlterCommonPolicy_(soap, -1, NULL, NULL, NULL); if (_p) { soap_default___ns1__GetAlterCommonPolicy_(soap, _p); } return _p; }
+
+inline struct __ns1__GetAlterCommonPolicy_ * soap_new_set___ns1__GetAlterCommonPolicy_(struct soap *soap, _ns1__GetAlterCommonPolicy *ns1__GetAlterCommonPolicy) { struct __ns1__GetAlterCommonPolicy_ *_p = soap_instantiate___ns1__GetAlterCommonPolicy_(soap, -1, NULL, NULL, NULL); if (_p) { soap_default___ns1__GetAlterCommonPolicy_(soap, _p); _p->ns1__GetAlterCommonPolicy = ns1__GetAlterCommonPolicy; } return _p; }
+
+inline void soap_delete___ns1__GetAlterCommonPolicy_(struct soap *soap, struct __ns1__GetAlterCommonPolicy_ *p) { soap_delete(soap, p); }
+
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy___ns1__GetAlterCommonPolicy_(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE___ns1__GetAllCommonPolicyZIP_
+#define SOAP_TYPE___ns1__GetAllCommonPolicyZIP_ (86)
+#endif
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___ns1__GetAllCommonPolicyZIP_(struct soap*, struct __ns1__GetAllCommonPolicyZIP_ *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___ns1__GetAllCommonPolicyZIP_(struct soap*, const struct __ns1__GetAllCommonPolicyZIP_ *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___ns1__GetAllCommonPolicyZIP_(struct soap*, const char*, int, const struct __ns1__GetAllCommonPolicyZIP_ *, const char*);
+SOAP_FMAC3 struct __ns1__GetAllCommonPolicyZIP_ * SOAP_FMAC4 soap_in___ns1__GetAllCommonPolicyZIP_(struct soap*, const char*, struct __ns1__GetAllCommonPolicyZIP_ *, const char*);
+
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___ns1__GetAllCommonPolicyZIP_(struct soap*, const struct __ns1__GetAllCommonPolicyZIP_ *, const char*, const char*);
+
+#ifndef soap_write___ns1__GetAllCommonPolicyZIP_
+#define soap_write___ns1__GetAllCommonPolicyZIP_(soap, data) ( soap_free_temp(soap), soap_begin_send(soap) || (soap_serialize___ns1__GetAllCommonPolicyZIP_(soap, data),0) || soap_put___ns1__GetAllCommonPolicyZIP_(soap, data, "-ns1:GetAllCommonPolicyZIP", NULL) || soap_end_send(soap), (soap)->error )
+#endif
+
+SOAP_FMAC3 struct __ns1__GetAllCommonPolicyZIP_ * SOAP_FMAC4 soap_get___ns1__GetAllCommonPolicyZIP_(struct soap*, struct __ns1__GetAllCommonPolicyZIP_ *, const char*, const char*);
+
+#ifndef soap_read___ns1__GetAllCommonPolicyZIP_
+#define soap_read___ns1__GetAllCommonPolicyZIP_(soap, data) ( soap_begin_recv(soap) || !soap_get___ns1__GetAllCommonPolicyZIP_(soap, data, NULL, NULL) || soap_end_recv(soap), (soap)->error )
+#endif
+
+SOAP_FMAC1 struct __ns1__GetAllCommonPolicyZIP_ * SOAP_FMAC2 soap_instantiate___ns1__GetAllCommonPolicyZIP_(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct __ns1__GetAllCommonPolicyZIP_ * soap_new___ns1__GetAllCommonPolicyZIP_(struct soap *soap, int n = -1) { return soap_instantiate___ns1__GetAllCommonPolicyZIP_(soap, n, NULL, NULL, NULL); }
+
+inline struct __ns1__GetAllCommonPolicyZIP_ * soap_new_req___ns1__GetAllCommonPolicyZIP_(struct soap *soap) { struct __ns1__GetAllCommonPolicyZIP_ *_p = soap_instantiate___ns1__GetAllCommonPolicyZIP_(soap, -1, NULL, NULL, NULL); if (_p) { soap_default___ns1__GetAllCommonPolicyZIP_(soap, _p); } return _p; }
+
+inline struct __ns1__GetAllCommonPolicyZIP_ * soap_new_set___ns1__GetAllCommonPolicyZIP_(struct soap *soap, _ns1__GetAllCommonPolicyZIP *ns1__GetAllCommonPolicyZIP) { struct __ns1__GetAllCommonPolicyZIP_ *_p = soap_instantiate___ns1__GetAllCommonPolicyZIP_(soap, -1, NULL, NULL, NULL); if (_p) { soap_default___ns1__GetAllCommonPolicyZIP_(soap, _p); _p->ns1__GetAllCommonPolicyZIP = ns1__GetAllCommonPolicyZIP; } return _p; }
+
+inline void soap_delete___ns1__GetAllCommonPolicyZIP_(struct soap *soap, struct __ns1__GetAllCommonPolicyZIP_ *p) { soap_delete(soap, p); }
+
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy___ns1__GetAllCommonPolicyZIP_(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE___ns1__GetAllCommonPolicy_
+#define SOAP_TYPE___ns1__GetAllCommonPolicy_ (84)
+#endif
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___ns1__GetAllCommonPolicy_(struct soap*, struct __ns1__GetAllCommonPolicy_ *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___ns1__GetAllCommonPolicy_(struct soap*, const struct __ns1__GetAllCommonPolicy_ *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___ns1__GetAllCommonPolicy_(struct soap*, const char*, int, const struct __ns1__GetAllCommonPolicy_ *, const char*);
+SOAP_FMAC3 struct __ns1__GetAllCommonPolicy_ * SOAP_FMAC4 soap_in___ns1__GetAllCommonPolicy_(struct soap*, const char*, struct __ns1__GetAllCommonPolicy_ *, const char*);
+
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___ns1__GetAllCommonPolicy_(struct soap*, const struct __ns1__GetAllCommonPolicy_ *, const char*, const char*);
+
+#ifndef soap_write___ns1__GetAllCommonPolicy_
+#define soap_write___ns1__GetAllCommonPolicy_(soap, data) ( soap_free_temp(soap), soap_begin_send(soap) || (soap_serialize___ns1__GetAllCommonPolicy_(soap, data),0) || soap_put___ns1__GetAllCommonPolicy_(soap, data, "-ns1:GetAllCommonPolicy", NULL) || soap_end_send(soap), (soap)->error )
+#endif
+
+SOAP_FMAC3 struct __ns1__GetAllCommonPolicy_ * SOAP_FMAC4 soap_get___ns1__GetAllCommonPolicy_(struct soap*, struct __ns1__GetAllCommonPolicy_ *, const char*, const char*);
+
+#ifndef soap_read___ns1__GetAllCommonPolicy_
+#define soap_read___ns1__GetAllCommonPolicy_(soap, data) ( soap_begin_recv(soap) || !soap_get___ns1__GetAllCommonPolicy_(soap, data, NULL, NULL) || soap_end_recv(soap), (soap)->error )
+#endif
+
+SOAP_FMAC1 struct __ns1__GetAllCommonPolicy_ * SOAP_FMAC2 soap_instantiate___ns1__GetAllCommonPolicy_(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct __ns1__GetAllCommonPolicy_ * soap_new___ns1__GetAllCommonPolicy_(struct soap *soap, int n = -1) { return soap_instantiate___ns1__GetAllCommonPolicy_(soap, n, NULL, NULL, NULL); }
+
+inline struct __ns1__GetAllCommonPolicy_ * soap_new_req___ns1__GetAllCommonPolicy_(struct soap *soap) { struct __ns1__GetAllCommonPolicy_ *_p = soap_instantiate___ns1__GetAllCommonPolicy_(soap, -1, NULL, NULL, NULL); if (_p) { soap_default___ns1__GetAllCommonPolicy_(soap, _p); } return _p; }
+
+inline struct __ns1__GetAllCommonPolicy_ * soap_new_set___ns1__GetAllCommonPolicy_(struct soap *soap, _ns1__GetAllCommonPolicy *ns1__GetAllCommonPolicy) { struct __ns1__GetAllCommonPolicy_ *_p = soap_instantiate___ns1__GetAllCommonPolicy_(soap, -1, NULL, NULL, NULL); if (_p) { soap_default___ns1__GetAllCommonPolicy_(soap, _p); _p->ns1__GetAllCommonPolicy = ns1__GetAllCommonPolicy; } return _p; }
+
+inline void soap_delete___ns1__GetAllCommonPolicy_(struct soap *soap, struct __ns1__GetAllCommonPolicy_ *p) { soap_delete(soap, p); }
+
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy___ns1__GetAllCommonPolicy_(struct soap*, int, int, void*, size_t, const void*, size_t);
 
 #ifndef SOAP_TYPE___ns1__GetChangeFlightDate
 #define SOAP_TYPE___ns1__GetChangeFlightDate (82)
@@ -1381,7 +1765,7 @@ SOAP_FMAC3 void SOAP_FMAC4 soap_copy___ns1__GetAllCommonPolicy(struct soap*, int
 #ifndef WITH_NOGLOBAL
 
 #ifndef SOAP_TYPE_PointerToSOAP_ENV__Reason
-#define SOAP_TYPE_PointerToSOAP_ENV__Reason (92)
+#define SOAP_TYPE_PointerToSOAP_ENV__Reason (116)
 #endif
 SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToSOAP_ENV__Reason(struct soap*, struct SOAP_ENV__Reason *const*);
 SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToSOAP_ENV__Reason(struct soap*, const char *, int, struct SOAP_ENV__Reason *const*, const char *);
@@ -1404,7 +1788,7 @@ SOAP_FMAC3 struct SOAP_ENV__Reason ** SOAP_FMAC4 soap_get_PointerToSOAP_ENV__Rea
 #ifndef WITH_NOGLOBAL
 
 #ifndef SOAP_TYPE_PointerToSOAP_ENV__Detail
-#define SOAP_TYPE_PointerToSOAP_ENV__Detail (91)
+#define SOAP_TYPE_PointerToSOAP_ENV__Detail (115)
 #endif
 SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToSOAP_ENV__Detail(struct soap*, struct SOAP_ENV__Detail *const*);
 SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToSOAP_ENV__Detail(struct soap*, const char *, int, struct SOAP_ENV__Detail *const*, const char *);
@@ -1427,7 +1811,7 @@ SOAP_FMAC3 struct SOAP_ENV__Detail ** SOAP_FMAC4 soap_get_PointerToSOAP_ENV__Det
 #ifndef WITH_NOGLOBAL
 
 #ifndef SOAP_TYPE_PointerToSOAP_ENV__Code
-#define SOAP_TYPE_PointerToSOAP_ENV__Code (85)
+#define SOAP_TYPE_PointerToSOAP_ENV__Code (109)
 #endif
 SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToSOAP_ENV__Code(struct soap*, struct SOAP_ENV__Code *const*);
 SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToSOAP_ENV__Code(struct soap*, const char *, int, struct SOAP_ENV__Code *const*, const char *);
