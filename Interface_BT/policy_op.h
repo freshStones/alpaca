@@ -16,18 +16,18 @@ class policy_op
 public:
     policy_op();
 
-    bool op_GetAllCommonPolicy();
-    bool op_GetAllCommonPolicyZIP();
-    bool op_GetAlterCommonPolicy();
-    bool op_GetAVPolicy();
-    bool op_GetChangeFlightDate();
-    bool op_GetDomesticMatchNormalZRateByID();
-    bool op_GetInvalidationProviders();
-    bool op_GetOrderInfo();
-    bool op_DetailCreateOrder();
-    bool op_MatchCommonPolicy();
-    bool op_RefundOrder();
-    bool op_RTCreateOrder();
+    bool GetAllCommonPolicy();
+    bool GetAllCommonPolicyZIP();
+    bool GetAlterCommonPolicy();
+    bool GetAVPolicy();
+    bool GetChangeFlightDate();
+    bool GetDomesticMatchNormalZRateByID();
+    bool GetInvalidationProviders();
+    bool GetOrderInfo();
+    bool DetailCreateOrder();
+    bool MatchCommonPolicy();
+    bool RefundOrder();
+    bool RTCreateOrder();
 
 private:
     BaitourServiceSoapProxy* BTproxy;

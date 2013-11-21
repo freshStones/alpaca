@@ -7,22 +7,36 @@ policy_op::policy_op()
     BTproxy = new BaitourServiceSoapProxy();
 }
 
-bool policy_op::op_GetAllCommonPolicy()
+bool policy_op::GetAllCommonPolicy()
 {
 
-    _ns1__GetAllCommonPolicy ns1__GetAllCommonPolicy;
-    _ns1__GetAllCommonPolicyResponse ns1__GetAllCommonPolicyResponse;
+    _ns1__GetAllCommonPolicy req;
+    _ns1__GetAllCommonPolicyResponse res;
 
     std::string tripType = "0", ticketType = "0";
     std::string agentUserName = "lhjk", pwd = "lhjk";
-    ns1__GetAllCommonPolicy.tripType = &tripType;
-    ns1__GetAllCommonPolicy.ticketType = &ticketType;
-    ns1__GetAllCommonPolicy.agentUserName = &agentUserName;
-    ns1__GetAllCommonPolicy.pwd = &pwd;
+    req.tripType = &tripType;
+    req.ticketType = &ticketType;
+    req.agentUserName = &agentUserName;
+    req.pwd = &pwd;
 
-    BTproxy->GetAllCommonPolicy(&ns1__GetAllCommonPolicy, &ns1__GetAllCommonPolicyResponse);
+    BTproxy->GetAllCommonPolicy(&req, &res);
 
-    qDebug() << ns1__GetAllCommonPolicyResponse.GetAllCommonPolicyResult->data() << endl;
+    qDebug() << res.GetAllCommonPolicyResult << endl;
     return true;
 }
 
+bool policy_op::GetAllCommonPolicyZIP()
+{
+
+}
+bool policy_op::GetAlterCommonPolicy();
+bool policy_op::GetAVPolicy();
+bool policy_op::GetChangeFlightDate();
+bool policy_op::GetDomesticMatchNormalZRateByID();
+bool policy_op::GetInvalidationProviders();
+bool policy_op::GetOrderInfo();
+bool policy_op::DetailCreateOrder();
+bool policy_op::MatchCommonPolicy();
+bool policy_op::RefundOrder();
+bool policy_op::RTCreateOrder();

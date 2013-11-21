@@ -17,7 +17,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
 void MainWindow::BTtest(){
     policy_op p;
-    p.op_GetAllCommonPolicy();
+    p.GetAllCommonPolicy();
 }
 
 void MainWindow::xmlTest(){
