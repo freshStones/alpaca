@@ -7,14 +7,17 @@
 #include <gsoap/soapBaitourServiceSoapProxy.h>
 //#include "gsoap/BaitourServiceSoap.nsmap"
 #include <QDebug>
+#include <QString>
+#include <Qmap>
 
 namespace ns1 {
-class policy_op;
+class policyOp;
 }
-class policy_op
+class policyOp
 {
+    std::string username,pwd,agentCode;
 public:
-    policy_op();
+    policyOp();
 
     bool GetAllCommonPolicy();
     bool GetAllCommonPolicyZIP();
@@ -28,7 +31,7 @@ public:
     bool MatchCommonPolicy();
     bool RefundOrder();
     bool RTCreateOrder();
-
+    bool debugMsg(std::string);
 private:
     BaitourServiceSoapProxy* BTproxy;
 

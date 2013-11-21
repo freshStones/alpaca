@@ -1,12 +1,13 @@
 #include "policy_op.h"
 #include "gsoap/BaitourServiceSoap.nsmap"
-
+#include <Qmap>
 
 policy_op::policy_op()
 {
     BTproxy = new BaitourServiceSoapProxy();
 }
 
+bool debug
 bool policy_op::GetAllCommonPolicy()
 {
 
