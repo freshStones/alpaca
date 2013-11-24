@@ -59,8 +59,8 @@ void MainWindow::xmlTest(){
             count++;
         }*/
         this->op->showDebugMsg(element.nodeName());
-        this->op->showDebugMsg(QString("%1").arg(element.hasAttribute("Id")));
-        this->op->showDebugMsg(element.attributes().namedItem("Id").toElement().tagName());
+        //this->op->showDebugMsg(QString("%1").arg(element.hasAttribute("Id")));
+        this->op->showDebugMsg(QString("%1").arg(element.attributes().namedItem("Id").nodeValue()));
         //qDebug() << count << endl;
 
     }
