@@ -16,12 +16,14 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+
     void BTtest();
 
     void xmlTest();
     
 private:
     Ui::MainWindow *ui;
+    policyOp *op;
 };
 
 #endif // MAINWINDOW_H

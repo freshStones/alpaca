@@ -2,9 +2,8 @@
 #include "ui_mainwindow.h"
 
 #include <QFile>
-#include <QString>
-#include <QDebug>
 #include <QDomDocument>
+#include <QSettings>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -13,11 +12,15 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     //BTtest();
     xmlTest();
+
+    QSettings *configIniRead = new QSettings("setting.ini",QSettings::IniFormat);
+    this->op = new policyOp(configIniRead->value("/ACCOUNT/USERNAME").toString(),configIniRead->value("/ACCOUNT/PASSWORD").toString(),configIniRead->value("/AGENT_DESC/AGENTCODE").toString());
+
 }
 
 void MainWindow::BTtest(){
-    policyOp p;
-    p.GetAllCommonPolicy();
+    //policyOp p;
+    //p.GetAllCommonPolicy();
 }
 
 void MainWindow::xmlTest(){
@@ -49,13 +52,16 @@ void MainWindow::xmlTest(){
         QDomElement root = doc.documentElement();
 
         QDomElement element = root.firstChildElement();
-        int count  = 0;
+        /*int count  = 0;
         while(!element.isNull()){
             qDebug() << element.nodeName() << endl;
             element = element.nextSiblingElement();
             count++;
-        }
-        qDebug() << count << endl;
+        }*/
+        this->op->showDebugMsg(element.nodeName());
+        this->op->showDebugMsg(QString("%1").arg(element.hasAttribute("Id")));
+        this->op->showDebugMsg(element.attributes().namedItem("Id").toElement().tagName());
+        //qDebug() << count << endl;
 
     }
 }
