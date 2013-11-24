@@ -1,6 +1,7 @@
 #include "policyOp.h"
 #include "gsoap/BaitourServiceSoap.nsmap"
 
+using namespace std;
 
 policyOp::policyOp(QString _usrName, QString _pwd, QString _agentcode)
 {
@@ -10,10 +11,9 @@ policyOp::policyOp(QString _usrName, QString _pwd, QString _agentcode)
     agentCode = _agentcode;
 }
 
-bool policyOp::showDebugMsg(QString msg)
+void policyOp::showDebugMsg(QString msg)
 {
     qDebug() << msg << endl;
-    return true;
 }
 bool policyOp::xmlhandler(int callRes,QString xml,bool (*visitor)(QDomElement))
 {
@@ -95,10 +95,11 @@ bool policyOp::GetAllCommonPolicy(std::string tripType, std::string ticketType, 
     //showDebugMsg(QString().fromStdString(*res.GetAllCommonPolicyResult));
 }
 
-bool policyOp::GetAllCommonPolicyZIP()
+/*bool policyOp::GetAllCommonPolicyZIP()
 {
     return true;
-}
+}*/
+
 bool policyOp::GetAlterCommonPolicy(QString rQStartDateTime, QString tripType, QString ticketType)
 {
     return this->GetAlterCommonPolicy(rQStartDateTime.toStdString(),tripType.toStdString(),ticketType.toStdString(),this->usrName.toStdString(),this->pwd.toStdString());
