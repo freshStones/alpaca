@@ -18,7 +18,7 @@ private:
 
 public:
     policyOp(QString, QString, QString);
-    bool xmlhandler(int,QString,bool (*)(QDomElement));
+    bool xmlhandler(int,QString,bool (*visitor)(QDomElement));
 
     bool GetAllCommonPolicy(QString, QString);
     bool GetAllCommonPolicy(std::string, std::string, std::string, std::string);
@@ -32,7 +32,7 @@ public:
     bool MatchCommonPolicy(std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string);
     bool MatchCommonPolicy(QString,QString,QString,QString,QString,QString,QString,QString,QString,QString);
     bool MatchCommonPolicyVisitor(QDomElement);
-    bool GetInvalidationProviders(QString);
+    bool GetInvalidationProviders();
     bool GetInvalidationProviders(std::string,std::string,std::string);
     bool GetInvalidationProvidersVisitor(QDomElement);
     //bool GetAllCommonPolicyZIP();
