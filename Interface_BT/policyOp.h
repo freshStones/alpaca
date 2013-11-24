@@ -8,7 +8,7 @@
 //#include "gsoap/BaitourServiceSoap.nsmap"
 #include <QDebug>
 #include <QString>
-#include <Qmap>
+#include <QMap>
 
 namespace ns1 {
 class policyOp;
@@ -19,10 +19,10 @@ class policyOp
 public:
     policyOp();
 
-    bool GetAllCommonPolicy();
+    bool GetAllCommonPolicy(std::string, std::string);
     bool GetAllCommonPolicyZIP();
-    bool GetAlterCommonPolicy();
-    bool GetAVPolicy();
+    bool GetAlterCommonPolicy(std::string, std::string, std::string);
+    bool GetAVPolicy(std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string);
     bool GetChangeFlightDate();
     bool GetDomesticMatchNormalZRateByID();
     bool GetInvalidationProviders();
@@ -31,7 +31,7 @@ public:
     bool MatchCommonPolicy();
     bool RefundOrder();
     bool RTCreateOrder();
-    bool debugMsg(std::string);
+    bool showDebugMsg(std::string);
 private:
     BaitourServiceSoapProxy* BTproxy;
 

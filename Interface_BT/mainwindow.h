@@ -2,7 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "policy_op.h"
+#include "policyOp.h"
 
 namespace Ui {
 class MainWindow;
