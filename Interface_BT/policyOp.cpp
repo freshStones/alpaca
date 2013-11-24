@@ -47,7 +47,7 @@ bool policyOp::xmlhandler(int callRes,QString xml,bool (*visitor)(QDomElement))
         showDebugMsg(QString("GetAllCommonPolicy call failed. Error code: %1").arg(callRes));
     }
 }
-bool policyOp::GetAllCommonPolicy(QString tripType = "0",QString ticketType = "0")
+bool policyOp::GetAllCommonPolicy(QString tripType,QString ticketType)
 {
     return this->GetAllCommonPolicy(tripType.toStdString(), ticketType.toStdString(), this->usrName.toStdString(),this->pwd.toStdString());
 }
@@ -61,44 +61,21 @@ bool policyOp::GetAllCommonPolicy(std::string tripType, std::string ticketType, 
     req.agentUserName = &username;
     req.pwd = &pwd;
     int callRes = BTproxy->GetAllCommonPolicy(&req, &res);
-    if(callRes == SOAP_OK){
-        QDomDocument doc;
-        QString errorMSG;
-        int errLine = 0, errCol = 0;
-        if(!doc.setContent(QString().fromStdString(*res.GetAllCommonPolicyResult), &errorMSG, &errLine, &errCol)){
-            showDebugMsg(QString("Parse file failed at line %1 column %2, error: %3 !").arg(errLine).arg(errCol).arg(errorMSG));
-            return false;
-        }
-        else{
-            showDebugMsg("Parse Succeeded!");
-        }
-
-        if(doc.isNull()){
-            showDebugMsg("Document is null!");
-            return false;
-        }
-
-        QDomElement root = doc.documentElement();
-        QDomElement element = root.firstChildElement();
-        int count  = 0;
-        while(!element.isNull()){
-            qDebug() << element.nodeName() << endl;
-            element = element.nextSiblingElement();
-            count++;
-        }
-        qDebug() << count << endl;
-    }
-    else{
-        showDebugMsg(QString("GetAllCommonPolicy call failed. Error code: %1").arg(callRes));
-    }
-
-    //showDebugMsg(QString().fromStdString(*res.GetAllCommonPolicyResult));
+    this->xmlhandler(callRes,QString().fromStdString(*res.GetAllCommonPolicyResult),GetAllCommonPolicyVisitor);
 }
 
-bool policyOp::GetAllCommonPolicyZIP()
+bool policyOp::GetAllCommonPolicyVisitor()
 {
+    QMap<QString,QString> map;
+    map.insert("Id",element.attributes().namedItem("Id").nodeValue());
+    map.insert("State",element.attributes().namedItem("State").nodeValue());
+    map.insert("IsChangePnr",element.attributes().namedItem("IsChangePnr").nodeValue());
+    map.insert("ProviderWorkTime",element.attributes().namedItem("ProviderWorkTime").nodeValue());
+    map.insert("ProviderVworkTime",element.attributes().namedItem("ProviderVWorkTime").nodeValue());
+    map.insert("Value",element.toText().data());
     return true;
 }
+
 bool policyOp::GetAlterCommonPolicy(QString rQStartDateTime, QString tripType, QString ticketType)
 {
     return this->GetAlterCommonPolicy(rQStartDateTime.toStdString(),tripType.toStdString(),ticketType.toStdString(),this->usrName.toStdString(),this->pwd.toStdString());
@@ -218,33 +195,21 @@ bool policyOp::MatchCommonPolicyVisitor(QDomElement element)
     map.insert("Office",element.attributes().namedItem("ChangePnr").nodeValue());
     return true;
 }
-bool policyOp::GetChangeFlightDate()
-{
-    return true;
-}
-bool policyOp::GetDomesticMatchNormalZRateByID()
-{
-    return true;
-}
 bool policyOp::GetInvalidationProviders()
 {
-    return true;
+    return this->GetInvalidationProviders(this->usrName.toStdString(),this->pwd.toStdString(),this->agentCode.toStdString());
 }
-bool policyOp::GetOrderInfo()
+bool policyOp::GetInvalidationProviders(string usrname,string pwd,string agentCode)
 {
-    return true;
+    _ns1__GetInvalidationProviders req;
+    _ns1__GetInvalidationProvidersResponse res;
+    req.AgentCode = &agentCode;
+    req.AgentPwd = &pwd;
+    req.AgentUserName = &usrname;
+    int callRes = BTproxy->GetInvalidationProviders(&req,&res);
+    return this->xmlhandler(callRes,QString().fromStdString(*res.GetInvalidationProvidersResult),GetInvalidationProvidersVisitor);
 }
-bool policyOp::DetailCreateOrder()
+bool policyOp::GetInvalidationProvidersVisitor(QDomElement element)
 {
-    return true;
-}
 
-bool policyOp::RefundOrder()
-{
-    return true;
-}
-
-bool policyOp::RTCreateOrder()
-{
-    return true;
 }
