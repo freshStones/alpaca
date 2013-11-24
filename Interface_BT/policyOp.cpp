@@ -73,6 +73,7 @@ bool policyOp::GetAllCommonPolicyVisitor(QDomElement element)
     map.insert("ProviderVworkTime",element.attributes().namedItem("ProviderVWorkTime").nodeValue());
     map.insert("Value",element.toText().data());
     return true;
+
 }
 
 bool policyOp::GetAlterCommonPolicy(QString rQStartDateTime, QString tripType, QString ticketType)

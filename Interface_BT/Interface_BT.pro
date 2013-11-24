@@ -7,6 +7,7 @@
 QT       += core gui
 QT       += xml
 QT       += widgets
+QT       += sql
 
 TARGET = Interface_BT
 TEMPLATE = app
@@ -17,7 +18,8 @@ SOURCES += main.cpp\
     gsoap/soapC.cpp \
     gsoap/soapBaitourServiceSoapProxy.cpp \
     gsoap/stdsoap2.cpp \
-    policyOp.cpp
+    policyOp.cpp \
+    btdatabase.cpp
 
 HEADERS  += mainwindow.h \
     gsoap/temp.h \
@@ -26,7 +28,8 @@ HEADERS  += mainwindow.h \
     gsoap/soapH.h \
     gsoap/soapBaitourServiceSoapProxy.h \
     gsoap/BaitourServiceSoap.nsmap \
-    policyOp.h
+    policyOp.h \
+    btdatabase.h
 
 FORMS    += \
     mainwindow.ui
