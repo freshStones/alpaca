@@ -26,8 +26,8 @@ public:
     bool GetAlterCommonPolicy(QString,QString,QString);
     bool GetAlterCommonPolicy(std::string, std::string, std::string,std::string,std::string);
     bool GetAlterCommonPolicyVisitor(QDomElement);
-    bool GetAVPolicy(QString,QString,QString,QString,QString,QString,QString,QString,QString,QString);
-    bool GetAVPolicy(std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string);
+    bool GetAVPolicy(QString,QString,QString,QString,QString,QString,QString,QString);
+    bool GetAVPolicy(std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string);
     bool GetAVPolicyVisitor(QDomElement);
     bool MatchCommonPolicy(std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string);
     bool MatchCommonPolicy(QString,QString,QString,QString,QString,QString,QString,QString,QString,QString);

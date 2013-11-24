@@ -132,21 +132,52 @@ bool policyOp::GetAVPolicy(QString DepartureDateTime, QString FlightNumber, QStr
 {
     return this->GetAVPolicy(DepartureDateTime.toStdString(),FlightNumber.toStdString(),ResBookDesigCode.toStdString(),DepartureAirport.toStdString(),ArrivalAirport.toStdString(),ReturnPolicyType.toStdString(),TripType.toStdString(),FlightNumberBack.toStdString(),ResBookDesigCodeBack.toStdString(),DepartureDateTimeBack.toStdString(),this->usrName.toStdString(),this->pwd.toStdString(),this->agentCode.toStdString());
 }
-bool policyOp::GetAVPolicy(string DepartureDateTime,string FlightNumber,string ResBookDesigCode,string DepartureAirport,string ArrivalAirport,string ReturnPolicyType,string TripType,string FlightNumberBack,string ResBookDesigCodeBack,string DepartureDateTimeBack,string usrname,string pwd,string agentCode)
+bool policyOp::GetAVPolicy(string Type,string OrderSrc,string DptAirport,string ArrAirport,string TakeOffDate,string Cabin,string FlightNum,string avinfo,string usrname,string pwd,string agentCode)
 {
     _ns1__GetAVPolicy req;
     _ns1__GetAVPolicyResponse res;
-    QString xml = QString("<OTA_AirFareRQ	 AgentCode=\"%1\" AgentUserName=\"%2\" AgentPwd=\"%3\" DepartureDateTime='%4' FlightNumber='%5' ResBookDesigCode='%6' DepartureAirport='%7' ArrivalAirport='%8' ReturnPolicyType='%9'  TripType='%10' FlightNumberBack='%11' ResBookDesigCodeBack='%12' DepartureDateTimeBack='%13'></OTA_AirFareRQ>").arg(agentCode).arg(usrname).arg(pwd)
-            .arg(DepartureDateTime).arg(FlightNumber).arg(ResBookDesigCode).arg(DepartureAirport).arg(ArrivalAirport).arg(ReturnPolicyType).arg(TripType).arg(FlightNumberBack).arg(ResBookDesigCodeBack).arg(DepartureDateTimeBack);
+    QString xml = QString("<FlightSearch AgentCode=\"%1\" AgentUserName=\"%2\" AgentPwd=\"%3\" ><AV  Type=\"%4\" OrderSrc=\"%5\"  DptAirport=\"%6\"  ArrAirport=\"%7\"  TakeOffDate=\"%8\" Cabin=\"%9\"  FlightNum=\"%10\">%11</AV></FlightSearch>").arg(agentCode).arg(usrname).arg(pwd).arg(Type).arg(OrderSrc).arg(DptAirport).arg(ArrAirport).arg(TakeOffDate).arg(Cabin).arg(FlightNum).arg(avinfo);
     xmldoc = xml.toStdString();
     req.xmlDoc = &xmldoc;
     int callRes = BTproxy ->GetAVPolicy(&req,&res);
-    this->xmlhandler(callRes,QString().fromStdString(*res.GetAVPolicyResult),GetAVPolicyVisitor);
-    return true;
+    return this->xmlhandler(callRes,QString().fromStdString(*res.GetAVPolicyResult),GetAVPolicyVisitor);
 }
 bool policyOp::GetAVPolicyVisitor()
 {
-
+    QMap<QString,QString> map;
+    map.insert("Dpt",element.attributes().namedItem("Dpt").nodeValue());
+    map.insert("Arr",element.attributes().namedItem("Arr").nodeValue());
+    map.insert("Date",element.attributes().namedItem("Date").nodeValue());
+    map.insert("DptAirport",element.attributes().namedItem("DptAirport").nodeValue());
+    map.insert("ArrAirport",element.attributes().namedItem("ArrAirport").nodeValue());
+    map.insert("DptTime",element.attributes().namedItem("DptTime").nodeValue());
+    map.insert("ArrTime",element.attributes().namedItem("ArrTime").nodeValue());
+    map.insert("Carrier",element.attributes().namedItem("Carrier").nodeValue());
+    map.insert("Code",element.attributes().namedItem("Code").nodeValue());
+    map.insert("StanderPrice",element.attributes().namedItem("StanderPrice").nodeValue());
+    map.insert("CabinYPrice",element.attributes().namedItem("CabinYPrice").nodeValue());
+    map.insert("LowestCabinCode",element.attributes().namedItem("LowestCabinCode").nodeValue());
+    map.insert("LowestPrice",element.attributes().namedItem("LowestPrice").nodeValue());
+    map.insert("Meal",element.attributes().namedItem("Meal").nodeValue());
+    map.insert("PlanType",element.attributes().namedItem("PlanType").nodeValue());
+    map.insert("SeatsForSale",element.attributes().namedItem("SeatsForSale").nodeValue());
+    map.insert("Message",element.attributes().namedItem("Message").nodeValue());
+    map.insert("LowestChildPrice",element.attributes().namedItem("LowestChildPrice").nodeValue());
+    map.insert("ChildCabin",element.attributes().namedItem("ChildCabin").nodeValue());
+    map.insert("InsuranceName",element.attributes().namedItem("InsuranceName").nodeValue());
+    map.insert("InsuranceCount",element.attributes().namedItem("InsuranceCount").nodeValue());
+    map.insert("InsuranceMax",element.attributes().namedItem("InsuranceMax").nodeValue());
+    map.insert("InsurancePrice",element.attributes().namedItem("InsurancePrice").nodeValue());
+    map.insert("PolicyCode",element.attributes().namedItem("PolicyCode").nodeValue());
+    map.insert("RateValue",element.attributes().namedItem("RateValue").nodeValue());
+    map.insert("ChildStandardPrice",element.attributes().namedItem("ChildStandardPrice").nodeValue());
+    map.insert("InfantStanderPrice",element.attributes().namedItem("InfantStanderPrice").nodeValue());
+    map.insert("DptTerminal",element.attributes().namedItem("DptTerminal").nodeValue());
+    map.insert("WorkTime",element.attributes().namedItem("WorkTime").nodeValue());
+    map.insert("ChangePnr",element.attributes().namedItem("ChangePnr").nodeValue());
+    map.insert("Remark",element.attributes().namedItem("Remark").nodeValue());
+    map.insert("PolicyType",element.attributes().namedItem("PolicyType").nodeValue());
+    return true;
 }
 bool policyOp::MatchCommonPolicy(QString DepartureDateTime,QString FlightNumber,QString ResBookDesigCode,QString DepartureAirport,QString ArrivalAirport,QString ReturnPolicyType,QString TripType,QString FlightNumberBack,QString ResBookDesigCodeBack,QString DepartureDateTimeBack)
 {
@@ -157,11 +188,36 @@ bool policyOp::MatchCommonPolicy(string DepartureDateTime,string FlightNumber,st
 {
     _ns1__MatchCommonPolicy req;
     _ns1__MatchCommonPolicyResponse res;
-
-    this->xmlhandler();
-    return true;
+    QString xml = QString("<OTA_AirFareRQ	 AgentCode=\"%1\" AgentUserName=\"%2\" AgentPwd=\"%3\" DepartureDateTime='%4' FlightNumber='%5' ResBookDesigCode='%6' DepartureAirport='%7' ArrivalAirport='%8' ReturnPolicyType='%9'  TripType='%10' FlightNumberBack='%11' ResBookDesigCodeBack='%12' DepartureDateTimeBack='%13'></OTA_AirFareRQ>").arg(agentCode).arg(usrname).arg(pwd).arg(DepartureDateTime).arg(FlightNumber).arg(ResBookDesigCode).arg(DepartureAirport).arg(ArrivalAirport).arg(ReturnPolicyType).arg(TripType).arg(FlightNumberBack).arg(ResBookDesigCodeBack).arg(DepartureDateTimeBack);
+    xmldoc = xml.toStdString();
+    req.xmlDoc = &xmldoc;
+    int callRes = BTproxy->MatchCommonPolicy(&req,&res);
+    return this->xmlhandler(callRes,QString().fromStdString(*res.MatchCommonPolicyResult),MatchCommonPolicyVisitor);
 }
 
+bool policyOp::MatchCommonPolicyVisitor(QDomElement element)
+{
+    QMap<QString,QString> map;
+    map.insert("Id",element.attributes().namedItem("Id").nodeValue());
+    map.insert("Price",element.attributes().namedItem("Price").nodeValue());
+    map.insert("AgentPrice",element.attributes().namedItem("AgentPrice").nodeValue());
+    map.insert("Commission",element.attributes().namedItem("Commission").nodeValue());
+    map.insert("Tax",element.attributes().namedItem("Tax").nodeValue());
+    map.insert("YQTax",element.attributes().namedItem("YQTax").nodeValue());
+    map.insert("Rate",element.attributes().namedItem("Rate").nodeValue());
+    map.insert("MoneyKeep",element.attributes().namedItem("MoneyKeep").nodeValue());
+    map.insert("Effdate",element.attributes().namedItem("Effdate").nodeValue());
+    map.insert("Expdate",element.attributes().namedItem("Expdate").nodeValue());
+    map.insert("IsAutoTicket",element.attributes().namedItem("IsAutoTicket").nodeValue());
+    map.insert("IssueTicketSpeed",element.attributes().namedItem("IssueTicketSpeed").nodeValue());
+    map.insert("ChangePnr",element.attributes().namedItem("ChangePnr").nodeValue());
+    map.insert("ProviderWorkTime",element.attributes().namedItem("ProviderWorkTime").nodeValue());
+    map.insert("Remark",element.attributes().namedItem("Remark").nodeValue());
+    map.insert("PolicyType",element.attributes().namedItem("PolicyType").nodeValue());
+    map.insert("VoidWorkTime",element.attributes().namedItem("VoidWorkTime").nodeValue());
+    map.insert("Office",element.attributes().namedItem("ChangePnr").nodeValue());
+    return true;
+}
 bool policyOp::GetChangeFlightDate()
 {
     return true;
