@@ -18,21 +18,28 @@ private:
 
 public:
     policyOp(QString, QString, QString);
+    bool xmlhandler(int,QString,bool (*)(QDomElement));
 
     bool GetAllCommonPolicy(QString, QString);
     bool GetAllCommonPolicy(std::string, std::string, std::string, std::string);
     //bool GetAllCommonPolicyZIP();
-    //bool GetAlterCommonPolicy(std::string, std::string, std::string);
-    //bool GetAVPolicy(std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string);
+    bool GetAlterCommonPolicy(QString,QString,QString);
+    bool GetAlterCommonPolicy(std::string, std::string, std::string,std::string,std::string);
+    bool GetAlterCommonPolicyVisitor(QDomElement);
+    bool GetAVPolicy(QString,QString,QString,QString,QString,QString,QString,QString,QString,QString);
+    bool GetAVPolicy(std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string);
+    bool GetAVPolicyVisitor(QDomElement);
+    bool MatchCommonPolicy(std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string);
+    bool MatchCommonPolicy(QString,QString,QString,QString,QString,QString,QString,QString,QString,QString);
+    bool MatchCommonPolicyVisitor(QDomElement);
     //bool GetChangeFlightDate();
     //bool GetDomesticMatchNormalZRateByID();
     //bool GetInvalidationProviders();
     //bool GetOrderInfo();
     //bool DetailCreateOrder();
-    //bool MatchCommonPolicy();
     //bool RefundOrder();
     //bool RTCreateOrder();
-    bool showDebugMsg(QString);
+    void showDebugMsg(QString);
 private:
     BaitourServiceSoapProxy* BTproxy;
 

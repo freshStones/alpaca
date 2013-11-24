@@ -28,7 +28,8 @@ HEADERS  += mainwindow.h \
     gsoap/BaitourServiceSoap.nsmap \
     policyOp.h
 
-FORMS    += mainwindow.ui
+FORMS    += \
+    mainwindow.ui
 
 OTHER_FILES += \
     gsoap/baitourService.asmx.xml
