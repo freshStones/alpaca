@@ -29,7 +29,7 @@ btDatabase * btDatabase::instance()
         return btDatabase::instance();
     }
 
-    return btDatabase::_instance();
+    return btDatabase::_instance;
 }
 
 btDatabase::btDatabase()

@@ -22,19 +22,19 @@ public:
 
     bool GetAllCommonPolicy(QString, QString);
     bool GetAllCommonPolicy(std::string, std::string, std::string, std::string);
-    bool GetAllCommonPolicyVisitor(QDomElement);
+    static bool GetAllCommonPolicyVisitor(QDomElement);
     bool GetAlterCommonPolicy(QString,QString,QString);
     bool GetAlterCommonPolicy(std::string, std::string, std::string,std::string,std::string);
-    bool GetAlterCommonPolicyVisitor(QDomElement);
+    static bool GetAlterCommonPolicyVisitor(QDomElement);
     bool GetAVPolicy(QString,QString,QString,QString,QString,QString,QString,QString);
     bool GetAVPolicy(std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string);
-    bool GetAVPolicyVisitor(QDomElement);
+    static bool GetAVPolicyVisitor(QDomElement);
     bool MatchCommonPolicy(std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string);
     bool MatchCommonPolicy(QString,QString,QString,QString,QString,QString,QString,QString,QString,QString);
-    bool MatchCommonPolicyVisitor(QDomElement);
+    static bool MatchCommonPolicyVisitor(QDomElement);
     bool GetInvalidationProviders();
     bool GetInvalidationProviders(std::string,std::string,std::string);
-    bool GetInvalidationProvidersVisitor(QDomElement);
+    static bool GetInvalidationProvidersVisitor(QDomElement);
     //bool GetAllCommonPolicyZIP();
     //bool GetChangeFlightDate();
     //bool GetDomesticMatchNormalZRateByID();
