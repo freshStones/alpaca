@@ -22,7 +22,7 @@ public:
 
     bool GetAllCommonPolicy(QString, QString);
     bool GetAllCommonPolicy(std::string, std::string, std::string, std::string);
-    //bool GetAllCommonPolicyZIP();
+    bool GetAllCommonPolicyVisitor(QDomElement);
     bool GetAlterCommonPolicy(QString,QString,QString);
     bool GetAlterCommonPolicy(std::string, std::string, std::string,std::string,std::string);
     bool GetAlterCommonPolicyVisitor(QDomElement);
@@ -32,9 +32,12 @@ public:
     bool MatchCommonPolicy(std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string);
     bool MatchCommonPolicy(QString,QString,QString,QString,QString,QString,QString,QString,QString,QString);
     bool MatchCommonPolicyVisitor(QDomElement);
+    bool GetInvalidationProviders(QString);
+    bool GetInvalidationProviders(std::string,std::string,std::string);
+    bool GetInvalidationProvidersVisitor(QDomElement);
+    //bool GetAllCommonPolicyZIP();
     //bool GetChangeFlightDate();
     //bool GetDomesticMatchNormalZRateByID();
-    //bool GetInvalidationProviders();
     //bool GetOrderInfo();
     //bool DetailCreateOrder();
     //bool RefundOrder();
