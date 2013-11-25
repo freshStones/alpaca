@@ -6,10 +6,10 @@ void btDatabase::init()
 {
     QSqlDatabase *db = new QSqlDatabase();
     *db = QSqlDatabase::addDatabase("QMYSQL");
-    db->setHostName("localhost");
+    db->setHostName("162.105.30.115");
     db->setDatabaseName("LH_AirTicket");
-    db->setUserName("root");
-    db->setPassword("root");
+    db->setUserName("remote");
+    db->setPassword("alpaca");
     db->open();
 
     this->db = db;
@@ -17,7 +17,7 @@ void btDatabase::init()
 
 btDatabase * btDatabase::instance()
 {
-    //qDebug() << "btDatabase::instance() called" << endl;
+    qDebug() << "btDatabase::instance() called" << endl;
     if(btDatabase::_instance == 0){
         btDatabase::_instance = new btDatabase();
         btDatabase::_instance->init();

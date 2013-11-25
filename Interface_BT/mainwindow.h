@@ -16,12 +16,13 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
-
-    void xmlTest();
     
 private:
     Ui::MainWindow *ui;
     policyOp *op;
+
+public slots:
+
 };
 
 #endif // MAINWINDOW_H

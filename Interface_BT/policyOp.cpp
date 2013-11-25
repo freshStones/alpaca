@@ -88,16 +88,7 @@ bool policyOp::GetAllCommonPolicy(std::wstring tripType, std::wstring ticketType
 
 bool policyOp::GetAllCommonPolicyVisitor(QDomElement element)
 {
-    QMap<QString,QString> map;
-    map.insert("Id",element.attributes().namedItem("Id").nodeValue());
-    map.insert("State",element.attributes().namedItem("State").nodeValue());
-    map.insert("IsChangePnr",element.attributes().namedItem("IsChangePnr").nodeValue());
-    map.insert("ProviderWorkTime",element.attributes().namedItem("ProviderWorkTime").nodeValue());
-    map.insert("ProviderVWorkTime",element.attributes().namedItem("PorviderVWorkTime").nodeValue());
-    map.insert("Value",element.text());
-    showmap(map);
-    return true;
-
+    return policyOp::GetAlterCommonPolicyVisitor(element);
 }
 
 bool policyOp::GetAlterCommonPolicy(QString rQStartDateTime, QString tripType, QString ticketType)
@@ -124,12 +115,6 @@ bool policyOp::GetAlterCommonPolicyVisitor(QDomElement element)
     QStringList qsl = element.text().split("|");
 
     QMap<QString,QString> map;
-    //map.insert("Id",element.attributes().namedItem("Id").nodeValue());
-    //map.insert("State",element.attributes().namedItem("State").nodeValue());
-    //map.insert("IsChangePnr",element.attributes().namedItem("IsChangePnr").nodeValue());
-    //map.insert("ProviderWorkTime",element.attributes().namedItem("ProviderWorkTime").nodeValue());
-    //map.insert("ProviderVWorkTime",element.attributes().namedItem("PorviderVWorkTime").nodeValue());
-    //map.insert("Value",element.text());
     map.insert("policy_uuid",element.attributes().namedItem("Id").nodeValue());
     map.insert("policyStatus",element.attributes().namedItem("State").nodeValue());
     map.insert("shouldChangePNR",element.attributes().namedItem("IsChangePnr").nodeValue());

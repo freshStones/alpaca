@@ -10,52 +10,15 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    //model = new QSqlTableModel;
+    //model->setTable("policyDescripition");
+    //model->select();
+    //ui->tableView->setModel(model);
     //xmlTest();
 
-    QSettings *configIniRead = new QSettings("/home/daniel/alpaca/Interface_BT/setting.ini",QSettings::IniFormat);
-    this->op = new policyOp(configIniRead->value("/ACCOUNT/USERNAME").toString(),configIniRead->value("/ACCOUNT/PASSWORD").toString(),configIniRead->value("/AGENT_DESC/AGENTCODE").toString());
-    this->op->GetAlterCommonPolicy("2013-11-25T23:30:20.827","0","0");
-}
-
-void MainWindow::xmlTest(){
-    char fileName[100] = "/home/daniel/Desktop/201311200359065980000.xml";
-
-    QFile file(fileName);
-    if(!file.open(QFile::ReadOnly | QFile::Text)){
-        qDebug() << QString("File %1 open failed!").arg(fileName) << endl;
-    }
-    else{
-        qDebug() << QString("File %1 open succeeded!").arg(fileName) << endl;
-
-        QDomDocument doc;
-        QString errorMSG;
-        int errLine = 0, errCol = 0;
-        if( !doc.setContent(&file, false, &errorMSG, &errLine, &errCol) ) {
-            qDebug() << QString("Parse file failed at line %1 column %2, error: %3 !").arg(errLine).arg(errCol).arg(errorMSG) << endl;
-            return;
-        }
-        else{
-            qDebug() << "Parse Succeeded!" << endl;
-        }
-
-        if(doc.isNull()){
-            qDebug() << "Document is null!" << endl;
-            return;
-        }
-
-        QDomElement root = doc.documentElement();
-
-        QDomElement element = root.firstChildElement();
-        int count  = 0;
-        while(!element.isNull()){
-            qDebug() << element.nodeName() << endl;
-            element = element.nextSiblingElement();
-            count++;
-        }
-        this->op->showDebugMsg(element.nodeName());
-        this->op->showDebugMsg(QString("%1").arg(element.attributes().namedItem("Id").nodeValue()));
-
-    }
+    //QSettings *configIniRead = new QSettings("/home/daniel/alpaca/Interface_BT/setting.ini",QSettings::IniFormat);
+    //this->op = new policyOp(configIniRead->value("/ACCOUNT/USERNAME").toString(),configIniRead->value("/ACCOUNT/PASSWORD").toString(),configIniRead->value("/AGENT_DESC/AGENTCODE").toString());
+    //this->op->GetAlterCommonPolicy("2013-11-25T23:30:20.827","0","0");
 }
 
 MainWindow::~MainWindow()
