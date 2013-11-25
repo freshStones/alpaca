@@ -1,6 +1,8 @@
 #include "policyOp.h"
 #include "gsoap/BaitourServiceSoap.nsmap"
 
+QString policyOp::sqlCollection = "";
+
 policyOp::policyOp(QString _usrName, QString _pwd, QString _agentcode)
 {
     BTproxy = new BaitourServiceSoapProxy();
@@ -33,7 +35,7 @@ QString policyOp::genQuery(QString table, QMap<QString,QString> map)
         keys = keys + "," + i.key();
         values = values + "," + "'" + i.value() + "'";
     }
-    return QString("replace into %1(%2) values(%3)").arg(table).arg(keys).arg(values);
+    return QString("replace into %1(%2) values(%3);\n").arg(table).arg(keys).arg(values);
 }
 
 bool policyOp::xmlhandler(int callRes,QString xml,bool (*visitor)(QDomElement))
@@ -66,7 +68,9 @@ bool policyOp::xmlhandler(int callRes,QString xml,bool (*visitor)(QDomElement))
             emit setProgressBarValue(itemCount);
             element = element.nextSiblingElement();       
         }
-
+        btDatabase::instance()->batchOperation(sqlCollection);
+        btDatabase::instance()->commitOperation();
+        sqlCollection = "";
     }
     else{
         showDebugMsg(QString("GetAllCommonPolicy call failed. Error code: %1").arg(callRes));
@@ -141,9 +145,16 @@ bool policyOp::GetAlterCommonPolicyVisitor(QDomElement element)
     map.insert("memo",qsl.at(16));
     map.insert("autoTicketingEnabled",qsl.at(17));  //百拓的文档写错了，这里应该有
     //showmap(map);
-    QString sql = genQuery("policyDescripition", map);
+    //QString sql = genQuery("policyDescripition", map);
     //showDebugMsg(sql);
-    if(btDatabase::instance()->updateOperation(sql) != 1) showDebugMsg("update error!");
+    //if(btDatabase::instance()->updateOperation(sql) != 1) showDebugMsg("update error!");
+    sqlCollection += genQuery("policyDescripition", map);
+    if(sqlCollection.count(";") == 1000 )
+    {
+        btDatabase::instance()->batchOperation(sqlCollection);
+        sqlCollection = "";
+    }
+    qDebug() << sqlCollection.count(";") << endl;
     return true;
 }
 bool policyOp::GetAVPolicy(QString Type,QString OrderSrc,QString DptAirport,QString ArrAirport,QString TakeOffDate,QString Cabin,QString FlightNum,QString avinfo)

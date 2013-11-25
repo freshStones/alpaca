@@ -84,7 +84,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-    //this->op->GetAlterCommonPolicy("2013-11-26T01:01:20.827","0","0");
+    //this->op->GetAlterCommonPolicy("2013-11-26T00:01:20.827","0","0");
     this->op->GetAllCommonPolicy("0","0");
 }
 

@@ -20,6 +20,7 @@ class policyOp:public QObject
     Q_OBJECT
 private:
     QString usrName, pwd, agentCode;
+    static QString sqlCollection;
 
 public:
     policyOp(QString, QString, QString);
