@@ -19,7 +19,7 @@ private:
 public:
     policyOp(QString, QString, QString);
     bool xmlhandler(int,QString,bool (*visitor)(QDomElement));
-
+    static void showmap(QMap<QString,QString>);
     bool GetAllCommonPolicy(QString, QString);
     bool GetAllCommonPolicy(std::string, std::string, std::string, std::string);
     static bool GetAllCommonPolicyVisitor(QDomElement);
@@ -27,9 +27,7 @@ public:
     bool GetAlterCommonPolicy(std::string, std::string, std::string,std::string,std::string);
     static bool GetAlterCommonPolicyVisitor(QDomElement);
     bool GetAVPolicy(QString,QString,QString,QString,QString,QString,QString,QString);
-    bool GetAVPolicy(std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string);
     static bool GetAVPolicyVisitor(QDomElement);
-    bool MatchCommonPolicy(std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string);
     bool MatchCommonPolicy(QString,QString,QString,QString,QString,QString,QString,QString,QString,QString);
     static bool MatchCommonPolicyVisitor(QDomElement);
     bool GetInvalidationProviders();
