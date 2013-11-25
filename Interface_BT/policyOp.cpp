@@ -7,7 +7,7 @@ policyOp::policyOp(QString _usrName, QString _pwd, QString _agentcode)
     usrName = _usrName;
     pwd = _pwd;
     agentCode = _agentcode;
-    qDebug()<<usrName<<pwd<<agentCode<<endl;
+    qDebug() << usrName << pwd << agentCode << endl;
 }
 
 void policyOp::showDebugMsg(QString msg)
@@ -17,7 +17,7 @@ void policyOp::showDebugMsg(QString msg)
 void policyOp::showmap(QMap<QString, QString> map)
 {
     QMap<QString,QString>::const_iterator i;
-    for( i=map.constBegin(); i!=map.constEnd(); ++i)
+    for( i = map.constBegin(); i != map.constEnd(); ++i)
            qDebug() << i.key() <<": " << i.value()<<endl;
 }
 QString policyOp::genQuery(QString table, QMap<QString,QString> map)
@@ -58,7 +58,6 @@ bool policyOp::xmlhandler(int callRes,QString xml,bool (*visitor)(QDomElement))
 
         QDomElement root = doc.documentElement();
         QDomElement element = root.firstChildElement();
-        //int count  = 0;
         while(!element.isNull()){
             (*visitor)(element);
             element = element.nextSiblingElement();

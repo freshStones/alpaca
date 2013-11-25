@@ -10,17 +10,11 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    //BTtest();
     //xmlTest();
 
-    QSettings *configIniRead = new QSettings("/Users/xiaosb/Documents/workspace/alpaca/Interface_BT/setting.ini",QSettings::IniFormat);
+    QSettings *configIniRead = new QSettings("/home/daniel/alpaca/Interface_BT/setting.ini",QSettings::IniFormat);
     this->op = new policyOp(configIniRead->value("/ACCOUNT/USERNAME").toString(),configIniRead->value("/ACCOUNT/PASSWORD").toString(),configIniRead->value("/AGENT_DESC/AGENTCODE").toString());
-    this->op->GetAlterCommonPolicy("2013-11-25T12:15:20.827","0","0");
-}
-
-void MainWindow::BTtest(){
-    //policyOp p;
-    //p.GetAllCommonPolicy();
+    //this->op->GetAlterCommonPolicy("2013-11-25T12:15:20.827","0","0");
 }
 
 void MainWindow::xmlTest(){
@@ -52,16 +46,14 @@ void MainWindow::xmlTest(){
         QDomElement root = doc.documentElement();
 
         QDomElement element = root.firstChildElement();
-        /*int count  = 0;
+        int count  = 0;
         while(!element.isNull()){
             qDebug() << element.nodeName() << endl;
             element = element.nextSiblingElement();
             count++;
-        }*/
+        }
         this->op->showDebugMsg(element.nodeName());
-        //this->op->showDebugMsg(QString("%1").arg(element.hasAttribute("Id")));
         this->op->showDebugMsg(QString("%1").arg(element.attributes().namedItem("Id").nodeValue()));
-        //qDebug() << count << endl;
 
     }
 }

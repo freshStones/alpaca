@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "policyOp.h"
+//#include "btdatabase.h"
 
 namespace Ui {
 class MainWindow;
@@ -15,9 +16,6 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
-
-
-    void BTtest();
 
     void xmlTest();
     
