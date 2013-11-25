@@ -59,8 +59,8 @@ void BaitourServiceSoapProxy::BaitourServiceSoapProxy_init(soap_mode imode, soap
 	soap_endpoint = NULL;
 	static const struct Namespace namespaces[] =
 {
-	{"SOAP-ENV", "http://www.w3.org/2003/05/soap-envelope", "http://schemas.xmlsoap.org/soap/envelope/", NULL},
-	{"SOAP-ENC", "http://www.w3.org/2003/05/soap-encoding", "http://schemas.xmlsoap.org/soap/encoding/", NULL},
+	{"SOAP-ENV", "http://schemas.xmlsoap.org/soap/envelope/", "http://www.w3.org/*/soap-envelope", NULL},
+	{"SOAP-ENC", "http://schemas.xmlsoap.org/soap/encoding/", "http://www.w3.org/*/soap-encoding", NULL},
 	{"xsi", "http://www.w3.org/2001/XMLSchema-instance", "http://www.w3.org/*/XMLSchema-instance", NULL},
 	{"xsd", "http://www.w3.org/2001/XMLSchema", "http://www.w3.org/*/XMLSchema", NULL},
 	{"ns1", "http://www.baitour.com/", NULL, NULL},
@@ -131,7 +131,7 @@ int BaitourServiceSoapProxy::GetAllCommonPolicy(const char *endpoint, const char
 	if (endpoint)
 		soap_endpoint = endpoint;
 	if (soap_endpoint == NULL)
-		soap_endpoint = "http://ite4.baitour.com/comanage/baitourService.asmx";
+		soap_endpoint = "http://ite3.baitour.com/comanage/baitourService.asmx";
 	if (soap_action == NULL)
 		soap_action = "http://www.baitour.com/GetAllCommonPolicy";
 	soap_begin(soap);
@@ -185,7 +185,7 @@ int BaitourServiceSoapProxy::GetAllCommonPolicyZIP(const char *endpoint, const c
 	if (endpoint)
 		soap_endpoint = endpoint;
 	if (soap_endpoint == NULL)
-		soap_endpoint = "http://ite4.baitour.com/comanage/baitourService.asmx";
+		soap_endpoint = "http://ite3.baitour.com/comanage/baitourService.asmx";
 	if (soap_action == NULL)
 		soap_action = "http://www.baitour.com/GetAllCommonPolicyZIP";
 	soap_begin(soap);
@@ -239,7 +239,7 @@ int BaitourServiceSoapProxy::GetAlterCommonPolicy(const char *endpoint, const ch
 	if (endpoint)
 		soap_endpoint = endpoint;
 	if (soap_endpoint == NULL)
-		soap_endpoint = "http://ite4.baitour.com/comanage/baitourService.asmx";
+		soap_endpoint = "http://ite3.baitour.com/comanage/baitourService.asmx";
 	if (soap_action == NULL)
 		soap_action = "http://www.baitour.com/GetAlterCommonPolicy";
 	soap_begin(soap);
@@ -293,7 +293,7 @@ int BaitourServiceSoapProxy::MatchCommonPolicy(const char *endpoint, const char 
 	if (endpoint)
 		soap_endpoint = endpoint;
 	if (soap_endpoint == NULL)
-		soap_endpoint = "http://ite4.baitour.com/comanage/baitourService.asmx";
+		soap_endpoint = "http://ite3.baitour.com/comanage/baitourService.asmx";
 	if (soap_action == NULL)
 		soap_action = "http://www.baitour.com/MatchCommonPolicy";
 	soap_begin(soap);
@@ -347,7 +347,7 @@ int BaitourServiceSoapProxy::GetAVPolicy(const char *endpoint, const char *soap_
 	if (endpoint)
 		soap_endpoint = endpoint;
 	if (soap_endpoint == NULL)
-		soap_endpoint = "http://ite4.baitour.com/comanage/baitourService.asmx";
+		soap_endpoint = "http://ite3.baitour.com/comanage/baitourService.asmx";
 	if (soap_action == NULL)
 		soap_action = "http://www.baitour.com/GetAVPolicy";
 	soap_begin(soap);
@@ -401,7 +401,7 @@ int BaitourServiceSoapProxy::GetDomesticMatchNormalZRateByID(const char *endpoin
 	if (endpoint)
 		soap_endpoint = endpoint;
 	if (soap_endpoint == NULL)
-		soap_endpoint = "http://ite4.baitour.com/comanage/baitourService.asmx";
+		soap_endpoint = "http://ite3.baitour.com/comanage/baitourService.asmx";
 	if (soap_action == NULL)
 		soap_action = "http://www.baitour.com/GetDomesticMatchNormalZRateByID";
 	soap_begin(soap);
@@ -455,7 +455,7 @@ int BaitourServiceSoapProxy::DetailCreateOrder(const char *endpoint, const char 
 	if (endpoint)
 		soap_endpoint = endpoint;
 	if (soap_endpoint == NULL)
-		soap_endpoint = "http://ite4.baitour.com/comanage/baitourService.asmx";
+		soap_endpoint = "http://ite3.baitour.com/comanage/baitourService.asmx";
 	if (soap_action == NULL)
 		soap_action = "http://www.baitour.com/DetailCreateOrder";
 	soap_begin(soap);
@@ -509,7 +509,7 @@ int BaitourServiceSoapProxy::RTCreateOrder(const char *endpoint, const char *soa
 	if (endpoint)
 		soap_endpoint = endpoint;
 	if (soap_endpoint == NULL)
-		soap_endpoint = "http://ite4.baitour.com/comanage/baitourService.asmx";
+		soap_endpoint = "http://ite3.baitour.com/comanage/baitourService.asmx";
 	if (soap_action == NULL)
 		soap_action = "http://www.baitour.com/RTCreateOrder";
 	soap_begin(soap);
@@ -563,7 +563,7 @@ int BaitourServiceSoapProxy::GetOrderInfo(const char *endpoint, const char *soap
 	if (endpoint)
 		soap_endpoint = endpoint;
 	if (soap_endpoint == NULL)
-		soap_endpoint = "http://ite4.baitour.com/comanage/baitourService.asmx";
+		soap_endpoint = "http://ite3.baitour.com/comanage/baitourService.asmx";
 	if (soap_action == NULL)
 		soap_action = "http://www.baitour.com/GetOrderInfo";
 	soap_begin(soap);
@@ -617,7 +617,7 @@ int BaitourServiceSoapProxy::GetInvalidationProviders(const char *endpoint, cons
 	if (endpoint)
 		soap_endpoint = endpoint;
 	if (soap_endpoint == NULL)
-		soap_endpoint = "http://ite4.baitour.com/comanage/baitourService.asmx";
+		soap_endpoint = "http://ite3.baitour.com/comanage/baitourService.asmx";
 	if (soap_action == NULL)
 		soap_action = "http://www.baitour.com/GetInvalidationProviders";
 	soap_begin(soap);
@@ -671,7 +671,7 @@ int BaitourServiceSoapProxy::RefundOrder(const char *endpoint, const char *soap_
 	if (endpoint)
 		soap_endpoint = endpoint;
 	if (soap_endpoint == NULL)
-		soap_endpoint = "http://ite4.baitour.com/comanage/baitourService.asmx";
+		soap_endpoint = "http://ite3.baitour.com/comanage/baitourService.asmx";
 	if (soap_action == NULL)
 		soap_action = "http://www.baitour.com/RefundOrder";
 	soap_begin(soap);
@@ -725,7 +725,7 @@ int BaitourServiceSoapProxy::GetChangeFlightDate(const char *endpoint, const cha
 	if (endpoint)
 		soap_endpoint = endpoint;
 	if (soap_endpoint == NULL)
-		soap_endpoint = "http://ite4.baitour.com/comanage/baitourService.asmx";
+		soap_endpoint = "http://ite3.baitour.com/comanage/baitourService.asmx";
 	if (soap_action == NULL)
 		soap_action = "http://www.baitour.com/GetChangeFlightDate";
 	soap_begin(soap);
@@ -751,654 +751,6 @@ int BaitourServiceSoapProxy::GetChangeFlightDate(const char *endpoint, const cha
 	 || soap_putheader(soap)
 	 || soap_body_begin_out(soap)
 	 || soap_put___ns1__GetChangeFlightDate(soap, &soap_tmp___ns1__GetChangeFlightDate, "-ns1:GetChangeFlightDate", NULL)
-	 || soap_body_end_out(soap)
-	 || soap_envelope_end_out(soap)
-	 || soap_end_send(soap))
-		return soap_closesock(soap);
-	if (!ns1__GetChangeFlightDateResponse)
-		return soap_closesock(soap);
-	ns1__GetChangeFlightDateResponse->soap_default(soap);
-	if (soap_begin_recv(soap)
-	 || soap_envelope_begin_in(soap)
-	 || soap_recv_header(soap)
-	 || soap_body_begin_in(soap))
-		return soap_closesock(soap);
-	ns1__GetChangeFlightDateResponse->soap_get(soap, "ns1:GetChangeFlightDateResponse", "");
-	if (soap->error)
-		return soap_recv_fault(soap, 0);
-	if (soap_body_end_in(soap)
-	 || soap_envelope_end_in(soap)
-	 || soap_end_recv(soap))
-		return soap_closesock(soap);
-	return soap_closesock(soap);
-}
-
-int BaitourServiceSoapProxy::GetAllCommonPolicy_(const char *endpoint, const char *soap_action, _ns1__GetAllCommonPolicy *ns1__GetAllCommonPolicy, _ns1__GetAllCommonPolicyResponse *ns1__GetAllCommonPolicyResponse)
-{	struct soap *soap = this->soap;
-	struct __ns1__GetAllCommonPolicy_ soap_tmp___ns1__GetAllCommonPolicy_;
-	if (endpoint)
-		soap_endpoint = endpoint;
-	if (soap_endpoint == NULL)
-		soap_endpoint = "http://ite4.baitour.com/comanage/baitourService.asmx";
-	if (soap_action == NULL)
-		soap_action = "http://www.baitour.com/GetAllCommonPolicy";
-	soap_begin(soap);
-	soap->encodingStyle = NULL;
-	soap_tmp___ns1__GetAllCommonPolicy_.ns1__GetAllCommonPolicy = ns1__GetAllCommonPolicy;
-	soap_serializeheader(soap);
-	soap_serialize___ns1__GetAllCommonPolicy_(soap, &soap_tmp___ns1__GetAllCommonPolicy_);
-	if (soap_begin_count(soap))
-		return soap->error;
-	if (soap->mode & SOAP_IO_LENGTH)
-	{	if (soap_envelope_begin_out(soap)
-		 || soap_putheader(soap)
-		 || soap_body_begin_out(soap)
-		 || soap_put___ns1__GetAllCommonPolicy_(soap, &soap_tmp___ns1__GetAllCommonPolicy_, "-ns1:GetAllCommonPolicy", NULL)
-		 || soap_body_end_out(soap)
-		 || soap_envelope_end_out(soap))
-			 return soap->error;
-	}
-	if (soap_end_count(soap))
-		return soap->error;
-	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
-	 || soap_envelope_begin_out(soap)
-	 || soap_putheader(soap)
-	 || soap_body_begin_out(soap)
-	 || soap_put___ns1__GetAllCommonPolicy_(soap, &soap_tmp___ns1__GetAllCommonPolicy_, "-ns1:GetAllCommonPolicy", NULL)
-	 || soap_body_end_out(soap)
-	 || soap_envelope_end_out(soap)
-	 || soap_end_send(soap))
-		return soap_closesock(soap);
-	if (!ns1__GetAllCommonPolicyResponse)
-		return soap_closesock(soap);
-	ns1__GetAllCommonPolicyResponse->soap_default(soap);
-	if (soap_begin_recv(soap)
-	 || soap_envelope_begin_in(soap)
-	 || soap_recv_header(soap)
-	 || soap_body_begin_in(soap))
-		return soap_closesock(soap);
-	ns1__GetAllCommonPolicyResponse->soap_get(soap, "ns1:GetAllCommonPolicyResponse", "");
-	if (soap->error)
-		return soap_recv_fault(soap, 0);
-	if (soap_body_end_in(soap)
-	 || soap_envelope_end_in(soap)
-	 || soap_end_recv(soap))
-		return soap_closesock(soap);
-	return soap_closesock(soap);
-}
-
-int BaitourServiceSoapProxy::GetAllCommonPolicyZIP_(const char *endpoint, const char *soap_action, _ns1__GetAllCommonPolicyZIP *ns1__GetAllCommonPolicyZIP, _ns1__GetAllCommonPolicyZIPResponse *ns1__GetAllCommonPolicyZIPResponse)
-{	struct soap *soap = this->soap;
-	struct __ns1__GetAllCommonPolicyZIP_ soap_tmp___ns1__GetAllCommonPolicyZIP_;
-	if (endpoint)
-		soap_endpoint = endpoint;
-	if (soap_endpoint == NULL)
-		soap_endpoint = "http://ite4.baitour.com/comanage/baitourService.asmx";
-	if (soap_action == NULL)
-		soap_action = "http://www.baitour.com/GetAllCommonPolicyZIP";
-	soap_begin(soap);
-	soap->encodingStyle = NULL;
-	soap_tmp___ns1__GetAllCommonPolicyZIP_.ns1__GetAllCommonPolicyZIP = ns1__GetAllCommonPolicyZIP;
-	soap_serializeheader(soap);
-	soap_serialize___ns1__GetAllCommonPolicyZIP_(soap, &soap_tmp___ns1__GetAllCommonPolicyZIP_);
-	if (soap_begin_count(soap))
-		return soap->error;
-	if (soap->mode & SOAP_IO_LENGTH)
-	{	if (soap_envelope_begin_out(soap)
-		 || soap_putheader(soap)
-		 || soap_body_begin_out(soap)
-		 || soap_put___ns1__GetAllCommonPolicyZIP_(soap, &soap_tmp___ns1__GetAllCommonPolicyZIP_, "-ns1:GetAllCommonPolicyZIP", NULL)
-		 || soap_body_end_out(soap)
-		 || soap_envelope_end_out(soap))
-			 return soap->error;
-	}
-	if (soap_end_count(soap))
-		return soap->error;
-	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
-	 || soap_envelope_begin_out(soap)
-	 || soap_putheader(soap)
-	 || soap_body_begin_out(soap)
-	 || soap_put___ns1__GetAllCommonPolicyZIP_(soap, &soap_tmp___ns1__GetAllCommonPolicyZIP_, "-ns1:GetAllCommonPolicyZIP", NULL)
-	 || soap_body_end_out(soap)
-	 || soap_envelope_end_out(soap)
-	 || soap_end_send(soap))
-		return soap_closesock(soap);
-	if (!ns1__GetAllCommonPolicyZIPResponse)
-		return soap_closesock(soap);
-	ns1__GetAllCommonPolicyZIPResponse->soap_default(soap);
-	if (soap_begin_recv(soap)
-	 || soap_envelope_begin_in(soap)
-	 || soap_recv_header(soap)
-	 || soap_body_begin_in(soap))
-		return soap_closesock(soap);
-	ns1__GetAllCommonPolicyZIPResponse->soap_get(soap, "ns1:GetAllCommonPolicyZIPResponse", "");
-	if (soap->error)
-		return soap_recv_fault(soap, 0);
-	if (soap_body_end_in(soap)
-	 || soap_envelope_end_in(soap)
-	 || soap_end_recv(soap))
-		return soap_closesock(soap);
-	return soap_closesock(soap);
-}
-
-int BaitourServiceSoapProxy::GetAlterCommonPolicy_(const char *endpoint, const char *soap_action, _ns1__GetAlterCommonPolicy *ns1__GetAlterCommonPolicy, _ns1__GetAlterCommonPolicyResponse *ns1__GetAlterCommonPolicyResponse)
-{	struct soap *soap = this->soap;
-	struct __ns1__GetAlterCommonPolicy_ soap_tmp___ns1__GetAlterCommonPolicy_;
-	if (endpoint)
-		soap_endpoint = endpoint;
-	if (soap_endpoint == NULL)
-		soap_endpoint = "http://ite4.baitour.com/comanage/baitourService.asmx";
-	if (soap_action == NULL)
-		soap_action = "http://www.baitour.com/GetAlterCommonPolicy";
-	soap_begin(soap);
-	soap->encodingStyle = NULL;
-	soap_tmp___ns1__GetAlterCommonPolicy_.ns1__GetAlterCommonPolicy = ns1__GetAlterCommonPolicy;
-	soap_serializeheader(soap);
-	soap_serialize___ns1__GetAlterCommonPolicy_(soap, &soap_tmp___ns1__GetAlterCommonPolicy_);
-	if (soap_begin_count(soap))
-		return soap->error;
-	if (soap->mode & SOAP_IO_LENGTH)
-	{	if (soap_envelope_begin_out(soap)
-		 || soap_putheader(soap)
-		 || soap_body_begin_out(soap)
-		 || soap_put___ns1__GetAlterCommonPolicy_(soap, &soap_tmp___ns1__GetAlterCommonPolicy_, "-ns1:GetAlterCommonPolicy", NULL)
-		 || soap_body_end_out(soap)
-		 || soap_envelope_end_out(soap))
-			 return soap->error;
-	}
-	if (soap_end_count(soap))
-		return soap->error;
-	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
-	 || soap_envelope_begin_out(soap)
-	 || soap_putheader(soap)
-	 || soap_body_begin_out(soap)
-	 || soap_put___ns1__GetAlterCommonPolicy_(soap, &soap_tmp___ns1__GetAlterCommonPolicy_, "-ns1:GetAlterCommonPolicy", NULL)
-	 || soap_body_end_out(soap)
-	 || soap_envelope_end_out(soap)
-	 || soap_end_send(soap))
-		return soap_closesock(soap);
-	if (!ns1__GetAlterCommonPolicyResponse)
-		return soap_closesock(soap);
-	ns1__GetAlterCommonPolicyResponse->soap_default(soap);
-	if (soap_begin_recv(soap)
-	 || soap_envelope_begin_in(soap)
-	 || soap_recv_header(soap)
-	 || soap_body_begin_in(soap))
-		return soap_closesock(soap);
-	ns1__GetAlterCommonPolicyResponse->soap_get(soap, "ns1:GetAlterCommonPolicyResponse", "");
-	if (soap->error)
-		return soap_recv_fault(soap, 0);
-	if (soap_body_end_in(soap)
-	 || soap_envelope_end_in(soap)
-	 || soap_end_recv(soap))
-		return soap_closesock(soap);
-	return soap_closesock(soap);
-}
-
-int BaitourServiceSoapProxy::MatchCommonPolicy_(const char *endpoint, const char *soap_action, _ns1__MatchCommonPolicy *ns1__MatchCommonPolicy, _ns1__MatchCommonPolicyResponse *ns1__MatchCommonPolicyResponse)
-{	struct soap *soap = this->soap;
-	struct __ns1__MatchCommonPolicy_ soap_tmp___ns1__MatchCommonPolicy_;
-	if (endpoint)
-		soap_endpoint = endpoint;
-	if (soap_endpoint == NULL)
-		soap_endpoint = "http://ite4.baitour.com/comanage/baitourService.asmx";
-	if (soap_action == NULL)
-		soap_action = "http://www.baitour.com/MatchCommonPolicy";
-	soap_begin(soap);
-	soap->encodingStyle = NULL;
-	soap_tmp___ns1__MatchCommonPolicy_.ns1__MatchCommonPolicy = ns1__MatchCommonPolicy;
-	soap_serializeheader(soap);
-	soap_serialize___ns1__MatchCommonPolicy_(soap, &soap_tmp___ns1__MatchCommonPolicy_);
-	if (soap_begin_count(soap))
-		return soap->error;
-	if (soap->mode & SOAP_IO_LENGTH)
-	{	if (soap_envelope_begin_out(soap)
-		 || soap_putheader(soap)
-		 || soap_body_begin_out(soap)
-		 || soap_put___ns1__MatchCommonPolicy_(soap, &soap_tmp___ns1__MatchCommonPolicy_, "-ns1:MatchCommonPolicy", NULL)
-		 || soap_body_end_out(soap)
-		 || soap_envelope_end_out(soap))
-			 return soap->error;
-	}
-	if (soap_end_count(soap))
-		return soap->error;
-	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
-	 || soap_envelope_begin_out(soap)
-	 || soap_putheader(soap)
-	 || soap_body_begin_out(soap)
-	 || soap_put___ns1__MatchCommonPolicy_(soap, &soap_tmp___ns1__MatchCommonPolicy_, "-ns1:MatchCommonPolicy", NULL)
-	 || soap_body_end_out(soap)
-	 || soap_envelope_end_out(soap)
-	 || soap_end_send(soap))
-		return soap_closesock(soap);
-	if (!ns1__MatchCommonPolicyResponse)
-		return soap_closesock(soap);
-	ns1__MatchCommonPolicyResponse->soap_default(soap);
-	if (soap_begin_recv(soap)
-	 || soap_envelope_begin_in(soap)
-	 || soap_recv_header(soap)
-	 || soap_body_begin_in(soap))
-		return soap_closesock(soap);
-	ns1__MatchCommonPolicyResponse->soap_get(soap, "ns1:MatchCommonPolicyResponse", "");
-	if (soap->error)
-		return soap_recv_fault(soap, 0);
-	if (soap_body_end_in(soap)
-	 || soap_envelope_end_in(soap)
-	 || soap_end_recv(soap))
-		return soap_closesock(soap);
-	return soap_closesock(soap);
-}
-
-int BaitourServiceSoapProxy::GetAVPolicy_(const char *endpoint, const char *soap_action, _ns1__GetAVPolicy *ns1__GetAVPolicy, _ns1__GetAVPolicyResponse *ns1__GetAVPolicyResponse)
-{	struct soap *soap = this->soap;
-	struct __ns1__GetAVPolicy_ soap_tmp___ns1__GetAVPolicy_;
-	if (endpoint)
-		soap_endpoint = endpoint;
-	if (soap_endpoint == NULL)
-		soap_endpoint = "http://ite4.baitour.com/comanage/baitourService.asmx";
-	if (soap_action == NULL)
-		soap_action = "http://www.baitour.com/GetAVPolicy";
-	soap_begin(soap);
-	soap->encodingStyle = NULL;
-	soap_tmp___ns1__GetAVPolicy_.ns1__GetAVPolicy = ns1__GetAVPolicy;
-	soap_serializeheader(soap);
-	soap_serialize___ns1__GetAVPolicy_(soap, &soap_tmp___ns1__GetAVPolicy_);
-	if (soap_begin_count(soap))
-		return soap->error;
-	if (soap->mode & SOAP_IO_LENGTH)
-	{	if (soap_envelope_begin_out(soap)
-		 || soap_putheader(soap)
-		 || soap_body_begin_out(soap)
-		 || soap_put___ns1__GetAVPolicy_(soap, &soap_tmp___ns1__GetAVPolicy_, "-ns1:GetAVPolicy", NULL)
-		 || soap_body_end_out(soap)
-		 || soap_envelope_end_out(soap))
-			 return soap->error;
-	}
-	if (soap_end_count(soap))
-		return soap->error;
-	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
-	 || soap_envelope_begin_out(soap)
-	 || soap_putheader(soap)
-	 || soap_body_begin_out(soap)
-	 || soap_put___ns1__GetAVPolicy_(soap, &soap_tmp___ns1__GetAVPolicy_, "-ns1:GetAVPolicy", NULL)
-	 || soap_body_end_out(soap)
-	 || soap_envelope_end_out(soap)
-	 || soap_end_send(soap))
-		return soap_closesock(soap);
-	if (!ns1__GetAVPolicyResponse)
-		return soap_closesock(soap);
-	ns1__GetAVPolicyResponse->soap_default(soap);
-	if (soap_begin_recv(soap)
-	 || soap_envelope_begin_in(soap)
-	 || soap_recv_header(soap)
-	 || soap_body_begin_in(soap))
-		return soap_closesock(soap);
-	ns1__GetAVPolicyResponse->soap_get(soap, "ns1:GetAVPolicyResponse", "");
-	if (soap->error)
-		return soap_recv_fault(soap, 0);
-	if (soap_body_end_in(soap)
-	 || soap_envelope_end_in(soap)
-	 || soap_end_recv(soap))
-		return soap_closesock(soap);
-	return soap_closesock(soap);
-}
-
-int BaitourServiceSoapProxy::GetDomesticMatchNormalZRateByID_(const char *endpoint, const char *soap_action, _ns1__GetDomesticMatchNormalZRateByID *ns1__GetDomesticMatchNormalZRateByID, _ns1__GetDomesticMatchNormalZRateByIDResponse *ns1__GetDomesticMatchNormalZRateByIDResponse)
-{	struct soap *soap = this->soap;
-	struct __ns1__GetDomesticMatchNormalZRateByID_ soap_tmp___ns1__GetDomesticMatchNormalZRateByID_;
-	if (endpoint)
-		soap_endpoint = endpoint;
-	if (soap_endpoint == NULL)
-		soap_endpoint = "http://ite4.baitour.com/comanage/baitourService.asmx";
-	if (soap_action == NULL)
-		soap_action = "http://www.baitour.com/GetDomesticMatchNormalZRateByID";
-	soap_begin(soap);
-	soap->encodingStyle = NULL;
-	soap_tmp___ns1__GetDomesticMatchNormalZRateByID_.ns1__GetDomesticMatchNormalZRateByID = ns1__GetDomesticMatchNormalZRateByID;
-	soap_serializeheader(soap);
-	soap_serialize___ns1__GetDomesticMatchNormalZRateByID_(soap, &soap_tmp___ns1__GetDomesticMatchNormalZRateByID_);
-	if (soap_begin_count(soap))
-		return soap->error;
-	if (soap->mode & SOAP_IO_LENGTH)
-	{	if (soap_envelope_begin_out(soap)
-		 || soap_putheader(soap)
-		 || soap_body_begin_out(soap)
-		 || soap_put___ns1__GetDomesticMatchNormalZRateByID_(soap, &soap_tmp___ns1__GetDomesticMatchNormalZRateByID_, "-ns1:GetDomesticMatchNormalZRateByID", NULL)
-		 || soap_body_end_out(soap)
-		 || soap_envelope_end_out(soap))
-			 return soap->error;
-	}
-	if (soap_end_count(soap))
-		return soap->error;
-	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
-	 || soap_envelope_begin_out(soap)
-	 || soap_putheader(soap)
-	 || soap_body_begin_out(soap)
-	 || soap_put___ns1__GetDomesticMatchNormalZRateByID_(soap, &soap_tmp___ns1__GetDomesticMatchNormalZRateByID_, "-ns1:GetDomesticMatchNormalZRateByID", NULL)
-	 || soap_body_end_out(soap)
-	 || soap_envelope_end_out(soap)
-	 || soap_end_send(soap))
-		return soap_closesock(soap);
-	if (!ns1__GetDomesticMatchNormalZRateByIDResponse)
-		return soap_closesock(soap);
-	ns1__GetDomesticMatchNormalZRateByIDResponse->soap_default(soap);
-	if (soap_begin_recv(soap)
-	 || soap_envelope_begin_in(soap)
-	 || soap_recv_header(soap)
-	 || soap_body_begin_in(soap))
-		return soap_closesock(soap);
-	ns1__GetDomesticMatchNormalZRateByIDResponse->soap_get(soap, "ns1:GetDomesticMatchNormalZRateByIDResponse", "");
-	if (soap->error)
-		return soap_recv_fault(soap, 0);
-	if (soap_body_end_in(soap)
-	 || soap_envelope_end_in(soap)
-	 || soap_end_recv(soap))
-		return soap_closesock(soap);
-	return soap_closesock(soap);
-}
-
-int BaitourServiceSoapProxy::DetailCreateOrder_(const char *endpoint, const char *soap_action, _ns1__DetailCreateOrder *ns1__DetailCreateOrder, _ns1__DetailCreateOrderResponse *ns1__DetailCreateOrderResponse)
-{	struct soap *soap = this->soap;
-	struct __ns1__DetailCreateOrder_ soap_tmp___ns1__DetailCreateOrder_;
-	if (endpoint)
-		soap_endpoint = endpoint;
-	if (soap_endpoint == NULL)
-		soap_endpoint = "http://ite4.baitour.com/comanage/baitourService.asmx";
-	if (soap_action == NULL)
-		soap_action = "http://www.baitour.com/DetailCreateOrder";
-	soap_begin(soap);
-	soap->encodingStyle = NULL;
-	soap_tmp___ns1__DetailCreateOrder_.ns1__DetailCreateOrder = ns1__DetailCreateOrder;
-	soap_serializeheader(soap);
-	soap_serialize___ns1__DetailCreateOrder_(soap, &soap_tmp___ns1__DetailCreateOrder_);
-	if (soap_begin_count(soap))
-		return soap->error;
-	if (soap->mode & SOAP_IO_LENGTH)
-	{	if (soap_envelope_begin_out(soap)
-		 || soap_putheader(soap)
-		 || soap_body_begin_out(soap)
-		 || soap_put___ns1__DetailCreateOrder_(soap, &soap_tmp___ns1__DetailCreateOrder_, "-ns1:DetailCreateOrder", NULL)
-		 || soap_body_end_out(soap)
-		 || soap_envelope_end_out(soap))
-			 return soap->error;
-	}
-	if (soap_end_count(soap))
-		return soap->error;
-	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
-	 || soap_envelope_begin_out(soap)
-	 || soap_putheader(soap)
-	 || soap_body_begin_out(soap)
-	 || soap_put___ns1__DetailCreateOrder_(soap, &soap_tmp___ns1__DetailCreateOrder_, "-ns1:DetailCreateOrder", NULL)
-	 || soap_body_end_out(soap)
-	 || soap_envelope_end_out(soap)
-	 || soap_end_send(soap))
-		return soap_closesock(soap);
-	if (!ns1__DetailCreateOrderResponse)
-		return soap_closesock(soap);
-	ns1__DetailCreateOrderResponse->soap_default(soap);
-	if (soap_begin_recv(soap)
-	 || soap_envelope_begin_in(soap)
-	 || soap_recv_header(soap)
-	 || soap_body_begin_in(soap))
-		return soap_closesock(soap);
-	ns1__DetailCreateOrderResponse->soap_get(soap, "ns1:DetailCreateOrderResponse", "");
-	if (soap->error)
-		return soap_recv_fault(soap, 0);
-	if (soap_body_end_in(soap)
-	 || soap_envelope_end_in(soap)
-	 || soap_end_recv(soap))
-		return soap_closesock(soap);
-	return soap_closesock(soap);
-}
-
-int BaitourServiceSoapProxy::RTCreateOrder_(const char *endpoint, const char *soap_action, _ns1__RTCreateOrder *ns1__RTCreateOrder, _ns1__RTCreateOrderResponse *ns1__RTCreateOrderResponse)
-{	struct soap *soap = this->soap;
-	struct __ns1__RTCreateOrder_ soap_tmp___ns1__RTCreateOrder_;
-	if (endpoint)
-		soap_endpoint = endpoint;
-	if (soap_endpoint == NULL)
-		soap_endpoint = "http://ite4.baitour.com/comanage/baitourService.asmx";
-	if (soap_action == NULL)
-		soap_action = "http://www.baitour.com/RTCreateOrder";
-	soap_begin(soap);
-	soap->encodingStyle = NULL;
-	soap_tmp___ns1__RTCreateOrder_.ns1__RTCreateOrder = ns1__RTCreateOrder;
-	soap_serializeheader(soap);
-	soap_serialize___ns1__RTCreateOrder_(soap, &soap_tmp___ns1__RTCreateOrder_);
-	if (soap_begin_count(soap))
-		return soap->error;
-	if (soap->mode & SOAP_IO_LENGTH)
-	{	if (soap_envelope_begin_out(soap)
-		 || soap_putheader(soap)
-		 || soap_body_begin_out(soap)
-		 || soap_put___ns1__RTCreateOrder_(soap, &soap_tmp___ns1__RTCreateOrder_, "-ns1:RTCreateOrder", NULL)
-		 || soap_body_end_out(soap)
-		 || soap_envelope_end_out(soap))
-			 return soap->error;
-	}
-	if (soap_end_count(soap))
-		return soap->error;
-	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
-	 || soap_envelope_begin_out(soap)
-	 || soap_putheader(soap)
-	 || soap_body_begin_out(soap)
-	 || soap_put___ns1__RTCreateOrder_(soap, &soap_tmp___ns1__RTCreateOrder_, "-ns1:RTCreateOrder", NULL)
-	 || soap_body_end_out(soap)
-	 || soap_envelope_end_out(soap)
-	 || soap_end_send(soap))
-		return soap_closesock(soap);
-	if (!ns1__RTCreateOrderResponse)
-		return soap_closesock(soap);
-	ns1__RTCreateOrderResponse->soap_default(soap);
-	if (soap_begin_recv(soap)
-	 || soap_envelope_begin_in(soap)
-	 || soap_recv_header(soap)
-	 || soap_body_begin_in(soap))
-		return soap_closesock(soap);
-	ns1__RTCreateOrderResponse->soap_get(soap, "ns1:RTCreateOrderResponse", "");
-	if (soap->error)
-		return soap_recv_fault(soap, 0);
-	if (soap_body_end_in(soap)
-	 || soap_envelope_end_in(soap)
-	 || soap_end_recv(soap))
-		return soap_closesock(soap);
-	return soap_closesock(soap);
-}
-
-int BaitourServiceSoapProxy::GetOrderInfo_(const char *endpoint, const char *soap_action, _ns1__GetOrderInfo *ns1__GetOrderInfo, _ns1__GetOrderInfoResponse *ns1__GetOrderInfoResponse)
-{	struct soap *soap = this->soap;
-	struct __ns1__GetOrderInfo_ soap_tmp___ns1__GetOrderInfo_;
-	if (endpoint)
-		soap_endpoint = endpoint;
-	if (soap_endpoint == NULL)
-		soap_endpoint = "http://ite4.baitour.com/comanage/baitourService.asmx";
-	if (soap_action == NULL)
-		soap_action = "http://www.baitour.com/GetOrderInfo";
-	soap_begin(soap);
-	soap->encodingStyle = NULL;
-	soap_tmp___ns1__GetOrderInfo_.ns1__GetOrderInfo = ns1__GetOrderInfo;
-	soap_serializeheader(soap);
-	soap_serialize___ns1__GetOrderInfo_(soap, &soap_tmp___ns1__GetOrderInfo_);
-	if (soap_begin_count(soap))
-		return soap->error;
-	if (soap->mode & SOAP_IO_LENGTH)
-	{	if (soap_envelope_begin_out(soap)
-		 || soap_putheader(soap)
-		 || soap_body_begin_out(soap)
-		 || soap_put___ns1__GetOrderInfo_(soap, &soap_tmp___ns1__GetOrderInfo_, "-ns1:GetOrderInfo", NULL)
-		 || soap_body_end_out(soap)
-		 || soap_envelope_end_out(soap))
-			 return soap->error;
-	}
-	if (soap_end_count(soap))
-		return soap->error;
-	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
-	 || soap_envelope_begin_out(soap)
-	 || soap_putheader(soap)
-	 || soap_body_begin_out(soap)
-	 || soap_put___ns1__GetOrderInfo_(soap, &soap_tmp___ns1__GetOrderInfo_, "-ns1:GetOrderInfo", NULL)
-	 || soap_body_end_out(soap)
-	 || soap_envelope_end_out(soap)
-	 || soap_end_send(soap))
-		return soap_closesock(soap);
-	if (!ns1__GetOrderInfoResponse)
-		return soap_closesock(soap);
-	ns1__GetOrderInfoResponse->soap_default(soap);
-	if (soap_begin_recv(soap)
-	 || soap_envelope_begin_in(soap)
-	 || soap_recv_header(soap)
-	 || soap_body_begin_in(soap))
-		return soap_closesock(soap);
-	ns1__GetOrderInfoResponse->soap_get(soap, "ns1:GetOrderInfoResponse", "");
-	if (soap->error)
-		return soap_recv_fault(soap, 0);
-	if (soap_body_end_in(soap)
-	 || soap_envelope_end_in(soap)
-	 || soap_end_recv(soap))
-		return soap_closesock(soap);
-	return soap_closesock(soap);
-}
-
-int BaitourServiceSoapProxy::GetInvalidationProviders_(const char *endpoint, const char *soap_action, _ns1__GetInvalidationProviders *ns1__GetInvalidationProviders, _ns1__GetInvalidationProvidersResponse *ns1__GetInvalidationProvidersResponse)
-{	struct soap *soap = this->soap;
-	struct __ns1__GetInvalidationProviders_ soap_tmp___ns1__GetInvalidationProviders_;
-	if (endpoint)
-		soap_endpoint = endpoint;
-	if (soap_endpoint == NULL)
-		soap_endpoint = "http://ite4.baitour.com/comanage/baitourService.asmx";
-	if (soap_action == NULL)
-		soap_action = "http://www.baitour.com/GetInvalidationProviders";
-	soap_begin(soap);
-	soap->encodingStyle = NULL;
-	soap_tmp___ns1__GetInvalidationProviders_.ns1__GetInvalidationProviders = ns1__GetInvalidationProviders;
-	soap_serializeheader(soap);
-	soap_serialize___ns1__GetInvalidationProviders_(soap, &soap_tmp___ns1__GetInvalidationProviders_);
-	if (soap_begin_count(soap))
-		return soap->error;
-	if (soap->mode & SOAP_IO_LENGTH)
-	{	if (soap_envelope_begin_out(soap)
-		 || soap_putheader(soap)
-		 || soap_body_begin_out(soap)
-		 || soap_put___ns1__GetInvalidationProviders_(soap, &soap_tmp___ns1__GetInvalidationProviders_, "-ns1:GetInvalidationProviders", NULL)
-		 || soap_body_end_out(soap)
-		 || soap_envelope_end_out(soap))
-			 return soap->error;
-	}
-	if (soap_end_count(soap))
-		return soap->error;
-	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
-	 || soap_envelope_begin_out(soap)
-	 || soap_putheader(soap)
-	 || soap_body_begin_out(soap)
-	 || soap_put___ns1__GetInvalidationProviders_(soap, &soap_tmp___ns1__GetInvalidationProviders_, "-ns1:GetInvalidationProviders", NULL)
-	 || soap_body_end_out(soap)
-	 || soap_envelope_end_out(soap)
-	 || soap_end_send(soap))
-		return soap_closesock(soap);
-	if (!ns1__GetInvalidationProvidersResponse)
-		return soap_closesock(soap);
-	ns1__GetInvalidationProvidersResponse->soap_default(soap);
-	if (soap_begin_recv(soap)
-	 || soap_envelope_begin_in(soap)
-	 || soap_recv_header(soap)
-	 || soap_body_begin_in(soap))
-		return soap_closesock(soap);
-	ns1__GetInvalidationProvidersResponse->soap_get(soap, "ns1:GetInvalidationProvidersResponse", "");
-	if (soap->error)
-		return soap_recv_fault(soap, 0);
-	if (soap_body_end_in(soap)
-	 || soap_envelope_end_in(soap)
-	 || soap_end_recv(soap))
-		return soap_closesock(soap);
-	return soap_closesock(soap);
-}
-
-int BaitourServiceSoapProxy::RefundOrder_(const char *endpoint, const char *soap_action, _ns1__RefundOrder *ns1__RefundOrder, _ns1__RefundOrderResponse *ns1__RefundOrderResponse)
-{	struct soap *soap = this->soap;
-	struct __ns1__RefundOrder_ soap_tmp___ns1__RefundOrder_;
-	if (endpoint)
-		soap_endpoint = endpoint;
-	if (soap_endpoint == NULL)
-		soap_endpoint = "http://ite4.baitour.com/comanage/baitourService.asmx";
-	if (soap_action == NULL)
-		soap_action = "http://www.baitour.com/RefundOrder";
-	soap_begin(soap);
-	soap->encodingStyle = NULL;
-	soap_tmp___ns1__RefundOrder_.ns1__RefundOrder = ns1__RefundOrder;
-	soap_serializeheader(soap);
-	soap_serialize___ns1__RefundOrder_(soap, &soap_tmp___ns1__RefundOrder_);
-	if (soap_begin_count(soap))
-		return soap->error;
-	if (soap->mode & SOAP_IO_LENGTH)
-	{	if (soap_envelope_begin_out(soap)
-		 || soap_putheader(soap)
-		 || soap_body_begin_out(soap)
-		 || soap_put___ns1__RefundOrder_(soap, &soap_tmp___ns1__RefundOrder_, "-ns1:RefundOrder", NULL)
-		 || soap_body_end_out(soap)
-		 || soap_envelope_end_out(soap))
-			 return soap->error;
-	}
-	if (soap_end_count(soap))
-		return soap->error;
-	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
-	 || soap_envelope_begin_out(soap)
-	 || soap_putheader(soap)
-	 || soap_body_begin_out(soap)
-	 || soap_put___ns1__RefundOrder_(soap, &soap_tmp___ns1__RefundOrder_, "-ns1:RefundOrder", NULL)
-	 || soap_body_end_out(soap)
-	 || soap_envelope_end_out(soap)
-	 || soap_end_send(soap))
-		return soap_closesock(soap);
-	if (!ns1__RefundOrderResponse)
-		return soap_closesock(soap);
-	ns1__RefundOrderResponse->soap_default(soap);
-	if (soap_begin_recv(soap)
-	 || soap_envelope_begin_in(soap)
-	 || soap_recv_header(soap)
-	 || soap_body_begin_in(soap))
-		return soap_closesock(soap);
-	ns1__RefundOrderResponse->soap_get(soap, "ns1:RefundOrderResponse", "");
-	if (soap->error)
-		return soap_recv_fault(soap, 0);
-	if (soap_body_end_in(soap)
-	 || soap_envelope_end_in(soap)
-	 || soap_end_recv(soap))
-		return soap_closesock(soap);
-	return soap_closesock(soap);
-}
-
-int BaitourServiceSoapProxy::GetChangeFlightDate_(const char *endpoint, const char *soap_action, _ns1__GetChangeFlightDate *ns1__GetChangeFlightDate, _ns1__GetChangeFlightDateResponse *ns1__GetChangeFlightDateResponse)
-{	struct soap *soap = this->soap;
-	struct __ns1__GetChangeFlightDate_ soap_tmp___ns1__GetChangeFlightDate_;
-	if (endpoint)
-		soap_endpoint = endpoint;
-	if (soap_endpoint == NULL)
-		soap_endpoint = "http://ite4.baitour.com/comanage/baitourService.asmx";
-	if (soap_action == NULL)
-		soap_action = "http://www.baitour.com/GetChangeFlightDate";
-	soap_begin(soap);
-	soap->encodingStyle = NULL;
-	soap_tmp___ns1__GetChangeFlightDate_.ns1__GetChangeFlightDate = ns1__GetChangeFlightDate;
-	soap_serializeheader(soap);
-	soap_serialize___ns1__GetChangeFlightDate_(soap, &soap_tmp___ns1__GetChangeFlightDate_);
-	if (soap_begin_count(soap))
-		return soap->error;
-	if (soap->mode & SOAP_IO_LENGTH)
-	{	if (soap_envelope_begin_out(soap)
-		 || soap_putheader(soap)
-		 || soap_body_begin_out(soap)
-		 || soap_put___ns1__GetChangeFlightDate_(soap, &soap_tmp___ns1__GetChangeFlightDate_, "-ns1:GetChangeFlightDate", NULL)
-		 || soap_body_end_out(soap)
-		 || soap_envelope_end_out(soap))
-			 return soap->error;
-	}
-	if (soap_end_count(soap))
-		return soap->error;
-	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
-	 || soap_envelope_begin_out(soap)
-	 || soap_putheader(soap)
-	 || soap_body_begin_out(soap)
-	 || soap_put___ns1__GetChangeFlightDate_(soap, &soap_tmp___ns1__GetChangeFlightDate_, "-ns1:GetChangeFlightDate", NULL)
 	 || soap_body_end_out(soap)
 	 || soap_envelope_end_out(soap)
 	 || soap_end_send(soap))

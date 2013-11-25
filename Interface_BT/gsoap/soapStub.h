@@ -53,10 +53,10 @@ compiling, linking, and/or using OpenSSL is allowed.
 class SOAP_CMAC _ns1__GetAllCommonPolicy
 {
 public:
-	std::string *tripType;	/* optional element of type xsd:string */
-	std::string *ticketType;	/* optional element of type xsd:string */
-	std::string *agentUserName;	/* optional element of type xsd:string */
-	std::string *pwd;	/* optional element of type xsd:string */
+	std::wstring *tripType;	/* optional element of type xsd:string */
+	std::wstring *ticketType;	/* optional element of type xsd:string */
+	std::wstring *agentUserName;	/* optional element of type xsd:string */
+	std::wstring *pwd;	/* optional element of type xsd:string */
 	struct soap *soap;	/* transient */
 public:
 	virtual int soap_type() const { return 8; } /* = unique id SOAP_TYPE__ns1__GetAllCommonPolicy */
@@ -77,7 +77,7 @@ public:
 class SOAP_CMAC _ns1__GetAllCommonPolicyResponse
 {
 public:
-	std::string *GetAllCommonPolicyResult;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type xsd:string */
+	std::wstring *GetAllCommonPolicyResult;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type xsd:string */
 	struct soap *soap;	/* transient */
 public:
 	virtual int soap_type() const { return 9; } /* = unique id SOAP_TYPE__ns1__GetAllCommonPolicyResponse */
@@ -98,11 +98,11 @@ public:
 class SOAP_CMAC _ns1__GetAllCommonPolicyZIP
 {
 public:
-	std::string *tripType;	/* optional element of type xsd:string */
-	std::string *ticketType;	/* optional element of type xsd:string */
-	std::string *agentUserName;	/* optional element of type xsd:string */
-	std::string *pwd;	/* optional element of type xsd:string */
-	std::string *zip;	/* optional element of type xsd:string */
+	std::wstring *tripType;	/* optional element of type xsd:string */
+	std::wstring *ticketType;	/* optional element of type xsd:string */
+	std::wstring *agentUserName;	/* optional element of type xsd:string */
+	std::wstring *pwd;	/* optional element of type xsd:string */
+	std::wstring *zip;	/* optional element of type xsd:string */
 	struct soap *soap;	/* transient */
 public:
 	virtual int soap_type() const { return 10; } /* = unique id SOAP_TYPE__ns1__GetAllCommonPolicyZIP */
@@ -123,7 +123,7 @@ public:
 class SOAP_CMAC _ns1__GetAllCommonPolicyZIPResponse
 {
 public:
-	std::string *GetAllCommonPolicyZIPResult;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type xsd:string */
+	std::wstring *GetAllCommonPolicyZIPResult;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type xsd:string */
 	struct soap *soap;	/* transient */
 public:
 	virtual int soap_type() const { return 11; } /* = unique id SOAP_TYPE__ns1__GetAllCommonPolicyZIPResponse */
@@ -144,11 +144,11 @@ public:
 class SOAP_CMAC _ns1__GetAlterCommonPolicy
 {
 public:
-	std::string *tripType;	/* optional element of type xsd:string */
-	std::string *ticketType;	/* optional element of type xsd:string */
-	std::string *agentUserName;	/* optional element of type xsd:string */
-	std::string *pwd;	/* optional element of type xsd:string */
-	std::string *rQStartDateTime;	/* optional element of type xsd:string */
+	std::wstring *tripType;	/* optional element of type xsd:string */
+	std::wstring *ticketType;	/* optional element of type xsd:string */
+	std::wstring *agentUserName;	/* optional element of type xsd:string */
+	std::wstring *pwd;	/* optional element of type xsd:string */
+	std::wstring *rQStartDateTime;	/* optional element of type xsd:string */
 	struct soap *soap;	/* transient */
 public:
 	virtual int soap_type() const { return 12; } /* = unique id SOAP_TYPE__ns1__GetAlterCommonPolicy */
@@ -169,7 +169,7 @@ public:
 class SOAP_CMAC _ns1__GetAlterCommonPolicyResponse
 {
 public:
-	std::string *GetAlterCommonPolicyResult;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type xsd:string */
+	std::wstring *GetAlterCommonPolicyResult;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type xsd:string */
 	struct soap *soap;	/* transient */
 public:
 	virtual int soap_type() const { return 13; } /* = unique id SOAP_TYPE__ns1__GetAlterCommonPolicyResponse */
@@ -190,7 +190,7 @@ public:
 class SOAP_CMAC _ns1__MatchCommonPolicy
 {
 public:
-	std::string *xmlDoc;	/* optional element of type xsd:string */
+	std::wstring *xmlDoc;	/* optional element of type xsd:string */
 	struct soap *soap;	/* transient */
 public:
 	virtual int soap_type() const { return 14; } /* = unique id SOAP_TYPE__ns1__MatchCommonPolicy */
@@ -211,7 +211,7 @@ public:
 class SOAP_CMAC _ns1__MatchCommonPolicyResponse
 {
 public:
-	std::string *MatchCommonPolicyResult;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type xsd:string */
+	std::wstring *MatchCommonPolicyResult;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type xsd:string */
 	struct soap *soap;	/* transient */
 public:
 	virtual int soap_type() const { return 15; } /* = unique id SOAP_TYPE__ns1__MatchCommonPolicyResponse */
@@ -232,7 +232,7 @@ public:
 class SOAP_CMAC _ns1__GetAVPolicy
 {
 public:
-	std::string *xmlDoc;	/* optional element of type xsd:string */
+	std::wstring *xmlDoc;	/* optional element of type xsd:string */
 	struct soap *soap;	/* transient */
 public:
 	virtual int soap_type() const { return 16; } /* = unique id SOAP_TYPE__ns1__GetAVPolicy */
@@ -253,7 +253,7 @@ public:
 class SOAP_CMAC _ns1__GetAVPolicyResponse
 {
 public:
-	std::string *GetAVPolicyResult;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type xsd:string */
+	std::wstring *GetAVPolicyResult;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type xsd:string */
 	struct soap *soap;	/* transient */
 public:
 	virtual int soap_type() const { return 17; } /* = unique id SOAP_TYPE__ns1__GetAVPolicyResponse */
@@ -274,7 +274,7 @@ public:
 class SOAP_CMAC _ns1__GetDomesticMatchNormalZRateByID
 {
 public:
-	std::string *xmlDoc;	/* optional element of type xsd:string */
+	std::wstring *xmlDoc;	/* optional element of type xsd:string */
 	struct soap *soap;	/* transient */
 public:
 	virtual int soap_type() const { return 18; } /* = unique id SOAP_TYPE__ns1__GetDomesticMatchNormalZRateByID */
@@ -295,7 +295,7 @@ public:
 class SOAP_CMAC _ns1__GetDomesticMatchNormalZRateByIDResponse
 {
 public:
-	std::string *GetDomesticMatchNormalZRateByIDResult;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type xsd:string */
+	std::wstring *GetDomesticMatchNormalZRateByIDResult;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type xsd:string */
 	struct soap *soap;	/* transient */
 public:
 	virtual int soap_type() const { return 19; } /* = unique id SOAP_TYPE__ns1__GetDomesticMatchNormalZRateByIDResponse */
@@ -316,7 +316,7 @@ public:
 class SOAP_CMAC _ns1__DetailCreateOrder
 {
 public:
-	std::string *xmlDoc;	/* optional element of type xsd:string */
+	std::wstring *xmlDoc;	/* optional element of type xsd:string */
 	struct soap *soap;	/* transient */
 public:
 	virtual int soap_type() const { return 20; } /* = unique id SOAP_TYPE__ns1__DetailCreateOrder */
@@ -337,7 +337,7 @@ public:
 class SOAP_CMAC _ns1__DetailCreateOrderResponse
 {
 public:
-	std::string *DetailCreateOrderResult;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type xsd:string */
+	std::wstring *DetailCreateOrderResult;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type xsd:string */
 	struct soap *soap;	/* transient */
 public:
 	virtual int soap_type() const { return 21; } /* = unique id SOAP_TYPE__ns1__DetailCreateOrderResponse */
@@ -358,7 +358,7 @@ public:
 class SOAP_CMAC _ns1__RTCreateOrder
 {
 public:
-	std::string *xmlDoc;	/* optional element of type xsd:string */
+	std::wstring *xmlDoc;	/* optional element of type xsd:string */
 	struct soap *soap;	/* transient */
 public:
 	virtual int soap_type() const { return 22; } /* = unique id SOAP_TYPE__ns1__RTCreateOrder */
@@ -379,7 +379,7 @@ public:
 class SOAP_CMAC _ns1__RTCreateOrderResponse
 {
 public:
-	std::string *RTCreateOrderResult;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type xsd:string */
+	std::wstring *RTCreateOrderResult;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type xsd:string */
 	struct soap *soap;	/* transient */
 public:
 	virtual int soap_type() const { return 23; } /* = unique id SOAP_TYPE__ns1__RTCreateOrderResponse */
@@ -400,10 +400,10 @@ public:
 class SOAP_CMAC _ns1__GetOrderInfo
 {
 public:
-	std::string *AgentCode;	/* optional element of type xsd:string */
-	std::string *AgentUserName;	/* optional element of type xsd:string */
-	std::string *AgentPwd;	/* optional element of type xsd:string */
-	std::string *OrderID;	/* optional element of type xsd:string */
+	std::wstring *AgentCode;	/* optional element of type xsd:string */
+	std::wstring *AgentUserName;	/* optional element of type xsd:string */
+	std::wstring *AgentPwd;	/* optional element of type xsd:string */
+	std::wstring *OrderID;	/* optional element of type xsd:string */
 	struct soap *soap;	/* transient */
 public:
 	virtual int soap_type() const { return 24; } /* = unique id SOAP_TYPE__ns1__GetOrderInfo */
@@ -424,7 +424,7 @@ public:
 class SOAP_CMAC _ns1__GetOrderInfoResponse
 {
 public:
-	std::string *GetOrderInfoResult;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type xsd:string */
+	std::wstring *GetOrderInfoResult;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type xsd:string */
 	struct soap *soap;	/* transient */
 public:
 	virtual int soap_type() const { return 25; } /* = unique id SOAP_TYPE__ns1__GetOrderInfoResponse */
@@ -445,9 +445,9 @@ public:
 class SOAP_CMAC _ns1__GetInvalidationProviders
 {
 public:
-	std::string *AgentCode;	/* optional element of type xsd:string */
-	std::string *AgentUserName;	/* optional element of type xsd:string */
-	std::string *AgentPwd;	/* optional element of type xsd:string */
+	std::wstring *AgentCode;	/* optional element of type xsd:string */
+	std::wstring *AgentUserName;	/* optional element of type xsd:string */
+	std::wstring *AgentPwd;	/* optional element of type xsd:string */
 	struct soap *soap;	/* transient */
 public:
 	virtual int soap_type() const { return 26; } /* = unique id SOAP_TYPE__ns1__GetInvalidationProviders */
@@ -468,7 +468,7 @@ public:
 class SOAP_CMAC _ns1__GetInvalidationProvidersResponse
 {
 public:
-	std::string *GetInvalidationProvidersResult;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type xsd:string */
+	std::wstring *GetInvalidationProvidersResult;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type xsd:string */
 	struct soap *soap;	/* transient */
 public:
 	virtual int soap_type() const { return 27; } /* = unique id SOAP_TYPE__ns1__GetInvalidationProvidersResponse */
@@ -489,7 +489,7 @@ public:
 class SOAP_CMAC _ns1__RefundOrder
 {
 public:
-	std::string *xmlDoc;	/* optional element of type xsd:string */
+	std::wstring *xmlDoc;	/* optional element of type xsd:string */
 	struct soap *soap;	/* transient */
 public:
 	virtual int soap_type() const { return 28; } /* = unique id SOAP_TYPE__ns1__RefundOrder */
@@ -510,7 +510,7 @@ public:
 class SOAP_CMAC _ns1__RefundOrderResponse
 {
 public:
-	std::string *RefundOrderResult;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type xsd:string */
+	std::wstring *RefundOrderResult;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type xsd:string */
 	struct soap *soap;	/* transient */
 public:
 	virtual int soap_type() const { return 29; } /* = unique id SOAP_TYPE__ns1__RefundOrderResponse */
@@ -531,7 +531,7 @@ public:
 class SOAP_CMAC _ns1__GetChangeFlightDate
 {
 public:
-	std::string *xmlDoc;	/* optional element of type xsd:string */
+	std::wstring *xmlDoc;	/* optional element of type xsd:string */
 	struct soap *soap;	/* transient */
 public:
 	virtual int soap_type() const { return 30; } /* = unique id SOAP_TYPE__ns1__GetChangeFlightDate */
@@ -552,7 +552,7 @@ public:
 class SOAP_CMAC _ns1__GetChangeFlightDateResponse
 {
 public:
-	std::string *GetChangeFlightDateResult;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type xsd:string */
+	std::wstring *GetChangeFlightDateResult;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type xsd:string */
 	struct soap *soap;	/* transient */
 public:
 	virtual int soap_type() const { return 31; } /* = unique id SOAP_TYPE__ns1__GetChangeFlightDateResponse */
@@ -711,159 +711,15 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE___ns1__GetAllCommonPolicy_
-#define SOAP_TYPE___ns1__GetAllCommonPolicy_ (84)
-/* Operation wrapper: */
-struct __ns1__GetAllCommonPolicy_
-{
-public:
-	_ns1__GetAllCommonPolicy *ns1__GetAllCommonPolicy;	/* optional element of type ns1:GetAllCommonPolicy */
-public:
-	int soap_type() const { return 84; } /* = unique id SOAP_TYPE___ns1__GetAllCommonPolicy_ */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetAllCommonPolicyZIP_
-#define SOAP_TYPE___ns1__GetAllCommonPolicyZIP_ (86)
-/* Operation wrapper: */
-struct __ns1__GetAllCommonPolicyZIP_
-{
-public:
-	_ns1__GetAllCommonPolicyZIP *ns1__GetAllCommonPolicyZIP;	/* optional element of type ns1:GetAllCommonPolicyZIP */
-public:
-	int soap_type() const { return 86; } /* = unique id SOAP_TYPE___ns1__GetAllCommonPolicyZIP_ */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetAlterCommonPolicy_
-#define SOAP_TYPE___ns1__GetAlterCommonPolicy_ (88)
-/* Operation wrapper: */
-struct __ns1__GetAlterCommonPolicy_
-{
-public:
-	_ns1__GetAlterCommonPolicy *ns1__GetAlterCommonPolicy;	/* optional element of type ns1:GetAlterCommonPolicy */
-public:
-	int soap_type() const { return 88; } /* = unique id SOAP_TYPE___ns1__GetAlterCommonPolicy_ */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__MatchCommonPolicy_
-#define SOAP_TYPE___ns1__MatchCommonPolicy_ (90)
-/* Operation wrapper: */
-struct __ns1__MatchCommonPolicy_
-{
-public:
-	_ns1__MatchCommonPolicy *ns1__MatchCommonPolicy;	/* optional element of type ns1:MatchCommonPolicy */
-public:
-	int soap_type() const { return 90; } /* = unique id SOAP_TYPE___ns1__MatchCommonPolicy_ */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetAVPolicy_
-#define SOAP_TYPE___ns1__GetAVPolicy_ (92)
-/* Operation wrapper: */
-struct __ns1__GetAVPolicy_
-{
-public:
-	_ns1__GetAVPolicy *ns1__GetAVPolicy;	/* optional element of type ns1:GetAVPolicy */
-public:
-	int soap_type() const { return 92; } /* = unique id SOAP_TYPE___ns1__GetAVPolicy_ */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetDomesticMatchNormalZRateByID_
-#define SOAP_TYPE___ns1__GetDomesticMatchNormalZRateByID_ (94)
-/* Operation wrapper: */
-struct __ns1__GetDomesticMatchNormalZRateByID_
-{
-public:
-	_ns1__GetDomesticMatchNormalZRateByID *ns1__GetDomesticMatchNormalZRateByID;	/* optional element of type ns1:GetDomesticMatchNormalZRateByID */
-public:
-	int soap_type() const { return 94; } /* = unique id SOAP_TYPE___ns1__GetDomesticMatchNormalZRateByID_ */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__DetailCreateOrder_
-#define SOAP_TYPE___ns1__DetailCreateOrder_ (96)
-/* Operation wrapper: */
-struct __ns1__DetailCreateOrder_
-{
-public:
-	_ns1__DetailCreateOrder *ns1__DetailCreateOrder;	/* optional element of type ns1:DetailCreateOrder */
-public:
-	int soap_type() const { return 96; } /* = unique id SOAP_TYPE___ns1__DetailCreateOrder_ */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__RTCreateOrder_
-#define SOAP_TYPE___ns1__RTCreateOrder_ (98)
-/* Operation wrapper: */
-struct __ns1__RTCreateOrder_
-{
-public:
-	_ns1__RTCreateOrder *ns1__RTCreateOrder;	/* optional element of type ns1:RTCreateOrder */
-public:
-	int soap_type() const { return 98; } /* = unique id SOAP_TYPE___ns1__RTCreateOrder_ */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetOrderInfo_
-#define SOAP_TYPE___ns1__GetOrderInfo_ (100)
-/* Operation wrapper: */
-struct __ns1__GetOrderInfo_
-{
-public:
-	_ns1__GetOrderInfo *ns1__GetOrderInfo;	/* optional element of type ns1:GetOrderInfo */
-public:
-	int soap_type() const { return 100; } /* = unique id SOAP_TYPE___ns1__GetOrderInfo_ */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetInvalidationProviders_
-#define SOAP_TYPE___ns1__GetInvalidationProviders_ (102)
-/* Operation wrapper: */
-struct __ns1__GetInvalidationProviders_
-{
-public:
-	_ns1__GetInvalidationProviders *ns1__GetInvalidationProviders;	/* optional element of type ns1:GetInvalidationProviders */
-public:
-	int soap_type() const { return 102; } /* = unique id SOAP_TYPE___ns1__GetInvalidationProviders_ */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__RefundOrder_
-#define SOAP_TYPE___ns1__RefundOrder_ (104)
-/* Operation wrapper: */
-struct __ns1__RefundOrder_
-{
-public:
-	_ns1__RefundOrder *ns1__RefundOrder;	/* optional element of type ns1:RefundOrder */
-public:
-	int soap_type() const { return 104; } /* = unique id SOAP_TYPE___ns1__RefundOrder_ */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetChangeFlightDate_
-#define SOAP_TYPE___ns1__GetChangeFlightDate_ (106)
-/* Operation wrapper: */
-struct __ns1__GetChangeFlightDate_
-{
-public:
-	_ns1__GetChangeFlightDate *ns1__GetChangeFlightDate;	/* optional element of type ns1:GetChangeFlightDate */
-public:
-	int soap_type() const { return 106; } /* = unique id SOAP_TYPE___ns1__GetChangeFlightDate_ */
-};
-#endif
-
 #ifndef WITH_NOGLOBAL
 
 #ifndef SOAP_TYPE_SOAP_ENV__Header
-#define SOAP_TYPE_SOAP_ENV__Header (107)
+#define SOAP_TYPE_SOAP_ENV__Header (83)
 /* SOAP Header: */
 struct SOAP_ENV__Header
 {
 public:
-	int soap_type() const { return 107; } /* = unique id SOAP_TYPE_SOAP_ENV__Header */
+	int soap_type() const { return 83; } /* = unique id SOAP_TYPE_SOAP_ENV__Header */
 #ifdef WITH_NOEMPTYSTRUCT
 private:
 	char dummy;	/* dummy member to enable compilation */
@@ -876,7 +732,7 @@ private:
 #ifndef WITH_NOGLOBAL
 
 #ifndef SOAP_TYPE_SOAP_ENV__Code
-#define SOAP_TYPE_SOAP_ENV__Code (108)
+#define SOAP_TYPE_SOAP_ENV__Code (84)
 /* SOAP Fault Code: */
 struct SOAP_ENV__Code
 {
@@ -884,7 +740,7 @@ public:
 	char *SOAP_ENV__Value;	/* optional element of type xsd:QName */
 	struct SOAP_ENV__Code *SOAP_ENV__Subcode;	/* optional element of type SOAP-ENV:Code */
 public:
-	int soap_type() const { return 108; } /* = unique id SOAP_TYPE_SOAP_ENV__Code */
+	int soap_type() const { return 84; } /* = unique id SOAP_TYPE_SOAP_ENV__Code */
 };
 #endif
 
@@ -893,7 +749,7 @@ public:
 #ifndef WITH_NOGLOBAL
 
 #ifndef SOAP_TYPE_SOAP_ENV__Detail
-#define SOAP_TYPE_SOAP_ENV__Detail (110)
+#define SOAP_TYPE_SOAP_ENV__Detail (86)
 /* SOAP-ENV:Detail */
 struct SOAP_ENV__Detail
 {
@@ -902,7 +758,7 @@ public:
 	int __type;	/* any type of element <fault> (defined below) */
 	void *fault;	/* transient */
 public:
-	int soap_type() const { return 110; } /* = unique id SOAP_TYPE_SOAP_ENV__Detail */
+	int soap_type() const { return 86; } /* = unique id SOAP_TYPE_SOAP_ENV__Detail */
 };
 #endif
 
@@ -911,14 +767,14 @@ public:
 #ifndef WITH_NOGLOBAL
 
 #ifndef SOAP_TYPE_SOAP_ENV__Reason
-#define SOAP_TYPE_SOAP_ENV__Reason (113)
+#define SOAP_TYPE_SOAP_ENV__Reason (89)
 /* SOAP-ENV:Reason */
 struct SOAP_ENV__Reason
 {
 public:
 	char *SOAP_ENV__Text;	/* optional element of type xsd:string */
 public:
-	int soap_type() const { return 113; } /* = unique id SOAP_TYPE_SOAP_ENV__Reason */
+	int soap_type() const { return 89; } /* = unique id SOAP_TYPE_SOAP_ENV__Reason */
 };
 #endif
 
@@ -927,7 +783,7 @@ public:
 #ifndef WITH_NOGLOBAL
 
 #ifndef SOAP_TYPE_SOAP_ENV__Fault
-#define SOAP_TYPE_SOAP_ENV__Fault (114)
+#define SOAP_TYPE_SOAP_ENV__Fault (90)
 /* SOAP Fault: */
 struct SOAP_ENV__Fault
 {
@@ -942,7 +798,7 @@ public:
 	char *SOAP_ENV__Role;	/* optional element of type xsd:string */
 	struct SOAP_ENV__Detail *SOAP_ENV__Detail;	/* optional element of type SOAP-ENV:Detail */
 public:
-	int soap_type() const { return 114; } /* = unique id SOAP_TYPE_SOAP_ENV__Fault */
+	int soap_type() const { return 90; } /* = unique id SOAP_TYPE_SOAP_ENV__Fault */
 };
 #endif
 

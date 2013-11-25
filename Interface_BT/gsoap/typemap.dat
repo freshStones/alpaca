@@ -28,7 +28,7 @@
 #	or using C++ strings, which need a pointer (added by default):
 #		xsd__string = | std::string
 #	or using C++ wstrings:
-#		xsd__string = | std::wstring
+		xsd__string = | std::wstring
 #	After enabling this line, all XSD strings will be mapped to char* or
 #	std::wstring, respectively to support Unicode. Note that the
 #	'declaration' part is empty in this case.

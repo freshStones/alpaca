@@ -111,53 +111,5 @@ class SOAP_CMAC BaitourServiceSoapProxy
 	/// Web service operation 'GetChangeFlightDate' (returns error code or SOAP_OK)
 	virtual	int GetChangeFlightDate(_ns1__GetChangeFlightDate *ns1__GetChangeFlightDate, _ns1__GetChangeFlightDateResponse *ns1__GetChangeFlightDateResponse) { return this->GetChangeFlightDate(NULL, NULL, ns1__GetChangeFlightDate, ns1__GetChangeFlightDateResponse); }
 	virtual	int GetChangeFlightDate(const char *endpoint, const char *soap_action, _ns1__GetChangeFlightDate *ns1__GetChangeFlightDate, _ns1__GetChangeFlightDateResponse *ns1__GetChangeFlightDateResponse);
-
-	/// Web service operation 'GetAllCommonPolicy' (returns error code or SOAP_OK)
-	virtual	int GetAllCommonPolicy_(_ns1__GetAllCommonPolicy *ns1__GetAllCommonPolicy, _ns1__GetAllCommonPolicyResponse *ns1__GetAllCommonPolicyResponse) { return this->GetAllCommonPolicy_(NULL, NULL, ns1__GetAllCommonPolicy, ns1__GetAllCommonPolicyResponse); }
-	virtual	int GetAllCommonPolicy_(const char *endpoint, const char *soap_action, _ns1__GetAllCommonPolicy *ns1__GetAllCommonPolicy, _ns1__GetAllCommonPolicyResponse *ns1__GetAllCommonPolicyResponse);
-
-	/// Web service operation 'GetAllCommonPolicyZIP' (returns error code or SOAP_OK)
-	virtual	int GetAllCommonPolicyZIP_(_ns1__GetAllCommonPolicyZIP *ns1__GetAllCommonPolicyZIP, _ns1__GetAllCommonPolicyZIPResponse *ns1__GetAllCommonPolicyZIPResponse) { return this->GetAllCommonPolicyZIP_(NULL, NULL, ns1__GetAllCommonPolicyZIP, ns1__GetAllCommonPolicyZIPResponse); }
-	virtual	int GetAllCommonPolicyZIP_(const char *endpoint, const char *soap_action, _ns1__GetAllCommonPolicyZIP *ns1__GetAllCommonPolicyZIP, _ns1__GetAllCommonPolicyZIPResponse *ns1__GetAllCommonPolicyZIPResponse);
-
-	/// Web service operation 'GetAlterCommonPolicy' (returns error code or SOAP_OK)
-	virtual	int GetAlterCommonPolicy_(_ns1__GetAlterCommonPolicy *ns1__GetAlterCommonPolicy, _ns1__GetAlterCommonPolicyResponse *ns1__GetAlterCommonPolicyResponse) { return this->GetAlterCommonPolicy_(NULL, NULL, ns1__GetAlterCommonPolicy, ns1__GetAlterCommonPolicyResponse); }
-	virtual	int GetAlterCommonPolicy_(const char *endpoint, const char *soap_action, _ns1__GetAlterCommonPolicy *ns1__GetAlterCommonPolicy, _ns1__GetAlterCommonPolicyResponse *ns1__GetAlterCommonPolicyResponse);
-
-	/// Web service operation 'MatchCommonPolicy' (returns error code or SOAP_OK)
-	virtual	int MatchCommonPolicy_(_ns1__MatchCommonPolicy *ns1__MatchCommonPolicy, _ns1__MatchCommonPolicyResponse *ns1__MatchCommonPolicyResponse) { return this->MatchCommonPolicy_(NULL, NULL, ns1__MatchCommonPolicy, ns1__MatchCommonPolicyResponse); }
-	virtual	int MatchCommonPolicy_(const char *endpoint, const char *soap_action, _ns1__MatchCommonPolicy *ns1__MatchCommonPolicy, _ns1__MatchCommonPolicyResponse *ns1__MatchCommonPolicyResponse);
-
-	/// Web service operation 'GetAVPolicy' (returns error code or SOAP_OK)
-	virtual	int GetAVPolicy_(_ns1__GetAVPolicy *ns1__GetAVPolicy, _ns1__GetAVPolicyResponse *ns1__GetAVPolicyResponse) { return this->GetAVPolicy_(NULL, NULL, ns1__GetAVPolicy, ns1__GetAVPolicyResponse); }
-	virtual	int GetAVPolicy_(const char *endpoint, const char *soap_action, _ns1__GetAVPolicy *ns1__GetAVPolicy, _ns1__GetAVPolicyResponse *ns1__GetAVPolicyResponse);
-
-	/// Web service operation 'GetDomesticMatchNormalZRateByID' (returns error code or SOAP_OK)
-	virtual	int GetDomesticMatchNormalZRateByID_(_ns1__GetDomesticMatchNormalZRateByID *ns1__GetDomesticMatchNormalZRateByID, _ns1__GetDomesticMatchNormalZRateByIDResponse *ns1__GetDomesticMatchNormalZRateByIDResponse) { return this->GetDomesticMatchNormalZRateByID_(NULL, NULL, ns1__GetDomesticMatchNormalZRateByID, ns1__GetDomesticMatchNormalZRateByIDResponse); }
-	virtual	int GetDomesticMatchNormalZRateByID_(const char *endpoint, const char *soap_action, _ns1__GetDomesticMatchNormalZRateByID *ns1__GetDomesticMatchNormalZRateByID, _ns1__GetDomesticMatchNormalZRateByIDResponse *ns1__GetDomesticMatchNormalZRateByIDResponse);
-
-	/// Web service operation 'DetailCreateOrder' (returns error code or SOAP_OK)
-	virtual	int DetailCreateOrder_(_ns1__DetailCreateOrder *ns1__DetailCreateOrder, _ns1__DetailCreateOrderResponse *ns1__DetailCreateOrderResponse) { return this->DetailCreateOrder_(NULL, NULL, ns1__DetailCreateOrder, ns1__DetailCreateOrderResponse); }
-	virtual	int DetailCreateOrder_(const char *endpoint, const char *soap_action, _ns1__DetailCreateOrder *ns1__DetailCreateOrder, _ns1__DetailCreateOrderResponse *ns1__DetailCreateOrderResponse);
-
-	/// Web service operation 'RTCreateOrder' (returns error code or SOAP_OK)
-	virtual	int RTCreateOrder_(_ns1__RTCreateOrder *ns1__RTCreateOrder, _ns1__RTCreateOrderResponse *ns1__RTCreateOrderResponse) { return this->RTCreateOrder_(NULL, NULL, ns1__RTCreateOrder, ns1__RTCreateOrderResponse); }
-	virtual	int RTCreateOrder_(const char *endpoint, const char *soap_action, _ns1__RTCreateOrder *ns1__RTCreateOrder, _ns1__RTCreateOrderResponse *ns1__RTCreateOrderResponse);
-
-	/// Web service operation 'GetOrderInfo' (returns error code or SOAP_OK)
-	virtual	int GetOrderInfo_(_ns1__GetOrderInfo *ns1__GetOrderInfo, _ns1__GetOrderInfoResponse *ns1__GetOrderInfoResponse) { return this->GetOrderInfo_(NULL, NULL, ns1__GetOrderInfo, ns1__GetOrderInfoResponse); }
-	virtual	int GetOrderInfo_(const char *endpoint, const char *soap_action, _ns1__GetOrderInfo *ns1__GetOrderInfo, _ns1__GetOrderInfoResponse *ns1__GetOrderInfoResponse);
-
-	/// Web service operation 'GetInvalidationProviders' (returns error code or SOAP_OK)
-	virtual	int GetInvalidationProviders_(_ns1__GetInvalidationProviders *ns1__GetInvalidationProviders, _ns1__GetInvalidationProvidersResponse *ns1__GetInvalidationProvidersResponse) { return this->GetInvalidationProviders_(NULL, NULL, ns1__GetInvalidationProviders, ns1__GetInvalidationProvidersResponse); }
-	virtual	int GetInvalidationProviders_(const char *endpoint, const char *soap_action, _ns1__GetInvalidationProviders *ns1__GetInvalidationProviders, _ns1__GetInvalidationProvidersResponse *ns1__GetInvalidationProvidersResponse);
-
-	/// Web service operation 'RefundOrder' (returns error code or SOAP_OK)
-	virtual	int RefundOrder_(_ns1__RefundOrder *ns1__RefundOrder, _ns1__RefundOrderResponse *ns1__RefundOrderResponse) { return this->RefundOrder_(NULL, NULL, ns1__RefundOrder, ns1__RefundOrderResponse); }
-	virtual	int RefundOrder_(const char *endpoint, const char *soap_action, _ns1__RefundOrder *ns1__RefundOrder, _ns1__RefundOrderResponse *ns1__RefundOrderResponse);
-
-	/// Web service operation 'GetChangeFlightDate' (returns error code or SOAP_OK)
-	virtual	int GetChangeFlightDate_(_ns1__GetChangeFlightDate *ns1__GetChangeFlightDate, _ns1__GetChangeFlightDateResponse *ns1__GetChangeFlightDateResponse) { return this->GetChangeFlightDate_(NULL, NULL, ns1__GetChangeFlightDate, ns1__GetChangeFlightDateResponse); }
-	virtual	int GetChangeFlightDate_(const char *endpoint, const char *soap_action, _ns1__GetChangeFlightDate *ns1__GetChangeFlightDate, _ns1__GetChangeFlightDateResponse *ns1__GetChangeFlightDateResponse);
 };
 #endif
