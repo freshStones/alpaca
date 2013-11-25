@@ -12,9 +12,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     //xmlTest();
 
-    QSettings *configIniRead = new QSettings("/Users/xiaosb/Documents/workspace/alpaca/Interface_BT/setting.ini",QSettings::IniFormat);
+    QSettings *configIniRead = new QSettings("/home/daniel/alpaca/Interface_BT/setting.ini",QSettings::IniFormat);
     this->op = new policyOp(configIniRead->value("/ACCOUNT/USERNAME").toString(),configIniRead->value("/ACCOUNT/PASSWORD").toString(),configIniRead->value("/AGENT_DESC/AGENTCODE").toString());
-    this->op->GetAlterCommonPolicy("2013-11-25T12:15:20.827","0","0");
+    //this->op->GetAlterCommonPolicy("2013-11-25T12:15:20.827","0","0");
 }
 
 void MainWindow::xmlTest(){

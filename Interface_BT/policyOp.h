@@ -8,6 +8,8 @@
 #include <QMap>
 #include <QDomDocument>
 
+#include "btdatabase.h"
+
 namespace ns1 {
 class policyOp;
 }
