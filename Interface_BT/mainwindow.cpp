@@ -13,6 +13,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
     ui->progressBar->setRange(0,5000-1);
     ui->progressBar->setValue(0);
 
