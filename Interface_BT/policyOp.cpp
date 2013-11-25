@@ -26,14 +26,14 @@ QString policyOp::genQuery(QString table, QMap<QString,QString> map)
     QMap<QString,QString>::const_iterator i;
     i = map.constBegin();
     keys += i.key();
-    values+= i.value();
+    values+= "'" + i.value() + "'";
     i++;
     for( ; i!=map.constEnd(); ++i)
     {
         keys = keys + "," + i.key();
-        values = values = "," + i.value();
+        values = values + "," + "'" + i.value() + "'";
     }
-    return QString("insert into %1(%2) values(%3)").arg(table).arg(keys).arg(values);
+    return QString("replace into %1(%2) values(%3)").arg(table).arg(keys).arg(values);
 }
 
 bool policyOp::xmlhandler(int callRes,QString xml,bool (*visitor)(QDomElement))
@@ -83,7 +83,7 @@ bool policyOp::GetAllCommonPolicy(std::wstring tripType, std::wstring ticketType
     req.agentUserName = &username;
     req.pwd = &pwd;
     int callRes = BTproxy->GetAllCommonPolicy(&req, &res);
-    return this->xmlhandler(callRes,QString().fromStdWString(*res.GetAllCommonPolicyResult),GetAllCommonPolicyVisitor);
+    return this->xmlhandler(callRes,QString().fromStdWString(*res.GetAllCommonPolicyResult),GetAlterCommonPolicyVisitor);
 }
 
 bool policyOp::GetAllCommonPolicyVisitor(QDomElement element)
@@ -121,14 +121,40 @@ bool policyOp::GetAlterCommonPolicy(std::wstring rQStartDateTime,std::wstring tr
 }
 bool policyOp::GetAlterCommonPolicyVisitor(QDomElement element)
 {
+    QStringList qsl = element.text().split("|");
+
     QMap<QString,QString> map;
-    map.insert("Id",element.attributes().namedItem("Id").nodeValue());
-    map.insert("State",element.attributes().namedItem("State").nodeValue());
-    map.insert("IsChangePnr",element.attributes().namedItem("IsChangePnr").nodeValue());
-    map.insert("ProviderWorkTime",element.attributes().namedItem("ProviderWorkTime").nodeValue());
-    map.insert("ProviderVWorkTime",element.attributes().namedItem("PorviderVWorkTime").nodeValue());
-    map.insert("Value",element.text());
-    showmap(map);
+    //map.insert("Id",element.attributes().namedItem("Id").nodeValue());
+    //map.insert("State",element.attributes().namedItem("State").nodeValue());
+    //map.insert("IsChangePnr",element.attributes().namedItem("IsChangePnr").nodeValue());
+    //map.insert("ProviderWorkTime",element.attributes().namedItem("ProviderWorkTime").nodeValue());
+    //map.insert("ProviderVWorkTime",element.attributes().namedItem("PorviderVWorkTime").nodeValue());
+    //map.insert("Value",element.text());
+    map.insert("policy_uuid",element.attributes().namedItem("Id").nodeValue());
+    map.insert("policyStatus",element.attributes().namedItem("State").nodeValue());
+    map.insert("shouldChangePNR",element.attributes().namedItem("IsChangePnr").nodeValue());
+    map.insert("departureCityCodes",qsl.at(0));
+    map.insert("arrivalCityCodes",qsl.at((1)));
+    map.insert("airlineCode",qsl.at(2));
+    map.insert("flightType",qsl.at(3));
+    map.insert("applicableFlight",qsl.at(4));
+    map.insert("inapplicableFlight",qsl.at(5));
+    map.insert("timetableRestriction",qsl.at(6));
+    map.insert("ticketType",qsl.at(7));
+    map.insert("applicableSpaceCode",qsl.at(8));
+    map.insert("rebateRate",qsl.at(9));
+    map.insert("ticketingDateLimitStart",qsl.at(10).split(",").at(0));
+    map.insert("ticketingDateLimitEnd",qsl.at(10).split(",").at(1));
+    map.insert("supplierTTLofficeAccount",qsl.at(12));
+    map.insert("policyEntryDateTime",qsl.at(13));
+    map.insert("policyModifyDatetime",qsl.at(14));
+    map.insert("supplierCode",qsl.at(15));
+    map.insert("memo",qsl.at(16));
+    map.insert("autoTicketingEnabled",qsl.at(17));  //百拓的文档写错了，这里应该有
+    //showmap(map);
+    QString sql = genQuery("policyDescripition", map);
+    //showDebugMsg(sql);
+    if(btDatabase::instance()->updateOperation(sql) != 1) showDebugMsg("update error!");
     return true;
 }
 bool policyOp::GetAVPolicy(QString Type,QString OrderSrc,QString DptAirport,QString ArrAirport,QString TakeOffDate,QString Cabin,QString FlightNum,QString avinfo)

@@ -5,6 +5,7 @@
 //#include "gsoap/BaitourServiceSoap.nsmap"
 #include <QDebug>
 #include <QString>
+#include <QStringList>
 #include <QMap>
 #include <QDomDocument>
 
@@ -22,7 +23,7 @@ public:
     policyOp(QString, QString, QString);
     bool xmlhandler(int,QString,bool (*visitor)(QDomElement));
     static void showmap(QMap<QString,QString>);
-    QString genQuery(QString,QMap<QString,QString>);
+    static QString genQuery(QString,QMap<QString,QString>);
     bool GetAllCommonPolicy(QString, QString);
     bool GetAllCommonPolicy(std::wstring, std::wstring, std::wstring, std::wstring);
     static bool GetAllCommonPolicyVisitor(QDomElement);
@@ -43,7 +44,7 @@ public:
     //bool DetailCreateOrder();
     //bool RefundOrder();
     //bool RTCreateOrder();
-    void showDebugMsg(QString);
+    static void showDebugMsg(QString);
 private:
     BaitourServiceSoapProxy* BTproxy;
 
