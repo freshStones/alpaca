@@ -387,7 +387,7 @@
        </rect>
       </property>
       <property name="text">
-       <string>s</string>
+       <string/>
       </property>
      </widget>
     </widget>
