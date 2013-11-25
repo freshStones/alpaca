@@ -1,6 +1,5 @@
 #include "policyOp.h"
 #include "gsoap/BaitourServiceSoap.nsmap"
-using namespace std;
 
 policyOp::policyOp(QString _usrName, QString _pwd, QString _agentcode)
 {
@@ -34,7 +33,7 @@ QString policyOp::genQuery(QString table, QMap<QString,QString> map)
         keys = keys + "," + i.key();
         values = values = "," + i.value();
     }
-    return QString("insert into %1%2 values%3").arg(table).arg(keys).arg(values);
+    return QString("insert into %1(%2) values(%3)").arg(table).arg(keys).arg(values);
 }
 
 bool policyOp::xmlhandler(int callRes,QString xml,bool (*visitor)(QDomElement))
@@ -76,7 +75,7 @@ bool policyOp::GetAllCommonPolicy(QString tripType,QString ticketType)
     return this->GetAllCommonPolicy(tripType.toStdWString(), ticketType.toStdWString(), this->usrName.toStdWString(),this->pwd.toStdWString());
 }
 
-bool policyOp::GetAllCommonPolicy(wstring tripType, wstring ticketType, wstring username, wstring pwd)
+bool policyOp::GetAllCommonPolicy(std::wstring tripType, std::wstring ticketType, std::wstring username, std::wstring pwd)
 {
     _ns1__GetAllCommonPolicy req;
     _ns1__GetAllCommonPolicyResponse res;
@@ -107,7 +106,7 @@ bool policyOp::GetAlterCommonPolicy(QString rQStartDateTime, QString tripType, Q
     return this->GetAlterCommonPolicy(rQStartDateTime.toStdWString(),tripType.toStdWString(),ticketType.toStdWString(),this->usrName.toStdWString(),this->pwd.toStdWString());
 }
 
-bool policyOp::GetAlterCommonPolicy(wstring rQStartDateTime,wstring tripType,wstring ticketType,wstring usrname,wstring pwd)
+bool policyOp::GetAlterCommonPolicy(std::wstring rQStartDateTime,std::wstring tripType,std::wstring ticketType,std::wstring usrname,std::wstring pwd)
 {
     //qDebug()<<QString().fromStdString(rQStartDateTime)<<QString().fromStdString(tripType)<<QString().fromStdString(usrname)<<endl;
     _ns1__GetAlterCommonPolicy req;
@@ -138,7 +137,7 @@ bool policyOp::GetAVPolicy(QString Type,QString OrderSrc,QString DptAirport,QStr
     _ns1__GetAVPolicy req;
     _ns1__GetAVPolicyResponse res;
     QString xml = QString("<FlightSearch AgentCode=\"%1\" AgentUserName=\"%2\" AgentPwd=\"%3\" ><AV  Type=\"%4\" OrderSrc=\"%5\"  DptAirport=\"%6\"  ArrAirport=\"%7\"  TakeOffDate=\"%8\" Cabin=\"%9\"  FlightNum=\"%10\">%11</AV></FlightSearch>").arg(agentCode).arg(usrName).arg(pwd).arg(Type).arg(OrderSrc).arg(DptAirport).arg(ArrAirport).arg(TakeOffDate).arg(Cabin).arg(FlightNum).arg(avinfo);
-    wstring xmldoc = xml.toStdWString();
+    std::wstring xmldoc = xml.toStdWString();
     req.xmlDoc = &xmldoc;
     int callRes = BTproxy ->GetAVPolicy(&req,&res);
     return this->xmlhandler(callRes,QString().fromStdWString(*res.GetAVPolicyResult),GetAVPolicyVisitor);
@@ -186,7 +185,7 @@ bool policyOp::MatchCommonPolicy(QString DepartureDateTime,QString FlightNumber,
     _ns1__MatchCommonPolicy req;
     _ns1__MatchCommonPolicyResponse res;
     QString xml = QString("<OTA_AirFareRQ	 AgentCode=\"%1\" AgentUserName=\"%2\" AgentPwd=\"%3\" DepartureDateTime='%4' FlightNumber='%5' ResBookDesigCode='%6' DepartureAirport='%7' ArrivalAirport='%8' ReturnPolicyType='%9'  TripType='%10' FlightNumberBack='%11' ResBookDesigCodeBack='%12' DepartureDateTimeBack='%13'></OTA_AirFareRQ>").arg(agentCode).arg(usrName).arg(pwd).arg(DepartureDateTime).arg(FlightNumber).arg(ResBookDesigCode).arg(DepartureAirport).arg(ArrivalAirport).arg(ReturnPolicyType).arg(TripType).arg(FlightNumberBack).arg(ResBookDesigCodeBack).arg(DepartureDateTimeBack);
-    wstring xmldoc = xml.toStdWString();
+    std::wstring xmldoc = xml.toStdWString();
     req.xmlDoc = &xmldoc;
     int callRes = BTproxy->MatchCommonPolicy(&req,&res);
     return this->xmlhandler(callRes,QString().fromStdWString(*res.MatchCommonPolicyResult),MatchCommonPolicyVisitor);
@@ -220,7 +219,7 @@ bool policyOp::GetInvalidationProviders()
 {
     return this->GetInvalidationProviders(this->usrName.toStdWString(),this->pwd.toStdWString(),this->agentCode.toStdWString());
 }
-bool policyOp::GetInvalidationProviders(wstring usrname,wstring pwd,wstring agentCode)
+bool policyOp::GetInvalidationProviders(std::wstring usrname,std::wstring pwd,std::wstring agentCode)
 {
     _ns1__GetInvalidationProviders req;
     _ns1__GetInvalidationProvidersResponse res;
