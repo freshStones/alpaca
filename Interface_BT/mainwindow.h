@@ -19,9 +19,16 @@ public:
 
     void xmlTest();
     
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     policyOp *op;
+
+public slots:
+    void slotSetProgressBarRange(int);
+    void slotSetProgressBarValue(int);
 };
 
 #endif // MAINWINDOW_H

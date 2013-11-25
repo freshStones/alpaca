@@ -4,18 +4,31 @@
 #include <QFile>
 #include <QDomDocument>
 #include <QSettings>
+#include <QSqlDatabase>
+#include <QMessageBox>
+#include <QObject>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    ui->progressBar->setRange(0,5000-1);
+    ui->progressBar->setValue(0);
+
     //xmlTest();
 
     QSettings *configIniRead = new QSettings("/home/daniel/alpaca/Interface_BT/setting.ini",QSettings::IniFormat);
     this->op = new policyOp(configIniRead->value("/ACCOUNT/USERNAME").toString(),configIniRead->value("/ACCOUNT/PASSWORD").toString(),configIniRead->value("/AGENT_DESC/AGENTCODE").toString());
-    this->op->GetAlterCommonPolicy("2013-11-25T23:30:20.827","0","0");
+
+    connect(this->op,SIGNAL(setProgressBarRange(int)),this,SLOT(slotSetProgressBarRange(int)));
+    connect(this->op,SIGNAL(setProgressBarValue(int)),this,SLOT(slotSetProgressBarValue(int)));
+    //QSqlDatabase::database().transaction();
+    //this->op->GetAlterCommonPolicy("2013-11-26T01:13:20.827","0","0");
+    //QMessageBox::information(NULL, "Title", "Content", QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
+    //QSqlDatabase::database().commit();
 }
+
 
 void MainWindow::xmlTest(){
     char fileName[100] = "/home/daniel/Desktop/201311200359065980000.xml";
@@ -61,4 +74,17 @@ void MainWindow::xmlTest(){
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+    this->op->GetAlterCommonPolicy("2013-11-26T00:13:20.827","0","0");
+}
+
+void MainWindow::slotSetProgressBarRange(int x){
+    if(x != 0 ) ui->progressBar->setRange(0,x);
+}
+
+void MainWindow::slotSetProgressBarValue(int x){
+    ui->progressBar->setValue(x);
 }

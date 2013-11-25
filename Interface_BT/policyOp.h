@@ -8,14 +8,16 @@
 #include <QStringList>
 #include <QMap>
 #include <QDomDocument>
+#include <QObject>
 
 #include "btdatabase.h"
 
 namespace ns1 {
 class policyOp;
 }
-class policyOp
+class policyOp:public QObject
 {
+    Q_OBJECT
 private:
     QString usrName, pwd, agentCode;
 
@@ -48,6 +50,9 @@ public:
 private:
     BaitourServiceSoapProxy* BTproxy;
 
+signals:
+    void setProgressBarValue(int x);
+    void setProgressBarRange(int x);
 };
 
 #endif // POLICY_OP_H

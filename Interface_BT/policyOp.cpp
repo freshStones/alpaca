@@ -57,10 +57,14 @@ bool policyOp::xmlhandler(int callRes,QString xml,bool (*visitor)(QDomElement))
         }
 
         QDomElement root = doc.documentElement();
+        emit setProgressBarRange(root.childNodes().count());
         QDomElement element = root.firstChildElement();
+        int itemCount = 0;
         while(!element.isNull()){
+            itemCount++;
             (*visitor)(element);
-            element = element.nextSiblingElement();
+            emit setProgressBarValue(itemCount);
+            element = element.nextSiblingElement();       
         }
 
     }
