@@ -80,8 +80,8 @@ bool policyOp::GetAllCommonPolicyVisitor(QDomElement element)
     map.insert("State",element.attributes().namedItem("State").nodeValue());
     map.insert("IsChangePnr",element.attributes().namedItem("IsChangePnr").nodeValue());
     map.insert("ProviderWorkTime",element.attributes().namedItem("ProviderWorkTime").nodeValue());
-    map.insert("ProviderVWorkTime",element.attributes().namedItem("ProviderVWorkTime").nodeValue());
-    map.insert("Value",element.toText().data());
+    map.insert("ProviderVWorkTime",element.attributes().namedItem("PorviderVWorkTime").nodeValue());
+    map.insert("Value",element.text());
     showmap(map);
     return true;
 
@@ -113,7 +113,7 @@ bool policyOp::GetAlterCommonPolicyVisitor(QDomElement element)
     map.insert("State",element.attributes().namedItem("State").nodeValue());
     map.insert("IsChangePnr",element.attributes().namedItem("IsChangePnr").nodeValue());
     map.insert("ProviderWorkTime",element.attributes().namedItem("ProviderWorkTime").nodeValue());
-    map.insert("PorviderVworkTime",element.attributes().namedItem("ProviderVWorkTime").nodeValue());
+    map.insert("ProviderVWorkTime",element.attributes().namedItem("PorviderVWorkTime").nodeValue());
     map.insert("Value",element.text());
     showmap(map);
     return true;
