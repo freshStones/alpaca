@@ -21,6 +21,8 @@ public:
 private slots:
     void on_pushButton_clicked();
 
+    void on_queryButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     policyOp *op;

@@ -16,8 +16,6 @@ MainWindow::MainWindow(QWidget *parent) :
     btDatabase::instance();
     allPolicyModel = new QSqlTableModel;
     allPolicyModel->setTable("policyDescripition");
-    allPolicyModel->select();
-    ui->allPolicyTableView->setModel(allPolicyModel);
 
     ui->progressBar->setRange(0,5000-1);
     ui->progressBar->setValue(0);
@@ -99,4 +97,19 @@ void MainWindow::slotSetProgressBarValue(int x){
     int i = str.indexOf(", ") + 2;
     int j = str.indexOf("processed") - 1;
     ui->label->setText(str.replace(i,j-i,QString("%1").arg(x)));
+}
+
+void MainWindow::on_queryButton_clicked()
+{
+    QString filter("departureCityCodes like \"\%" + ui->dep->text() + "\%\""+"and arrivalCityCodes like \"\%" + ui->arr->text() + "\%\"" + " and supplierTTLofficeAccount like \"\%" + ui->officeNo->text() + "\"");
+    filter += " and airlinecode like \"\%" + ui->companyCode->text() + " and policyStatus = 1";
+    if (ui->pnrCheck->checkState()==Qt::Checked)
+        filter += " and shouldChangePNR = 1";
+    if (ui->rateGtCheck->checkState()==Qt::Checked)
+        filter += " and rebateRate > " + ui->rateGt->text();
+    if (ui->rateLtCheck->checkState()==Qt::Checked)
+        filter += " and rebateRate < " + ui->rateLt->text();
+    allPolicyModel->setFilter(filter);
+    allPolicyModel->select();
+    ui->allPolicyTableView->setModel(allPolicyModel);
 }
