@@ -24,7 +24,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     //xmlTest();
 
-    QSettings *configIniRead = new QSettings("/Users/xiaosb/Documents/workspace/alpaca/Interface_BT/setting.ini",QSettings::IniFormat);
+    QSettings *configIniRead = new QSettings("/home/daniel/alpaca/Interface_BT/setting.ini",QSettings::IniFormat);
     this->op = new policyOp(configIniRead->value("/ACCOUNT/USERNAME").toString(),configIniRead->value("/ACCOUNT/PASSWORD").toString(),configIniRead->value("/AGENT_DESC/AGENTCODE").toString());
 
     connect(this->op,SIGNAL(setProgressBarRange(int)),this,SLOT(slotSetProgressBarRange(int)));
@@ -84,13 +84,19 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-    this->op->GetAlterCommonPolicy("2013-11-26T01:01:20.827","0","0");
+    //this->op->GetAlterCommonPolicy("2013-11-26T01:01:20.827","0","0");
+    this->op->GetAllCommonPolicy("0","0");
 }
 
 void MainWindow::slotSetProgressBarRange(int x){
     if(x != 0 ) ui->progressBar->setRange(0,x);
+    ui->label->setText(QString("%1 Items in total, 0 processed.").arg(x));
 }
 
 void MainWindow::slotSetProgressBarValue(int x){
     ui->progressBar->setValue(x);
+    QString str = ui->label->text();
+    int i = str.indexOf(", ") + 2;
+    int j = str.indexOf("processed") - 1;
+    ui->label->setText(str.replace(i,j-i,QString("%1").arg(x)));
 }
