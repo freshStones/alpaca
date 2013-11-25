@@ -17,8 +17,8 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>330</x>
-      <y>480</y>
+      <x>310</x>
+      <y>470</y>
       <width>115</width>
       <height>32</height>
      </rect>
@@ -30,7 +30,7 @@
    <widget class="QTabWidget" name="tabs">
     <property name="geometry">
      <rect>
-      <x>60</x>
+      <x>30</x>
       <y>50</y>
       <width>701</width>
       <height>391</height>
@@ -69,6 +69,19 @@
       </property>
      </widget>
     </widget>
+   </widget>
+   <widget class="QProgressBar" name="progressBar">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>530</y>
+      <width>801</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>24</number>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

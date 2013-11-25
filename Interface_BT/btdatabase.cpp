@@ -17,7 +17,7 @@ void btDatabase::init()
 
 btDatabase * btDatabase::instance()
 {
-    qDebug() << "btDatabase::instance() called" << endl;
+    //qDebug() << "btDatabase::instance() called" << endl;
     if(btDatabase::_instance == 0){
         btDatabase::_instance = new btDatabase();
         btDatabase::_instance->init();

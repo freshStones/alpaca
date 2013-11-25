@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Mon Nov 25 22:46:16 2013
+** Created: Tue Nov 26 01:28:16 2013
 **      by: Qt User Interface Compiler version 4.8.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -17,6 +17,7 @@
 #include <QtGui/QHeaderView>
 #include <QtGui/QMainWindow>
 #include <QtGui/QMenuBar>
+#include <QtGui/QProgressBar>
 #include <QtGui/QPushButton>
 #include <QtGui/QStatusBar>
 #include <QtGui/QWidget>
@@ -28,6 +29,7 @@ class Ui_MainWindow
 public:
     QWidget *centralwidget;
     QPushButton *pushButton;
+    QProgressBar *progressBar;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -40,7 +42,11 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(330, 480, 115, 32));
+        pushButton->setGeometry(QRect(310, 380, 115, 32));
+        progressBar = new QProgressBar(centralwidget);
+        progressBar->setObjectName(QString::fromUtf8("progressBar"));
+        progressBar->setGeometry(QRect(0, 530, 801, 23));
+        progressBar->setValue(24);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
