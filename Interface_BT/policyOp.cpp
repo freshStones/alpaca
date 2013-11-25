@@ -58,10 +58,10 @@ bool policyOp::xmlhandler(int callRes,QString xml,bool (*visitor)(QDomElement))
 }
 bool policyOp::GetAllCommonPolicy(QString tripType,QString ticketType)
 {
-    return this->GetAllCommonPolicy(tripType.toStdString(), ticketType.toStdString(), this->usrName.toStdString(),this->pwd.toStdString());
+    return this->GetAllCommonPolicy(tripType.toStdWString(), ticketType.toStdWString(), this->usrName.toStdWString(),this->pwd.toStdWString());
 }
 
-bool policyOp::GetAllCommonPolicy(std::string tripType, std::string ticketType, std::string username, std::string pwd)
+bool policyOp::GetAllCommonPolicy(wstring tripType, wstring ticketType, wstring username, wstring pwd)
 {
     _ns1__GetAllCommonPolicy req;
     _ns1__GetAllCommonPolicyResponse res;
@@ -70,7 +70,7 @@ bool policyOp::GetAllCommonPolicy(std::string tripType, std::string ticketType, 
     req.agentUserName = &username;
     req.pwd = &pwd;
     int callRes = BTproxy->GetAllCommonPolicy(&req, &res);
-    return this->xmlhandler(callRes,QString().fromStdString(*res.GetAllCommonPolicyResult),GetAllCommonPolicyVisitor);
+    return this->xmlhandler(callRes,QString().fromStdWString(*res.GetAllCommonPolicyResult),GetAllCommonPolicyVisitor);
 }
 
 bool policyOp::GetAllCommonPolicyVisitor(QDomElement element)
@@ -89,10 +89,10 @@ bool policyOp::GetAllCommonPolicyVisitor(QDomElement element)
 
 bool policyOp::GetAlterCommonPolicy(QString rQStartDateTime, QString tripType, QString ticketType)
 {
-    return this->GetAlterCommonPolicy(rQStartDateTime.toStdString(),tripType.toStdString(),ticketType.toStdString(),this->usrName.toStdString(),this->pwd.toStdString());
+    return this->GetAlterCommonPolicy(rQStartDateTime.toStdWString(),tripType.toStdWString(),ticketType.toStdWString(),this->usrName.toStdWString(),this->pwd.toStdWString());
 }
 
-bool policyOp::GetAlterCommonPolicy(string rQStartDateTime,string tripType,string ticketType,string usrname,string pwd)
+bool policyOp::GetAlterCommonPolicy(wstring rQStartDateTime,wstring tripType,wstring ticketType,wstring usrname,wstring pwd)
 {
     //qDebug()<<QString().fromStdString(rQStartDateTime)<<QString().fromStdString(tripType)<<QString().fromStdString(usrname)<<endl;
     _ns1__GetAlterCommonPolicy req;
@@ -103,7 +103,7 @@ bool policyOp::GetAlterCommonPolicy(string rQStartDateTime,string tripType,strin
     req.tripType = &tripType;
     req.ticketType = &ticketType;
     int callRes = BTproxy ->GetAlterCommonPolicy(&req,&res);
-    this->xmlhandler(callRes,QString().fromStdString(*res.GetAlterCommonPolicyResult),GetAlterCommonPolicyVisitor);
+    this->xmlhandler(callRes,QString().fromStdWString(*res.GetAlterCommonPolicyResult),GetAlterCommonPolicyVisitor);
     return true;
 }
 bool policyOp::GetAlterCommonPolicyVisitor(QDomElement element)
@@ -123,10 +123,10 @@ bool policyOp::GetAVPolicy(QString Type,QString OrderSrc,QString DptAirport,QStr
     _ns1__GetAVPolicy req;
     _ns1__GetAVPolicyResponse res;
     QString xml = QString("<FlightSearch AgentCode=\"%1\" AgentUserName=\"%2\" AgentPwd=\"%3\" ><AV  Type=\"%4\" OrderSrc=\"%5\"  DptAirport=\"%6\"  ArrAirport=\"%7\"  TakeOffDate=\"%8\" Cabin=\"%9\"  FlightNum=\"%10\">%11</AV></FlightSearch>").arg(agentCode).arg(usrName).arg(pwd).arg(Type).arg(OrderSrc).arg(DptAirport).arg(ArrAirport).arg(TakeOffDate).arg(Cabin).arg(FlightNum).arg(avinfo);
-    string xmldoc = xml.toStdString();
+    wstring xmldoc = xml.toStdWString();
     req.xmlDoc = &xmldoc;
     int callRes = BTproxy ->GetAVPolicy(&req,&res);
-    return this->xmlhandler(callRes,QString().fromStdString(*res.GetAVPolicyResult),GetAVPolicyVisitor);
+    return this->xmlhandler(callRes,QString().fromStdWString(*res.GetAVPolicyResult),GetAVPolicyVisitor);
     //return this->GetAVPolicy(Type.toStdString(),OrderSrc.toStdString(),DptAirport.toStdString(),ArrAirport.toStdString(),TakeOffDate.toStdString(),Cabin.toStdString(),FlightNum.toStdString(),avinfo.toStdString(),this->usrName.toStdString(),this->pwd.toStdString(),this->agentCode.toStdString());
 }
 bool policyOp::GetAVPolicyVisitor(QDomElement element)
@@ -171,10 +171,10 @@ bool policyOp::MatchCommonPolicy(QString DepartureDateTime,QString FlightNumber,
     _ns1__MatchCommonPolicy req;
     _ns1__MatchCommonPolicyResponse res;
     QString xml = QString("<OTA_AirFareRQ	 AgentCode=\"%1\" AgentUserName=\"%2\" AgentPwd=\"%3\" DepartureDateTime='%4' FlightNumber='%5' ResBookDesigCode='%6' DepartureAirport='%7' ArrivalAirport='%8' ReturnPolicyType='%9'  TripType='%10' FlightNumberBack='%11' ResBookDesigCodeBack='%12' DepartureDateTimeBack='%13'></OTA_AirFareRQ>").arg(agentCode).arg(usrName).arg(pwd).arg(DepartureDateTime).arg(FlightNumber).arg(ResBookDesigCode).arg(DepartureAirport).arg(ArrivalAirport).arg(ReturnPolicyType).arg(TripType).arg(FlightNumberBack).arg(ResBookDesigCodeBack).arg(DepartureDateTimeBack);
-    string xmldoc = xml.toStdString();
+    wstring xmldoc = xml.toStdWString();
     req.xmlDoc = &xmldoc;
     int callRes = BTproxy->MatchCommonPolicy(&req,&res);
-    return this->xmlhandler(callRes,QString().fromStdString(*res.MatchCommonPolicyResult),MatchCommonPolicyVisitor);
+    return this->xmlhandler(callRes,QString().fromStdWString(*res.MatchCommonPolicyResult),MatchCommonPolicyVisitor);
 //    return this->MatchCommonPolicy(DepartureDateTime.toStdString(),FlightNumber.toStdString(),ResBookDesigCode.toStdString(),DepartureAirport.toStdString(),ArrivalAirport.toStdString(),ReturnPolicyType.toStdString(),TripType.toStdString(),FlightNumberBack.toStdString(),ResBookDesigCode.toStdString(),DepartureDateTimeBack.toStdString(),this->usrName.toStdString(),this->pwd.toStdString(),this->agentCode.toStdString());
 }
 
@@ -203,9 +203,9 @@ bool policyOp::MatchCommonPolicyVisitor(QDomElement element)
 }
 bool policyOp::GetInvalidationProviders()
 {
-    return this->GetInvalidationProviders(this->usrName.toStdString(),this->pwd.toStdString(),this->agentCode.toStdString());
+    return this->GetInvalidationProviders(this->usrName.toStdWString(),this->pwd.toStdWString(),this->agentCode.toStdWString());
 }
-bool policyOp::GetInvalidationProviders(string usrname,string pwd,string agentCode)
+bool policyOp::GetInvalidationProviders(wstring usrname,wstring pwd,wstring agentCode)
 {
     _ns1__GetInvalidationProviders req;
     _ns1__GetInvalidationProvidersResponse res;
@@ -213,7 +213,7 @@ bool policyOp::GetInvalidationProviders(string usrname,string pwd,string agentCo
     req.AgentPwd = &pwd;
     req.AgentUserName = &usrname;
     int callRes = BTproxy->GetInvalidationProviders(&req,&res);
-    return this->xmlhandler(callRes,QString().fromStdString(*res.GetInvalidationProvidersResult),GetInvalidationProvidersVisitor);
+    return this->xmlhandler(callRes,QString().fromStdWString(*res.GetInvalidationProvidersResult),GetInvalidationProvidersVisitor);
 }
 bool policyOp::GetInvalidationProvidersVisitor(QDomElement element)
 {
