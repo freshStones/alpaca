@@ -20,6 +20,7 @@ public:
     policyOp(QString, QString, QString);
     bool xmlhandler(int,QString,bool (*visitor)(QDomElement));
     static void showmap(QMap<QString,QString>);
+    QString genQuery(QString,QMap<QString,QString>);
     bool GetAllCommonPolicy(QString, QString);
     bool GetAllCommonPolicy(std::wstring, std::wstring, std::wstring, std::wstring);
     static bool GetAllCommonPolicyVisitor(QDomElement);

@@ -21,6 +21,21 @@ void policyOp::showmap(QMap<QString, QString> map)
     for( i=map.constBegin(); i!=map.constEnd(); ++i)
            qDebug() << i.key() <<": " << i.value()<<endl;
 }
+QString policyOp::genQuery(QString table, QMap<QString,QString> map)
+{
+    QString keys(""),values("");
+    QMap<QString,QString>::const_iterator i;
+    i = map.constBegin();
+    keys += i.key();
+    values+= i.value();
+    i++;
+    for( ; i!=map.constEnd(); ++i)
+    {
+        keys = keys + "," + i.key();
+        values = values = "," + i.value();
+    }
+    return QString("insert into %1%2 values%3").arg(table).arg(keys).arg(values);
+}
 
 bool policyOp::xmlhandler(int callRes,QString xml,bool (*visitor)(QDomElement))
 {
