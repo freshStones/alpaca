@@ -10,11 +10,11 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    //model = new QSqlTableModel;
-    //model->setTable("policyDescripition");
-    //model->select();
-    //ui->tableView->setModel(model);
-    //xmlTest();
+    btDatabase::instance();
+    allPolicyModel = new QSqlTableModel;
+    allPolicyModel->setTable("policyDescripition");
+    allPolicyModel->select();
+    ui->allPolicyTableView->setModel(allPolicyModel);
 
     //QSettings *configIniRead = new QSettings("/home/daniel/alpaca/Interface_BT/setting.ini",QSettings::IniFormat);
     //this->op = new policyOp(configIniRead->value("/ACCOUNT/USERNAME").toString(),configIniRead->value("/ACCOUNT/PASSWORD").toString(),configIniRead->value("/AGENT_DESC/AGENTCODE").toString());

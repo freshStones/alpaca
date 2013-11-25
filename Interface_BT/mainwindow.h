@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "policyOp.h"
+#include <QSqlTableModel>
 //#include "btdatabase.h"
 
 namespace Ui {
@@ -20,6 +21,7 @@ public:
 private:
     Ui::MainWindow *ui;
     policyOp *op;
+    QSqlTableModel *allPolicyModel;
 
 public slots:
 
