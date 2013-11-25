@@ -13,11 +13,11 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    //btDatabase::instance();
-    //allPolicyModel = new QSqlTableModel;
-    //allPolicyModel->setTable("policyDescripition");
-    //allPolicyModel->select();
-    //ui->allPolicyTableView->setModel(allPolicyModel);
+    btDatabase::instance();
+    allPolicyModel = new QSqlTableModel;
+    allPolicyModel->setTable("policyDescripition");
+    allPolicyModel->select();
+    ui->allPolicyTableView->setModel(allPolicyModel);
 
     ui->progressBar->setRange(0,5000-1);
     ui->progressBar->setValue(0);
