@@ -69,6 +69,28 @@ int btDatabase::updateOperation(const QString sql)
     return this->execSQL(sql);
 }
 
+int btDatabase::batchOperation(const QString sql)
+{
+    int res = 0;
+    if(QSqlDatabase::database().driver()->hasFeature(QSqlDriver::Transactions))
+    {
+        QSqlDatabase::database().transaction();
+        QSqlQuery query;
+        qDebug() << "start sql op" << endl;
+        try{
+            res = query.exec(sql);
+            QSqlDatabase::database().commit();
+        }
+        catch(QString Exception){
+            qDebug() << Exception << endl;
+        }
+
+        //qDebug() << sql << endl;
+        qDebug() << "sql op ended" << endl;
+    }
+    return res;
+}
+
 void btDatabase::commitOperation()
 {
     QString sql = "commit;";

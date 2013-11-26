@@ -3,6 +3,7 @@
 
 #include <QSqlDatabase>
 #include <QSqlQuery>
+#include <QSqlDriver>
 #include <QDebug>
 
 
@@ -19,6 +20,7 @@ public:
     QSqlQuery querySQL(const QString sql, bool debug = 0);
     int insertOperation(const QString sql);
     int updateOperation(const QString sql);
+    int batchOperation(const QString sql);
 
     void commitOperation();
 
