@@ -102,7 +102,7 @@ void MainWindow::slotSetProgressBarValue(int x){
 void MainWindow::on_queryButton_clicked()
 {
     QString filter("departureCityCodes like \"\%" + ui->dep->text() + "\%\""+"and arrivalCityCodes like \"\%" + ui->arr->text() + "\%\"" + " and supplierTTLofficeAccount like \"\%" + ui->officeNo->text() + "\"");
-    filter += " and airlinecode like \"\%" + ui->companyCode->text() + " and policyStatus = 1";
+    filter += " and airlinecode like \"\%" + ui->companyCode->text() + "\" and policyStatus = 1";
     if (ui->pnrCheck->checkState()==Qt::Checked)
         filter += " and shouldChangePNR = 1";
     if (ui->rateGtCheck->checkState()==Qt::Checked)
@@ -112,4 +112,6 @@ void MainWindow::on_queryButton_clicked()
     allPolicyModel->setFilter(filter);
     allPolicyModel->select();
     ui->allPolicyTableView->setModel(allPolicyModel);
+    ui->allPolicyTableView->setColumnHidden(0,true);
+    ui->allPolicyTableView->setColumnHidden(1,true);
 }
