@@ -19,7 +19,8 @@ SOURCES += main.cpp\
     gsoap/soapBaitourServiceSoapProxy.cpp \
     gsoap/stdsoap2.cpp \
     policyOp.cpp \
-    btdatabase.cpp
+    btdatabase.cpp \
+    dump.cpp
 
 HEADERS  += mainwindow.h \
     gsoap/temp.h \
@@ -29,7 +30,8 @@ HEADERS  += mainwindow.h \
     gsoap/soapBaitourServiceSoapProxy.h \
     gsoap/BaitourServiceSoap.nsmap \
     policyOp.h \
-    btdatabase.h
+    btdatabase.h \
+    dump.h
 
 FORMS    += \
     mainwindow.ui

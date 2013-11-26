@@ -4,7 +4,7 @@
 #include <QMainWindow>
 #include "policyOp.h"
 #include <QSqlTableModel>
-//#include "btdatabase.h"
+#include "btdatabase.h"
 
 namespace Ui {
 class MainWindow;
@@ -25,6 +25,8 @@ public:
 private slots:
     void on_pushButton_clicked();
     void on_queryButton_clicked();
+
+    void on_dumpButton_clicked();
 
 private:
     Ui::MainWindow *ui;

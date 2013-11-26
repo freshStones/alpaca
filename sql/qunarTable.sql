@@ -4,7 +4,7 @@ CREATE TABLE qunarTable(
 `policyCode` varchar(100) NOT NULL,
 `departureCityCodes` varchar(100) COLLATE gb2312_bin NOT NULL,
 `arrivalCityCodes` varchar(100) COLLATE gb2312_bin NOT NULL,
-`flightRestriction` enum('所有','适用') COLLATE gb2312_bin NOT NULL,
+`flightRestriction` enum('所有','适用') COLLATE gb2312_bin NOT NULL DEFAULT'所有',
 `flightNumber` varchar(20) COLLATE gb2312_bin,
 `timetableRestriction` varchar(45) COLLATE gb2312_bin NOT NULL DEFAULT '',
 `applicableSpaceCode` varchar(45) COLLATE gb2312_bin NOT NULL,
@@ -28,7 +28,7 @@ CREATE TABLE qunarTable(
 `isItinerarySupplied` tinyint(4) NOT NULL DEFAULT 1,
 `refundRule` int NOT NULL DEFAULT 0,
 `remarkRule` int NOT NULL DEFAULT 0,
-`canSign` enum('是','否') COLLATE gb2312_bin NOT NULL DEFAULT '是',
+`canSign` enum('是','否') COLLATE gb2312_bin NOT NULL DEFAULT '否',
 `isCreditsupplied` enum('是','否') COLLATE gb2312_bin NOT NULL DEFAULT '是',
 `certifyID` enum('0','1','2','3','4','5') COLLATE gb2312_bin NOT NULL,
 `maxAge` tinyint(4) DEFAULT 99,
@@ -40,4 +40,4 @@ LOCK TABLES `qunarTable` WRITE;
 
 UNLOCK TABLES;
 
-select * from policyDescripition;
+
