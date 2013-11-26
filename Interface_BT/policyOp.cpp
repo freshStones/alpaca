@@ -232,6 +232,7 @@ bool policyOp::MatchCommonPolicyVisitor(QDomElement element)
     map.insert("PolicyType",element.attributes().namedItem("PolicyType").nodeValue());
     map.insert("VoidWorkTime",element.attributes().namedItem("VoidWorkTime").nodeValue());
     map.insert("Office",element.attributes().namedItem("ChangePnr").nodeValue());
+    policyOp::showmap(map);
     return true;
 }
 bool policyOp::GetInvalidationProviders()

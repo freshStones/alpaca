@@ -13,29 +13,46 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    btDatabase::instance();
-    allPolicyModel = new QSqlTableModel;
-    allPolicyModel->setTable("policyDescripition");
-
+    this->configure();
+    this->dataPrepare();
+    this->debug();
     ui->progressBar->setRange(0,5000-1);
     ui->progressBar->setValue(0);
 
     //xmlTest();
 
-    QSettings *configIniRead = new QSettings("/home/daniel/alpaca/Interface_BT/setting.ini",QSettings::IniFormat);
-    this->op = new policyOp(configIniRead->value("/ACCOUNT/USERNAME").toString(),configIniRead->value("/ACCOUNT/PASSWORD").toString(),configIniRead->value("/AGENT_DESC/AGENTCODE").toString());
-
-    connect(this->op,SIGNAL(setProgressBarRange(int)),this,SLOT(slotSetProgressBarRange(int)));
-    connect(this->op,SIGNAL(setProgressBarValue(int)),this,SLOT(slotSetProgressBarValue(int)));
-    //QSqlDatabase::database().transaction();
-    //this->op->GetAlterCommonPolicy("2013-11-26T01:13:20.827","0","0");
-    //QMessageBox::information(NULL, "Title", "Content", QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
-    //QSqlDatabase::database().commit();
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+void MainWindow::debug()
+{
+    //this->op->MatchCommonPolicy("2013-11-30T14:25:00","MU5710","Y","PEK","LZO","1","1","","","");
+    //this->op->GetAlterCommonPolicy("2013-11-26T00:01:20.827","0","0");
+    //this->op->GetAllCommonPolicy("0","0");
+}
+
+void MainWindow::configure()
+{
+    //QString setting("setting.ini");
+    //QString setting("/home/daniel/alpaca/Interface_BT/setting.ini");
+    QString setting("/Users/xiaosb/Documents/workspace/alpaca/Interface_BT/setting.ini");
+    QSettings *configIniRead = new QSettings(setting,QSettings::IniFormat);
+    this->op = new policyOp(configIniRead->value("/ACCOUNT/USERNAME").toString(),configIniRead->value("/ACCOUNT/PASSWORD").toString(),configIniRead->value("/AGENT_DESC/AGENTCODE").toString());
+}
+
+void MainWindow::dataPrepare()
+{
+    btDatabase::instance();
+    allPolicyModel = new QSqlTableModel;
+    allPolicyModel->setTable("policyDescripition");
+}
+void MainWindow::signalConnection()
+{
+    connect(this->op,SIGNAL(setProgressBarRange(int)),this,SLOT(slotSetProgressBarRange(int)));
+    connect(this->op,SIGNAL(setProgressBarValue(int)),this,SLOT(slotSetProgressBarValue(int)));
 }
 
 void MainWindow::on_pushButton_clicked()
