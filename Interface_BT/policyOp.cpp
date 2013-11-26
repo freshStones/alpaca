@@ -144,10 +144,6 @@ bool policyOp::GetAlterCommonPolicyVisitor(QDomElement element)
     map.insert("supplierCode",qsl.at(15));
     map.insert("memo",qsl.at(16));
     map.insert("autoTicketingEnabled",qsl.at(17));  //百拓的文档写错了，这里应该有
-    //showmap(map);
-    //QString sql = genQuery("policyDescripition", map);
-    //showDebugMsg(sql);
-    //if(btDatabase::instance()->updateOperation(sql) != 1) showDebugMsg("update error!");
     sqlCollection += genQuery("policyDescripition", map);
     if(sqlCollection.count(";") == 1000 )
     {
@@ -166,7 +162,6 @@ bool policyOp::GetAVPolicy(QString Type,QString OrderSrc,QString DptAirport,QStr
     req.xmlDoc = &xmldoc;
     int callRes = BTproxy ->GetAVPolicy(&req,&res);
     return this->xmlhandler(callRes,QString().fromStdWString(*res.GetAVPolicyResult),GetAVPolicyVisitor);
-    //return this->GetAVPolicy(Type.toStdString(),OrderSrc.toStdString(),DptAirport.toStdString(),ArrAirport.toStdString(),TakeOffDate.toStdString(),Cabin.toStdString(),FlightNum.toStdString(),avinfo.toStdString(),this->usrName.toStdString(),this->pwd.toStdString(),this->agentCode.toStdString());
 }
 bool policyOp::GetAVPolicyVisitor(QDomElement element)
 {
@@ -214,7 +209,6 @@ bool policyOp::MatchCommonPolicy(QString DepartureDateTime,QString FlightNumber,
     req.xmlDoc = &xmldoc;
     int callRes = BTproxy->MatchCommonPolicy(&req,&res);
     return this->xmlhandler(callRes,QString().fromStdWString(*res.MatchCommonPolicyResult),MatchCommonPolicyVisitor);
-//    return this->MatchCommonPolicy(DepartureDateTime.toStdString(),FlightNumber.toStdString(),ResBookDesigCode.toStdString(),DepartureAirport.toStdString(),ArrivalAirport.toStdString(),ReturnPolicyType.toStdString(),TripType.toStdString(),FlightNumberBack.toStdString(),ResBookDesigCode.toStdString(),DepartureDateTimeBack.toStdString(),this->usrName.toStdString(),this->pwd.toStdString(),this->agentCode.toStdString());
 }
 
 bool policyOp::MatchCommonPolicyVisitor(QDomElement element)
