@@ -20,7 +20,8 @@ SOURCES += main.cpp\
     gsoap/stdsoap2.cpp \
     policyOp.cpp \
     btdatabase.cpp \
-    dump.cpp
+    dump.cpp \
+    login.cpp
 
 HEADERS  += mainwindow.h \
     gsoap/temp.h \
@@ -31,10 +32,12 @@ HEADERS  += mainwindow.h \
     gsoap/BaitourServiceSoap.nsmap \
     policyOp.h \
     btdatabase.h \
-    dump.h
+    dump.h \
+    login.h
 
 FORMS    += \
-    mainwindow.ui
+    mainwindow.ui \
+    login.ui
 
 OTHER_FILES += \
     gsoap/baitourService.asmx.xml

@@ -5,7 +5,7 @@
 #include "policyOp.h"
 #include <QSqlTableModel>
 #include "btdatabase.h"
-
+#include "login.h"
 namespace Ui {
 class MainWindow;
 }
@@ -29,6 +29,7 @@ private slots:
     void on_dumpButton_clicked();
 
 private:
+    Login *l;
     Ui::MainWindow *ui;
     policyOp *op;
     QSqlTableModel *allPolicyModel;

@@ -18,6 +18,7 @@ MainWindow::MainWindow(QWidget *parent) :
     this->configure();
     this->dataPrepare();
     this->debug();
+    this->l->show();
     ui->progressBar->setRange(0,5000-1);
     ui->progressBar->setValue(0);
 
@@ -50,11 +51,13 @@ void MainWindow::dataPrepare()
     btDatabase::instance();
     allPolicyModel = new QSqlTableModel;
     allPolicyModel->setTable("policyDescripition");
+    l = new Login();
 }
 void MainWindow::signalConnection()
 {
     connect(this->op,SIGNAL(setProgressBarRange(int)),this,SLOT(slotSetProgressBarRange(int)));
     connect(this->op,SIGNAL(setProgressBarValue(int)),this,SLOT(slotSetProgressBarValue(int)));
+    connect(this->l,SIGNAL(authorizedOK()),this,SLOT(show()));
 }
 
 void MainWindow::on_pushButton_clicked()
