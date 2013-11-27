@@ -1,15 +1,18 @@
 #include "btdatabase.h"
-
+#include <QDebug>
 btDatabase * btDatabase::_instance = 0;
-
+QString btDatabase::username;
+QString btDatabase::password;
+QString btDatabase::server;
 void btDatabase::init()
 {
     QSqlDatabase *db = new QSqlDatabase();
     *db = QSqlDatabase::addDatabase("QMYSQL");
-    db->setHostName("162.105.30.184");
+    db->setHostName(server);
     db->setDatabaseName("LH_AirTicket");
-    db->setUserName("remote");
-    db->setPassword("alpaca");
+    db->setUserName(username);
+    db->setPassword(password);
+    qDebug()<<server<<username<<password;
     db->open();
 
     this->db = db;
@@ -17,7 +20,7 @@ void btDatabase::init()
 
 btDatabase * btDatabase::instance()
 {
-    //qDebug() << "btDatabase::instance() called" << endl;
+    qDebug() << "btDatabase::instance() called" << endl;
     if(btDatabase::_instance == 0){
         btDatabase::_instance = new btDatabase();
         btDatabase::_instance->init();
@@ -30,6 +33,13 @@ btDatabase * btDatabase::instance()
     }
 
     return btDatabase::_instance;
+}
+
+void btDatabase::setconfig(QString _username, QString _password, QString _server)
+{
+    btDatabase::username = _username;
+    btDatabase::password = _password;
+    btDatabase::server = _server;
 }
 
 btDatabase::btDatabase()

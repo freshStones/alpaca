@@ -16,14 +16,9 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     this->configure();
-    this->dataPrepare();
-    this->debug();
     this->l->show();
-    ui->progressBar->setRange(0,5000-1);
-    ui->progressBar->setValue(0);
-
-    //xmlTest();
-
+    this->signalConnection();
+    this->debug();
 }
 
 MainWindow::~MainWindow()
@@ -35,24 +30,22 @@ void MainWindow::debug()
     //this->op->MatchCommonPolicy("2013-11-30T14:25:00","MU5710","Y","PEK","LZO","1","1","","","");
     //this->op->GetAlterCommonPolicy("2013-11-26T00:01:20.827","0","0");
     //this->op->GetAllCommonPolicy("0","0");
+    //this->show();
 }
 
 void MainWindow::configure()
 {
     //QString setting("setting.ini");
     //QString setting("/home/daniel/alpaca/Interface_BT/setting.ini");
+    l = new Login();
+    ad = new AdminWindow();
     QString setting("/Users/xiaosb/Documents/workspace/alpaca/Interface_BT/setting.ini");
     QSettings *configIniRead = new QSettings(setting,QSettings::IniFormat);
     this->op = new policyOp(configIniRead->value("/ACCOUNT/USERNAME").toString(),configIniRead->value("/ACCOUNT/PASSWORD").toString(),configIniRead->value("/AGENT_DESC/AGENTCODE").toString());
+    ui->progressBar->setRange(0,5000-1);
+    ui->progressBar->setValue(0);
 }
 
-void MainWindow::dataPrepare()
-{
-    btDatabase::instance();
-    allPolicyModel = new QSqlTableModel;
-    allPolicyModel->setTable("policyDescripition");
-    l = new Login();
-}
 void MainWindow::signalConnection()
 {
     connect(this->op,SIGNAL(setProgressBarRange(int)),this,SLOT(slotSetProgressBarRange(int)));
@@ -62,8 +55,8 @@ void MainWindow::signalConnection()
 
 void MainWindow::on_pushButton_clicked()
 {
-    //this->op->GetAlterCommonPolicy("2013-11-26T00:01:20.827","0","0");
-    this->op->GetAllCommonPolicy("0","0");
+    this->op->GetAlterCommonPolicy("2013-11-28T00:01:20.827","0","0");
+    //this->op->GetAllCommonPolicy("0","0");
 }
 
 void MainWindow::slotSetProgressBarRange(int x){
@@ -81,6 +74,12 @@ void MainWindow::slotSetProgressBarValue(int x){
 
 void MainWindow::on_queryButton_clicked()
 {
+    btDatabase::instance();
+    if (allPolicyModel == NULL)
+    {
+        allPolicyModel = new QSqlTableModel;
+        allPolicyModel->setTable("policyDescripition");
+    }
     QString filter("departureCityCodes like \"\%" + ui->dep->text() + "\%\""+"and arrivalCityCodes like \"\%" + ui->arr->text() + "\%\"" + " and supplierTTLofficeAccount like \"\%" + ui->officeNo->text() + "\"");
     filter += " and airlinecode like \"\%" + ui->companyCode->text() + "\" and policyStatus = 1";
     if (ui->pnrCheck->checkState()==Qt::Checked)
@@ -155,4 +154,9 @@ void MainWindow::on_dumpButton_clicked()
 
 
     }
+}
+
+void MainWindow::on_userManager_clicked()
+{
+    ad->show();
 }

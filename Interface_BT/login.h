@@ -2,6 +2,11 @@
 #define LOGIN_H
 
 #include <QWidget>
+#include <QString>
+#include <QByteArray>
+#include <QCryptographicHash>
+#include <QDebug>
+#include <btdatabase.h>
 
 namespace Ui {
 class Login;
@@ -21,6 +26,9 @@ private slots:
 
 private:
     Ui::Login *ui;
+    QString username;
+    QString password;
+    QString server;
 };
 
 #endif // LOGIN_H

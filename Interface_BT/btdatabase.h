@@ -5,6 +5,7 @@
 #include <QSqlQuery>
 #include <QSqlDriver>
 #include <QDebug>
+#include <QString>
 
 
 class btDatabase
@@ -12,7 +13,7 @@ class btDatabase
 public:
 
     static btDatabase* instance();
-
+    static void setconfig(QString,QString,QString);
     void init();
     bool isOpen();
 
@@ -26,7 +27,7 @@ public:
 
 private:
     static btDatabase* _instance;
-
+    static QString username,password,server;
     btDatabase();
     QSqlDatabase *db;
 };
