@@ -6,10 +6,10 @@ void btDatabase::init()
 {
     QSqlDatabase *db = new QSqlDatabase();
     *db = QSqlDatabase::addDatabase("QMYSQL");
-    db->setHostName("162.105.81.242");
+    db->setHostName("162.105.30.184");
     db->setDatabaseName("LH_AirTicket");
-    db->setUserName("root");
-    db->setPassword("raccoon");
+    db->setUserName("remote");
+    db->setPassword("alpaca");
     db->open();
 
     this->db = db;
