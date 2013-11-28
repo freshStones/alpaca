@@ -21,7 +21,7 @@ public:
     void signalConnection();
     void debug();
     void exportXls(QString);
-    void configure();
+    void init();
 private slots:
     void on_pushButton_clicked();
     void on_queryButton_clicked();

@@ -15,8 +15,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    this->configure();
-    this->l->show();
+    this->init();                          //Load settings.ini.
+    this->l->show();                            //
     this->signalConnection();
     this->debug();
 }
@@ -33,17 +33,23 @@ void MainWindow::debug()
     //this->show();
 }
 
-void MainWindow::configure()
+void MainWindow::init()
 {
     //QString setting("setting.ini");
-    //QString setting("/home/daniel/alpaca/Interface_BT/setting.ini");
     l = new Login();
     ad = new AdminWindow();
-    QString setting("/Users/xiaosb/Documents/workspace/alpaca/Interface_BT/setting.ini");
-    QSettings *configIniRead = new QSettings(setting,QSettings::IniFormat);
-    this->op = new policyOp(configIniRead->value("/ACCOUNT/USERNAME").toString(),configIniRead->value("/ACCOUNT/PASSWORD").toString(),configIniRead->value("/AGENT_DESC/AGENTCODE").toString());
+
     ui->progressBar->setRange(0,5000-1);
     ui->progressBar->setValue(0);
+    ui->progressBar->hide();
+
+    QString setting("/home/daniel/alpaca/Interface_BT/setting.ini");
+    //QString setting("/Users/xiaosb/Documents/workspace/alpaca/Interface_BT/setting.ini");
+    QSettings *configIniRead = new QSettings(setting,QSettings::IniFormat);
+
+    this->op = new policyOp(configIniRead->value("/ACCOUNT/USERNAME").toString(),configIniRead->value("/ACCOUNT/PASSWORD").toString(),configIniRead->value("/AGENT_DESC/AGENTCODE").toString());
+
+
 }
 
 void MainWindow::signalConnection()
@@ -55,7 +61,7 @@ void MainWindow::signalConnection()
 
 void MainWindow::on_pushButton_clicked()
 {
-    this->op->GetAlterCommonPolicy("2013-11-28T00:01:20.827","0","0");
+    this->op->GetAlterCommonPolicy("2013-11-28T16:01:20.827","0","0");
     //this->op->GetAllCommonPolicy("0","0");
 }
 

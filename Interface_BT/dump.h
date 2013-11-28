@@ -5,7 +5,7 @@
 #include <QSqlQuery>
 #include <QSqlDriver>
 #include <QDebug>
-#include <btDatabase.h>
+#include "btdatabase.h"
 #include <QString>
 
 
