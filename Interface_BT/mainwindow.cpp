@@ -9,14 +9,14 @@
 #include <QObject>
 #include <QSqlRecord>
 #include <QSqlError>
+#include <QDesktopWidget>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    this->init();                          //Load settings.ini.
-    this->l->show();                            //
+    this->init();
     this->signalConnection();
     this->debug();
 }
@@ -32,24 +32,35 @@ void MainWindow::debug()
     //this->op->GetAllCommonPolicy("0","0");
     //this->show();
 }
+void MainWindow::setDiagMidParent(int height, int width)
+{
+    QDesktopWidget* desktopWidget = QApplication::desktop();
+    int startupX = desktopWidget->screenGeometry().width()/2 - width;
+    int startupY = desktopWidget->screenGeometry().height()/2 - height;
+    this->resize(width, height);
+    this->move(startupX, startupY);
+    this->show();
+}
 
 void MainWindow::init()
 {
-    //QString setting("setting.ini");
+    //---------------------UI initialize----------------------------
+    QDesktopWidget* desktopWidget = QApplication::desktop();
     l = new Login();
+    l->setDiagMidParent(270,360);
     ad = new AdminWindow();
-
     ui->progressBar->setRange(0,5000-1);
     ui->progressBar->setValue(0);
     ui->progressBar->hide();
 
+    //------------------Settings initialize----------------------
     QString setting("/home/daniel/alpaca/Interface_BT/setting.ini");
     //QString setting("/Users/xiaosb/Documents/workspace/alpaca/Interface_BT/setting.ini");
+    //QString setting("setting.ini");
     QSettings *configIniRead = new QSettings(setting,QSettings::IniFormat);
 
+    //------------------policyOp initialize---------------------
     this->op = new policyOp(configIniRead->value("/ACCOUNT/USERNAME").toString(),configIniRead->value("/ACCOUNT/PASSWORD").toString(),configIniRead->value("/AGENT_DESC/AGENTCODE").toString());
-
-
 }
 
 void MainWindow::signalConnection()
@@ -61,7 +72,7 @@ void MainWindow::signalConnection()
 
 void MainWindow::on_pushButton_clicked()
 {
-    this->op->GetAlterCommonPolicy("2013-11-28T16:01:20.827","0","0");
+    //this->op->GetAlterCommonPolicy("2013-11-28T16:01:20.827","0","0");
     //this->op->GetAllCommonPolicy("0","0");
 }
 

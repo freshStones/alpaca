@@ -2,8 +2,15 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "policyOp.h"
+#include <QApplication>
+#include <QtCore/qglobal.h>
+#include <QTextCodec>
+#include <QObject>
+#include <QSharedMemory>
+#include <QMessageBox>
 #include <QSqlTableModel>
+
+#include "policyOp.h"
 #include "btdatabase.h"
 #include "login.h"
 #include "adminwindow.h"
@@ -22,12 +29,12 @@ public:
     void debug();
     void exportXls(QString);
     void init();
+    void setDiagMidParent(int height, int width);
+
 private slots:
     void on_pushButton_clicked();
     void on_queryButton_clicked();
-
     void on_dumpButton_clicked();
-
     void on_userManager_clicked();
 
 private:

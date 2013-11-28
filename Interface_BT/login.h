@@ -6,6 +6,7 @@
 #include <QByteArray>
 #include <QCryptographicHash>
 #include <QDebug>
+#include <QDesktopWidget>
 #include <btdatabase.h>
 
 namespace Ui {
@@ -18,7 +19,9 @@ class Login : public QWidget
 
 public:
     explicit Login(QWidget *parent = 0);
+    void setDiagMidParent(int height, int width);
     ~Login();
+
 signals:
     void authorizedOK();
 private slots:

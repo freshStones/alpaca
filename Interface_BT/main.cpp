@@ -6,15 +6,7 @@
 //*                                      "Winter in PKU is beautiful!"                                           *
 //****************************************************************************************************************
 
-
-#include <QApplication>
-#include <QtCore/qglobal.h>
-#include <QTextCodec>
-#include <QObject>
-#include <QSharedMemory>
-#include <QMessageBox>
 #include "mainwindow.h"
-#include "login.h"
 
 int main(int argc, char *argv[])
 {

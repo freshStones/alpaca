@@ -12,6 +12,23 @@ Login::~Login()
     delete ui;
 }
 
+void Login::setDiagMidParent(int height, int width)
+{
+    QDesktopWidget* desktopWidget = QApplication::desktop();
+    int startupX = desktopWidget->screenGeometry().width()/2 - width/2;
+    int startupY = desktopWidget->screenGeometry().height()/2 - height/2;
+    this->setFixedSize(width,height);
+    this->move(startupX, startupY);
+    this->setWindowTitle(tr("登陆界面"));
+    //this->ui->username->setFocus();
+    this->setTabOrder(this->ui->username,this->ui->pushButton);
+    this->setTabOrder(this->ui->password,this->ui->pushButton);
+    this->ui->pushButton->setFocus();
+
+    this->show();
+}
+
+
 void Login::on_pushButton_clicked()
 {
     this ->server = ui->server->text();

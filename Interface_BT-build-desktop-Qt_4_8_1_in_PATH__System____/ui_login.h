@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'login.ui'
 **
-** Created: Thu Nov 28 16:36:25 2013
+** Created: Thu Nov 28 23:00:43 2013
 **      by: Qt User Interface Compiler version 4.8.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -37,30 +37,33 @@ public:
     {
         if (Login->objectName().isEmpty())
             Login->setObjectName(QString::fromUtf8("Login"));
-        Login->resize(400, 300);
+        Login->resize(360, 270);
         pushButton = new QPushButton(Login);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(130, 210, 115, 32));
+        pushButton->setGeometry(QRect(119, 200, 115, 32));
+        pushButton->setFocusPolicy(Qt::StrongFocus);
+        pushButton->setAcceptDrops(false);
+        pushButton->setCheckable(false);
         username = new QLineEdit(Login);
         username->setObjectName(QString::fromUtf8("username"));
-        username->setGeometry(QRect(190, 100, 113, 21));
+        username->setGeometry(QRect(151, 100, 131, 21));
         label = new QLabel(Login);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(90, 100, 62, 19));
+        label->setGeometry(QRect(59, 100, 62, 19));
         label_2 = new QLabel(Login);
         label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(90, 160, 62, 19));
+        label_2->setGeometry(QRect(59, 150, 62, 19));
         password = new QLineEdit(Login);
         password->setObjectName(QString::fromUtf8("password"));
-        password->setGeometry(QRect(190, 160, 113, 21));
+        password->setGeometry(QRect(149, 150, 131, 21));
         password->setContextMenuPolicy(Qt::PreventContextMenu);
         password->setEchoMode(QLineEdit::Password);
         server = new QLineEdit(Login);
         server->setObjectName(QString::fromUtf8("server"));
-        server->setGeometry(QRect(190, 50, 113, 21));
+        server->setGeometry(QRect(149, 50, 131, 21));
         label_3 = new QLabel(Login);
         label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setGeometry(QRect(90, 50, 62, 19));
+        label_3->setGeometry(QRect(60, 50, 81, 21));
 
         retranslateUi(Login);
 
