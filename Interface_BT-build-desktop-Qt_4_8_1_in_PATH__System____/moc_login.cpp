@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'login.h'
 **
-** Created: Thu Nov 28 21:53:50 2013
+** Created: Fri Nov 29 01:26:26 2013
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.1)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,24 +23,26 @@ static const uint qt_meta_data_Login[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-       2,   14, // methods
+       3,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       1,       // signalCount
+       2,       // signalCount
 
  // signals: signature, parameters, type, tag, flags
        7,    6,    6,    6, 0x05,
+      27,    6,    6,    6, 0x05,
 
  // slots: signature, parameters, type, tag, flags
-      22,    6,    6,    6, 0x08,
+      48,    6,    6,    6, 0x08,
 
        0        // eod
 };
 
 static const char qt_meta_stringdata_Login[] = {
-    "Login\0\0authorizedOK()\0on_pushButton_clicked()\0"
+    "Login\0\0adminAuthorizedOK()\0"
+    "commonAuthorizedOK()\0on_loginButton_clicked()\0"
 };
 
 void Login::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -49,8 +51,9 @@ void Login::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void 
         Q_ASSERT(staticMetaObject.cast(_o));
         Login *_t = static_cast<Login *>(_o);
         switch (_id) {
-        case 0: _t->authorizedOK(); break;
-        case 1: _t->on_pushButton_clicked(); break;
+        case 0: _t->adminAuthorizedOK(); break;
+        case 1: _t->commonAuthorizedOK(); break;
+        case 2: _t->on_loginButton_clicked(); break;
         default: ;
         }
     }
@@ -89,16 +92,22 @@ int Login::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 2)
+        if (_id < 3)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 2;
+        _id -= 3;
     }
     return _id;
 }
 
 // SIGNAL 0
-void Login::authorizedOK()
+void Login::adminAuthorizedOK()
 {
     QMetaObject::activate(this, &staticMetaObject, 0, 0);
+}
+
+// SIGNAL 1
+void Login::commonAuthorizedOK()
+{
+    QMetaObject::activate(this, &staticMetaObject, 1, 0);
 }
 QT_END_MOC_NAMESPACE
