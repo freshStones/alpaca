@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'adminwindow.ui'
 **
-** Created: Thu Nov 28 16:36:25 2013
+** Created: Fri Nov 29 01:34:17 2013
 **      by: Qt User Interface Compiler version 4.8.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -44,7 +44,7 @@ public:
     {
         if (AdminWindow->objectName().isEmpty())
             AdminWindow->setObjectName(QString::fromUtf8("AdminWindow"));
-        AdminWindow->resize(639, 462);
+        AdminWindow->resize(640, 480);
         allUsersTable = new QTableView(AdminWindow);
         allUsersTable->setObjectName(QString::fromUtf8("allUsersTable"));
         allUsersTable->setGeometry(QRect(60, 150, 511, 271));

@@ -7,6 +7,7 @@
 #include <QCryptographicHash>
 #include <QDebug>
 #include <QDesktopWidget>
+#include <QMessageBox>
 #include <btdatabase.h>
 
 namespace Ui {
@@ -23,9 +24,10 @@ public:
     ~Login();
 
 signals:
-    void authorizedOK();
+    void adminAuthorizedOK();
+    void commonAuthorizedOK();
 private slots:
-    void on_pushButton_clicked();
+    void on_loginButton_clicked();
 
 private:
     Ui::Login *ui;

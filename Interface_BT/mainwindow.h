@@ -9,6 +9,7 @@
 #include <QSharedMemory>
 #include <QMessageBox>
 #include <QSqlTableModel>
+#include <QCleanlooksStyle>
 
 #include "policyOp.h"
 #include "btdatabase.h"
@@ -47,6 +48,7 @@ private:
 public slots:
     void slotSetProgressBarRange(int);
     void slotSetProgressBarValue(int);
+    void slotAdminLoggedin();
 };
 
 #endif // MAINWINDOW_H

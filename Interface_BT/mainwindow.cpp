@@ -44,6 +44,13 @@ void MainWindow::setDiagMidParent(int height, int width)
 
 void MainWindow::init()
 {
+
+    //------------------Settings initialize----------------------
+    QString setting("/home/daniel/alpaca/Interface_BT/setting.ini");
+    //QString setting("/Users/xiaosb/Documents/workspace/alpaca/Interface_BT/setting.ini");
+    //QString setting("setting.ini");
+    QSettings *configIniRead = new QSettings(setting,QSettings::IniFormat);
+
     //---------------------UI initialize----------------------------
     QDesktopWidget* desktopWidget = QApplication::desktop();
     l = new Login();
@@ -52,12 +59,7 @@ void MainWindow::init()
     ui->progressBar->setRange(0,5000-1);
     ui->progressBar->setValue(0);
     ui->progressBar->hide();
-
-    //------------------Settings initialize----------------------
-    QString setting("/home/daniel/alpaca/Interface_BT/setting.ini");
-    //QString setting("/Users/xiaosb/Documents/workspace/alpaca/Interface_BT/setting.ini");
-    //QString setting("setting.ini");
-    QSettings *configIniRead = new QSettings(setting,QSettings::IniFormat);
+    ui->userManager->hide();
 
     //------------------policyOp initialize---------------------
     this->op = new policyOp(configIniRead->value("/ACCOUNT/USERNAME").toString(),configIniRead->value("/ACCOUNT/PASSWORD").toString(),configIniRead->value("/AGENT_DESC/AGENTCODE").toString());
@@ -67,7 +69,8 @@ void MainWindow::signalConnection()
 {
     connect(this->op,SIGNAL(setProgressBarRange(int)),this,SLOT(slotSetProgressBarRange(int)));
     connect(this->op,SIGNAL(setProgressBarValue(int)),this,SLOT(slotSetProgressBarValue(int)));
-    connect(this->l,SIGNAL(authorizedOK()),this,SLOT(show()));
+    connect(this->l,SIGNAL(adminAuthorizedOK()),this,SLOT(slotAdminLoggedin()));
+    connect(this->l,SIGNAL(commonAuthorizedOK()),this,SLOT(show()));
 }
 
 void MainWindow::on_pushButton_clicked()
@@ -87,6 +90,11 @@ void MainWindow::slotSetProgressBarValue(int x){
     int i = str.indexOf(", ") + 2;
     int j = str.indexOf("processed") - 1;
     ui->label->setText(str.replace(i,j-i,QString("%1").arg(x)));
+}
+
+void MainWindow::slotAdminLoggedin(){
+    this->ui->userManager->show();
+    this->show();
 }
 
 void MainWindow::on_queryButton_clicked()

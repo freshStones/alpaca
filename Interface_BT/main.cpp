@@ -1,5 +1,5 @@
 //****************************************************************************************************************
-//*     This Qt based program is producted by Team 2012, with Hainan Langhua Business Travel Service Co. Ltd.    *
+//*     This Qt based program is producted by Team 2022, with Hainan Langhua Business Travel Service Co. Ltd.    *
 //*                                    Generated in: 11/28/2013                                                  *
 //*                                 Members: joker, zghember, god miao                                           *
 //*                          Partner: Hainan Langhua Business Travel Service Co. Ltd.                            *
@@ -11,6 +11,7 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+    QApplication::setStyle(new QCleanlooksStyle());
 
     //避免中文乱码
 #ifdef Q_OS_WIN32
