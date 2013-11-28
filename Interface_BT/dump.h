@@ -5,8 +5,20 @@
 #include <QSqlQuery>
 #include <QSqlDriver>
 #include <QDebug>
-#include "btdatabase.h"
+#include <btDatabase.h>
 #include <QString>
+#include <qfile.h>
+#include <QAxObject>
+#include <QFileDialog>
+#include <QObject>
+#include <QVector>
+#include <QSqlTableModel>
+#include <QSqlRecord>
+#include <QSqlError>
+#include <QFileDialog>
+#include <QVector>
+
+
 
 
 class dump{
@@ -14,9 +26,15 @@ class dump{
 public:
 
     void init();
-    void dumpFromB2Q();
+    QVector<QStringList> dumpFromB2Q(QSqlTableModel *model,QString moneyKeep,QString memo,QString latestPreticketTimeLimit,QString policyCode,QString canPayDirectly,QString pnr,QString pat,QString suppierCode,QString isItinerarySupplied);
+    void save();
+    void saveAsExcel(QString filepath,QVector<QStringList> v);
+    void exportXls(QString querys);
     dump();
 
+    QVector<QString> rowMark;
+    QVector<QString> rowName;
+    int ROWNUM;
 
 };
 

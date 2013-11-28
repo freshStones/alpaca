@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>639</width>
-    <height>462</height>
+    <width>640</width>
+    <height>480</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -65,7 +65,7 @@
   <widget class="QLineEdit" name="username">
    <property name="geometry">
     <rect>
-     <x>210</x>
+     <x>180</x>
      <y>30</y>
      <width>113</width>
      <height>21</height>
@@ -75,7 +75,7 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>130</x>
+     <x>100</x>
      <y>30</y>
      <width>62</width>
      <height>19</height>
@@ -88,7 +88,7 @@
   <widget class="QCheckBox" name="checkBox">
    <property name="geometry">
     <rect>
-     <x>130</x>
+     <x>190</x>
      <y>70</y>
      <width>86</width>
      <height>23</height>
@@ -98,36 +98,10 @@
     <string>权限1</string>
    </property>
   </widget>
-  <widget class="QCheckBox" name="checkBox_2">
-   <property name="geometry">
-    <rect>
-     <x>250</x>
-     <y>70</y>
-     <width>86</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>权限2</string>
-   </property>
-  </widget>
-  <widget class="QCheckBox" name="checkBox_3">
-   <property name="geometry">
-    <rect>
-     <x>370</x>
-     <y>70</y>
-     <width>86</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>权限3</string>
-   </property>
-  </widget>
   <widget class="QCheckBox" name="checkBox_4">
    <property name="geometry">
     <rect>
-     <x>480</x>
+     <x>330</x>
      <y>70</y>
      <width>86</width>
      <height>23</height>
@@ -140,7 +114,7 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>360</x>
+     <x>340</x>
      <y>30</y>
      <width>62</width>
      <height>19</height>
@@ -153,7 +127,7 @@
   <widget class="QLineEdit" name="password">
    <property name="geometry">
     <rect>
-     <x>400</x>
+     <x>380</x>
      <y>30</y>
      <width>113</width>
      <height>21</height>

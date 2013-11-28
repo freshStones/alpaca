@@ -8,11 +8,12 @@ QT       += core gui
 QT       += xml
 QT       += widgets
 QT       += sql
+CONFIG   += qaxcontainer
 
 TARGET = Interface_BT
 TEMPLATE = app
 
-
+LIBS += -lWs2_32
 SOURCES += main.cpp\
         mainwindow.cpp \
     gsoap/soapC.cpp \

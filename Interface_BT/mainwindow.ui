@@ -73,7 +73,7 @@
        </rect>
       </property>
      </widget>
-     <widget class="QLineEdit" name="officeNo">
+     <widget class="QLineEdit" name="supplierCode">
       <property name="geometry">
        <rect>
         <x>540</x>
@@ -83,7 +83,7 @@
        </rect>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_4">
+     <widget class="QLineEdit" name="LTT">
       <property name="geometry">
        <rect>
         <x>540</x>
@@ -181,7 +181,7 @@
        <string>票务说明:</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_6">
+     <widget class="QLineEdit" name="memo">
       <property name="geometry">
        <rect>
         <x>540</x>
@@ -191,7 +191,7 @@
        </rect>
       </property>
      </widget>
-     <widget class="QCheckBox" name="checkBox">
+     <widget class="QCheckBox" name="patCheck">
       <property name="geometry">
        <rect>
         <x>680</x>
@@ -223,7 +223,7 @@
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QCheckBox" name="checkBox_3">
+     <widget class="QCheckBox" name="itineraryCheck">
       <property name="geometry">
        <rect>
         <x>680</x>
@@ -242,7 +242,7 @@
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QCheckBox" name="checkBox_4">
+     <widget class="QCheckBox" name="payCheck">
       <property name="geometry">
        <rect>
         <x>680</x>
@@ -256,28 +256,6 @@
       </property>
       <property name="checked">
        <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QCheckBox" name="checkBox_5">
-      <property name="geometry">
-       <rect>
-        <x>680</x>
-        <y>130</y>
-        <width>91</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="acceptDrops">
-       <bool>false</bool>
-      </property>
-      <property name="autoFillBackground">
-       <bool>false</bool>
-      </property>
-      <property name="text">
-       <string>FY舱改备注</string>
-      </property>
-      <property name="checked">
-       <bool>false</bool>
       </property>
      </widget>
      <widget class="QLineEdit" name="rateGt">
@@ -339,7 +317,7 @@
        <string>留钱:</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_9">
+     <widget class="QLineEdit" name="moneyKeep">
       <property name="geometry">
        <rect>
         <x>540</x>
@@ -503,7 +481,7 @@
      <x>0</x>
      <y>0</y>
      <width>904</width>
-     <height>22</height>
+     <height>23</height>
     </rect>
    </property>
   </widget>

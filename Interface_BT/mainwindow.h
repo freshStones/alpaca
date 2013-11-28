@@ -9,11 +9,13 @@
 #include <QSharedMemory>
 #include <QMessageBox>
 #include <QSqlTableModel>
+//#include <QCleanlooksStyle>
 
 #include "policyOp.h"
 #include "btdatabase.h"
 #include "login.h"
 #include "adminwindow.h"
+#include "dump.h"
 namespace Ui {
 class MainWindow;
 }
@@ -27,7 +29,6 @@ public:
     ~MainWindow();
     void signalConnection();
     void debug();
-    void exportXls(QString);
     void init();
     void setDiagMidParent(int height, int width);
 
@@ -38,6 +39,7 @@ private slots:
     void on_userManager_clicked();
 
 private:
+    dump *d;
     Login *l;
     AdminWindow *ad;
     Ui::MainWindow *ui;
@@ -47,6 +49,7 @@ private:
 public slots:
     void slotSetProgressBarRange(int);
     void slotSetProgressBarValue(int);
+    void slotAdminLoggedin();
 };
 
 #endif // MAINWINDOW_H

@@ -6,6 +6,7 @@
 #include <QSqlDriver>
 #include <QDebug>
 #include <QString>
+#include <QMessageBox>
 
 
 class btDatabase
@@ -13,7 +14,8 @@ class btDatabase
 public:
 
     static btDatabase* instance();
-    static void setconfig(QString,QString,QString);
+    static void setconfig(const QString, const QString, const QString);
+    QString identify(const QString, const QString);
     void init();
     bool isOpen();
 

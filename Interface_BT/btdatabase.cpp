@@ -10,8 +10,10 @@ void btDatabase::init()
     *db = QSqlDatabase::addDatabase("QMYSQL");
     db->setHostName(server);
     db->setDatabaseName("LH_AirTicket");
-    db->setUserName(username);
-    db->setPassword(password);
+    //db->setUserName(username);
+    //db->setPassword(password);
+    db->setUserName("remote");
+    db->setPassword("alpaca");
     qDebug()<<server<<username<<password;
     db->open();
 
@@ -26,16 +28,16 @@ btDatabase * btDatabase::instance()
         btDatabase::_instance->init();
     }
 
-    if(!btDatabase::_instance->isOpen()){
+    /*if(!btDatabase::_instance->isOpen()){
         delete btDatabase::_instance;
         btDatabase::_instance = 0;
         return btDatabase::instance();
-    }
+    }*/
 
     return btDatabase::_instance;
 }
 
-void btDatabase::setconfig(QString _username, QString _password, QString _server)
+void btDatabase::setconfig(const QString _username,const  QString _password,const QString _server)
 {
     btDatabase::username = _username;
     btDatabase::password = _password;
@@ -44,7 +46,6 @@ void btDatabase::setconfig(QString _username, QString _password, QString _server
 
 btDatabase::btDatabase()
 {
-
 }
 
 bool btDatabase::isOpen()
@@ -99,6 +100,22 @@ int btDatabase::batchOperation(const QString sql)
         qDebug() << "sql op ended" << endl;
     }
     return res;
+}
+
+QString btDatabase::identify(const QString usr, const QString pwd)
+{
+    QString sql = QString("SELECT authorityType FROM LH_AirTicket.userList WHERE userAccount='%1' AND userPassport='%2';").arg(usr).arg(pwd);
+    QSqlQuery q(sql);
+    qDebug() << sql;
+    try
+    {
+        q.exec(sql);
+    }
+    catch(QString exception){
+        QMessageBox::warning(NULL,QObject::tr("Warning"),QObject::tr(exception.toStdString().data()),QMessageBox::Ok);
+    }
+    if(q.next())    return QString(q.value(0).toString());
+    else return "unauthorized id";
 }
 
 void btDatabase::commitOperation()
