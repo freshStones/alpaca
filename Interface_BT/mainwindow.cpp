@@ -114,6 +114,7 @@ void MainWindow::on_queryButton_clicked()
     QString filter("departureCityCodes like \"\%" + ui->dep->text() + "\%\""+" and arrivalCityCodes like \"\%" + ui->arr->text() + "\%\"" );
     filter += " and airlinecode like \"\%" + ui->companyCode->text() + "\" and policyStatus = 1 and (false ";
     QString space = ui->space->text();
+
     int i = 0;
     for (i = 0; i < space.length();i++)
     {
@@ -121,7 +122,9 @@ void MainWindow::on_queryButton_clicked()
     }
     if (!i)  filter += " or applicableSpaceCode like \"\%\%\")";
     else filter += ")";
-    qDebug()<<filter<<endl;
+    if (space.size() == 0)
+        space = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    //qDebug()<<filter<<endl;
     if (ui->rateGtCheck->checkState()==Qt::Checked)
         filter += " and rebateRate > " + ui->rateGt->text();
     if (ui->rateLtCheck->checkState()==Qt::Checked)

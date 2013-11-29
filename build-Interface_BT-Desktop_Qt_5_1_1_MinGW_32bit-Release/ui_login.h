@@ -87,7 +87,7 @@ public:
         label_passport->setText(QApplication::translate("Login", "\345\257\206\347\240\201:", 0));
         password->setInputMask(QString());
         password->setText(QApplication::translate("Login", "lh2013", 0));
-        server->setText(QApplication::translate("Login", "162.105.30.184", 0));
+        server->setText(QApplication::translate("Login", "162.105.81.242", 0));
         label_server->setText(QApplication::translate("Login", "\346\234\215\345\212\241\345\231\250:", 0));
         checkBox_autoLogin->setText(QApplication::translate("Login", "\350\207\252\345\212\250\347\231\273\351\231\206", 0));
         checkBox_autoRememberPwd->setText(QApplication::translate("Login", "\350\256\260\344\275\217\345\257\206\347\240\201", 0));
