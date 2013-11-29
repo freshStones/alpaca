@@ -405,7 +405,7 @@
        <string>舱位:</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit">
+     <widget class="QLineEdit" name="space">
       <property name="geometry">
        <rect>
         <x>200</x>

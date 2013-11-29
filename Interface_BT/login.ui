@@ -106,7 +106,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>162.105.30.184</string>
+    <string>162.105.81.242</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_server">

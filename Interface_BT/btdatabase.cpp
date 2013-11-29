@@ -12,8 +12,8 @@ void btDatabase::init()
     db->setDatabaseName("LH_AirTicket");
     //db->setUserName(username);
     //db->setPassword(password);
-    db->setUserName("remote");
-    db->setPassword("alpaca");
+    db->setUserName("root");
+    db->setPassword("raccoon");
     qDebug()<<server<<username<<password;
     db->open();
 

@@ -111,12 +111,21 @@ void MainWindow::on_queryButton_clicked()
         allPolicyModel = new QSqlTableModel;
         allPolicyModel->setTable("policyDescripition");
     }
-    QString filter("departureCityCodes like \"\%" + ui->dep->text() + "\%\""+"and arrivalCityCodes like \"\%" + ui->arr->text() + "\%\"" );
-    filter += " and airlinecode like \"\%" + ui->companyCode->text() + "\" and policyStatus = 1";
+    QString filter("departureCityCodes like \"\%" + ui->dep->text() + "\%\""+" and arrivalCityCodes like \"\%" + ui->arr->text() + "\%\"" );
+    filter += " and airlinecode like \"\%" + ui->companyCode->text() + "\" and policyStatus = 1 and (false ";
+    QString space = ui->space->text();
+    int i = 0;
+    for (i = 0; i < space.length();i++)
+    {
+        filter += " or applicableSpaceCode like \"\%" +space[i]+ "\%\" ";
+    }
+    if (!i)  filter += " or applicableSpaceCode like \"\%\%\")";
+    else filter += ")";
+    qDebug()<<filter<<endl;
     if (ui->rateGtCheck->checkState()==Qt::Checked)
         filter += " and rebateRate > " + ui->rateGt->text();
     if (ui->rateLtCheck->checkState()==Qt::Checked)
-        filter += " and rebateRate < " + ui->rateLt->text();
+        filter += " and rebateRate < " + ui->rateLt->text();   
     allPolicyModel->setFilter(filter);
     allPolicyModel->select();
     ui->allPolicyTableView->setModel(allPolicyModel);
@@ -139,12 +148,12 @@ void MainWindow::on_dumpButton_clicked()
     if (ui->itineraryCheck->checkState() == Qt::Checked)
         itinerary = "0";
     else itinerary = "1";
+    QString filepath=QFileDialog::getSaveFileName(this,QObject::tr("Save orbit"),".",QObject::tr("Microsoft Office 2000 (*.xls)"));//获取保存路径
+    QVector<QStringList> v = d->dumpFromB2Q(allPolicyModel,ui->moneyKeep->text(),ui->memo->text(),ui->LTT->text(),ui->policyNo->text(),pay,pnr,pat,ui->supplierCode->text(),itinerary,ui->dep->text(),ui->arr->text(),ui->space->text());
 
-    QVector<QStringList> v = d->dumpFromB2Q(allPolicyModel,ui->moneyKeep->text(),ui->memo->text(),ui->LTT->text(),ui->policyNo->text(),pay,pnr,pat,ui->supplierCode->text(),itinerary);
-    QString filepath=QFileDialog::getSaveFileName(this,QObject::tr("Save orbit"),".",QObject::tr("Microsoft Office 2003 (*.xls)"));//获取保存路径
     //filepath.replace(QString("\\"),QString("/"));
-    d->saveAsExcel(filepath,v);
-    //d->exportXls("");
+    //d->saveAsExcel(filepath,v);
+    d->xlsByODBC(filepath,v);
 }
 
 void MainWindow::on_userManager_clicked()
