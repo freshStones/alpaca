@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     //QApplication::setStyle(new QCleanlooksStyle());
-
+    QApplication::addLibraryPath("./plugins");
     //避免中文乱码
 #ifdef Q_OS_WIN32
     QTextCodec *codec = QTextCodec::codecForName("System");
