@@ -50,7 +50,7 @@ void Login::setDiagMidParent(int height, int width)
 
     this->show();
 
-    //(ifAutoLoginFlag) this->ui->loginButton->click();             //to be solved here
+    if (ifAutoLoginFlag) this->ui->loginButton->click();             //to be solved here
 }
 
 void Login::loadUserPwd()

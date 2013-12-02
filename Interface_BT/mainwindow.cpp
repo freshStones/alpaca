@@ -21,7 +21,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     this->init();
-    this->signalConnection();
+    //this->signalConnection();
     this->debug();
 }
 
@@ -57,10 +57,17 @@ void MainWindow::init()
         l = new Login(configIniRead->value("/DEFAULT_ACCOUNT/USERACCOUNT").toString());
     else
         l = new Login();
-    l->setDiagMidParent(270,360);
+
+
     d = new dump();
     d->init();  
     ad = new AdminWindow();
+
+    //------------------policyOp initialize---------------------
+    this->op = new policyOp(configIniRead->value("/SQL_ACCOUNT/USERNAME").toString(),configIniRead->value("/SQL_ACCOUNT/PASSWORD").toString(),configIniRead->value("/AGENT_DESC/AGENTCODE").toString());
+
+    this->signalConnection();
+    l->setDiagMidParent(270,360);
 
     allPolicyModel = 0;
     ui->progressBar->setRange(0,5000-1);
@@ -68,9 +75,7 @@ void MainWindow::init()
     ui->progressBar->hide();
     ui->userManager->hide();
 
-    //------------------policyOp initialize---------------------
-    this->op = new policyOp(configIniRead->value("/SQL_ACCOUNT/USERNAME").toString(),configIniRead->value("/SQL_ACCOUNT/PASSWORD").toString(),configIniRead->value("/AGENT_DESC/AGENTCODE").toString());
-}
+    }
 
 void MainWindow::signalConnection()
 {
