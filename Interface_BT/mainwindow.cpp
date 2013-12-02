@@ -106,6 +106,9 @@ void MainWindow::on_queryButton_clicked()
     for (i = 0; i < space.length();i++)
     {
         filter += " or applicableSpaceCode like \"\%" +space[i]+ "\%\" ";
+        if(i < space.length()-1)
+            if(space.at(i+1).isDigit())
+                i++;
     }
     if (!i)  filter += " or applicableSpaceCode like \"\%\%\")";
     else filter += ")";
@@ -150,7 +153,10 @@ void MainWindow::on_dumpButton_clicked()
                 space.append(QString(spaceString.at(i))+spaceString.at(i+1));
                 i++;
             }
+            else
+            {
             space.append(spaceString.at(i));
+            }
         }
         else
         {

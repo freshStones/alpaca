@@ -138,6 +138,7 @@ QVector<QStringList> dump::dumpFromB2Q(QSqlTableModel *model,QString moneyKeep,Q
     QStringList departureCityList,arrivalCityList;
     for(int i = 0;i<model->rowCount();i++)
     {
+        QVector<QString> spacev;
         airlineCode = model->record(i).value("airlineCode").toString();
         //policyCode = model->record(i).value(1).toString() + "lh";
         if (dep.size() != 0)
@@ -170,50 +171,71 @@ QVector<QStringList> dump::dumpFromB2Q(QSqlTableModel *model,QString moneyKeep,Q
             }
             applicableFlight +=  airlineCode + QString::number(row.at(row.count()-1).toLong(),10);
         }
+        spaceString = applicableSpaceCode;
+        for(int i = 0; i < spaceString.length();i++)
+        {
+            if(i < spaceString.length() - 1)
+            {
+                if(spaceString.at(i+1).isDigit())
+                {
+                    space.append(QString(spaceString.at(i))+spaceString.at(i+1));
+                    i++;
+                }
+                else
+                {
+                space.append(spaceString.at(i));
+                }
+            }
+            else
+            {
+                space.append(spaceString.at(i));
+            }
+        }
         if (space.empty())
-            space = spaceCode;
+            space = spacev;
         for(int j = 0; j < space.size();j++)
-            if (applicableSpaceCode.contains(space.at(j)))
-                for(int m = 0; m < departureCityList.count();m++)
-                    for(int n = 0; n < arrivalCityList.count();n++)
-                    {
-                        QStringList list;
-                        list.append(airlineCode);
-                        list.append(policyCode);
-                        list.append(departureCityList.at(m));
-                        list.append(arrivalCityList.at(n));
-                        list.append(flightRestriction);
-                        list.append(applicableFlight);
-                        list.append(timetableRestriction);
-                        list.append(QString(space[j]));
-                        list.append(priceType);
-                        list.append(price);
-                        list.append(rebateRate);
-                        list.append(moneyKeep);
-                        list.append(ticketingDateLimitStart);
-                        list.append(ticketingDateLimitEnd);
-                        list.append(ticketingDateLimitStart);
-                        list.append(ticketingDateLimitEnd);
-                        list.append(departureTime);
-                        list.append(latestPreticketTimeLimit);
-                        list.append(earliestPreticketTimeLimit);
-                        list.append(remarkInfo);
-                        list.append(spaceInfo);
-                        list.append(canPayDirectly);
-                        list.append(pnr);
-                        list.append(pat);
-                        list.append(suppierCode);
-                        list.append(isItinerarySupplied);
-                        list.append("0");
-                        list.append("0");
-                        list.append("否");
-                        list.append("是");
-                        list.append("0");
-                        list.append("99");
-                        list.append("2");
-                        list.append(memo);
-                        v.append(list);
-                    }
+            for(int k = 0; k < spacev.size();k++)
+                if (space.at(k) == spacev.at(j))
+                    for(int m = 0; m < departureCityList.count();m++)
+                        for(int n = 0; n < arrivalCityList.count();n++)
+                        {
+                            QStringList list;
+                            list.append(airlineCode);
+                            list.append(policyCode);
+                            list.append(departureCityList.at(m));
+                            list.append(arrivalCityList.at(n));
+                            list.append(flightRestriction);
+                            list.append(applicableFlight);
+                            list.append(timetableRestriction);
+                            list.append(space.at(k));
+                            list.append(priceType);
+                            list.append(price);
+                            list.append(rebateRate);
+                            list.append(moneyKeep);
+                            list.append(ticketingDateLimitStart);
+                            list.append(ticketingDateLimitEnd);
+                            list.append(ticketingDateLimitStart);
+                            list.append(ticketingDateLimitEnd);
+                            list.append(departureTime);
+                            list.append(latestPreticketTimeLimit);
+                            list.append(earliestPreticketTimeLimit);
+                            list.append(remarkInfo);
+                            list.append(spaceInfo);
+                            list.append(canPayDirectly);
+                            list.append(pnr);
+                            list.append(pat);
+                            list.append(suppierCode);
+                            list.append(isItinerarySupplied);
+                            list.append("0");
+                            list.append("0");
+                            list.append("否");
+                            list.append("是");
+                            list.append("0");
+                            list.append("99");
+                            list.append("2");
+                            list.append(memo);
+                            v.append(list);
+                        }
     }
     qDebug() << "finished" << endl;
     return v;
