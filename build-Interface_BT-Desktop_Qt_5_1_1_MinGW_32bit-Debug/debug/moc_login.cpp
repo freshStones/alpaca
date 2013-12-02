@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_Login_t {
-    QByteArrayData data[10];
-    char stringdata[195];
+    QByteArrayData data[9];
+    char stringdata[171];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -30,18 +30,16 @@ struct qt_meta_stringdata_Login_t {
 static const qt_meta_stringdata_Login_t qt_meta_stringdata_Login = {
     {
 QT_MOC_LITERAL(0, 0, 5),
-QT_MOC_LITERAL(1, 6, 17),
-QT_MOC_LITERAL(2, 24, 0),
-QT_MOC_LITERAL(3, 25, 18),
-QT_MOC_LITERAL(4, 44, 22),
-QT_MOC_LITERAL(5, 67, 34),
-QT_MOC_LITERAL(6, 102, 4),
-QT_MOC_LITERAL(7, 107, 35),
-QT_MOC_LITERAL(8, 143, 27),
-QT_MOC_LITERAL(9, 171, 22)
+QT_MOC_LITERAL(1, 6, 12),
+QT_MOC_LITERAL(2, 19, 0),
+QT_MOC_LITERAL(3, 20, 22),
+QT_MOC_LITERAL(4, 43, 34),
+QT_MOC_LITERAL(5, 78, 4),
+QT_MOC_LITERAL(6, 83, 35),
+QT_MOC_LITERAL(7, 119, 27),
+QT_MOC_LITERAL(8, 147, 22)
     },
-    "Login\0adminAuthorizedOK\0\0commonAuthorizedOK\0"
-    "on_loginButton_clicked\0"
+    "Login\0authorizedOK\0\0on_loginButton_clicked\0"
     "on_checkBox_autoLogin_stateChanged\0"
     "arg1\0on_checkBox_autoRememberPwd_clicked\0"
     "on_username_editingFinished\0"
@@ -55,34 +53,32 @@ static const uint qt_meta_data_Login[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       7,   14, // methods
+       6,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       2,       // signalCount
+       1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,   49,    2, 0x05,
-       3,    0,   50,    2, 0x05,
+       1,    2,   44,    2, 0x05,
 
  // slots: name, argc, parameters, tag, flags
-       4,    0,   51,    2, 0x08,
-       5,    1,   52,    2, 0x08,
-       7,    0,   55,    2, 0x08,
-       8,    0,   56,    2, 0x08,
-       9,    1,   57,    2, 0x08,
+       3,    0,   49,    2, 0x08,
+       4,    1,   50,    2, 0x08,
+       6,    0,   53,    2, 0x08,
+       7,    0,   54,    2, 0x08,
+       8,    1,   55,    2, 0x08,
 
  // signals: parameters
-    QMetaType::Void,
-    QMetaType::Void,
+    QMetaType::Void, QMetaType::QString, QMetaType::QString,    2,    2,
 
  // slots: parameters
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Int,    6,
+    QMetaType::Void, QMetaType::Int,    5,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QString,    6,
+    QMetaType::Void, QMetaType::QString,    5,
 
        0        // eod
 };
@@ -92,28 +88,21 @@ void Login::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void 
     if (_c == QMetaObject::InvokeMetaMethod) {
         Login *_t = static_cast<Login *>(_o);
         switch (_id) {
-        case 0: _t->adminAuthorizedOK(); break;
-        case 1: _t->commonAuthorizedOK(); break;
-        case 2: _t->on_loginButton_clicked(); break;
-        case 3: _t->on_checkBox_autoLogin_stateChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 4: _t->on_checkBox_autoRememberPwd_clicked(); break;
-        case 5: _t->on_username_editingFinished(); break;
-        case 6: _t->on_username_textEdited((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 0: _t->authorizedOK((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2]))); break;
+        case 1: _t->on_loginButton_clicked(); break;
+        case 2: _t->on_checkBox_autoLogin_stateChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 3: _t->on_checkBox_autoRememberPwd_clicked(); break;
+        case 4: _t->on_username_editingFinished(); break;
+        case 5: _t->on_username_textEdited((*reinterpret_cast< const QString(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
         int *result = reinterpret_cast<int *>(_a[0]);
         void **func = reinterpret_cast<void **>(_a[1]);
         {
-            typedef void (Login::*_t)();
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&Login::adminAuthorizedOK)) {
+            typedef void (Login::*_t)(QString , QString );
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&Login::authorizedOK)) {
                 *result = 0;
-            }
-        }
-        {
-            typedef void (Login::*_t)();
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&Login::commonAuthorizedOK)) {
-                *result = 1;
             }
         }
     }
@@ -144,26 +133,21 @@ int Login::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 7)
+        if (_id < 6)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 7;
+        _id -= 6;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 7)
+        if (_id < 6)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 7;
+        _id -= 6;
     }
     return _id;
 }
 
 // SIGNAL 0
-void Login::adminAuthorizedOK()
+void Login::authorizedOK(QString _t1, QString _t2)
 {
-    QMetaObject::activate(this, &staticMetaObject, 0, 0);
-}
-
-// SIGNAL 1
-void Login::commonAuthorizedOK()
-{
-    QMetaObject::activate(this, &staticMetaObject, 1, 0);
+    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
+    QMetaObject::activate(this, &staticMetaObject, 0, _a);
 }
 QT_END_MOC_NAMESPACE
