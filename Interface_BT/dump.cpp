@@ -118,6 +118,8 @@ QVector<QStringList> dump::dumpFromB2Q(QSqlTableModel *model,QString moneyKeep,Q
             }
             applicableFlight +=  airlineCode + QString::number(row.at(row.count()-1).toLong(),10);
         }
+        if (space.length() == 0)
+            space = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         for(int j = 0; j < space.length();j++)
             if (applicableSpaceCode.contains(space[j]))
                 for(int m = 0; m < departureCityList.count();m++)
