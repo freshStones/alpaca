@@ -12,6 +12,7 @@
 #include <QVector>
 #include <QStringList>
 
+
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
@@ -21,7 +22,6 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     this->init();
-    //this->signalConnection();
     this->debug();
 }
 
@@ -79,6 +79,12 @@ void MainWindow::signalConnection()
 {
     connect(this->l,SIGNAL(authorizedOK(QString, QString)),this,SLOT(slotLoggedin(QString, QString)));
     connect(this->ui->action_exit,SIGNAL(triggered()),qApp,SLOT(quit()));
+}
+
+void MainWindow::loadSpaceInfo()
+{
+
+
 }
 
 

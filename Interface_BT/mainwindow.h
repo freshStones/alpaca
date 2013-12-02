@@ -9,6 +9,8 @@
 #include <QSharedMemory>
 #include <QMessageBox>
 #include <QSqlTableModel>
+#include <QPair>
+#include <QVector>
 
 #include "policyOp.h"
 #include "btdatabase.h"
@@ -29,6 +31,7 @@ public:
     void signalConnection();
     void debug();
     void init();
+    void loadSpaceInfo();
     void setDiagMidParent(int height, int width);
 
 private slots:
@@ -47,6 +50,7 @@ private:
     Ui::MainWindow *ui;
     policyOp *op;
     QSqlTableModel *allPolicyModel;
+    QVector<QPair<QString,QString> > qv[11];  //account from 0.9,0.85 to 0.4
 
 public slots:
     void slotLoggedin(QString, QString);
