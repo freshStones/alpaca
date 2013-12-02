@@ -126,6 +126,7 @@ void MainWindow::on_queryButton_clicked()
 void MainWindow::on_dumpButton_clicked()
 {
     QString pay,pnr,pat,itinerary;
+    QVector<QString> space;
     if (ui->payCheck->checkState() ==Qt::Checked)
         pay = "是";
     else pay = "否";
@@ -139,7 +140,24 @@ void MainWindow::on_dumpButton_clicked()
         itinerary = "0";
     else itinerary = "1";
     QString filepath=QFileDialog::getSaveFileName(this,QObject::tr("Save orbit"),".",QObject::tr("Microsoft Office 2000 (*.xls)"));//获取保存路径
-    QVector<QStringList> v = d->dumpFromB2Q(allPolicyModel,ui->moneyKeep->text(),ui->memo->text(),ui->LTT->text(),ui->policyNo->text(),pay,pnr,pat,ui->supplierCode->text(),itinerary,ui->dep->text(),ui->arr->text(),ui->space->text());
+    QString spaceString = ui->space->text();
+    for(int i = 0; i < spaceString.length();i++)
+    {
+        if(i < spaceString.length() - 1)
+        {
+            if(spaceString.at(i+1).isDigit())
+            {
+                space.append(QString(spaceString.at(i))+spaceString.at(i+1));
+                i++;
+            }
+            space.append(spaceString.at(i));
+        }
+        else
+        {
+            space.append(spaceString.at(i));
+        }
+    }
+    QVector<QStringList> v = d->dumpFromB2Q(allPolicyModel,ui->moneyKeep->text(),ui->memo->text(),ui->LTT->text(),ui->policyNo->text(),pay,pnr,pat,ui->supplierCode->text(),itinerary,ui->dep->text(),ui->arr->text(),space);
 
     //filepath.replace(QString("\\"),QString("/"));
     //d->saveAsExcel(filepath,v);

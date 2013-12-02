@@ -6,80 +6,131 @@ dump::dump(){
 }
 
 void dump::init(){
-   ROWNUM = 34;
-   rowMark.append("A");
-   rowMark.append("B");
-   rowMark.append("C");
-   rowMark.append("D");
-   rowMark.append("E");
-   rowMark.append("F");
-   rowMark.append("G");
-   rowMark.append("H");
-   rowMark.append("I");
-   rowMark.append("J");
-   rowMark.append("K");
-   rowMark.append("L");
-   rowMark.append("M");
-   rowMark.append("N");
-   rowMark.append("O");
-   rowMark.append("P");
-   rowMark.append("Q");
-   rowMark.append("R");
-   rowMark.append("S");
-   rowMark.append("T");
-   rowMark.append("U");
-   rowMark.append("V");
-   rowMark.append("W");
-   rowMark.append("X");
-   rowMark.append("Y");
-   rowMark.append("Z");
-   rowMark.append("AA");
-   rowMark.append("AB");
-   rowMark.append("AC");
-   rowMark.append("AD");
-   rowMark.append("AE");
-   rowMark.append("AF");
-   rowMark.append("AG");
-   rowMark.append("AH");
-   rowName.append("航空公司");
-   rowName.append("政策代码");
-   rowName.append("起飞城市");
-   rowName.append("到达城市");
-   rowName.append("航班限制");
-   rowName.append("航班号");
-   rowName.append("班期限制");
-   rowName.append("适用舱位");
-   rowName.append("票面价类型");
-   rowName.append("票面价/折扣");
-   rowName.append("返点");
-   rowName.append("留钱");
-   rowName.append("销售起始日期");
-   rowName.append("销售结束日期");
-   rowName.append("旅行起始日期");
-   rowName.append("旅行结束日期");
-   rowName.append("航班起飞时间");
-   rowName.append("最晚提前出票时限");
-   rowName.append("最早提前出票时限");
-   rowName.append("退改签说明");
-   rowName.append("舱位说明");
-   rowName.append("是否允许直接支付");
-   rowName.append("是否生成PNR");
-   rowName.append("进行PAT:A校验");
-   rowName.append("搭桥office号");
-   rowName.append("是否提供行程单");
-   rowName.append("退票规则");
-   rowName.append("改期规则");
-   rowName.append("是否允许签转");
-   rowName.append("是否提供常旅客积分");
-   rowName.append("证件类型");
-   rowName.append("最大购买年龄");
-   rowName.append("最小购买年龄");
-   rowName.append("特殊票务说明");
-
+    ROWNUM = 34;
+    rowMark.append("A");
+    rowMark.append("B");
+    rowMark.append("C");
+    rowMark.append("D");
+    rowMark.append("E");
+    rowMark.append("F");
+    rowMark.append("G");
+    rowMark.append("H");
+    rowMark.append("I");
+    rowMark.append("J");
+    rowMark.append("K");
+    rowMark.append("L");
+    rowMark.append("M");
+    rowMark.append("N");
+    rowMark.append("O");
+    rowMark.append("P");
+    rowMark.append("Q");
+    rowMark.append("R");
+    rowMark.append("S");
+    rowMark.append("T");
+    rowMark.append("U");
+    rowMark.append("V");
+    rowMark.append("W");
+    rowMark.append("X");
+    rowMark.append("Y");
+    rowMark.append("Z");
+    rowMark.append("AA");
+    rowMark.append("AB");
+    rowMark.append("AC");
+    rowMark.append("AD");
+    rowMark.append("AE");
+    rowMark.append("AF");
+    rowMark.append("AG");
+    rowMark.append("AH");
+    rowName.append("航空公司");
+    rowName.append("政策代码");
+    rowName.append("起飞城市");
+    rowName.append("到达城市");
+    rowName.append("航班限制");
+    rowName.append("航班号");
+    rowName.append("班期限制");
+    rowName.append("适用舱位");
+    rowName.append("票面价类型");
+    rowName.append("票面价/折扣");
+    rowName.append("返点");
+    rowName.append("留钱");
+    rowName.append("销售起始日期");
+    rowName.append("销售结束日期");
+    rowName.append("旅行起始日期");
+    rowName.append("旅行结束日期");
+    rowName.append("航班起飞时间");
+    rowName.append("最晚提前出票时限");
+    rowName.append("最早提前出票时限");
+    rowName.append("退改签说明");
+    rowName.append("舱位说明");
+    rowName.append("是否允许直接支付");
+    rowName.append("是否生成PNR");
+    rowName.append("进行PAT:A校验");
+    rowName.append("搭桥office号");
+    rowName.append("是否提供行程单");
+    rowName.append("退票规则");
+    rowName.append("改期规则");
+    rowName.append("是否允许签转");
+    rowName.append("是否提供常旅客积分");
+    rowName.append("证件类型");
+    rowName.append("最大购买年龄");
+    rowName.append("最小购买年龄");
+    rowName.append("特殊票务说明");
+    spaceCode.append("A");
+    spaceCode.append("B");
+    spaceCode.append("C");
+    spaceCode.append("D");
+    spaceCode.append("E");
+    spaceCode.append("F");
+    spaceCode.append("G");
+    spaceCode.append("H");
+    spaceCode.append("I");
+    spaceCode.append("J");
+    spaceCode.append("K");
+    spaceCode.append("L");
+    spaceCode.append("M");
+    spaceCode.append("N");
+    spaceCode.append("O");
+    spaceCode.append("P");
+    spaceCode.append("Q");
+    spaceCode.append("R");
+    spaceCode.append("S");
+    spaceCode.append("T");
+    spaceCode.append("U");
+    spaceCode.append("V");
+    spaceCode.append("W");
+    spaceCode.append("X");
+    spaceCode.append("Y");
+    spaceCode.append("Z");
+    spaceCode.append("A1");
+    spaceCode.append("B1");
+    spaceCode.append("C1");
+    spaceCode.append("D1");
+    spaceCode.append("E1");
+    spaceCode.append("F1");
+    spaceCode.append("G1");
+    spaceCode.append("H1");
+    spaceCode.append("I1");
+    spaceCode.append("J1");
+    spaceCode.append("K1");
+    spaceCode.append("L1");
+    spaceCode.append("M1");
+    spaceCode.append("N1");
+    spaceCode.append("O1");
+    spaceCode.append("P1");
+    spaceCode.append("Q1");
+    spaceCode.append("R1");
+    spaceCode.append("S1");
+    spaceCode.append("T1");
+    spaceCode.append("U1");
+    spaceCode.append("V1");
+    spaceCode.append("W1");
+    spaceCode.append("X1");
+    spaceCode.append("Y1");
+    spaceCode.append("Z1");
 
 }
 
-QVector<QStringList> dump::dumpFromB2Q(QSqlTableModel *model,QString moneyKeep,QString memo,QString latestPreticketTimeLimit,QString policyCode,QString canPayDirectly,QString pnr,QString pat,QString suppierCode,QString isItinerarySupplied,QString dep,QString arv,QString space){
+QVector<QStringList> dump::dumpFromB2Q(QSqlTableModel *model,QString moneyKeep,QString memo,QString latestPreticketTimeLimit,QString policyCode,QString canPayDirectly,QString pnr,QString pat,QString suppierCode,QString isItinerarySupplied,QString dep,QString arv,QVector<QString> space){
     QVector<QStringList> v;
     QString airlineCode,departureCityCodes, arrivalCityCodes,applicableFlight,timetableRestriction,rebateRate,ticketingDateLimitStart,ticketingDateLimitEnd,applicableSpaceCode;
     QString flightRestriction="所有",priceType="Y舱折扣",departureTime="0000-2359",earliestPreticketTimeLimit="0",price ="0";
@@ -102,7 +153,8 @@ QVector<QStringList> dump::dumpFromB2Q(QSqlTableModel *model,QString moneyKeep,Q
         applicableFlight = model->record(i).value("applicableFlight").toString();
         ticketingDateLimitStart = model->record(i).value("ticketingDateLimitStart").toString();
         ticketingDateLimitEnd = model->record(i).value("ticketingDateLimitEnd").toString();
-        timetableRestriction = model->record(i).value("timetableRestriction").toString();
+        //timetableRestriction = model->record(i).value("timetableRestriction").toString();
+        timetableRestriction = "1234567";
         applicableSpaceCode = model->record(i).value("applicableSpaceCode").toString();
         rebateRate = QString::number(100*(model->record(i).value("rebateRate").toDouble()),'f',2);
 
@@ -118,10 +170,10 @@ QVector<QStringList> dump::dumpFromB2Q(QSqlTableModel *model,QString moneyKeep,Q
             }
             applicableFlight +=  airlineCode + QString::number(row.at(row.count()-1).toLong(),10);
         }
-        if (space.length() == 0)
-            space = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        for(int j = 0; j < space.length();j++)
-            if (applicableSpaceCode.contains(space[j]))
+        if (space.empty())
+            space = spaceCode;
+        for(int j = 0; j < space.size();j++)
+            if (applicableSpaceCode.contains(space.at(j)))
                 for(int m = 0; m < departureCityList.count();m++)
                     for(int n = 0; n < arrivalCityList.count();n++)
                     {
