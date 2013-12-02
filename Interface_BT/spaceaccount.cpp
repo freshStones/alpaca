@@ -76,16 +76,27 @@ void spaceAccount::initMap()
     spaceMap.insert("CAV","0.45");
     spaceMap.insert("CAV1","0.40");
 
-    spaceMap.insert("ZH/VDB","0.90");
-    spaceMap.insert("ZH/VDM","0.85");
-    spaceMap.insert("ZH/VDH","0.80");
-    spaceMap.insert("ZH/VDK","0.75");
-    spaceMap.insert("ZH/VDL","0.70");
-    spaceMap.insert("ZH/VDJ","0.65");
-    spaceMap.insert("ZH/VDQ","0.60");
-    spaceMap.insert("ZH/VDG","0.50");
-    spaceMap.insert("ZH/VDV","0.45");
-    spaceMap.insert("ZH/VDW","0.40");
+    spaceMap.insert("ZHB","0.90");
+    spaceMap.insert("ZHM","0.85");
+    spaceMap.insert("ZHH","0.80");
+    spaceMap.insert("ZHK","0.75");
+    spaceMap.insert("ZHL","0.70");
+    spaceMap.insert("ZHJ","0.65");
+    spaceMap.insert("ZHQ","0.60");
+    spaceMap.insert("ZHG","0.50");
+    spaceMap.insert("ZHV","0.45");
+    spaceMap.insert("ZHW","0.40");
+
+    spaceMap.insert("VDB","0.90");
+    spaceMap.insert("VDM","0.85");
+    spaceMap.insert("VDH","0.80");
+    spaceMap.insert("VDK","0.75");
+    spaceMap.insert("VDL","0.70");
+    spaceMap.insert("VDJ","0.65");
+    spaceMap.insert("VDQ","0.60");
+    spaceMap.insert("VDG","0.50");
+    spaceMap.insert("VDV","0.45");
+    spaceMap.insert("VDW","0.40");
 
     spaceMap.insert("SCB","0.90");
     spaceMap.insert("SCM","0.85");
@@ -108,15 +119,25 @@ void spaceAccount::initMap()
     spaceMap.insert("HUU","0.45");
     spaceMap.insert("HUE","0.40");
 
-    spaceMap.insert("CN/GSB","0.90");
-    spaceMap.insert("CN/GSH","0.85");
-    spaceMap.insert("CN/GSK","0.80");
-    spaceMap.insert("CN/GSL","0.75");
-    spaceMap.insert("CN/GSM","0.70");
-    spaceMap.insert("CN/GSQ","0.60");
-    spaceMap.insert("CN/GSX","0.50");
-    spaceMap.insert("CN/GSU","0.45");
-    spaceMap.insert("CN/GSE","0.40");
+    spaceMap.insert("GSB","0.90");
+    spaceMap.insert("GSH","0.85");
+    spaceMap.insert("GSK","0.80");
+    spaceMap.insert("GSL","0.75");
+    spaceMap.insert("GSM","0.70");
+    spaceMap.insert("GSQ","0.60");
+    spaceMap.insert("GSX","0.50");
+    spaceMap.insert("GSU","0.45");
+    spaceMap.insert("GSE","0.40");
+
+    spaceMap.insert("CNB","0.90");
+    spaceMap.insert("CNH","0.85");
+    spaceMap.insert("CNK","0.80");
+    spaceMap.insert("CNL","0.75");
+    spaceMap.insert("CNM","0.70");
+    spaceMap.insert("CNQ","0.60");
+    spaceMap.insert("CNX","0.50");
+    spaceMap.insert("CNU","0.45");
+    spaceMap.insert("CNE","0.40");
 
     spaceMap.insert("PNB","0.90");
     spaceMap.insert("PNH","0.85");

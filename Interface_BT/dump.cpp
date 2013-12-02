@@ -1,11 +1,12 @@
 
 #include <dump.h>
-
+#include <spaceaccount.h>
 
 dump::dump(){
 }
 
 void dump::init(){
+    spaceAccount::initMap();
     ROWNUM = 34;
     rowMark.append("A");
     rowMark.append("B");
@@ -212,7 +213,7 @@ QVector<QStringList> dump::dumpFromB2Q(QSqlTableModel *model,QString moneyKeep,Q
                             list.append(timetableRestriction);
                             list.append(space.at(j));
                             list.append(priceType);
-                            list.append(price);
+                            list.append(spaceAccount::spaceMap.value(airlineCode+space.at(j)));
                             list.append(rebateRate);
                             list.append(moneyKeep);
                             list.append(ticketingDateLimitStart);
