@@ -148,6 +148,7 @@ void Login::on_username_editingFinished()
 {
     if(userMap.contains(this->ui->username->text())){
         this->ui->password->setText(userMap.value(this->ui->username->text()));
+        this->ui->checkBox_autoRememberPwd->setChecked(true);
         this->ui->loginButton->setFocus();
     }
 }

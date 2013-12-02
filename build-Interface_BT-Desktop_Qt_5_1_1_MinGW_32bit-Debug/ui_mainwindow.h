@@ -68,8 +68,7 @@ public:
     QLineEdit *companyCode;
     QLabel *label_space;
     QLineEdit *space;
-    QWidget *tab_2;
-    QTableView *tableView_2;
+    QWidget *tab_unknown;
     QMenuBar *menubar;
     QMenu *menu_common;
     QMenu *menu_admin;
@@ -191,12 +190,9 @@ public:
         space->setObjectName(QStringLiteral("space"));
         space->setGeometry(QRect(280, 100, 111, 21));
         tabs->addTab(policy, QString());
-        tab_2 = new QWidget();
-        tab_2->setObjectName(QStringLiteral("tab_2"));
-        tableView_2 = new QTableView(tab_2);
-        tableView_2->setObjectName(QStringLiteral("tableView_2"));
-        tableView_2->setGeometry(QRect(0, 60, 691, 301));
-        tabs->addTab(tab_2, QString());
+        tab_unknown = new QWidget();
+        tab_unknown->setObjectName(QStringLiteral("tab_unknown"));
+        tabs->addTab(tab_unknown, QString());
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QStringLiteral("menubar"));
@@ -256,7 +252,7 @@ public:
         companyCode->setText(QString());
         label_space->setText(QApplication::translate("MainWindow", "\350\210\261\344\275\215:", 0));
         tabs->setTabText(tabs->indexOf(policy), QApplication::translate("MainWindow", "\347\255\233\346\224\277\347\255\226", 0));
-        tabs->setTabText(tabs->indexOf(tab_2), QApplication::translate("MainWindow", "Tab 2", 0));
+        tabs->setTabText(tabs->indexOf(tab_unknown), QApplication::translate("MainWindow", "\345\276\205\346\267\273\345\212\240\345\212\237\350\203\275", 0));
         menu_common->setTitle(QApplication::translate("MainWindow", "\346\231\256\351\200\232\347\224\250\346\210\267\350\217\234\345\215\225", 0));
         menu_admin->setTitle(QApplication::translate("MainWindow", "\347\256\241\347\220\206\345\221\230\350\217\234\345\215\225", 0));
     } // retranslateUi

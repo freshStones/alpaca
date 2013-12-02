@@ -403,20 +403,10 @@
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="tab_2">
+    <widget class="QWidget" name="tab_unknown">
      <attribute name="title">
-      <string>Tab 2</string>
+      <string>待添加功能</string>
      </attribute>
-     <widget class="QTableView" name="tableView_2">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>60</y>
-        <width>691</width>
-        <height>301</height>
-       </rect>
-      </property>
-     </widget>
     </widget>
    </widget>
   </widget>
