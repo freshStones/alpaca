@@ -111,10 +111,21 @@ void MainWindow::on_queryButton_clicked()
     int i = 0;
     for (i = 0; i < space.length();i++)
     {
-        filter += " or applicableSpaceCode like \"\%" +space[i]+ "\%\" ";
+
         if(i < space.length()-1)
+        {
             if(space.at(i+1).isDigit())
+            {
+                filter += " or applicableSpaceCode like \"\%" +space[i]+space[i+1]+ "\%\" ";
                 i++;
+            }
+            else
+            {
+                filter += " or applicableSpaceCode like \"\%" +space[i]+ "\%\" ";
+            }
+        }
+        else
+            filter += " or applicableSpaceCode like \"\%" +space[i]+ "\%\" ";
     }
     if (!i)  filter += " or applicableSpaceCode like \"\%\%\")";
     else filter += ")";
