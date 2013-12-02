@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QSqlTableModel>
+#include <QString>
 
 namespace Ui {
 class AdminWindow;
@@ -15,6 +16,7 @@ class AdminWindow : public QWidget
 public:
     explicit AdminWindow(QWidget *parent = 0);
     ~AdminWindow();
+    void setusername(QString);
 
 private slots:
     void on_pushButton_clicked();
@@ -27,6 +29,7 @@ private slots:
 private:
     Ui::AdminWindow *ui;
     QSqlTableModel * allUsers;
+    QString username;
 };
 
 #endif // ADMINWINDOW_H

@@ -39,8 +39,8 @@ void MainWindow::debug()
 void MainWindow::setDiagMidParent(int height, int width)
 {
     QDesktopWidget* desktopWidget = QApplication::desktop();
-    int startupX = desktopWidget->screenGeometry().width()/2 - width;
-    int startupY = desktopWidget->screenGeometry().height()/2 - height;
+    int startupX = desktopWidget->screenGeometry().width()/2 - width/2;
+    int startupY = desktopWidget->screenGeometry().height()/2 - height/2;
     this->resize(width, height);
     this->move(startupX, startupY);
     this->show();
@@ -53,61 +53,54 @@ void MainWindow::init()
     QSettings *configIniRead = new QSettings(QString("setting.ini"),QSettings::IniFormat);
 
     //---------------------UI initialize----------------------------
+    d = new dump();
+    d->init();
+    ad = new AdminWindow();
     if(configIniRead->value("/DEFAULT_ACCOUNT/USERACCOUNT").toString() != "")
         l = new Login(configIniRead->value("/DEFAULT_ACCOUNT/USERACCOUNT").toString());
     else
         l = new Login();
-
-
-    d = new dump();
-    d->init();  
-    ad = new AdminWindow();
-
     //------------------policyOp initialize---------------------
     this->op = new policyOp(configIniRead->value("/SQL_ACCOUNT/USERNAME").toString(),configIniRead->value("/SQL_ACCOUNT/PASSWORD").toString(),configIniRead->value("/AGENT_DESC/AGENTCODE").toString());
 
     this->signalConnection();
 
 
-    allPolicyModel = 0;
-    ui->progressBar->setRange(0,5000-1);
-    ui->progressBar->setValue(0);
-    ui->progressBar->hide();
-    ui->userManager->hide();
     l->setDiagMidParent(270,360);
-    }
+    allPolicyModel = 0;
+
+    ui->dumpUpload->setEnabled(false);
+
+}
 
 void MainWindow::signalConnection()
 {
     connect(this->op,SIGNAL(setProgressBarRange(int)),this,SLOT(slotSetProgressBarRange(int)));
     connect(this->op,SIGNAL(setProgressBarValue(int)),this,SLOT(slotSetProgressBarValue(int)));
-    connect(this->l,SIGNAL(adminAuthorizedOK()),this,SLOT(slotAdminLoggedin()));
-    connect(this->l,SIGNAL(commonAuthorizedOK()),this,SLOT(show()));
-}
-
-void MainWindow::on_pushButton_clicked()
-{
-    //this->op->GetAlterCommonPolicy("2013-11-28T16:01:20.827","0","0");
-    //this->op->GetAllCommonPolicy("0","0");
+    connect(this->l,SIGNAL(authorizedOK(QString, QString)),this,SLOT(slotLoggedin(QString, QString)));
+//    connect(this->l,SIGNAL(commonAuthorizedOK()),this,SLOT(show()));
 }
 
 void MainWindow::slotSetProgressBarRange(int x){
-    if(x != 0 ) ui->progressBar->setRange(0,x);
-    ui->label->setText(QString("%1 Items in total, 0 processed.").arg(x));
+    /*if(x != 0 ) ui->progressBar->setRange(0,x);
+    ui->label->setText(QString("%1 Items in total, 0 processed.").arg(x));*/
 }
 
 void MainWindow::slotSetProgressBarValue(int x){
-    ui->progressBar->setValue(x);
+    /*ui->progressBar->setValue(x);
     QString str = ui->label->text();
     int i = str.indexOf(", ") + 2;
     int j = str.indexOf("processed") - 1;
-    ui->label->setText(str.replace(i,j-i,QString("%1").arg(x)));
+    ui->label->setText(str.replace(i,j-i,QString("%1").arg(x)));*/
 }
 
-void MainWindow::slotAdminLoggedin(){
+void MainWindow::slotLoggedin(QString username, QString idRes){
     qDebug() << "logged in";
-    this->ui->userManager->show();
-    this->show();
+    if(idRes == "all")    this->ui->menu_admin->setEnabled(true);
+    else this->ui->menu_admin->setEnabled(false);
+    this->setDiagMidParent(768,1024);
+    this->username = username;
+    this->ad->setusername(username);
 }
 
 void MainWindow::on_queryButton_clicked()
@@ -166,12 +159,13 @@ void MainWindow::on_dumpButton_clicked()
     d->xlsByODBC(filepath,v);
 }
 
-void MainWindow::on_userManager_clicked()
+
+void MainWindow::on_action_accountProc_triggered()
 {
     ad->show();
 }
 
-void MainWindow::on_button_logout_clicked()
+void MainWindow::on_action_logOut_triggered()
 {
     QSettings *settings = new QSettings(QString("setting.ini"),QSettings::IniFormat);
     settings->setValue("/DEFAULT_ACCOUNT/USERACCOUNT",QString(""));

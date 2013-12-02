@@ -126,9 +126,10 @@ void Login::on_loginButton_clicked()
             settings->setValue("/DEFAULT_ACCOUNT/USERACCOUNT", this->ui->username->text());
         }
         this->hide();
+        emit authorizedOK(this->username, idRes);
 
-        if(idRes == "all")  emit adminAuthorizedOK();
-        else emit commonAuthorizedOK();
+//        if(idRes == "all")  emit authorizedOK(this->username, idRes);
+//        else emit commonAuthorizedOK();
     }
 }
 

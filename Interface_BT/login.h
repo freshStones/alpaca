@@ -34,8 +34,7 @@ private:
     void saveUserPwd();
 
 signals:
-    void adminAuthorizedOK();
-    void commonAuthorizedOK();
+    void authorizedOK(QString,QString);
 private slots:
     void on_loginButton_clicked();
 

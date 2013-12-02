@@ -32,15 +32,14 @@ public:
     void setDiagMidParent(int height, int width);
 
 private slots:
-    void on_pushButton_clicked();
     void on_queryButton_clicked();
     void on_dumpButton_clicked();
-    void on_userManager_clicked();
-
-    void on_button_logout_clicked();
+    void on_action_accountProc_triggered();
+    void on_action_logOut_triggered();
 
 private:
     dump *d;
+    QString username;
     Login *l;
     AdminWindow *ad;
     Ui::MainWindow *ui;
@@ -50,7 +49,7 @@ private:
 public slots:
     void slotSetProgressBarRange(int);
     void slotSetProgressBarValue(int);
-    void slotAdminLoggedin();
+    void slotLoggedin(QString, QString);
 };
 
 #endif // MAINWINDOW_H
