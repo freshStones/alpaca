@@ -25,7 +25,8 @@ SOURCES += main.cpp\
     btdatabase.cpp \
     dump.cpp \
     login.cpp \
-    adminwindow.cpp
+    adminwindow.cpp \
+    spaceaccount.cpp
 
 HEADERS  += mainwindow.h \
     gsoap/temp.h \
@@ -38,7 +39,8 @@ HEADERS  += mainwindow.h \
     btdatabase.h \
     dump.h \
     login.h \
-    adminwindow.h
+    adminwindow.h \
+    spaceaccount.h
 
 FORMS    += \
     mainwindow.ui \
