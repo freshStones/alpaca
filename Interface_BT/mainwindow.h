@@ -9,7 +9,6 @@
 #include <QSharedMemory>
 #include <QMessageBox>
 #include <QSqlTableModel>
-//#include <QCleanlooksStyle>
 
 #include "policyOp.h"
 #include "btdatabase.h"
