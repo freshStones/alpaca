@@ -26,7 +26,7 @@ class dump{
 public:
 
     void init();
-    QVector<QStringList> dumpFromB2Q(QSqlTableModel *model,QString moneyKeep,QString memo,QString latestPreticketTimeLimit,QString policyCode,QString canPayDirectly,QString pnr,QString pat,QString suppierCode,QString isItinerarySupplied,QString dep,QString arv,QString space);
+    QVector<QStringList> dumpFromB2Q(QSqlTableModel *model,QString moneyKeep,QString memo,QString latestPreticketTimeLimit,QString policyCode,QString canPayDirectly,QString pnr,QString pat,QString suppierCode,QString isItinerarySupplied,QString dep,QString arv,QVector<QString> space);
     void save();
     //void saveAsExcel(QString filepath,QVector<QStringList> v);
     void xlsByODBC(QString filepath,QVector<QStringList> v);
@@ -34,6 +34,7 @@ public:
 
     QVector<QString> rowMark;
     QVector<QString> rowName;
+    QVector<QString> spaceCode;
     int ROWNUM;
 
 };
