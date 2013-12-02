@@ -1,6 +1,6 @@
 #include "spaceaccount.h"
 
-QMap<QString, QString> spaceMap;
+QMap<QString, QString> spaceAccount::spaceMap;
 spaceAccount::spaceAccount()
 {
 }

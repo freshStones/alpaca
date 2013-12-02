@@ -171,7 +171,7 @@ QVector<QStringList> dump::dumpFromB2Q(QSqlTableModel *model,QString moneyKeep,Q
             }
             applicableFlight +=  airlineCode + QString::number(row.at(row.count()-1).toLong(),10);
         }
-        spaceString = applicableSpaceCode;
+        QString spaceString = applicableSpaceCode;
         for(int i = 0; i < spaceString.length();i++)
         {
             if(i < spaceString.length() - 1)
