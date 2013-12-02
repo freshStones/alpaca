@@ -43,6 +43,8 @@ void MainWindow::setDiagMidParent(int height, int width)
     int startupY = desktopWidget->screenGeometry().height()/2 - height/2;
     this->resize(width, height);
     this->move(startupX, startupY);
+    this->setWindowTitle(tr("海南浪花商旅有限公司机票网销系统"));
+
     this->show();
 }
 
@@ -77,27 +79,12 @@ void MainWindow::init()
 
 void MainWindow::signalConnection()
 {
-    connect(this->op,SIGNAL(setProgressBarRange(int)),this,SLOT(slotSetProgressBarRange(int)));
-    connect(this->op,SIGNAL(setProgressBarValue(int)),this,SLOT(slotSetProgressBarValue(int)));
     connect(this->l,SIGNAL(authorizedOK(QString, QString)),this,SLOT(slotLoggedin(QString, QString)));
-//    connect(this->l,SIGNAL(commonAuthorizedOK()),this,SLOT(show()));
+    connect(this->ui->action_exit,SIGNAL(triggered()),qApp,SLOT(quit()));
 }
 
-void MainWindow::slotSetProgressBarRange(int x){
-    /*if(x != 0 ) ui->progressBar->setRange(0,x);
-    ui->label->setText(QString("%1 Items in total, 0 processed.").arg(x));*/
-}
-
-void MainWindow::slotSetProgressBarValue(int x){
-    /*ui->progressBar->setValue(x);
-    QString str = ui->label->text();
-    int i = str.indexOf(", ") + 2;
-    int j = str.indexOf("processed") - 1;
-    ui->label->setText(str.replace(i,j-i,QString("%1").arg(x)));*/
-}
 
 void MainWindow::slotLoggedin(QString username, QString idRes){
-    qDebug() << "logged in";
     if(idRes == "all")    this->ui->menu_admin->setEnabled(true);
     else this->ui->menu_admin->setEnabled(false);
     this->setDiagMidParent(768,1024);
@@ -169,4 +156,11 @@ void MainWindow::on_action_logOut_triggered()
 {
     QSettings *settings = new QSettings(QString("setting.ini"),QSettings::IniFormat);
     settings->setValue("/DEFAULT_ACCOUNT/USERACCOUNT",QString(""));
+    this->hide();
+    this->l->show();
+}
+
+void MainWindow::on_action_exit_triggered()
+{
+
 }

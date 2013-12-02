@@ -37,6 +37,8 @@ private slots:
     void on_action_accountProc_triggered();
     void on_action_logOut_triggered();
 
+    void on_action_exit_triggered();
+
 private:
     dump *d;
     Login *l;
@@ -46,8 +48,6 @@ private:
     QSqlTableModel *allPolicyModel;
 
 public slots:
-    void slotSetProgressBarRange(int);
-    void slotSetProgressBarValue(int);
     void slotLoggedin(QString, QString);
 };
 

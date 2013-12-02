@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[9];
-    char stringdata[178];
+    QByteArrayData data[8];
+    char stringdata[155];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -35,16 +35,14 @@ QT_MOC_LITERAL(2, 34, 0),
 QT_MOC_LITERAL(3, 35, 21),
 QT_MOC_LITERAL(4, 57, 31),
 QT_MOC_LITERAL(5, 89, 26),
-QT_MOC_LITERAL(6, 116, 23),
-QT_MOC_LITERAL(7, 140, 23),
-QT_MOC_LITERAL(8, 164, 12)
+QT_MOC_LITERAL(6, 116, 24),
+QT_MOC_LITERAL(7, 141, 12)
     },
     "MainWindow\0on_queryButton_clicked\0\0"
     "on_dumpButton_clicked\0"
     "on_action_accountProc_triggered\0"
     "on_action_logOut_triggered\0"
-    "slotSetProgressBarRange\0slotSetProgressBarValue\0"
-    "slotLoggedin\0"
+    "on_action_exit_triggered\0slotLoggedin\0"
 };
 #undef QT_MOC_LITERAL
 
@@ -54,7 +52,7 @@ static const uint qt_meta_data_MainWindow[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       7,   14, // methods
+       6,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -62,21 +60,19 @@ static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   49,    2, 0x08,
-       3,    0,   50,    2, 0x08,
-       4,    0,   51,    2, 0x08,
-       5,    0,   52,    2, 0x08,
-       6,    1,   53,    2, 0x0a,
-       7,    1,   56,    2, 0x0a,
-       8,    2,   59,    2, 0x0a,
+       1,    0,   44,    2, 0x08,
+       3,    0,   45,    2, 0x08,
+       4,    0,   46,    2, 0x08,
+       5,    0,   47,    2, 0x08,
+       6,    0,   48,    2, 0x08,
+       7,    2,   49,    2, 0x0a,
 
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Int,    2,
-    QMetaType::Void, QMetaType::Int,    2,
+    QMetaType::Void,
     QMetaType::Void, QMetaType::QString, QMetaType::QString,    2,    2,
 
        0        // eod
@@ -91,9 +87,8 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 1: _t->on_dumpButton_clicked(); break;
         case 2: _t->on_action_accountProc_triggered(); break;
         case 3: _t->on_action_logOut_triggered(); break;
-        case 4: _t->slotSetProgressBarRange((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 5: _t->slotSetProgressBarValue((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 6: _t->slotLoggedin((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2]))); break;
+        case 4: _t->on_action_exit_triggered(); break;
+        case 5: _t->slotLoggedin((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2]))); break;
         default: ;
         }
     }
@@ -124,13 +119,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 7)
+        if (_id < 6)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 7;
+        _id -= 6;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 7)
+        if (_id < 6)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 7;
+        _id -= 6;
     }
     return _id;
 }
