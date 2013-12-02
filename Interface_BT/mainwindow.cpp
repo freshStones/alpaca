@@ -67,14 +67,14 @@ void MainWindow::init()
     this->op = new policyOp(configIniRead->value("/SQL_ACCOUNT/USERNAME").toString(),configIniRead->value("/SQL_ACCOUNT/PASSWORD").toString(),configIniRead->value("/AGENT_DESC/AGENTCODE").toString());
 
     this->signalConnection();
-    l->setDiagMidParent(270,360);
+
 
     allPolicyModel = 0;
     ui->progressBar->setRange(0,5000-1);
     ui->progressBar->setValue(0);
     ui->progressBar->hide();
     ui->userManager->hide();
-
+    l->setDiagMidParent(270,360);
     }
 
 void MainWindow::signalConnection()

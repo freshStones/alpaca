@@ -36,7 +36,7 @@
     <string>查找用户</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="addUser">
    <property name="geometry">
     <rect>
      <x>240</x>
@@ -49,7 +49,7 @@
     <string>添加用户</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_3">
+  <widget class="QPushButton" name="deleteUser">
    <property name="geometry">
     <rect>
      <x>370</x>
