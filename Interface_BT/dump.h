@@ -8,7 +8,7 @@
 #include <btDatabase.h>
 #include <QString>
 #include <qfile.h>
-#include <QAxObject>
+//#include <QAxObject>
 #include <QFileDialog>
 #include <QObject>
 #include <QVector>
@@ -28,7 +28,7 @@ public:
     void init();
     QVector<QStringList> dumpFromB2Q(QSqlTableModel *model,QString moneyKeep,QString memo,QString latestPreticketTimeLimit,QString policyCode,QString canPayDirectly,QString pnr,QString pat,QString suppierCode,QString isItinerarySupplied,QString dep,QString arv,QString space);
     void save();
-    void saveAsExcel(QString filepath,QVector<QStringList> v);
+    //void saveAsExcel(QString filepath,QVector<QStringList> v);
     void xlsByODBC(QString filepath,QVector<QStringList> v);
     dump();
 

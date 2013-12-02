@@ -197,7 +197,7 @@ void dump::save(){
            file.close();
 }
 
-
+/*
 void dump::saveAsExcel(QString filepath,QVector<QStringList> v){
        // QString filepath=QFileDialog::getSaveFileName(this,QObject::tr("Save orbit"),".",QObject::tr("Microsoft Office 2007 (*.xlsx)"));//获取保存路径
         qDebug() << filepath << endl;
@@ -253,7 +253,7 @@ void dump::saveAsExcel(QString filepath,QVector<QStringList> v){
             qDebug() << "finish" << endl;
         }
 }
-
+*/
 void dump::xlsByODBC(QString filepath,QVector<QStringList> v)
 {
     QString sheetName = "Sheet1";
