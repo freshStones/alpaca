@@ -178,24 +178,27 @@ QVector<QStringList> dump::dumpFromB2Q(QSqlTableModel *model,QString moneyKeep,Q
             {
                 if(spaceString.at(i+1).isDigit())
                 {
-                    space.append(QString(spaceString.at(i))+spaceString.at(i+1));
+                    spacev.append(QString(spaceString.at(i))+spaceString.at(i+1));
                     i++;
                 }
                 else
                 {
-                space.append(spaceString.at(i));
+                spacev.append(spaceString.at(i));
                 }
             }
             else
             {
-                space.append(spaceString.at(i));
+                spacev.append(spaceString.at(i));
             }
         }
         if (space.empty())
+        {
             space = spacev;
+        }
+ //       qDebug()<<space.size();
         for(int j = 0; j < space.size();j++)
             for(int k = 0; k < spacev.size();k++)
-                if (space.at(k) == spacev.at(j))
+                if (space.at(j) == spacev.at(k))
                     for(int m = 0; m < departureCityList.count();m++)
                         for(int n = 0; n < arrivalCityList.count();n++)
                         {
@@ -207,7 +210,7 @@ QVector<QStringList> dump::dumpFromB2Q(QSqlTableModel *model,QString moneyKeep,Q
                             list.append(flightRestriction);
                             list.append(applicableFlight);
                             list.append(timetableRestriction);
-                            list.append(space.at(k));
+                            list.append(space.at(j));
                             list.append(priceType);
                             list.append(price);
                             list.append(rebateRate);
