@@ -45,6 +45,7 @@ void AdminWindow::on_addUser_clicked()
     allUsers->setData(allUsers->index(rowNum,2),ui->password->text());
     allUsers->setData(allUsers->index(rowNum,3),this->username);
     allUsers->setData(allUsers->index(rowNum,4),right);
+    allUsers->submit();
 }
 
 void AdminWindow::on_deleteUser_clicked()
