@@ -70,6 +70,7 @@ public:
     QProgressBar *progressBar;
     QLabel *label;
     QPushButton *userManager;
+    QPushButton *button_logout;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -201,10 +202,13 @@ public:
         userManager = new QPushButton(centralwidget);
         userManager->setObjectName(QStringLiteral("userManager"));
         userManager->setGeometry(QRect(760, 640, 115, 32));
+        button_logout = new QPushButton(centralwidget);
+        button_logout->setObjectName(QStringLiteral("button_logout"));
+        button_logout->setGeometry(QRect(824, 10, 61, 23));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QStringLiteral("menubar"));
-        menubar->setGeometry(QRect(0, 0, 904, 23));
+        menubar->setGeometry(QRect(0, 0, 904, 21));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QStringLiteral("statusbar"));
@@ -245,6 +249,7 @@ public:
         tabs->setTabText(tabs->indexOf(tab_2), QApplication::translate("MainWindow", "Tab 2", 0));
         label->setText(QString());
         userManager->setText(QApplication::translate("MainWindow", "\347\256\241\347\220\206", 0));
+        button_logout->setText(QApplication::translate("MainWindow", "\346\263\250\351\224\200", 0));
     } // retranslateUi
 
 };

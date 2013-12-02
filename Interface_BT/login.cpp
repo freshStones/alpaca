@@ -1,12 +1,29 @@
+//Edited by joker,zghember, in late Nov. 2013
+//"A Log-in window"
+//last modified in 2013/12/02 by joker
+
 #include "login.h"
 #include "ui_login.h"
-#include "btdatabase.h"
 
 Login::Login(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Login)
 {
     ui->setupUi(this);
+    this->username = "";
+    this->ifAutoLoginFlag = false;
+    loadUserPwd();
+}
+
+Login::Login(const QString username) :
+    ui(new Ui::Login)
+{
+    ui->setupUi(this);
+    this->username = username;
+    this->ifAutoLoginFlag = true;
+    loadUserPwd();
+    this->ui->username->setText(this->username);
+    this->ui->password->setText(userMap.value(this->username));
 }
 
 Login::~Login()
@@ -32,17 +49,62 @@ void Login::setDiagMidParent(int height, int width)
     this->ui->loginButton->setAutoDefault(true);
 
     this->show();
+
+    //(ifAutoLoginFlag) this->ui->loginButton->click();             //to be solved here
+}
+
+void Login::loadUserPwd()
+{
+    QFile qf("nodalong.src");
+    qf.open(QIODevice::ReadOnly);
+    QTextStream qts(&qf);
+    while(!qts.atEnd()){
+        QStringList ss = qts.readLine().split(' ');
+        QString pwd(QByteArray().fromBase64(QByteArray().append(ss[1])));
+        userMap.insert(ss[0], pwd);
+    }
+    qf.close();
+}
+
+void Login::saveUserPwd()
+{
+    bool existanceFlag = false;
+    QString oldPwd = "";
+    QFile qf("nodalong.src");
+    qf.open(QIODevice::ReadOnly);
+    QTextStream qts(&qf);
+    while(!qts.atEnd()){
+        QString s = qts.readLine();
+        QStringList ss = s.split(' ');
+        if(ss[0] == this->username){
+            existanceFlag = true;
+            oldPwd = ss[1];
+            break;
+        }
+    }
+    qf.close();
+
+    qf.open(QIODevice::ReadOnly);
+    qts.reset();
+    QString tempStr = qts.readAll();
+
+    qf.close();
+    if(existanceFlag == true)   tempStr = tempStr.replace(this->username+" "+oldPwd, this->username+" "+QByteArray().append(this->password).toBase64());
+    else tempStr += (this->username + " " + QByteArray().append(this->password).toBase64() + "\r\n");
+
+    qf.open(QIODevice::WriteOnly);
+    qts.reset();
+    qts << tempStr;
+    qf.close();
 }
 
 void Login::on_loginButton_clicked()
 {
     this ->server = ui->server->text();
     this ->username = ui->username->text();
-    //this-> password = QString().append(QCryptographicHash::hash(ui->password->text().toUtf8(),QCryptographicHash::Md5 ).toHex());
     this->password = ui->password->text();
-    btDatabase::setconfig(username,ui->password->text(),server);
-    //btDatabase::instance()->querySQL(QString("select * from users where user = \"%1\"").arg(username);
-    //if (this->password == "3f5b31f8506cfb9a606553978da02d9f")
+    btDatabase::setconfig(username,password,server);
+
     if(!btDatabase::instance()->isOpen()){
         QMessageBox::warning(this,QObject::tr("Warning"),QObject::tr("数据库无法连接"),QMessageBox::Ok);
         ui->server->setText("");
@@ -56,11 +118,40 @@ void Login::on_loginButton_clicked()
         ui->password->clear();
         ui->username->setFocus();
         ui->username->selectAll();
-
     }
     else{
+        if(this->ui->checkBox_autoRememberPwd->isChecked() == true) saveUserPwd();
+        if(this->ui->checkBox_autoLogin->isChecked() == true){
+            QSettings *settings = new QSettings(QString("setting.ini"),QSettings::IniFormat);
+            settings->setValue("/DEFAULT_ACCOUNT/USERACCOUNT", this->ui->username->text());
+        }
         this->hide();
-        if(idRes == "all")emit adminAuthorizedOK();
+
+        if(idRes == "all")  emit adminAuthorizedOK();
         else emit commonAuthorizedOK();
     }
+}
+
+void Login::on_checkBox_autoLogin_stateChanged(int arg1)
+{
+    this->ui->checkBox_autoRememberPwd->setChecked(arg1);
+}
+
+void Login::on_checkBox_autoRememberPwd_clicked()
+{
+    if(this->ui->checkBox_autoLogin->isChecked()&& !this->ui->checkBox_autoRememberPwd->isChecked())
+        this->ui->checkBox_autoRememberPwd->setChecked(true);
+}
+
+void Login::on_username_editingFinished()
+{
+    if(userMap.contains(this->ui->username->text())){
+        this->ui->password->setText(userMap.value(this->ui->username->text()));
+        this->ui->loginButton->setFocus();
+    }
+}
+
+void Login::on_username_textEdited(const QString &arg1)
+{
+    this->ui->password->clear();
 }

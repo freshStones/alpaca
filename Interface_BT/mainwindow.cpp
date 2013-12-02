@@ -1,5 +1,4 @@
-#include "mainwindow.h"
-#include "ui_mainwindow.h"
+
 
 #include <QFile>
 #include <QDomDocument>
@@ -12,6 +11,9 @@
 #include <QDesktopWidget>
 #include <QVector>
 #include <QStringList>
+
+#include "mainwindow.h"
+#include "ui_mainwindow.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -48,27 +50,26 @@ void MainWindow::init()
 {
 
     //------------------Settings initialize----------------------
-    QString setting("/home/daniel/alpaca/Interface_BT/setting.ini");
-    //QString setting("/Users/xiaosb/Documents/workspace/alpaca/Interface_BT/setting.ini");
-    //QString setting("setting.ini");
-    QSettings *configIniRead = new QSettings(setting,QSettings::IniFormat);
+    QSettings *configIniRead = new QSettings(QString("setting.ini"),QSettings::IniFormat);
 
     //---------------------UI initialize----------------------------
-    QDesktopWidget* desktopWidget = QApplication::desktop();
-    l = new Login();
-    allPolicyModel = 0;
-    d = new dump();
-    d->init();
-
+    if(configIniRead->value("/DEFAULT_ACCOUNT/USERACCOUNT").toString() != "")
+        l = new Login(configIniRead->value("/DEFAULT_ACCOUNT/USERACCOUNT").toString());
+    else
+        l = new Login();
     l->setDiagMidParent(270,360);
+    d = new dump();
+    d->init();  
     ad = new AdminWindow();
+
+    allPolicyModel = 0;
     ui->progressBar->setRange(0,5000-1);
     ui->progressBar->setValue(0);
     ui->progressBar->hide();
     ui->userManager->hide();
 
     //------------------policyOp initialize---------------------
-    this->op = new policyOp(configIniRead->value("/ACCOUNT/USERNAME").toString(),configIniRead->value("/ACCOUNT/PASSWORD").toString(),configIniRead->value("/AGENT_DESC/AGENTCODE").toString());
+    this->op = new policyOp(configIniRead->value("/SQL_ACCOUNT/USERNAME").toString(),configIniRead->value("/SQL_ACCOUNT/PASSWORD").toString(),configIniRead->value("/AGENT_DESC/AGENTCODE").toString());
 }
 
 void MainWindow::signalConnection()
@@ -99,6 +100,7 @@ void MainWindow::slotSetProgressBarValue(int x){
 }
 
 void MainWindow::slotAdminLoggedin(){
+    qDebug() << "logged in";
     this->ui->userManager->show();
     this->show();
 }
@@ -162,4 +164,10 @@ void MainWindow::on_dumpButton_clicked()
 void MainWindow::on_userManager_clicked()
 {
     ad->show();
+}
+
+void MainWindow::on_button_logout_clicked()
+{
+    QSettings *settings = new QSettings(QString("setting.ini"),QSettings::IniFormat);
+    settings->setValue("/DEFAULT_ACCOUNT/USERACCOUNT",QString(""));
 }

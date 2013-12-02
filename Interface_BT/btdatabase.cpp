@@ -22,7 +22,7 @@ void btDatabase::init()
 
 btDatabase * btDatabase::instance()
 {
-    qDebug() << "btDatabase::instance() called" << endl;
+    //qDebug() << "btDatabase::instance() called" << endl;
     if(btDatabase::_instance == 0){
         btDatabase::_instance = new btDatabase();
         btDatabase::_instance->init();
@@ -106,7 +106,7 @@ QString btDatabase::identify(const QString usr, const QString pwd)
 {
     QString sql = QString("SELECT authorityType FROM LH_AirTicket.userList WHERE userAccount='%1' AND userPassport='%2';").arg(usr).arg(pwd);
     QSqlQuery q(sql);
-    qDebug() << sql;
+    //qDebug() << sql;
     try
     {
         q.exec(sql);

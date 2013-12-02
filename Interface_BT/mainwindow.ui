@@ -474,6 +474,19 @@
      <string>管理</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="button_logout">
+    <property name="geometry">
+     <rect>
+      <x>824</x>
+      <y>10</y>
+      <width>61</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>注销</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -481,7 +494,7 @@
      <x>0</x>
      <y>0</y>
      <width>904</width>
-     <height>23</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

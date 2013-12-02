@@ -37,6 +37,8 @@ private slots:
     void on_dumpButton_clicked();
     void on_userManager_clicked();
 
+    void on_button_logout_clicked();
+
 private:
     dump *d;
     Login *l;
