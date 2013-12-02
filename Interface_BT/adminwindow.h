@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QSqlTableModel>
 #include <QString>
+#include <QDesktopWidget>
 
 namespace Ui {
 class AdminWindow;
@@ -15,12 +16,12 @@ class AdminWindow : public QWidget
 
 public:
     explicit AdminWindow(QWidget *parent = 0);
-    ~AdminWindow();
+    void setDiagMidParent(int height, int width);
     void setusername(QString);
+    ~AdminWindow();
 
 private slots:
     void on_pushButton_clicked();
-
 
     void on_addUser_clicked();
 

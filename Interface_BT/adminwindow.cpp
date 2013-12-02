@@ -31,6 +31,28 @@ void AdminWindow::on_pushButton_clicked()
     allUsers->select();
     ui->allUsersTable->setModel(allUsers);
 }
+
+void AdminWindow::setDiagMidParent(int height, int width)
+{
+    QDesktopWidget* desktopWidget = QApplication::desktop();
+    int startupX = desktopWidget->screenGeometry().width()/2 - width/2;
+    int startupY = desktopWidget->screenGeometry().height()/2 - height/2;
+    this->setFixedSize(width,height);
+    this->move(startupX, startupY);
+    this->setWindowTitle(tr("海南浪花机票网销系统—账户管理界面"));
+
+    this->setTabOrder(this->ui->username, this->ui->password);
+    this->setTabOrder(this->ui->password, this->ui->checkBox_auth1);
+    this->setTabOrder(this->ui->checkBox_auth1, this->ui->checkBox_auth2);
+    this->setTabOrder(this->ui->checkBox_auth2, this->ui->queryButton);
+    this->setTabOrder(this->ui->queryButton, this->ui->addUser);
+    this->setTabOrder(this->ui->addUser, this->ui->deleteUser);
+    this->setTabOrder(this->ui->deleteUser, this->ui->username);
+
+    this->ui->username->setFocus();
+    this->show();
+}
+
 void AdminWindow::setusername(QString username)
 {
     this->username = username;

@@ -69,6 +69,7 @@ public:
     QLabel *label_space;
     QLineEdit *space;
     QWidget *tab_unknown;
+    QLabel *label_welcome;
     QMenuBar *menubar;
     QMenu *menu_common;
     QMenu *menu_admin;
@@ -193,6 +194,12 @@ public:
         tab_unknown = new QWidget();
         tab_unknown->setObjectName(QStringLiteral("tab_unknown"));
         tabs->addTab(tab_unknown, QString());
+        label_welcome = new QLabel(centralwidget);
+        label_welcome->setObjectName(QStringLiteral("label_welcome"));
+        label_welcome->setGeometry(QRect(860, 10, 161, 21));
+        QFont font;
+        font.setFamily(QString::fromUtf8("\345\256\213\344\275\223"));
+        label_welcome->setFont(font);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QStringLiteral("menubar"));
@@ -253,6 +260,7 @@ public:
         label_space->setText(QApplication::translate("MainWindow", "\350\210\261\344\275\215:", 0));
         tabs->setTabText(tabs->indexOf(policy), QApplication::translate("MainWindow", "\347\255\233\346\224\277\347\255\226", 0));
         tabs->setTabText(tabs->indexOf(tab_unknown), QApplication::translate("MainWindow", "\345\276\205\346\267\273\345\212\240\345\212\237\350\203\275", 0));
+        label_welcome->setText(QString());
         menu_common->setTitle(QApplication::translate("MainWindow", "\346\231\256\351\200\232\347\224\250\346\210\267\350\217\234\345\215\225", 0));
         menu_admin->setTitle(QApplication::translate("MainWindow", "\347\256\241\347\220\206\345\221\230\350\217\234\345\215\225", 0));
     } // retranslateUi

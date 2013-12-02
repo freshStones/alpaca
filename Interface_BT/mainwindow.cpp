@@ -41,10 +41,32 @@ void MainWindow::setDiagMidParent(int height, int width)
     QDesktopWidget* desktopWidget = QApplication::desktop();
     int startupX = desktopWidget->screenGeometry().width()/2 - width/2;
     int startupY = desktopWidget->screenGeometry().height()/2 - height/2;
-    this->resize(width, height);
+    this->setFixedSize(width, height);
     this->move(startupX, startupY);
     this->setWindowTitle(tr("海南浪花商旅有限公司机票网销系统"));
 
+    this->setTabOrder(this->ui->dep, this->ui->arr);
+    this->setTabOrder(this->ui->arr, this->ui->companyCode);
+    this->setTabOrder(this->ui->companyCode,this->ui->space);
+    this->setTabOrder(this->ui->space,this->ui->rateGtCheck);
+    this->setTabOrder(this->ui->rateGtCheck, this->ui->rateGt);
+    this->setTabOrder(this->ui->rateGt, this->ui->rateLtCheck);
+    this->setTabOrder(this->ui->rateLtCheck, this->ui->rateLt);
+    this->setTabOrder(this->ui->rateLt, this->ui->LTT);
+    this->setTabOrder(this->ui->LTT, this->ui->moneyKeep);
+    this->setTabOrder(this->ui->moneyKeep, this->ui->memo);
+    this->setTabOrder(this->ui->memo, this->ui->policyNo);
+    this->setTabOrder(this->ui->policyNo, this->ui->supplierCode);
+    this->setTabOrder(this->ui->supplierCode, this->ui->itineraryCheck);
+    this->setTabOrder(this->ui->itineraryCheck, this->ui->payCheck);
+    this->setTabOrder(this->ui->payCheck, this->ui->patCheck);
+    this->setTabOrder(this->ui->patCheck, this->ui->pnrCheck);
+    this->setTabOrder(this->ui->pnrCheck, this->ui->queryButton);
+    this->setTabOrder(this->ui->queryButton, this->ui->dumpButton);
+    this->setTabOrder(this->ui->dumpButton, this->ui->dumpUpload);
+    this->setTabOrder(this->ui->dumpUpload, this->ui->dep);
+
+    this->ui->dep->setFocus();
     this->show();
 }
 
@@ -94,6 +116,8 @@ void MainWindow::slotLoggedin(QString username, QString idRes){
     this->setDiagMidParent(768,1024);
     this->username = username;
     this->ad->setusername(username);
+    this->ui->label_welcome->setText(tr("欢迎回来，")+username);
+    this->ui->label_welcome->setAlignment(Qt::AlignCenter);
 }
 
 void MainWindow::on_queryButton_clicked()
@@ -172,7 +196,7 @@ void MainWindow::on_dumpButton_clicked()
             }
             else
             {
-            space.append(spaceString.at(i));
+                space.append(spaceString.at(i));
             }
         }
         else
@@ -190,7 +214,7 @@ void MainWindow::on_dumpButton_clicked()
 
 void MainWindow::on_action_accountProc_triggered()
 {
-    ad->show();
+    ad->setDiagMidParent(480, 640);
 }
 
 void MainWindow::on_action_logOut_triggered()
