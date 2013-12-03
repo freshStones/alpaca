@@ -49,3 +49,6 @@ FORMS    += \
 
 OTHER_FILES += \
     gsoap/baitourService.asmx.xml
+
+RESOURCES += \
+    icon.qrc
