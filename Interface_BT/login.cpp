@@ -107,7 +107,8 @@ void Login::on_loginButton_clicked()
 
     if(!btDatabase::instance()->isOpen()){
         QMessageBox::warning(this,QObject::tr("Warning"),QObject::tr("数据库无法连接"),QMessageBox::Ok);
-        ui->server->setText("");
+        ui->server->setFocus();
+        ui->server->selectAll();
         return;
     }
 

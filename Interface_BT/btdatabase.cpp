@@ -14,7 +14,7 @@ void btDatabase::init()
     //db->setPassword(password);
     db->setUserName("root");
     db->setPassword("raccoon");
-    qDebug()<<server<<username<<password;
+    //qDebug()<<server<<username<<password;
     db->open();
 
     this->db = db;
@@ -26,13 +26,14 @@ btDatabase * btDatabase::instance()
     if(btDatabase::_instance == 0){
         btDatabase::_instance = new btDatabase();
         btDatabase::_instance->init();
+        return btDatabase::_instance;
     }
 
-    /*if(!btDatabase::_instance->isOpen()){
+    if(!btDatabase::_instance->isOpen()){
         delete btDatabase::_instance;
         btDatabase::_instance = 0;
         return btDatabase::instance();
-    }*/
+    }
 
     return btDatabase::_instance;
 }
