@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
     op = new policyOp("lhjk","lhjk","B2B_070745");
-    //op.GetAllCommonPolicy("0","0");
+    op->GetAllCommonPolicy("0","0");
     QTimer *timer = new QTimer;
     QObject::connect(timer,SIGNAL(timeout()),op,SLOT(alter()));
     timer->start(3000);

@@ -19,7 +19,7 @@ class policyOp:public QObject
 {
     Q_OBJECT
 private:
-    QString usrName, pwd, agentCode;
+    QString usrName, pwd, agentCode,lasttime;
     static QString sqlCollection;
 
 public:

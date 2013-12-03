@@ -12,7 +12,9 @@ QT       += xml
 TARGET = alpaca-server
 CONFIG   += console
 CONFIG   -= app_bundle
-
+win32{
+LIBS += -lWs2_32
+}
 TEMPLATE = app
 
 

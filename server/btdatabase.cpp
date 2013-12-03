@@ -9,6 +9,7 @@ void btDatabase::init()
     QSqlDatabase *db = new QSqlDatabase();
     *db = QSqlDatabase::addDatabase("QMYSQL");
     db->setHostName("localhost");
+    db->setHostName("162.105.81.242");
     db->setDatabaseName("LH_AirTicket");
     //db->setUserName(username);
     //db->setPassword(password);
@@ -26,6 +27,7 @@ btDatabase * btDatabase::instance()
     if(btDatabase::_instance == 0){
         btDatabase::_instance = new btDatabase();
         btDatabase::_instance->init();
+        return btDatabase::_instance;
     }
 
     if(!btDatabase::_instance->isOpen()){

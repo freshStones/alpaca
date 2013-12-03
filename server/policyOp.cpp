@@ -81,6 +81,13 @@ bool policyOp::xmlhandler(int callRes,QString xml,bool (*visitor)(QDomElement))
 }
 bool policyOp::GetAllCommonPolicy(QString tripType,QString ticketType)
 {
+    QString dt;
+    QString date;
+    QString time;
+    date = QDate().currentDate().toString("yyyy-MM-dd");
+    time = QTime().currentTime().toString("hh:mm:ss");
+    dt = date + "T" + time;
+    lasttime = dt;
     return this->GetAllCommonPolicy(tripType.toStdWString(), ticketType.toStdWString(), this->usrName.toStdWString(),this->pwd.toStdWString());
 }
 
@@ -263,6 +270,7 @@ void policyOp::alter()
     date = QDate().currentDate().toString("yyyy-MM-dd");
     time = QTime().currentTime().toString("hh:mm:ss");
     dt = date + "T" + time;
-    qDebug()<<dt<<endl;
-    //op.GetAlterCommonPolicy(dt,"0","0");
+    qDebug()<<"alter:"<<dt<<endl;
+    GetAlterCommonPolicy(lasttime,"0","0");
+    lasttime = dt;
 }
