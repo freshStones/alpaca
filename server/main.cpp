@@ -15,6 +15,6 @@ int main(int argc, char *argv[])
     op->GetAllCommonPolicy("0","0");
     QTimer *timer = new QTimer;
     QObject::connect(timer,SIGNAL(timeout()),op,SLOT(alter()));
-    timer->start(3000);
+    timer->start(300000);
     return a.exec();
 }
