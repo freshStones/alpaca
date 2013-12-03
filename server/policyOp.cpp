@@ -159,7 +159,7 @@ bool policyOp::GetAlterCommonPolicyVisitor(QDomElement element)
         btDatabase::instance()->batchOperation(sqlCollection);
         sqlCollection = "";
     }
-    qDebug() << sqlCollection.count(";") << endl;
+    //qDebug() << sqlCollection.count(";") << endl;
     return true;
 }
 bool policyOp::GetAVPolicy(QString Type,QString OrderSrc,QString DptAirport,QString ArrAirport,QString TakeOffDate,QString Cabin,QString FlightNum,QString avinfo)
