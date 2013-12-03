@@ -80,6 +80,9 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
         MainWindow->resize(1024, 768);
+        QIcon icon;
+        icon.addFile(QStringLiteral(":/images/images/icon.png"), QSize(), QIcon::Normal, QIcon::Off);
+        MainWindow->setWindowIcon(icon);
         action_alterPwd = new QAction(MainWindow);
         action_alterPwd->setObjectName(QStringLiteral("action_alterPwd"));
         action_logOut = new QAction(MainWindow);
@@ -203,7 +206,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QStringLiteral("menubar"));
-        menubar->setGeometry(QRect(0, 0, 1024, 21));
+        menubar->setGeometry(QRect(0, 0, 1024, 22));
         menu_common = new QMenu(menubar);
         menu_common->setObjectName(QStringLiteral("menu_common"));
         menu_admin = new QMenu(menubar);
