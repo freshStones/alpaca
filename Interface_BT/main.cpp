@@ -31,6 +31,9 @@ int main(int argc, char *argv[])
         return -1;
     }
 #endif
+    QIcon icon;
+    icon.addFile(QStringLiteral(":/images/images/icon.png"), QSize(), QIcon::Normal, QIcon::Off);
+    //a.setWindowIcon(icon);
 
     MainWindow w;
     return a.exec();
