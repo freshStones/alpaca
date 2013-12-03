@@ -153,8 +153,8 @@ void MainWindow::on_queryButton_clicked()
     }
     if (!i)  filter += " or applicableSpaceCode like \"\%\%\")";
     else filter += ")";
-    if (space.size() == 0)
-        space = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    //if (space.size() == 0)
+       // space = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     //qDebug()<<filter<<endl;
     if (ui->rateGtCheck->checkState()==Qt::Checked)
         filter += " and rebateRate > " + ui->rateGt->text();

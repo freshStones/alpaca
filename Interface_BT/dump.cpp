@@ -131,7 +131,7 @@ void dump::init(){
 
 }
 
-QVector<QStringList> dump::dumpFromB2Q(QSqlTableModel *model,QString moneyKeep,QString memo,QString latestPreticketTimeLimit,QString policyCode,QString canPayDirectly,QString pnr,QString pat,QString suppierCode,QString isItinerarySupplied,QString dep,QString arv,QVector<QString> space){
+QVector<QStringList> dump::dumpFromB2Q(QSqlTableModel *model,QString moneyKeep,QString memo,QString latestPreticketTimeLimit,QString policyCode,QString canPayDirectly,QString pnr,QString pat,QString suppierCode,QString isItinerarySupplied,QString dep,QString arv,QVector<QString> spaceo){
     QVector<QStringList> v;
     QString airlineCode,departureCityCodes, arrivalCityCodes,applicableFlight,timetableRestriction,rebateRate,ticketingDateLimitStart,ticketingDateLimitEnd,applicableSpaceCode;
     QString flightRestriction="所有",priceType="Y舱折扣",departureTime="0000-2359",earliestPreticketTimeLimit="0",price ="0";
@@ -139,7 +139,7 @@ QVector<QStringList> dump::dumpFromB2Q(QSqlTableModel *model,QString moneyKeep,Q
     QStringList departureCityList,arrivalCityList;
     for(int i = 0;i<model->rowCount();i++)
     {
-        QVector<QString> spacev;
+        QVector<QString> spacev,space;
         airlineCode = model->record(i).value("airlineCode").toString();
         //policyCode = model->record(i).value(1).toString() + "lh";
         if (dep.size() != 0)
@@ -192,10 +192,11 @@ QVector<QStringList> dump::dumpFromB2Q(QSqlTableModel *model,QString moneyKeep,Q
                 spacev.append(spaceString.at(i));
             }
         }
-        if (space.empty())
-        {
+
+        if (spaceo.empty())
             space = spacev;
-        }
+        else
+            space = spaceo;
  //       qDebug()<<space.size();
         for(int j = 0; j < space.size();j++)
             for(int k = 0; k < spacev.size();k++)

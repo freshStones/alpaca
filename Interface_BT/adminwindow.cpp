@@ -20,7 +20,7 @@ AdminWindow::~AdminWindow()
     delete ui;
 }
 
-void AdminWindow::on_pushButton_clicked()
+void AdminWindow::on_queryButton_clicked()
 {
     if (allUsers == NULL)
     {
@@ -60,10 +60,17 @@ void AdminWindow::setusername(QString username)
 
 void AdminWindow::on_addUser_clicked()
 {
+    if(ui->username->text()==""||ui->password->text()=="")
+    {
+        QMessageBox::warning(this,QObject::tr("Warning"),QObject::tr("请输入用户名和密码！"),QMessageBox::Ok);
+        return;
+    }
+    this->on_queryButton_clicked();
     QString right("all");
     int rowNum = allUsers->rowCount(); //获得表的行数
     allUsers->insertRow(rowNum); //添加一行,或者用insertRows(0,1),在0行添加1条记录，根据表的排序规则，可能移到与指定行不同的行位置上
-    allUsers->setData(allUsers->index(rowNum,1),ui->username->text()); //因为这里设置了ID为主键，所以必须给新行添加id属性值,id字段在第0列上
+
+    allUsers->setData(allUsers->index(rowNum,1),ui->username->text());
     allUsers->setData(allUsers->index(rowNum,2),ui->password->text());
     allUsers->setData(allUsers->index(rowNum,3),this->username);
     allUsers->setData(allUsers->index(rowNum,4),right);
@@ -83,5 +90,7 @@ void AdminWindow::on_deleteUser_clicked()
             allUsers->removeRow(curRow);
         }
     }
+    allUsers->submit();
+    allUsers->select();
     //allUsers->
 }

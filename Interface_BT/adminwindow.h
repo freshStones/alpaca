@@ -21,7 +21,7 @@ public:
     ~AdminWindow();
 
 private slots:
-    void on_pushButton_clicked();
+    void on_queryButton_clicked();
 
     void on_addUser_clicked();
 
