@@ -46,7 +46,7 @@ bool policyOp::xmlhandler(int callRes,QString xml,bool (*visitor)(QDomElement))
         QDomDocument doc;
         QString errorMSG;
         int errLine = 0, errCol = 0;
-        showDebugMsg(xml);
+        //showDebugMsg(xml);
         if(!doc.setContent(xml, &errorMSG, &errLine, &errCol)){
             showDebugMsg(QString("Parse file failed at line %1 column %2, error: %3 !").arg(errLine).arg(errCol).arg(errorMSG));
             return false;
