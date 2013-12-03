@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 #endif
     QIcon icon;
     icon.addFile(QStringLiteral(":/images/images/icon.png"), QSize(), QIcon::Normal, QIcon::Off);
-    //a.setWindowIcon(icon);
+    a.setWindowIcon(icon);
 
     MainWindow w;
     return a.exec();
