@@ -9,7 +9,7 @@ QT       += xml
 QT       += widgets
 QT       += sql
 #CONFIG   += qaxcontainer
-
+RC_ICONS = images/icon.ico
 TARGET = Interface_BT
 TEMPLATE = app
 
