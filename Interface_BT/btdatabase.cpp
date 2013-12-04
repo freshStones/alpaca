@@ -12,10 +12,10 @@ void btDatabase::init()
     db->setDatabaseName("LH_AirTicket");
     //db->setUserName(username);
     //db->setPassword(password);
-    db->setUserName("remote");
-    db->setPassword("remote");
-    //db->setUserName("root");
-    //db->setPassword("raccoon");
+    //db->setUserName("remote");
+    //db->setPassword("remote");
+    db->setUserName("root");
+    db->setPassword("raccoon");
     //qDebug()<<server<<username<<password;
     db->open();
 

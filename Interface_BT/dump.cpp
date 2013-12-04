@@ -203,7 +203,7 @@ QVector<QVector<QStringList>* > dump::dumpFromB2Q(QSqlTableModel *model,QString 
 
         for(int j = 0; j < space.size();j++)
             for(int k = 0; k < spacev.size();k++)
-                if (space.at(j) == spacev.at(k))
+                if (space.at(j) == spacev.at(k) && spaceAccount::spaceMap.value(airlineCode+space.at(j))!="")
                     for(int m = 0; m < departureCityList.count();m++)
                         for(int n = 0; n < arrivalCityList.count();n++)
                         {
