@@ -131,12 +131,14 @@ void dump::init(){
 
 }
 
-QVector<QStringList> dump::dumpFromB2Q(QSqlTableModel *model,QString moneyKeep,QString memo,QString latestPreticketTimeLimit,QString policyCode,QString canPayDirectly,QString pnr,QString pat,QString suppierCode,QString isItinerarySupplied,QString dep,QString arv,QVector<QString> spaceo){
-    QVector<QStringList> v;
+QVector<QVector<QStringList>* > dump::dumpFromB2Q(QSqlTableModel *model,QString moneyKeep,QString memo,QString latestPreticketTimeLimit,QString policyCode,QString canPayDirectly,QString pnr,QString pat,QString suppierCode,QString isItinerarySupplied,QString dep,QString arv,QVector<QString> spaceo){
+    QVector<QVector<QStringList>* >v;
     QString airlineCode,departureCityCodes, arrivalCityCodes,applicableFlight,timetableRestriction,rebateRate,ticketingDateLimitStart,ticketingDateLimitEnd,applicableSpaceCode;
     QString flightRestriction="所有",priceType="Y舱折扣",departureTime="0000-2359",earliestPreticketTimeLimit="0",price ="0";
     QString remarkInfo="不可改签、不可改期、不可退票",spaceInfo="预付产品";
     QStringList departureCityList,arrivalCityList;
+    int ttt = 10000;
+    int vindex = -1;
     for(int i = 0;i<model->rowCount();i++)
     {
         QVector<QString> spacev,space;
@@ -162,13 +164,13 @@ QVector<QStringList> dump::dumpFromB2Q(QSqlTableModel *model,QString moneyKeep,Q
 
         flightRestriction="所有";
         if(applicableFlight != ""){
-           // qDebug() << "适用" << endl;
+            // qDebug() << "适用" << endl;
             flightRestriction = "适用";
             QStringList row = applicableFlight.split(',');
             applicableFlight = "";
-           // qDebug() << row.count() << " ";
+            // qDebug() << row.count() << " ";
             for(int i = 0; i < row.count()-1;i++){
-               applicableFlight +=  airlineCode + QString::number(row.at(i).toLong(),10)+",";
+                applicableFlight +=  airlineCode + QString::number(row.at(i).toLong(),10)+",";
             }
             applicableFlight +=  airlineCode + QString::number(row.at(row.count()-1).toLong(),10);
         }
@@ -184,7 +186,7 @@ QVector<QStringList> dump::dumpFromB2Q(QSqlTableModel *model,QString moneyKeep,Q
                 }
                 else
                 {
-                spacev.append(spaceString.at(i));
+                    spacev.append(spaceString.at(i));
                 }
             }
             else
@@ -197,7 +199,8 @@ QVector<QStringList> dump::dumpFromB2Q(QSqlTableModel *model,QString moneyKeep,Q
             space = spacev;
         else
             space = spaceo;
- //       qDebug()<<space.size();
+        //       qDebug()<<space.size();
+
         for(int j = 0; j < space.size();j++)
             for(int k = 0; k < spacev.size();k++)
                 if (space.at(j) == spacev.at(k))
@@ -239,7 +242,16 @@ QVector<QStringList> dump::dumpFromB2Q(QSqlTableModel *model,QString moneyKeep,Q
                             list.append("99");
                             list.append("2");
                             list.append(memo);
-                            v.append(list);
+                           // qDebug() << "tot:"<<ttt;
+                            if(ttt == 10000 )
+                            {
+                                ttt = 0;
+                                vindex++;
+                                v.append(new QVector<QStringList>);
+                            }
+                            v.at(vindex)->append(list);
+                            ttt = ttt+1;
+
                         }
     }
     qDebug() << "finished" << endl;
@@ -335,8 +347,9 @@ void dump::saveAsExcel(QString filepath,QVector<QStringList> v){
         }
 }
 */
-void dump::xlsByODBC(QString filepath,QVector<QStringList> v)
+void dump::xlsByODBC(QString filepath,QVector<QStringList>* v)
 {
+    qDebug()<<filepath;
     QString sheetName = "Sheet1";
     QSqlDatabase db = QSqlDatabase::addDatabase("QODBC","excelexport");
     if( !db.isValid())
@@ -349,6 +362,7 @@ void dump::xlsByODBC(QString filepath,QVector<QStringList> v)
     if( !db.open())
     {
         qDebug()<<"error";
+        qDebug()<<db.lastError().text();
         return;  //! db error
     }
     QSqlQuery query(db);
@@ -382,7 +396,7 @@ void dump::xlsByODBC(QString filepath,QVector<QStringList> v)
     state = query.prepare( sSql);
     //circle
     QVector<QStringList>::ConstIterator it;
-    for(it = v.begin(); it != v.end(); it++) {
+    for(it = v->begin(); it != v->end(); it++) {
         for (int j = 0; j < 34; j++) {
             query.bindValue(QString(":data%1").arg(j+1), it->at(j));
         }

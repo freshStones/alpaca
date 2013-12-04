@@ -24,8 +24,7 @@ class Login : public QWidget
     Q_OBJECT
 
 public:
-    explicit Login(QWidget *parent = 0);
-    explicit Login(const QString username);
+    explicit Login(QSettings * setting,QWidget *parent = 0);
     void setDiagMidParent(int height, int width);
     ~Login();
 
@@ -48,12 +47,13 @@ private slots:
 
 private:
     Ui::Login *ui;
+    QSettings *setting;
     QString username;
     QString password;
     QString server;
     QMap<QString, QString> userMap;
 
-    bool ifAutoLoginFlag;
+    int ifAutoLoginFlag;
 };
 
 #endif // LOGIN_H

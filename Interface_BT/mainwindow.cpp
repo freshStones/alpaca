@@ -80,10 +80,8 @@ void MainWindow::init()
     d = new dump();
     d->init();
     ad = new AdminWindow();
-    if(configIniRead->value("/DEFAULT_ACCOUNT/USERACCOUNT").toString() != "")
-        l = new Login(configIniRead->value("/DEFAULT_ACCOUNT/USERACCOUNT").toString());
-    else
-        l = new Login();
+    l = new Login(configIniRead);
+
     //------------------policyOp initialize---------------------
     this->op = new policyOp(configIniRead->value("/SQL_ACCOUNT/USERNAME").toString(),configIniRead->value("/SQL_ACCOUNT/PASSWORD").toString(),configIniRead->value("/AGENT_DESC/AGENTCODE").toString());
 
@@ -183,7 +181,7 @@ void MainWindow::on_dumpButton_clicked()
     if (ui->itineraryCheck->checkState() == Qt::Checked)
         itinerary = "0";
     else itinerary = "1";
-    QString filepath=QFileDialog::getSaveFileName(this,QObject::tr("Save orbit"),".",QObject::tr("Microsoft Office 2000 (*.xls)"));//获取保存路径
+    QString filepath=QFileDialog::getSaveFileName(this,QObject::tr("Save orbit"),".");//获取保存路径
     QString spaceString = ui->space->text();
     for(int i = 0; i < spaceString.length();i++)
     {
@@ -204,11 +202,14 @@ void MainWindow::on_dumpButton_clicked()
             space.append(spaceString.at(i));
         }
     }
-    QVector<QStringList> v = d->dumpFromB2Q(allPolicyModel,ui->moneyKeep->text(),ui->memo->text(),ui->LTT->text(),ui->policyNo->text(),pay,pnr,pat,ui->supplierCode->text(),itinerary,ui->dep->text(),ui->arr->text(),space);
+    QVector<QVector<QStringList>* > v = d->dumpFromB2Q(allPolicyModel,ui->moneyKeep->text(),ui->memo->text(),ui->LTT->text(),ui->policyNo->text(),pay,pnr,pat,ui->supplierCode->text(),itinerary,ui->dep->text(),ui->arr->text(),space);
 
     //filepath.replace(QString("\\"),QString("/"));
     //d->saveAsExcel(filepath,v);
-    d->xlsByODBC(filepath,v);
+    for (int i = 0; i < v.size(); i++)
+    {
+        d->xlsByODBC(filepath + '_'+ QString("%1").arg(i) +".xls" ,v.at(i));
+    }
 }
 
 
@@ -220,7 +221,7 @@ void MainWindow::on_action_accountProc_triggered()
 void MainWindow::on_action_logOut_triggered()
 {
     QSettings *settings = new QSettings(QString("setting.ini"),QSettings::IniFormat);
-    settings->setValue("/DEFAULT_ACCOUNT/USERACCOUNT",QString(""));
+    settings->setValue("/DEFAULT_ACCOUNT/AUTOLOGIN",0);
     this->hide();
     this->l->show();
 }

@@ -5,26 +5,25 @@
 #include "login.h"
 #include "ui_login.h"
 
-Login::Login(QWidget *parent) :
+Login::Login(QSettings *setting, QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Login)
 {
     ui->setupUi(this);
-    this->username = "";
-    this->ifAutoLoginFlag = false;
+    this->setting = setting;
+    this->server = setting->value("/SERVER/HOST").toString();
+    this->username = setting->value("/DEFAULT_ACCOUNT/USERACCOUNT").toString();
+    this->ifAutoLoginFlag = setting->value("/DEFAULT_ACCOUNT/AUTOLOGIN").toInt();
     loadUserPwd();
+    ui->server->setText(server);
+    ui->username->setText(this->username);
+    if(userMap.contains(this->ui->username->text())){
+        this->ui->password->setText(userMap.value(this->ui->username->text()));
+        this->ui->checkBox_autoRememberPwd->setChecked(true);
+        this->ui->loginButton->setFocus();
+    }
 }
 
-Login::Login(const QString username) :
-    ui(new Ui::Login)
-{
-    ui->setupUi(this);
-    this->username = username;
-    this->ifAutoLoginFlag = true;
-    loadUserPwd();
-    this->ui->username->setText(this->username);
-    this->ui->password->setText(userMap.value(this->username));
-}
 
 Login::~Login()
 {
@@ -121,10 +120,12 @@ void Login::on_loginButton_clicked()
         ui->username->selectAll();
     }
     else{
+
+        setting->setValue("/SERVER/HOST", this->ui->server->text());
+        setting->setValue("/DEFAULT_ACCOUNT/USERACCOUNT", this->ui->username->text());
         if(this->ui->checkBox_autoRememberPwd->isChecked() == true) saveUserPwd();
         if(this->ui->checkBox_autoLogin->isChecked() == true){
-            QSettings *settings = new QSettings(QString("setting.ini"),QSettings::IniFormat);
-            settings->setValue("/DEFAULT_ACCOUNT/USERACCOUNT", this->ui->username->text());
+            setting->setValue("/DEFAULT_ACCOUNT/AUTOLOGIN",1);
         }
         this->hide();
         emit authorizedOK(this->username, idRes);
@@ -157,4 +158,5 @@ void Login::on_username_editingFinished()
 void Login::on_username_textEdited(const QString &arg1)
 {
     this->ui->password->clear();
+    this->ui->checkBox_autoRememberPwd->setChecked(false);
 }
