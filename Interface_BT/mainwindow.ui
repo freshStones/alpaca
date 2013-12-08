@@ -6,34 +6,25 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>904</width>
-    <height>728</height>
+    <width>1024</width>
+    <height>768</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="icon.qrc">
+    <normaloff>:/images/images/icon.png</normaloff>:/images/images/icon.png</iconset>
+  </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>390</x>
-      <y>640</y>
-      <width>115</width>
-      <height>32</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>PushButton</string>
-    </property>
-   </widget>
    <widget class="QTabWidget" name="tabs">
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>30</y>
-      <width>881</width>
-      <height>541</height>
+      <width>1011</width>
+      <height>701</height>
      </rect>
     </property>
     <property name="currentIndex">
@@ -48,17 +39,17 @@
        <rect>
         <x>20</x>
         <y>200</y>
-        <width>851</width>
-        <height>311</height>
+        <width>971</width>
+        <height>461</height>
        </rect>
       </property>
      </widget>
      <widget class="QLineEdit" name="dep">
       <property name="geometry">
        <rect>
-        <x>200</x>
+        <x>280</x>
         <y>10</y>
-        <width>71</width>
+        <width>111</width>
         <height>21</height>
        </rect>
       </property>
@@ -66,9 +57,9 @@
      <widget class="QLineEdit" name="arr">
       <property name="geometry">
        <rect>
-        <x>200</x>
+        <x>280</x>
         <y>40</y>
-        <width>71</width>
+        <width>111</width>
         <height>21</height>
        </rect>
       </property>
@@ -76,7 +67,7 @@
      <widget class="QLineEdit" name="supplierCode">
       <property name="geometry">
        <rect>
-        <x>540</x>
+        <x>570</x>
         <y>130</y>
         <width>111</width>
         <height>21</height>
@@ -86,7 +77,7 @@
      <widget class="QLineEdit" name="LTT">
       <property name="geometry">
        <rect>
-        <x>540</x>
+        <x>570</x>
         <y>10</y>
         <width>111</width>
         <height>21</height>
@@ -96,17 +87,17 @@
      <widget class="QLineEdit" name="policyNo">
       <property name="geometry">
        <rect>
-        <x>540</x>
+        <x>570</x>
         <y>100</y>
         <width>111</width>
         <height>21</height>
        </rect>
       </property>
      </widget>
-     <widget class="QLabel" name="label_2">
+     <widget class="QLabel" name="label_dep">
       <property name="geometry">
        <rect>
-        <x>110</x>
+        <x>160</x>
         <y>10</y>
         <width>91</width>
         <height>19</height>
@@ -116,10 +107,10 @@
        <string>始发(三字码):</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_3">
+     <widget class="QLabel" name="label_arr">
       <property name="geometry">
        <rect>
-        <x>110</x>
+        <x>160</x>
         <y>40</y>
         <width>81</width>
         <height>19</height>
@@ -129,10 +120,10 @@
        <string>到达(三字码):</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_4">
+     <widget class="QLabel" name="label_policyNo">
       <property name="geometry">
        <rect>
-        <x>450</x>
+        <x>480</x>
         <y>100</y>
         <width>62</width>
         <height>19</height>
@@ -142,10 +133,10 @@
        <string>政策代码:</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_5">
+     <widget class="QLabel" name="label_supplierCode">
       <property name="geometry">
        <rect>
-        <x>450</x>
+        <x>480</x>
         <y>130</y>
         <width>62</width>
         <height>19</height>
@@ -155,10 +146,10 @@
        <string>Office号:</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_6">
+     <widget class="QLabel" name="label_LTT">
       <property name="geometry">
        <rect>
-        <x>450</x>
+        <x>480</x>
         <y>10</y>
         <width>91</width>
         <height>19</height>
@@ -168,10 +159,10 @@
        <string>最晚提前出票:</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_7">
+     <widget class="QLabel" name="label_memo">
       <property name="geometry">
        <rect>
-        <x>450</x>
+        <x>480</x>
         <y>70</y>
         <width>62</width>
         <height>19</height>
@@ -184,7 +175,7 @@
      <widget class="QLineEdit" name="memo">
       <property name="geometry">
        <rect>
-        <x>540</x>
+        <x>570</x>
         <y>70</y>
         <width>113</width>
         <height>21</height>
@@ -194,7 +185,7 @@
      <widget class="QCheckBox" name="patCheck">
       <property name="geometry">
        <rect>
-        <x>680</x>
+        <x>780</x>
         <y>70</y>
         <width>86</width>
         <height>23</height>
@@ -210,7 +201,7 @@
      <widget class="QCheckBox" name="pnrCheck">
       <property name="geometry">
        <rect>
-        <x>680</x>
+        <x>780</x>
         <y>100</y>
         <width>86</width>
         <height>23</height>
@@ -226,7 +217,7 @@
      <widget class="QCheckBox" name="itineraryCheck">
       <property name="geometry">
        <rect>
-        <x>680</x>
+        <x>780</x>
         <y>10</y>
         <width>86</width>
         <height>23</height>
@@ -245,7 +236,7 @@
      <widget class="QCheckBox" name="payCheck">
       <property name="geometry">
        <rect>
-        <x>680</x>
+        <x>780</x>
         <y>40</y>
         <width>86</width>
         <height>23</height>
@@ -261,7 +252,7 @@
      <widget class="QLineEdit" name="rateGt">
       <property name="geometry">
        <rect>
-        <x>170</x>
+        <x>220</x>
         <y>130</y>
         <width>31</width>
         <height>21</height>
@@ -271,7 +262,7 @@
      <widget class="QCheckBox" name="rateGtCheck">
       <property name="geometry">
        <rect>
-        <x>110</x>
+        <x>160</x>
         <y>130</y>
         <width>61</width>
         <height>23</height>
@@ -284,7 +275,7 @@
      <widget class="QCheckBox" name="rateLtCheck">
       <property name="geometry">
        <rect>
-        <x>210</x>
+        <x>270</x>
         <y>130</y>
         <width>61</width>
         <height>23</height>
@@ -297,17 +288,17 @@
      <widget class="QLineEdit" name="rateLt">
       <property name="geometry">
        <rect>
-        <x>270</x>
+        <x>330</x>
         <y>130</y>
         <width>31</width>
         <height>21</height>
        </rect>
       </property>
      </widget>
-     <widget class="QLabel" name="label_8">
+     <widget class="QLabel" name="label_moneyKeep">
       <property name="geometry">
        <rect>
-        <x>450</x>
+        <x>480</x>
         <y>40</y>
         <width>41</width>
         <height>19</height>
@@ -320,7 +311,7 @@
      <widget class="QLineEdit" name="moneyKeep">
       <property name="geometry">
        <rect>
-        <x>540</x>
+        <x>570</x>
         <y>40</y>
         <width>111</width>
         <height>21</height>
@@ -330,7 +321,7 @@
      <widget class="QPushButton" name="queryButton">
       <property name="geometry">
        <rect>
-        <x>120</x>
+        <x>200</x>
         <y>160</y>
         <width>141</width>
         <height>32</height>
@@ -343,7 +334,7 @@
      <widget class="QPushButton" name="dumpButton">
       <property name="geometry">
        <rect>
-        <x>470</x>
+        <x>480</x>
         <y>160</y>
         <width>141</width>
         <height>32</height>
@@ -356,7 +347,7 @@
      <widget class="QPushButton" name="dumpUpload">
       <property name="geometry">
        <rect>
-        <x>620</x>
+        <x>690</x>
         <y>160</y>
         <width>141</width>
         <height>32</height>
@@ -366,10 +357,10 @@
        <string>导出保存并自动上传</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_9">
+     <widget class="QLabel" name="label_companyCode">
       <property name="geometry">
        <rect>
-        <x>110</x>
+        <x>160</x>
         <y>70</y>
         <width>81</width>
         <height>20</height>
@@ -382,9 +373,9 @@
      <widget class="QLineEdit" name="companyCode">
       <property name="geometry">
        <rect>
-        <x>200</x>
+        <x>280</x>
         <y>70</y>
-        <width>71</width>
+        <width>111</width>
         <height>21</height>
        </rect>
       </property>
@@ -392,10 +383,10 @@
        <string/>
       </property>
      </widget>
-     <widget class="QLabel" name="label_10">
+     <widget class="QLabel" name="label_space">
       <property name="geometry">
        <rect>
-        <x>110</x>
+        <x>160</x>
         <y>100</y>
         <width>62</width>
         <height>19</height>
@@ -405,73 +396,39 @@
        <string>舱位:</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit">
+     <widget class="QLineEdit" name="space">
       <property name="geometry">
        <rect>
-        <x>200</x>
+        <x>280</x>
         <y>100</y>
-        <width>71</width>
+        <width>111</width>
         <height>21</height>
        </rect>
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="tab_2">
+    <widget class="QWidget" name="tab_unknown">
      <attribute name="title">
-      <string>Tab 2</string>
+      <string>待添加功能</string>
      </attribute>
-     <widget class="QTableView" name="tableView_2">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>60</y>
-        <width>691</width>
-        <height>301</height>
-       </rect>
-      </property>
-     </widget>
     </widget>
    </widget>
-   <widget class="QProgressBar" name="progressBar">
+   <widget class="QLabel" name="label_welcome">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>590</y>
-      <width>801</width>
-      <height>23</height>
+      <x>860</x>
+      <y>10</y>
+      <width>161</width>
+      <height>21</height>
      </rect>
     </property>
-    <property name="value">
-     <number>24</number>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>620</y>
-      <width>801</width>
-      <height>17</height>
-     </rect>
+    <property name="font">
+     <font>
+      <family>宋体</family>
+     </font>
     </property>
     <property name="text">
      <string/>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="userManager">
-    <property name="geometry">
-     <rect>
-      <x>760</x>
-      <y>640</y>
-      <width>115</width>
-      <height>32</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>管理</string>
     </property>
    </widget>
   </widget>
@@ -480,13 +437,63 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>904</width>
-     <height>23</height>
+     <width>1024</width>
+     <height>22</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menu_common">
+    <property name="title">
+     <string>普通用户菜单</string>
+    </property>
+    <addaction name="action_alterPwd"/>
+    <addaction name="action_logOut"/>
+    <addaction name="action_exit"/>
+   </widget>
+   <widget class="QMenu" name="menu_admin">
+    <property name="title">
+     <string>管理员菜单</string>
+    </property>
+    <addaction name="action_accountProc"/>
+   </widget>
+   <addaction name="menu_common"/>
+   <addaction name="menu_admin"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="action_alterPwd">
+   <property name="text">
+    <string>修改密码(&amp;M)</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+M</string>
+   </property>
+  </action>
+  <action name="action_logOut">
+   <property name="text">
+    <string>注销(&amp;L)</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+L</string>
+   </property>
+  </action>
+  <action name="action_exit">
+   <property name="text">
+    <string>退出(&amp;X)</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+X</string>
+   </property>
+  </action>
+  <action name="action_accountProc">
+   <property name="text">
+    <string>账户处理(&amp;A)</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+A</string>
+   </property>
+  </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="icon.qrc"/>
+ </resources>
  <connections/>
 </ui>

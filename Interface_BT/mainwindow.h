@@ -9,7 +9,8 @@
 #include <QSharedMemory>
 #include <QMessageBox>
 #include <QSqlTableModel>
-//#include <QCleanlooksStyle>
+#include <QPair>
+#include <QVector>
 
 #include "policyOp.h"
 #include "btdatabase.h"
@@ -30,26 +31,29 @@ public:
     void signalConnection();
     void debug();
     void init();
+    void loadSpaceInfo();
     void setDiagMidParent(int height, int width);
 
 private slots:
-    void on_pushButton_clicked();
     void on_queryButton_clicked();
     void on_dumpButton_clicked();
-    void on_userManager_clicked();
+    void on_action_accountProc_triggered();
+    void on_action_logOut_triggered();
+
+    void on_action_exit_triggered();
 
 private:
     dump *d;
+    QString username;
     Login *l;
     AdminWindow *ad;
     Ui::MainWindow *ui;
     policyOp *op;
     QSqlTableModel *allPolicyModel;
+    QVector<QPair<QString,QString> > qv[11];  //account from 0.9,0.85 to 0.4
 
 public slots:
-    void slotSetProgressBarRange(int);
-    void slotSetProgressBarValue(int);
-    void slotAdminLoggedin();
+    void slotLoggedin(QString, QString);
 };
 
 #endif // MAINWINDOW_H

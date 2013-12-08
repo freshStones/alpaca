@@ -45,7 +45,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>admin</string>
+    <string/>
    </property>
   </widget>
   <widget class="QLabel" name="label_username">
@@ -90,7 +90,7 @@
     <string/>
    </property>
    <property name="text">
-    <string>lh2013</string>
+    <string/>
    </property>
    <property name="echoMode">
     <enum>QLineEdit::Password</enum>
@@ -106,7 +106,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>162.105.30.184</string>
+    <string>162.105.81.242</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_server">

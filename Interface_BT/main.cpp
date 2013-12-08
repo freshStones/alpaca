@@ -11,8 +11,7 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    //QApplication::setStyle(new QCleanlooksStyle());
-
+    QApplication::addLibraryPath("./plugins");
     //避免中文乱码
 #ifdef Q_OS_WIN32
     QTextCodec *codec = QTextCodec::codecForName("System");
@@ -21,8 +20,6 @@ int main(int argc, char *argv[])
 #endif
 
     QTextCodec::setCodecForLocale(codec);
-    //QTextCodec::setCodecForCStrings(codec);
-    //QTextCodec::setCodecForTr(codec);
 
     //避免多个程序实例
 #ifdef Q_OS_WIN
@@ -34,6 +31,9 @@ int main(int argc, char *argv[])
         return -1;
     }
 #endif
+    QIcon icon;
+    icon.addFile(QStringLiteral(":/images/images/icon.png"), QSize(), QIcon::Normal, QIcon::Off);
+    a.setWindowIcon(icon);
 
     MainWindow w;
     return a.exec();

@@ -8,12 +8,15 @@ QT       += core gui
 QT       += xml
 QT       += widgets
 QT       += sql
-CONFIG   += qaxcontainer
-
+#CONFIG   += qaxcontainer
+RC_ICONS = images/icon.ico
+ICON = images/icon.icns
 TARGET = Interface_BT
 TEMPLATE = app
 
+win32{
 LIBS += -lWs2_32
+}
 SOURCES += main.cpp\
         mainwindow.cpp \
     gsoap/soapC.cpp \
@@ -23,7 +26,8 @@ SOURCES += main.cpp\
     btdatabase.cpp \
     dump.cpp \
     login.cpp \
-    adminwindow.cpp
+    adminwindow.cpp \
+    spaceaccount.cpp
 
 HEADERS  += mainwindow.h \
     gsoap/temp.h \
@@ -36,7 +40,8 @@ HEADERS  += mainwindow.h \
     btdatabase.h \
     dump.h \
     login.h \
-    adminwindow.h
+    adminwindow.h \
+    spaceaccount.h
 
 FORMS    += \
     mainwindow.ui \
@@ -45,3 +50,6 @@ FORMS    += \
 
 OTHER_FILES += \
     gsoap/baitourService.asmx.xml
+
+RESOURCES += \
+    icon.qrc
