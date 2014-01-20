@@ -8,14 +8,10 @@ void btDatabase::init()
 {
     QSqlDatabase *db = new QSqlDatabase();
     *db = QSqlDatabase::addDatabase("QMYSQL");
-    db->setHostName("localhost");
-    //db->setHostName("162.105.81.242");
+    db->setHostName("192.168.1.170");
     db->setDatabaseName("LH_AirTicket");
-    //db->setUserName(username);
-    //db->setPassword(password);
-    db->setUserName("root");
-    db->setPassword("root");
-    //qDebug()<<server<<username<<password;
+    db->setUserName("remote");
+    db->setPassword("tm2022");
     db->open();
 
     this->db = db;
@@ -23,7 +19,7 @@ void btDatabase::init()
 
 btDatabase * btDatabase::instance()
 {
-    qDebug() << "btDatabase::instance() called" << endl;
+//    qDebug() << "btDatabase::instance() called" << endl;
     if(btDatabase::_instance == 0){
         btDatabase::_instance = new btDatabase();
         btDatabase::_instance->init();
@@ -35,7 +31,6 @@ btDatabase * btDatabase::instance()
         btDatabase::_instance = 0;
         return btDatabase::instance();
     }
-
     return btDatabase::_instance;
 }
 
@@ -85,21 +80,26 @@ int btDatabase::updateOperation(const QString sql)
 int btDatabase::batchOperation(const QString sql)
 {
     int res = 0;
-    if(QSqlDatabase::database().driver()->hasFeature(QSqlDriver::Transactions))
+//  if(QSqlDatabase::database().driver()->hasFeature(QSqlDriver::Transactions))
+    if(db->driver()->hasFeature(QSqlDriver::Transactions))
     {
-        QSqlDatabase::database().transaction();
-        QSqlQuery query;
-        qDebug() << "start sql op" << endl;
+        db->transaction();
+        qDebug() << "start sql op." ;
         try{
-            res = query.exec(sql);
-            QSqlDatabase::database().commit();
+            res = this->execSQL(sql);
+            db->commit();
         }
         catch(QString Exception){
             qDebug() << Exception << endl;
         }
 
-        //qDebug() << sql << endl;
-        qDebug() << "sql op ended" << endl;
+        int count = 0;
+        for(int i = 0; i < sql.length(); i++){
+            if(sql.at(i) == ';') count++;
+        }
+
+//        qDebug() << sql << endl;
+        qDebug() << "sql op ended." << count << " rows affected.";
     }
     return res;
 }

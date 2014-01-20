@@ -9,6 +9,8 @@
 #include <QMap>
 #include <QDomDocument>
 #include <QObject>
+#include <QDate>
+#include <QTimer>
 
 #include "btdatabase.h"
 
@@ -20,6 +22,10 @@ class policyOp:public QObject
     Q_OBJECT
 private:
     QString usrName, pwd, agentCode,lasttime;
+    QTimer * alterTimer;
+    QDate curDate;
+    QTime baseTime;
+    bool b_ifGetAllCommonPolicyDone;
     static QString sqlCollection;
 
 public:
@@ -56,6 +62,7 @@ signals:
     void setProgressBarRange(int x);
 public slots:
     void alter();
+    void checkToStart();
 };
 
 #endif // POLICY_OP_H

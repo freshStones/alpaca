@@ -11,12 +11,17 @@ policyOp::policyOp(QString _usrName, QString _pwd, QString _agentcode)
     usrName = _usrName;
     pwd = _pwd;
     agentCode = _agentcode;
-    qDebug() << usrName << pwd << agentCode << endl;
+    b_ifGetAllCommonPolicyDone = false;
+    curDate = QDate().currentDate();
+    baseTime = QTime().fromString("06:00:00", "hh:mm:ss");
+    alterTimer = new QTimer;
+    connect(alterTimer,SIGNAL(timeout()),this,SLOT(alter()));
+//    qDebug() << usrName << pwd << agentCode << endl;
 }
 
 void policyOp::showDebugMsg(QString msg)
 {
-    qDebug() << msg << endl;
+    qDebug() << msg;
 }
 void policyOp::showmap(QMap<QString, QString> map)
 {
@@ -46,13 +51,13 @@ bool policyOp::xmlhandler(int callRes,QString xml,bool (*visitor)(QDomElement))
         QDomDocument doc;
         QString errorMSG;
         int errLine = 0, errCol = 0;
-        //showDebugMsg(xml);
+//        showDebugMsg(xml);
         if(!doc.setContent(xml, &errorMSG, &errLine, &errCol)){
             showDebugMsg(QString("Parse file failed at line %1 column %2, error: %3 !").arg(errLine).arg(errCol).arg(errorMSG));
             return false;
         }
         else{
-            showDebugMsg("Parse Succeeded!");
+//            showDebugMsg("Parse Succeeded!");
         }
 
         if(doc.isNull()){
@@ -61,15 +66,16 @@ bool policyOp::xmlhandler(int callRes,QString xml,bool (*visitor)(QDomElement))
         }
 
         QDomElement root = doc.documentElement();
-        emit setProgressBarRange(root.childNodes().count());
+//        emit setProgressBarRange(root.childNodes().count());
         QDomElement element = root.firstChildElement();
         int itemCount = 0;
         while(!element.isNull()){
             itemCount++;
             (*visitor)(element);
-            emit setProgressBarValue(itemCount);
+//            emit setProgressBarValue(itemCount);
             element = element.nextSiblingElement();       
         }
+
         btDatabase::instance()->batchOperation(sqlCollection);
         btDatabase::instance()->commitOperation();
         sqlCollection = "";
@@ -153,7 +159,7 @@ bool policyOp::GetAlterCommonPolicyVisitor(QDomElement element)
     map.insert("supplierCode",qsl.at(15));
     map.insert("memo",qsl.at(16));
     map.insert("autoTicketingEnabled",qsl.at(17));  //百拓的文档写错了，这里应该有
-    sqlCollection += genQuery("policyDescripition", map);
+    sqlCollection += genQuery("LH_AirTicket.policyDescripition", map);
     if(sqlCollection.count(";") == 1000 )
     {
         btDatabase::instance()->batchOperation(sqlCollection);
@@ -264,13 +270,32 @@ bool policyOp::GetInvalidationProvidersVisitor(QDomElement element)
 }
 void policyOp::alter()
 {
+    if(b_ifGetAllCommonPolicyDone == false) return;
     QString dt;
     QString date;
     QString time;
     date = QDate().currentDate().toString("yyyy-MM-dd");
     time = QTime().currentTime().toString("hh:mm:ss");
     dt = date + "T" + time;
-    qDebug()<<"alter:"<<dt<<endl;
+    qDebug()<<"alter:" << QDateTime().currentDateTime();
     GetAlterCommonPolicy(lasttime,"0","0");
     lasttime = dt;
+}
+
+void policyOp::checkToStart()
+{
+    //update date
+    if(curDate != QDate().currentDate()){
+        b_ifGetAllCommonPolicyDone = false;
+        curDate = QDate().currentDate();
+    }
+
+    //get all common policy
+    if(QTime().currentTime() >= baseTime && b_ifGetAllCommonPolicyDone == false){
+        qDebug() << "getall start: " << QDateTime().currentDateTime() << endl;
+        this->GetAllCommonPolicy("0","0");
+        qDebug() << "getall end: " << QDateTime().currentDateTime() << endl;
+        b_ifGetAllCommonPolicyDone = true;
+        alterTimer->start(300000);
+    }
 }
