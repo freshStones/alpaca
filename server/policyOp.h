@@ -13,6 +13,7 @@
 #include <QTimer>
 
 #include "btdatabase.h"
+#include "sysLog.h"
 
 namespace ns1 {
 class policyOp;
@@ -27,6 +28,8 @@ private:
     QTime baseTime;
     bool b_ifGetAllCommonPolicyDone;
     static QString sqlCollection;
+
+    sysLog *server_log;
 
 public:
     policyOp(QString, QString, QString);

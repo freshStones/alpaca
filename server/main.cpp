@@ -12,12 +12,10 @@ int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
     op = new policyOp("lhjk","lhjk","B2B_070745");
-//    op->GetAllCommonPolicy("0","0");
+
     QTimer *IDLEtimer = new QTimer;
     QObject::connect(IDLEtimer,SIGNAL(timeout()),op,SLOT(checkToStart()));
     IDLEtimer->start(1000);
-//    QObject::connect(timer,SIGNAL(timeout()),op,SLOT(alter()));
-//    timer->start(300000);
 
     return a.exec();
 }

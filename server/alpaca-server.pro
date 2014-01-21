@@ -23,7 +23,8 @@ SOURCES += main.cpp \
     btdatabase.cpp \
     gsoap/stdsoap2.cpp \
     gsoap/soapC.cpp \
-    gsoap/soapBaitourServiceSoapProxy.cpp
+    gsoap/soapBaitourServiceSoapProxy.cpp \
+    sysLog.cpp
 
 HEADERS += \
     policyOp.h \
@@ -33,4 +34,5 @@ HEADERS += \
     gsoap/soapH.h \
     gsoap/soapBaitourServiceSoapProxy.h \
     gsoap/BaitourServiceSoap.nsmap \
-    gsoap/temp.h
+    gsoap/temp.h \
+    sysLog.h
