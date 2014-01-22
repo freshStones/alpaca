@@ -18,6 +18,8 @@ policyOp::policyOp(QString _usrName, QString _pwd, QString _agentcode)
     server_log = new sysLog("/lh_data_root/log/alpaca_server.log");
     connect(alterTimer,SIGNAL(timeout()),this,SLOT(alter()));
 
+    qDebug() << "policy op loaded.";
+
     server_log->writelog(QString("Operation Start. UserName:%1, agentCode:%2.").arg(usrName).arg(agentCode));
 }
 
@@ -281,6 +283,7 @@ void policyOp::alter()
     date = QDate().currentDate().toString("yyyy-MM-dd");
     time = QTime().currentTime().toString("hh:mm:ss");
     dt = date + "T" + time;
+    qDebug() << "alter";
     server_log->writelog("GetAlterCommonPolicy Start:" + QDateTime().currentDateTime().toString());
     GetAlterCommonPolicy(lasttime,"0","0");
     lasttime = dt;
@@ -289,6 +292,7 @@ void policyOp::alter()
 
 void policyOp::checkToStart()
 {
+    qDebug() << "check to start...";
     //update date
     if(curDate != QDate().currentDate()){
         b_ifGetAllCommonPolicyDone = false;

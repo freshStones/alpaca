@@ -8,11 +8,14 @@ void btDatabase::init()
 {
     QSqlDatabase *db = new QSqlDatabase();
     *db = QSqlDatabase::addDatabase("QMYSQL");
-    db->setHostName("192.168.1.170");
+//    db->setHostName("192.168.1.170");
+    db->setHostName("localhost");
     db->setDatabaseName("LH_AirTicket");
     db->setUserName("remote");
     db->setPassword("tm2022");
     db->open();
+
+    qDebug() << "database opened.";
 
     this->db = db;
 }

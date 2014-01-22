@@ -5,6 +5,8 @@ sysLog::sysLog(QString path)
     qs_logfile_path = path;
 
     this->writelog(QString("Alpaca server log loaded. Log file path: %1").arg(qs_logfile_path));
+
+    qDebug() << "log file loaded.";
 }
 
 bool sysLog::writelog(QString qs_logLine){
