@@ -11,8 +11,10 @@ void btDatabase::init()
 //    db->setHostName("192.168.1.170");
     db->setHostName("localhost");
     db->setDatabaseName("LH_AirTicket");
-    db->setUserName("remote");
-    db->setPassword("tm2022");
+//    db->setUserName("remote");
+//    db->setPassword("tm2022");
+    db->setUserName("root");
+    db->setPassword("alpaca");
     db->open();
 
     qDebug() << "database opened.";
