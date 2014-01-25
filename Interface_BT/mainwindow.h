@@ -43,10 +43,10 @@ private slots:
     void on_action_exit_triggered();
 
 private:
-    dump *d;
+    dump *dumpExcelOp;
     QString username;
-    Login *l;
-    AdminWindow *ad;
+    Login *loginWindow;
+    AdminWindow *adminWindow;
     Ui::MainWindow *ui;
     policyOp *op;
     QSqlTableModel *allPolicyModel;

@@ -131,7 +131,7 @@ int BaitourServiceSoapProxy::GetAllCommonPolicy(const char *endpoint, const char
 	if (endpoint)
 		soap_endpoint = endpoint;
 	if (soap_endpoint == NULL)
-		soap_endpoint = "http://ite4.baitour.com/comanage/baitourService.asmx";
+        soap_endpoint = "http://ite.baitour.com/comanage/baitourService.asmx";
 	if (soap_action == NULL)
 		soap_action = "http://www.baitour.com/GetAllCommonPolicy";
 	soap_begin(soap);
@@ -185,7 +185,7 @@ int BaitourServiceSoapProxy::GetAllCommonPolicyZIP(const char *endpoint, const c
 	if (endpoint)
 		soap_endpoint = endpoint;
 	if (soap_endpoint == NULL)
-		soap_endpoint = "http://ite4.baitour.com/comanage/baitourService.asmx";
+        soap_endpoint = "http://ite.baitour.com/comanage/baitourService.asmx";
 	if (soap_action == NULL)
 		soap_action = "http://www.baitour.com/GetAllCommonPolicyZIP";
 	soap_begin(soap);
@@ -239,7 +239,7 @@ int BaitourServiceSoapProxy::GetAlterCommonPolicy(const char *endpoint, const ch
 	if (endpoint)
 		soap_endpoint = endpoint;
 	if (soap_endpoint == NULL)
-		soap_endpoint = "http://ite4.baitour.com/comanage/baitourService.asmx";
+        soap_endpoint = "http://ite.baitour.com/comanage/baitourService.asmx";
 	if (soap_action == NULL)
 		soap_action = "http://www.baitour.com/GetAlterCommonPolicy";
 	soap_begin(soap);
@@ -293,7 +293,7 @@ int BaitourServiceSoapProxy::MatchCommonPolicy(const char *endpoint, const char 
 	if (endpoint)
 		soap_endpoint = endpoint;
 	if (soap_endpoint == NULL)
-		soap_endpoint = "http://ite4.baitour.com/comanage/baitourService.asmx";
+        soap_endpoint = "http://ite.baitour.com/comanage/baitourService.asmx";
 	if (soap_action == NULL)
 		soap_action = "http://www.baitour.com/MatchCommonPolicy";
 	soap_begin(soap);
@@ -347,7 +347,7 @@ int BaitourServiceSoapProxy::GetAVPolicy(const char *endpoint, const char *soap_
 	if (endpoint)
 		soap_endpoint = endpoint;
 	if (soap_endpoint == NULL)
-		soap_endpoint = "http://ite4.baitour.com/comanage/baitourService.asmx";
+        soap_endpoint = "http://ite.baitour.com/comanage/baitourService.asmx";
 	if (soap_action == NULL)
 		soap_action = "http://www.baitour.com/GetAVPolicy";
 	soap_begin(soap);
@@ -401,7 +401,7 @@ int BaitourServiceSoapProxy::GetDomesticMatchNormalZRateByID(const char *endpoin
 	if (endpoint)
 		soap_endpoint = endpoint;
 	if (soap_endpoint == NULL)
-		soap_endpoint = "http://ite4.baitour.com/comanage/baitourService.asmx";
+        soap_endpoint = "http://ite.baitour.com/comanage/baitourService.asmx";
 	if (soap_action == NULL)
 		soap_action = "http://www.baitour.com/GetDomesticMatchNormalZRateByID";
 	soap_begin(soap);
@@ -455,7 +455,7 @@ int BaitourServiceSoapProxy::DetailCreateOrder(const char *endpoint, const char 
 	if (endpoint)
 		soap_endpoint = endpoint;
 	if (soap_endpoint == NULL)
-		soap_endpoint = "http://ite4.baitour.com/comanage/baitourService.asmx";
+        soap_endpoint = "http://ite.baitour.com/comanage/baitourService.asmx";
 	if (soap_action == NULL)
 		soap_action = "http://www.baitour.com/DetailCreateOrder";
 	soap_begin(soap);
@@ -509,7 +509,7 @@ int BaitourServiceSoapProxy::RTCreateOrder(const char *endpoint, const char *soa
 	if (endpoint)
 		soap_endpoint = endpoint;
 	if (soap_endpoint == NULL)
-		soap_endpoint = "http://ite4.baitour.com/comanage/baitourService.asmx";
+        soap_endpoint = "http://ite.baitour.com/comanage/baitourService.asmx";
 	if (soap_action == NULL)
 		soap_action = "http://www.baitour.com/RTCreateOrder";
 	soap_begin(soap);
@@ -563,7 +563,7 @@ int BaitourServiceSoapProxy::GetOrderInfo(const char *endpoint, const char *soap
 	if (endpoint)
 		soap_endpoint = endpoint;
 	if (soap_endpoint == NULL)
-		soap_endpoint = "http://ite4.baitour.com/comanage/baitourService.asmx";
+        soap_endpoint = "http://ite.baitour.com/comanage/baitourService.asmx";
 	if (soap_action == NULL)
 		soap_action = "http://www.baitour.com/GetOrderInfo";
 	soap_begin(soap);
@@ -617,7 +617,7 @@ int BaitourServiceSoapProxy::GetInvalidationProviders(const char *endpoint, cons
 	if (endpoint)
 		soap_endpoint = endpoint;
 	if (soap_endpoint == NULL)
-		soap_endpoint = "http://ite4.baitour.com/comanage/baitourService.asmx";
+        soap_endpoint = "http://ite.baitour.com/comanage/baitourService.asmx";
 	if (soap_action == NULL)
 		soap_action = "http://www.baitour.com/GetInvalidationProviders";
 	soap_begin(soap);
@@ -671,7 +671,7 @@ int BaitourServiceSoapProxy::RefundOrder(const char *endpoint, const char *soap_
 	if (endpoint)
 		soap_endpoint = endpoint;
 	if (soap_endpoint == NULL)
-		soap_endpoint = "http://ite4.baitour.com/comanage/baitourService.asmx";
+        soap_endpoint = "http://ite.baitour.com/comanage/baitourService.asmx";
 	if (soap_action == NULL)
 		soap_action = "http://www.baitour.com/RefundOrder";
 	soap_begin(soap);
@@ -725,7 +725,7 @@ int BaitourServiceSoapProxy::GetChangeFlightDate(const char *endpoint, const cha
 	if (endpoint)
 		soap_endpoint = endpoint;
 	if (soap_endpoint == NULL)
-		soap_endpoint = "http://ite4.baitour.com/comanage/baitourService.asmx";
+        soap_endpoint = "http://ite.baitour.com/comanage/baitourService.asmx";
 	if (soap_action == NULL)
 		soap_action = "http://www.baitour.com/GetChangeFlightDate";
 	soap_begin(soap);
@@ -779,7 +779,7 @@ int BaitourServiceSoapProxy::GetAllCommonPolicy_(const char *endpoint, const cha
 	if (endpoint)
 		soap_endpoint = endpoint;
 	if (soap_endpoint == NULL)
-		soap_endpoint = "http://ite4.baitour.com/comanage/baitourService.asmx";
+        soap_endpoint = "http://ite.baitour.com/comanage/baitourService.asmx";
 	if (soap_action == NULL)
 		soap_action = "http://www.baitour.com/GetAllCommonPolicy";
 	soap_begin(soap);
@@ -833,7 +833,7 @@ int BaitourServiceSoapProxy::GetAllCommonPolicyZIP_(const char *endpoint, const 
 	if (endpoint)
 		soap_endpoint = endpoint;
 	if (soap_endpoint == NULL)
-		soap_endpoint = "http://ite4.baitour.com/comanage/baitourService.asmx";
+        soap_endpoint = "http://ite.baitour.com/comanage/baitourService.asmx";
 	if (soap_action == NULL)
 		soap_action = "http://www.baitour.com/GetAllCommonPolicyZIP";
 	soap_begin(soap);
@@ -887,7 +887,7 @@ int BaitourServiceSoapProxy::GetAlterCommonPolicy_(const char *endpoint, const c
 	if (endpoint)
 		soap_endpoint = endpoint;
 	if (soap_endpoint == NULL)
-		soap_endpoint = "http://ite4.baitour.com/comanage/baitourService.asmx";
+        soap_endpoint = "http://ite.baitour.com/comanage/baitourService.asmx";
 	if (soap_action == NULL)
 		soap_action = "http://www.baitour.com/GetAlterCommonPolicy";
 	soap_begin(soap);
@@ -941,7 +941,7 @@ int BaitourServiceSoapProxy::MatchCommonPolicy_(const char *endpoint, const char
 	if (endpoint)
 		soap_endpoint = endpoint;
 	if (soap_endpoint == NULL)
-		soap_endpoint = "http://ite4.baitour.com/comanage/baitourService.asmx";
+        soap_endpoint = "http://ite.baitour.com/comanage/baitourService.asmx";
 	if (soap_action == NULL)
 		soap_action = "http://www.baitour.com/MatchCommonPolicy";
 	soap_begin(soap);
@@ -995,7 +995,7 @@ int BaitourServiceSoapProxy::GetAVPolicy_(const char *endpoint, const char *soap
 	if (endpoint)
 		soap_endpoint = endpoint;
 	if (soap_endpoint == NULL)
-		soap_endpoint = "http://ite4.baitour.com/comanage/baitourService.asmx";
+        soap_endpoint = "http://ite.baitour.com/comanage/baitourService.asmx";
 	if (soap_action == NULL)
 		soap_action = "http://www.baitour.com/GetAVPolicy";
 	soap_begin(soap);
@@ -1049,7 +1049,7 @@ int BaitourServiceSoapProxy::GetDomesticMatchNormalZRateByID_(const char *endpoi
 	if (endpoint)
 		soap_endpoint = endpoint;
 	if (soap_endpoint == NULL)
-		soap_endpoint = "http://ite4.baitour.com/comanage/baitourService.asmx";
+        soap_endpoint = "http://ite.baitour.com/comanage/baitourService.asmx";
 	if (soap_action == NULL)
 		soap_action = "http://www.baitour.com/GetDomesticMatchNormalZRateByID";
 	soap_begin(soap);
@@ -1103,7 +1103,7 @@ int BaitourServiceSoapProxy::DetailCreateOrder_(const char *endpoint, const char
 	if (endpoint)
 		soap_endpoint = endpoint;
 	if (soap_endpoint == NULL)
-		soap_endpoint = "http://ite4.baitour.com/comanage/baitourService.asmx";
+        soap_endpoint = "http://ite.baitour.com/comanage/baitourService.asmx";
 	if (soap_action == NULL)
 		soap_action = "http://www.baitour.com/DetailCreateOrder";
 	soap_begin(soap);
@@ -1157,7 +1157,7 @@ int BaitourServiceSoapProxy::RTCreateOrder_(const char *endpoint, const char *so
 	if (endpoint)
 		soap_endpoint = endpoint;
 	if (soap_endpoint == NULL)
-		soap_endpoint = "http://ite4.baitour.com/comanage/baitourService.asmx";
+        soap_endpoint = "http://ite.baitour.com/comanage/baitourService.asmx";
 	if (soap_action == NULL)
 		soap_action = "http://www.baitour.com/RTCreateOrder";
 	soap_begin(soap);
@@ -1211,7 +1211,7 @@ int BaitourServiceSoapProxy::GetOrderInfo_(const char *endpoint, const char *soa
 	if (endpoint)
 		soap_endpoint = endpoint;
 	if (soap_endpoint == NULL)
-		soap_endpoint = "http://ite4.baitour.com/comanage/baitourService.asmx";
+        soap_endpoint = "http://ite.baitour.com/comanage/baitourService.asmx";
 	if (soap_action == NULL)
 		soap_action = "http://www.baitour.com/GetOrderInfo";
 	soap_begin(soap);
@@ -1265,7 +1265,7 @@ int BaitourServiceSoapProxy::GetInvalidationProviders_(const char *endpoint, con
 	if (endpoint)
 		soap_endpoint = endpoint;
 	if (soap_endpoint == NULL)
-		soap_endpoint = "http://ite4.baitour.com/comanage/baitourService.asmx";
+        soap_endpoint = "http://ite.baitour.com/comanage/baitourService.asmx";
 	if (soap_action == NULL)
 		soap_action = "http://www.baitour.com/GetInvalidationProviders";
 	soap_begin(soap);
@@ -1319,7 +1319,7 @@ int BaitourServiceSoapProxy::RefundOrder_(const char *endpoint, const char *soap
 	if (endpoint)
 		soap_endpoint = endpoint;
 	if (soap_endpoint == NULL)
-		soap_endpoint = "http://ite4.baitour.com/comanage/baitourService.asmx";
+        soap_endpoint = "http://ite.baitour.com/comanage/baitourService.asmx";
 	if (soap_action == NULL)
 		soap_action = "http://www.baitour.com/RefundOrder";
 	soap_begin(soap);
@@ -1373,7 +1373,7 @@ int BaitourServiceSoapProxy::GetChangeFlightDate_(const char *endpoint, const ch
 	if (endpoint)
 		soap_endpoint = endpoint;
 	if (soap_endpoint == NULL)
-		soap_endpoint = "http://ite4.baitour.com/comanage/baitourService.asmx";
+        soap_endpoint = "http://ite.baitour.com/comanage/baitourService.asmx";
 	if (soap_action == NULL)
 		soap_action = "http://www.baitour.com/GetChangeFlightDate";
 	soap_begin(soap);

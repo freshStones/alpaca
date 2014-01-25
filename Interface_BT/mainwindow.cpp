@@ -1,5 +1,3 @@
-
-
 #include <QFile>
 #include <QDomDocument>
 #include <QSettings>
@@ -11,7 +9,6 @@
 #include <QDesktopWidget>
 #include <QVector>
 #include <QStringList>
-
 
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
@@ -73,47 +70,42 @@ void MainWindow::setDiagMidParent(int height, int width)
 void MainWindow::init()
 {
 
-    //------------------Settings initialize----------------------
+    //---------------------Settings initialize--------------------------------
     QSettings *configIniRead = new QSettings(QString("setting.ini"),QSettings::IniFormat);
 
-    //---------------------UI initialize----------------------------
-    d = new dump();
-    d->init();
-    ad = new AdminWindow();
-    l = new Login(configIniRead);
+    //---------------------Sub Operator initialize----------------------------
+    dumpExcelOp = new dump();
+    adminWindow = new AdminWindow();
+    loginWindow = new Login(configIniRead);
 
-    //------------------policyOp initialize---------------------
+    //---------------------PolicyOp initialize--------------------------------
     this->op = new policyOp(configIniRead->value("/SQL_ACCOUNT/USERNAME").toString(),configIniRead->value("/SQL_ACCOUNT/PASSWORD").toString(),configIniRead->value("/AGENT_DESC/AGENTCODE").toString());
 
     this->signalConnection();
 
-
-    l->setDiagMidParent(270,360);
+    loginWindow->setDiagMidParent(270,360);
     allPolicyModel = 0;
 
     ui->dumpUpload->setEnabled(false);
-
 }
 
 void MainWindow::signalConnection()
 {
-    connect(this->l,SIGNAL(authorizedOK(QString, QString)),this,SLOT(slotLoggedin(QString, QString)));
+    connect(this->loginWindow,SIGNAL(authorizedOK(QString, QString)),this,SLOT(slotLoggedin(QString, QString)));
     connect(this->ui->action_exit,SIGNAL(triggered()),qApp,SLOT(quit()));
 }
 
 void MainWindow::loadSpaceInfo()
 {
 
-
 }
-
 
 void MainWindow::slotLoggedin(QString username, QString idRes){
     if(idRes == "all")    this->ui->menu_admin->setEnabled(true);
     else this->ui->menu_admin->setEnabled(false);
     this->setDiagMidParent(768,1024);
     this->username = username;
-    this->ad->setusername(username);
+    this->adminWindow->setusername(username);
     this->ui->label_welcome->setText(tr("欢迎回来，")+username);
     this->ui->label_welcome->setAlignment(Qt::AlignCenter);
 }
@@ -202,20 +194,20 @@ void MainWindow::on_dumpButton_clicked()
             space.append(spaceString.at(i));
         }
     }
-    QVector<QVector<QStringList>* > v = d->dumpFromB2Q(allPolicyModel,ui->moneyKeep->text(),ui->memo->text(),ui->LTT->text(),ui->policyNo->text(),pay,pnr,pat,ui->supplierCode->text(),itinerary,ui->dep->text(),ui->arr->text(),space);
+    QVector<QVector<QStringList>* > v = this->dumpExcelOp->dumpFromB2Q(allPolicyModel,ui->moneyKeep->text(),ui->memo->text(),ui->LTT->text(),ui->policyNo->text(),pay,pnr,pat,ui->supplierCode->text(),itinerary,ui->dep->text(),ui->arr->text(),space);
 
     //filepath.replace(QString("\\"),QString("/"));
     //d->saveAsExcel(filepath,v);
     for (int i = 0; i < v.size(); i++)
     {
-        d->xlsByODBC(filepath + '_'+ QString("%1").arg(i) +".xls" ,v.at(i));
+        this->dumpExcelOp->xlsByODBC(filepath + '_'+ QString("%1").arg(i) +".xls" ,v.at(i));
     }
 }
 
 
 void MainWindow::on_action_accountProc_triggered()
 {
-    ad->setDiagMidParent(480, 640);
+    this->adminWindow->setDiagMidParent(480, 640);
 }
 
 void MainWindow::on_action_logOut_triggered()
@@ -223,7 +215,7 @@ void MainWindow::on_action_logOut_triggered()
     QSettings *settings = new QSettings(QString("setting.ini"),QSettings::IniFormat);
     settings->setValue("/DEFAULT_ACCOUNT/AUTOLOGIN",0);
     this->hide();
-    this->l->show();
+    this->loginWindow->show();
 }
 
 void MainWindow::on_action_exit_triggered()

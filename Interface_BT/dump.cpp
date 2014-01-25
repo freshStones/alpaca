@@ -3,6 +3,7 @@
 #include <spaceaccount.h>
 
 dump::dump(){
+    this->init();
 }
 
 void dump::init(){

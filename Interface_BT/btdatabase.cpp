@@ -10,12 +10,8 @@ void btDatabase::init()
     *db = QSqlDatabase::addDatabase("QMYSQL");
     db->setHostName(server);
     db->setDatabaseName("LH_AirTicket");
-    //db->setUserName(username);
-    //db->setPassword(password);
-    //db->setUserName("remote");
-    //db->setPassword("remote");
-    db->setUserName("root");
-    db->setPassword("raccoon");
+    db->setUserName("remote");
+    db->setPassword("tm2022");
     //qDebug()<<server<<username<<password;
     db->open();
 

@@ -12,7 +12,8 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     QApplication::addLibraryPath("./plugins");
-    //避免中文乱码
+
+//避免中文乱码
 #ifdef Q_OS_WIN32
     QTextCodec *codec = QTextCodec::codecForName("System");
 #else
@@ -21,7 +22,7 @@ int main(int argc, char *argv[])
 
     QTextCodec::setCodecForLocale(codec);
 
-    //避免多个程序实例
+//避免多个程序实例
 #ifdef Q_OS_WIN
     QSharedMemory shrMemo;
     shrMemo.setKey("LHOneInstanceLock");
@@ -31,6 +32,8 @@ int main(int argc, char *argv[])
         return -1;
     }
 #endif
+
+    //添加浪花logo
     QIcon icon;
     icon.addFile(QStringLiteral(":/images/images/icon.png"), QSize(), QIcon::Normal, QIcon::Off);
     a.setWindowIcon(icon);
