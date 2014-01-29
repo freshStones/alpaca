@@ -8,6 +8,7 @@ QT       += core gui
 QT       += xml
 QT       += widgets
 QT       += sql
+QT       += network
 #CONFIG   += qaxcontainer
 RC_ICONS = images/icon.ico
 ICON = images/icon.icns
@@ -27,7 +28,8 @@ SOURCES += main.cpp\
     dump.cpp \
     login.cpp \
     adminwindow.cpp \
-    spaceaccount.cpp
+    spaceaccount.cpp \
+    ota_xmlhttp.cpp
 
 HEADERS  += mainwindow.h \
     gsoap/temp.h \
@@ -41,7 +43,8 @@ HEADERS  += mainwindow.h \
     dump.h \
     login.h \
     adminwindow.h \
-    spaceaccount.h
+    spaceaccount.h \
+    ota_xmlhttp.h
 
 FORMS    += \
     mainwindow.ui \
