@@ -1,0 +1,8 @@
+<OTA_AirTicketRetryRQ>
+<POS>
+<Source PseudoCityCode="PEK099" OtherID="4" />
+</POS>
+<TicketRetryDetail>
+<BookingReferenceID ID="HSJ8CF" />
+</TicketRetryDetail>
+</OTA_AirTicketRetryRQ>

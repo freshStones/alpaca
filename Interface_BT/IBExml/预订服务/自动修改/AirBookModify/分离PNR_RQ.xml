@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 被2012 () 使用XMLSpy v编辑的 (http://www.altova.com) by -->
+<OTA_AirBookModifyRQ>
+	<POS>
+		<Source PseudoCityCode="PEK099"/>
+	</POS>
+	<AirBookModifyRQ ModificationType="PNR_SPLIT">
+		<AirReservation>
+			<TravelerInfo>
+				<AirTraveler PassengerTypeCode="ADT" AccompaniedByInfant="false">
+					<PersonName LanguageType="ZH">
+						<Surname>WANG/QIANG</Surname>
+					</PersonName>
+					<Document DocType="NI" DocID="650203200511220711"/>
+					<TravelerRefNumber RPH="1"/>
+				</AirTraveler>
+				<AirTraveler PassengerTypeCode="ADT" AccompaniedByInfant="false">
+					<PersonName LanguageType="ZH">
+						<Surname>王强</Surname>
+					</PersonName>
+					<Document DocType="NI" DocID="650203200511220712"/>
+					<TravelerRefNumber RPH="2"/>
+				</AirTraveler>
+			</TravelerInfo>
+		</AirReservation>
+	</AirBookModifyRQ>
+	<AirReservation>
+		<BookingReferenceID ID="JMX05B"/>
+	</AirReservation>
+</OTA_AirBookModifyRQ>

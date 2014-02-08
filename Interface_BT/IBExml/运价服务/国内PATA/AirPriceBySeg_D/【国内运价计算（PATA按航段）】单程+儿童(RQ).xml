@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<OTA_AirPriceRQ>
+  <POS>
+    <Source CityCode="BJS" PseudoCityCode="BJS407">
+      <RequestorID>
+        <CompanyName Code="CA"/>
+      </RequestorID>
+    </Source>
+  </POS>
+  <AirItinerary>
+    <OriginDestinationOptions>
+      <OriginDestinationOption>
+        <FlightSegment Status="HK" DepartureDateTime="2012-09-25T07:30:00" ArrivalDateTime="2012-09-25T09:30:00" FlightNumber="CA1831">
+          <DepartureAirport LocationCode="PEK"/>
+          <ArrivalAirport LocationCode="SHA"/>
+          <Equipment AirEquipType="773" />
+          <BookingClassAvail ResBookDesigCode="Y" />
+        </FlightSegment>
+      </OriginDestinationOption>
+    </OriginDestinationOptions>
+  </AirItinerary>
+  <TravelerInfoSummary>
+    <AirTravelerAvail>
+      <PassengerTypeQuantity Code="CHD"/>
+    </AirTravelerAvail>
+  </TravelerInfoSummary>
+</OTA_AirPriceRQ>

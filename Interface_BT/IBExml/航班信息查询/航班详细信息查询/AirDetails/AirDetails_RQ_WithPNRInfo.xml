@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OTA_AirDetailsRQ>
+	<POS>
+		<Source PseudoCityCode="BJS191" />
+	</POS>
+	<BookingReferenceID ID="HR2D56"/>
+</OTA_AirDetailsRQ>

@@ -1,0 +1,16 @@
+<OTA_AirAvailRQ xmlns="http://espeed.travelsky.com">
+	<POS>
+		<Source PseudoCityCode="BJS988"/>
+	</POS>
+	<OriginDestinationInformation>
+		<DepartureDateTime>2015-06-19</DepartureDateTime>
+		<OriginLocation LocationCode="PEK"/>
+		<DestinationLocation LocationCode="SHA"/>
+	</OriginDestinationInformation>
+	<SpecificFlightInfo>
+		<Airline Code="CA"/> 
+	</SpecificFlightInfo>
+	<TravelPreferences ETicketDesired="true">
+		<FlightTypePref FlightType="Connection"/>
+	</TravelPreferences>
+</OTA_AirAvailRQ>
