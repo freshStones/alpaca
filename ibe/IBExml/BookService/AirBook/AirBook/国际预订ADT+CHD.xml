@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OTA_AirBookRQ>
+    <POS>
+        <Source PseudoCityCode="BJS191" />
+    </POS>
+    <AirItinerary>
+        <OriginDestinationOptions>
+            <OriginDestinationOption>
+                <FlightSegment RPH="1" DepartureDateTime="2014-05-29T07:00:00" ArrivalDateTime="2014-05-29T09:10:00" CodeshareInd="false" FlightNumber="101" Status="NN" SegmentType="NORMAL">
+                    <DepartureAirport LocationCode="PEK" />
+                    <ArrivalAirport LocationCode="HKG" />
+                    <Equipment AirEquipType="321" />
+                    <MarketingAirline Code="CA" />
+                    <BookingClassAvail ResBookDesigCode="Y" />
+                </FlightSegment>
+            </OriginDestinationOption>
+        </OriginDestinationOptions>
+    </AirItinerary>
+    <TravelerInfo>
+        <AirTraveler Gender="MALE" PassengerTypeCode="ADT">
+            <PersonName LanguageType="ZH">
+                <Surname>张学友</Surname>
+            </PersonName>
+            <Document DocType="NI" DocID="120221197001011150">
+            </Document>
+            <TravelerRefNumber RPH="1" />
+            <Comment>HK</Comment>
+        </AirTraveler>
+        <AirTraveler Gender="MALE" PassengerTypeCode="CHD">
+            <PersonName LanguageType="ZH">
+                <Surname>张伟</Surname>
+            </PersonName>
+            <Document DocType="NI" DocID="31010420080101573X">
+                <!--身份证生日符合儿童规则时，主机会自动加入SSR CHLD，否则需要对预订航段每个航空公司手工写入SSR CHLD-->
+            </Document>
+            <TravelerRefNumber RPH="2" />
+            <Comment>HK</Comment>
+        </AirTraveler>
+        <SpecialReqDetails>
+            <OtherServiceInformations>
+                <OtherServiceInformation Code="OTHS">
+                    <Airline Code="CA" />
+                    <Text>CTCT13666666666</Text>
+                    <!--CTCT项不需要关联对应旅客，属于非PNR中旅客联系方式，CTCT后数字部分最多30位-->
+                </OtherServiceInformation>
+                <OtherServiceInformation Code="OTHS">
+                    <Airline Code="CA" />
+                    <Text>CTCM1366666666</Text>
+                    <!--CTCM必须关联旅客，CTCM后数字部分最多30位-->
+                    <TravelerRefNumber RPH="1" />
+                </OtherServiceInformation>
+            </OtherServiceInformations>
+        </SpecialReqDetails>
+    </TravelerInfo>
+    <Ticketing TicketTimeLimit="2014-05-29T00:01:00" />
+    <TPA_Extensions>
+        <ContactInfo>023-57651234</ContactInfo>
+        <EnvelopType>KI</EnvelopType>
+    </TPA_Extensions>
+</OTA_AirBookRQ>

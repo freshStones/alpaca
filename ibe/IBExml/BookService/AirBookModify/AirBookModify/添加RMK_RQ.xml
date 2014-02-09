@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 被2012 () 使用XMLSpy v编辑的 (http://www.altova.com) by -->
+<OTA_AirBookModifyRQ>
+	<POS>
+		<Source PseudoCityCode="PEK099"/>
+	</POS>
+	<AirBookModifyRQ ModificationType="REMARK_ADD">
+		<AirReservation>
+			<TravelerInfo>
+				<SpecialReqDetails>
+					<SpecialRemarks>
+						<SpecialRemark>
+							<TravelerRefNumber RPH="1"/>
+							<FlightRefNumber RPH="1"/>
+							<Text>remark</Text>
+						</SpecialRemark>
+					</SpecialRemarks>
+				</SpecialReqDetails>
+			</TravelerInfo>
+		</AirReservation>
+	</AirBookModifyRQ>
+	<AirReservation>
+		<AirItinerary>
+			<OriginDestinationOptions>
+				<OriginDestinationOption>
+					<FlightSegment RPH="1" DepartureDateTime="2011-08-08T16:05:00" FlightNumber="1831" NumberInParty="1" Status="NN" SegmentType="NORMAL">
+						<OperatingAirline Code="CA" FlightNumber="1831"/>
+						<DepartureAirport LocationCode="PEK"/>
+						<ArrivalAirport LocationCode="SHA"/>
+						<MarketingAirline Code="CA"/>
+						<BookingClassAvail ResBookDesigCode="Y"/>
+					</FlightSegment>
+				</OriginDestinationOption>
+			</OriginDestinationOptions>
+		</AirItinerary>
+		<TravelerInfo>
+			<AirTraveler PassengerTypeCode="ADT" AccompaniedByInfant="false">
+				<PersonName LanguageType="ZH">
+					<Surname>WANG/QIANG</Surname>
+				</PersonName>
+				<Document DocType="NI" DocID="650203200511220711"/>
+				<TravelerRefNumber RPH="1"/>
+			</AirTraveler>
+		</TravelerInfo>
+		<BookingReferenceID ID="HMVMMQ"/>
+	</AirReservation>
+</OTA_AirBookModifyRQ>

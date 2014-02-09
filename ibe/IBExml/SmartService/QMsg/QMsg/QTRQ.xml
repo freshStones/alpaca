@@ -1,0 +1,17 @@
+<OTA_QMsgRQ>
+<!--操作类型，OPQT,OPQR ,OPQX-->
+	<ActionCode>OPQT</ActionCode>
+	<StartDate><!--开始时间--></StartDate>
+	<EndDate><!--结束时间--></EndDate>
+	<StartQID><!--QID--></StartQID>
+	<MaxRow><!--最大显示数--></MaxRow>
+	<!--office号-->
+	<Queue Office="BJS191">
+	<!--Agent号，多个则多个Agent节点如下-->
+		<Agent>18089</Agent>
+		<Agent>18091</Agent>
+		<Agent>22062</Agent>
+		<Agent>24643</Agent>
+		<Agent>24679</Agent>
+	</Queue>
+</OTA_QMsgRQ>
