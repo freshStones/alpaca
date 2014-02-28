@@ -40,6 +40,7 @@ QString OTA_XMLHTTP::GetResponse(QString requestXML)
     else{
         QTextStream in(&xml);
         requestXML = in.readAll();
+        requestXML = requestXML.remove("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
 //        qDebug() << requestXML;
     }
 
@@ -47,11 +48,14 @@ QString OTA_XMLHTTP::GetResponse(QString requestXML)
     try{
         _request = new QNetworkRequest();
 
+        QUrl _qurl = QUrl("http://espeed.travelsky.com/develop/xml/AirBrief");
         //set server url
         _request->setUrl(QUrl("http://espeed.travelsky.com/develop/xml/AirBrief"));
 
         /*set request header*/
-        QByteArray content = requestXML.toLatin1();
+        QByteArray content = requestXML.toAscii();
+
+//        _request->setRawHeader("POST", "/develop/xml/AirBrief");
         _request->setHeader(QNetworkRequest::ContentTypeHeader,"application/x-www-form-urlencoded");
         _request->setHeader(QNetworkRequest::ContentLengthHeader,content.length());
 
@@ -68,6 +72,7 @@ QString OTA_XMLHTTP::GetResponse(QString requestXML)
 
     qDebug() << _reply->request().rawHeaderList() << _reply->request().rawHeader("Content-Type")
              << _reply->request().rawHeader("Authorization") << _reply->request().rawHeader("Content-Length");
+    qDebug() << _reply->readAll();
 
 }
 

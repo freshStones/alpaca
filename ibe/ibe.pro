@@ -13,9 +13,11 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    ota_xmlhttp.cpp
+    ota_xmlhttp.cpp \
+    ota_xmlhttp2.cpp
 
 HEADERS  += mainwindow.h \
-    ota_xmlhttp.h
+    ota_xmlhttp.h \
+    ota_xmlhttp2.h
 
 FORMS    += mainwindow.ui
