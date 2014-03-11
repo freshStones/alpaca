@@ -1,0 +1,67 @@
+<OTA_AirBookRQ>
+    <POS>
+        <Source PseudoCityCode="BJS191" />
+    </POS>
+    <AirItinerary>
+        <OriginDestinationOptions>
+            <OriginDestinationOption>
+                <FlightSegment RPH="1" DepartureDateTime="2014-05-16T00:00:00" ArrivalDateTime="2014-05-16T00:00:00" CodeshareInd="true" FlightNumber="6533" NumberInParty="1" Status="NN" SegmentType="NORMAL" InterSegment="false">
+                    <OperatingAirline Code="CA" FlightNumber="6533" />
+                    <DepartureAirport LocationCode="PEK" />
+                    <ArrivalAirport LocationCode="HKG" />
+                    <Equipment AirEquipType="76A" />
+                    <MarketingAirline Code="CA" />
+                    <BookingClassAvail ResBookDesigCode="Y" />
+                </FlightSegment>
+            </OriginDestinationOption>
+        </OriginDestinationOptions>
+    </AirItinerary>
+    <TravelerInfo>
+        <AirTraveler Gender="MALE" PassengerTypeCode="ADT">
+            <PersonName LanguageType="ZH">
+                <Surname>zhou/xiao</Surname>
+            </PersonName>
+            <Document DocType="PP" DocTypeDetail="P" DocID="G30470505" DocIssueCountry="CN" DocHolderNationality="CN" BirthDate="2005-01-01" Gender="MALE" ExpireDate="2018-08-05" RPH="1">
+                <DocHolderFormattedName>
+                    <GivenName>xiao</GivenName>
+                    <MiddleName />
+                    <Surname>zhou</Surname>
+                </DocHolderFormattedName>
+            </Document>
+            <TravelerRefNumber RPH="1" />
+            <FlightSegmentRPHs>
+                <FlightSegmentRPH>1</FlightSegmentRPH>
+            </FlightSegmentRPHs>
+            <DocumentFlightBinding>
+                <DocumentRPH>1</DocumentRPH>
+                <FlightSegmentRPH>1</FlightSegmentRPH>
+            </DocumentFlightBinding>
+            <Comment>HK</Comment>
+        </AirTraveler>
+        <SpecialReqDetails>
+            <SpecialServiceRequests>
+                <SpecialServiceRequest SSRCode="OTHS">
+                    <Airline Code="CA" />
+                    <Text>THIS IS 9901075</Text>
+                </SpecialServiceRequest>
+                <SpecialServiceRequest SSRCode="SPML" Status="NN">
+                    <Airline Code="CA" />
+                    <FlightRefNumber RPH="1" />
+                    <TravelerRefNumber RPH="1" />
+                    <Text>NOSOLT</Text>
+                </SpecialServiceRequest>
+                <SpecialServiceRequest SSRCode="FQTV" Status="NN">
+                    <Airline Code="CA" CodeContext="MU" CompanyShortName="MU" />
+                    <Text>4950682w</Text>
+                    <TravelerRefNumber RPH="1" />
+                </SpecialServiceRequest>
+            </SpecialServiceRequests>
+        </SpecialReqDetails>
+    </TravelerInfo>
+    <Ticketing TicketTimeLimit="2014-03-10T00:01:00" />
+    <TPA_Extensions>
+        <ContactInfo>1234445565t6</ContactInfo>
+        <ContactInfo>123349847849</ContactInfo>
+        <EnvelopType>KI</EnvelopType>
+    </TPA_Extensions>
+</OTA_AirBookRQ>

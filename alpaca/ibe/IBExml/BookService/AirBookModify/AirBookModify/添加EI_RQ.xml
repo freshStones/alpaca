@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 被2012 () 使用XMLSpy v编辑的 (http://www.altova.com) by -->
+<OTA_AirBookModifyRQ>
+	<POS>
+		<Source PseudoCityCode="PEK099"/>
+	</POS>
+	<AirBookModifyRQ ModificationType="EI_ADD">
+		<AirReservation>
+			<Ticketing>
+				<TicketItemInfo Endorsement="不得签转"/>
+			</Ticketing>
+		</AirReservation>
+	</AirBookModifyRQ>
+	<AirReservation>
+		<BookingReferenceID ID="HSVM20"/>
+	</AirReservation>
+</OTA_AirBookModifyRQ>

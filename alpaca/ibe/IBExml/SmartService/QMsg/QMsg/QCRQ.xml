@@ -1,0 +1,10 @@
+<OTA_QMsgRQ>
+	<ActionCode>OPQC</ActionCode>
+	<Queue QueueType="DO" Office="BJS191">
+		<QueueInfo>
+	<!--一次只允许转移一条 -->
+			<ID>1830710085</ID>
+		</QueueInfo>
+	</Queue>
+	<Queue QueueType="BE" Office="BJS191" />
+</OTA_QMsgRQ>

@@ -1,0 +1,10 @@
+<OTA_AirBriefRQ xmlns="http://espeed.travelsky.com">
+	<pos>
+		<Source PseudoCityCode="HAK295"/>
+	</pos>
+	<AirBrief>
+		<Airline Code="MU"/>
+		<FlightNumber>2966</FlightNumber>
+		<DepartureDate>2014-12-30</DepartureDate>
+	</AirBrief>
+</OTA_AirBriefRQ>

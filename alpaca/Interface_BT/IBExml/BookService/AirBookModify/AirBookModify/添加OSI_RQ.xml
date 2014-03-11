@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OTA_AirBookModifyRQ>
+	<POS>
+		<Source PseudoCityCode="PEK099"/>
+	</POS>
+	<AirBookModifyRQ ModificationType="OSI_ADD">
+		<AirReservation>
+			<TravelerInfo>
+				<SpecialReqDetails>
+					<OtherServiceInformations>
+						<OtherServiceInformation>
+							<TravelerRefNumber RPH="1"/>
+							<Airline Code="CA"/>
+							<Text>OSI</Text>
+						</OtherServiceInformation>
+					</OtherServiceInformations>
+				</SpecialReqDetails>
+			</TravelerInfo>
+		</AirReservation>
+	</AirBookModifyRQ>
+	<AirReservation>
+		<TravelerInfo>
+			<AirTraveler PassengerTypeCode="ADT" AccompaniedByInfant="false">
+				<PersonName LanguageType="ZH">
+					<Surname>WANG/QIANG</Surname>
+				</PersonName>
+				<Document DocType="NI" DocID="650203200511220711"/>
+				<TravelerRefNumber RPH="1"/>
+			</AirTraveler>
+		</TravelerInfo>
+		<BookingReferenceID ID="JMX042"/>
+	</AirReservation>
+</OTA_AirBookModifyRQ>
