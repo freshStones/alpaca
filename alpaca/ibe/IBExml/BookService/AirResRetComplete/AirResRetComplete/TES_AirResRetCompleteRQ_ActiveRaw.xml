@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TES_AirResRetCompleteRQ>
+	<POS>
+		<Source PseudoCityCode="PEK099">
+		</Source>
+	</POS>
+	<BookingReferenceID ID="JPFYE2">
+		<CompanyName/>
+	</BookingReferenceID>
+	<RetrieveType Type="ActiveRaw"/>
+</TES_AirResRetCompleteRQ>

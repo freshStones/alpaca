@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OTA_AirPriceRQ TransactionIdentifier="SFC" FareRefRPH="1">
+	<POS>
+		<Source PseudoCityCode="PEK099" />
+	</POS>
+	<TravelerInfoSummary>
+		<AirTravelerAvail>
+			<PassengerTypeQuantity Code="CHD" />
+                        <AirTraveler>
+                           <TravelerRefNumber RPH="1" />
+                        </AirTraveler>
+		</AirTravelerAvail>
+		<PaymentDetail PaymentType="CASH" />
+	</TravelerInfoSummary>
+	<BookingReferenceID ID="HR2D9K" />
+</OTA_AirPriceRQ>

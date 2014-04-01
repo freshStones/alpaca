@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OTA_AirBookRQ>
+    <POS>
+        <Source PseudoCityCode="BJS191" />
+    </POS>
+    <AirItinerary>
+        <OriginDestinationOptions>
+            <OriginDestinationOption>
+                <FlightSegment RPH="1" DepartureDateTime="2014-05-29T07:00:00" ArrivalDateTime="2014-05-29T09:10:00" CodeshareInd="false" FlightNumber="101" Status="NN" SegmentType="NORMAL">
+                    <DepartureAirport LocationCode="PEK" />
+                    <ArrivalAirport LocationCode="HKG" />
+                    <Equipment AirEquipType="321" />
+                    <MarketingAirline Code="CA" />
+                    <BookingClassAvail ResBookDesigCode="Y" />
+                </FlightSegment>
+            </OriginDestinationOption>
+        </OriginDestinationOptions>
+    </AirItinerary>
+    <TravelerInfo>
+        <AirTraveler Gender="MALE" PassengerTypeCode="ADT">
+            <PersonName LanguageType="ZH">
+                <Surname>张学友</Surname>
+            </PersonName>
+            <Document DocType="NI" DocID="120221197001011150">
+            </Document>
+            <TravelerRefNumber RPH="1" />
+            <Comment>HK</Comment>
+        </AirTraveler>
+        <SpecialReqDetails>
+            <OtherServiceInformations>
+                <!--OSI信息-->
+                <OtherServiceInformation Code="OTHS">
+                    <Airline Code="CA" />
+                    <Text>CTCT13666666666</Text>
+                    <!--CTCT项不需要关联对应旅客，属于非PNR中旅客联系方式，CTCT后数字部分最多30位-->
+                </OtherServiceInformation>
+                <OtherServiceInformation Code="OTHS">
+                    <Airline Code="CA" />
+                    <Text>CTCM1366666666</Text>
+                    <!--CTCM必须关联旅客，CTCM后数字部分最多30位-->
+                    <TravelerRefNumber RPH="1" />
+                </OtherServiceInformation>
+            </OtherServiceInformations>
+            <SpecialRemarks>
+                <SpecialRemark>
+                    <Text>特殊备注组信息</Text>
+                    <!--RMK信息-->
+                </SpecialRemark>
+            </SpecialRemarks>
+        </SpecialReqDetails>
+    </TravelerInfo>
+    <Ticketing TicketTimeLimit="2014-05-29T00:01:00" />
+    <TPA_Extensions>
+        <ContactInfo>023-57651234</ContactInfo>
+        <EnvelopType>KI</EnvelopType>
+    </TPA_Extensions>
+</OTA_AirBookRQ>
