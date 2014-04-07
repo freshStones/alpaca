@@ -371,7 +371,7 @@ void dump::xlsByODBC(QString filepath,QVector<QStringList>* v)
     bool state;
     // drop the table if it's already exists
     sSql = QString("DROP TABLE [%1]").arg(sheetName);
-    query.exec( sSql);
+    query.exec(sSql);
     //create the table (sheet in Excel file)
     sSql = QString("CREATE TABLE [%1] (").arg(sheetName);
     sSql +="[" + rowName.at(0) + "] varchar";
