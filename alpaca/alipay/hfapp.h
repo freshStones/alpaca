@@ -9,7 +9,7 @@ class hfapp
     QTcpSocket * tcpSocket;
 public:
     hfapp();
-    void execute(QVector<QPair<String,String> > data, QVector<QPair<String, String> > resdata);
+    void execute(QVector<QPair<QString,QString> > data, QVector<QPair<QString, QString> > resdata);
     void readMessage();
 };
 

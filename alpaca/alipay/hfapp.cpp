@@ -10,7 +10,7 @@ hfapp::hfapp()
 
 }
 
-void hfapp::execute(QVector<QPair<String, String> > data,QVector<QPair<String, String> > resdata)
+void hfapp::execute(QVector<QPair<QString, QString> > data,QVector<QPair<String, String> > resdata)
 {
     QString str = "";
     QVector<QPair<String, String> >::Iterator it = data.begin();

@@ -13,7 +13,7 @@
 #include <QMap>
 #include <QSettings>
 
-#include <btdatabase.h>
+#include "btdatabase.h"
 
 namespace Ui {
 class Login;
