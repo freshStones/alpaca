@@ -4,8 +4,10 @@
 #
 #-------------------------------------------------
 
-QT       += core
-
+QT       += core network sql
+win32{
+LIBS += -lWs2_32
+}
 QT       -= gui
 
 TARGET = xinghai
@@ -26,4 +28,5 @@ HEADERS += \
     gsoap/soapH.h \
     gsoap/soapBasicHttpBinding_USCOREixinghaiProxy.h \
     gsoap/stdsoap2.h \
-    xhhotel.h
+    xhhotel.h \
+    gsoap/BasicHttpBinding_USCOREixinghai.nsmap
