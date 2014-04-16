@@ -11,6 +11,7 @@ xhhotel::xhhotel(QString customerID,QString signStr)
 QJsonObject xhhotel::jsonHandler(std::wstring* data)
 {
     QString json = QString().fromStdWString(*data);
+    qDebug()<<json;
     QJsonParseError err;
     QJsonDocument doc = QJsonDocument::fromJson(json.toUtf8(),&err);
     if (err.error == QJsonParseError::NoError)
@@ -33,9 +34,7 @@ void xhhotel::getHotelList(std::wstring lastAccessDate)
     req.CustomerID = &customerID;
     req.SignStr = &signStr;
     soap->Get_USCOREHotel_USCOREList(&req,&res);
-    qDebug()<<soap->soap_fault_detail();
-    qDebug()<<soap->soap_fault_string();
-    qDebug()<<res.Get_USCOREHotel_USCOREListResult->length();
+    qDebug()<<res.Get_USCOREHotel_USCOREListResult;
     QJsonObject jsonobj = jsonHandler(res.Get_USCOREHotel_USCOREListResult);
 
     QString hotelID,hotelName,hotelStatus,infoUpdate,priceUpdate,statusUpdate;

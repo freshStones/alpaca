@@ -131,7 +131,7 @@ int BasicHttpBinding_USCOREixinghaiProxy::Get_USCOREHotel_USCOREList(const char 
 	if (endpoint)
 		soap_endpoint = endpoint;
 	if (soap_endpoint == NULL)
-		soap_endpoint = "http://webservice.xinghaitour.com/WebService.svc";
+		soap_endpoint = "http://59.50.95.250:4417/WebService.svc";
 	if (soap_action == NULL)
 		soap_action = "http://tempuri.org/ixinghai/Get_Hotel_List";
 	soap_begin(soap);
@@ -186,7 +186,7 @@ int BasicHttpBinding_USCOREixinghaiProxy::Get_USCOREHotel_USCOREInfo(const char 
 	if (endpoint)
 		soap_endpoint = endpoint;
 	if (soap_endpoint == NULL)
-		soap_endpoint = "http://webservice.xinghaitour.com/WebService.svc";
+		soap_endpoint = "http://59.50.95.250:4417/WebService.svc";
 	if (soap_action == NULL)
 		soap_action = "http://tempuri.org/ixinghai/Get_Hotel_Info";
 	soap_begin(soap);
@@ -241,7 +241,7 @@ int BasicHttpBinding_USCOREixinghaiProxy::Get_USCOREHotel_USCOREPrice(const char
 	if (endpoint)
 		soap_endpoint = endpoint;
 	if (soap_endpoint == NULL)
-		soap_endpoint = "http://webservice.xinghaitour.com/WebService.svc";
+		soap_endpoint = "http://59.50.95.250:4417/WebService.svc";
 	if (soap_action == NULL)
 		soap_action = "http://tempuri.org/ixinghai/Get_Hotel_Price";
 	soap_begin(soap);
@@ -296,7 +296,7 @@ int BasicHttpBinding_USCOREixinghaiProxy::Get_USCOREHotel_USCORERoomState(const 
 	if (endpoint)
 		soap_endpoint = endpoint;
 	if (soap_endpoint == NULL)
-		soap_endpoint = "http://webservice.xinghaitour.com/WebService.svc";
+		soap_endpoint = "http://59.50.95.250:4417/WebService.svc";
 	if (soap_action == NULL)
 		soap_action = "http://tempuri.org/ixinghai/Get_Hotel_RoomState";
 	soap_begin(soap);
@@ -351,7 +351,7 @@ int BasicHttpBinding_USCOREixinghaiProxy::Book_USCOREAdd(const char *endpoint, c
 	if (endpoint)
 		soap_endpoint = endpoint;
 	if (soap_endpoint == NULL)
-		soap_endpoint = "http://webservice.xinghaitour.com/WebService.svc";
+		soap_endpoint = "http://59.50.95.250:4417/WebService.svc";
 	if (soap_action == NULL)
 		soap_action = "http://tempuri.org/ixinghai/Book_Add";
 	soap_begin(soap);
@@ -406,7 +406,7 @@ int BasicHttpBinding_USCOREixinghaiProxy::Book_USCOREModify_USCOREHotel(const ch
 	if (endpoint)
 		soap_endpoint = endpoint;
 	if (soap_endpoint == NULL)
-		soap_endpoint = "http://webservice.xinghaitour.com/WebService.svc";
+		soap_endpoint = "http://59.50.95.250:4417/WebService.svc";
 	if (soap_action == NULL)
 		soap_action = "http://tempuri.org/ixinghai/Book_Modify_Hotel";
 	soap_begin(soap);
@@ -461,7 +461,7 @@ int BasicHttpBinding_USCOREixinghaiProxy::Book_USCOREModify_USCOREPlus(const cha
 	if (endpoint)
 		soap_endpoint = endpoint;
 	if (soap_endpoint == NULL)
-		soap_endpoint = "http://webservice.xinghaitour.com/WebService.svc";
+		soap_endpoint = "http://59.50.95.250:4417/WebService.svc";
 	if (soap_action == NULL)
 		soap_action = "http://tempuri.org/ixinghai/Book_Modify_Plus";
 	soap_begin(soap);
@@ -516,7 +516,7 @@ int BasicHttpBinding_USCOREixinghaiProxy::Book_USCOREApply(const char *endpoint,
 	if (endpoint)
 		soap_endpoint = endpoint;
 	if (soap_endpoint == NULL)
-		soap_endpoint = "http://webservice.xinghaitour.com/WebService.svc";
+		soap_endpoint = "http://59.50.95.250:4417/WebService.svc";
 	if (soap_action == NULL)
 		soap_action = "http://tempuri.org/ixinghai/Book_Apply";
 	soap_begin(soap);
@@ -571,7 +571,7 @@ int BasicHttpBinding_USCOREixinghaiProxy::Get_USCOREOrder(const char *endpoint, 
 	if (endpoint)
 		soap_endpoint = endpoint;
 	if (soap_endpoint == NULL)
-		soap_endpoint = "http://webservice.xinghaitour.com/WebService.svc";
+		soap_endpoint = "http://59.50.95.250:4417/WebService.svc";
 	if (soap_action == NULL)
 		soap_action = "http://tempuri.org/ixinghai/Get_Order";
 	soap_begin(soap);
@@ -626,7 +626,7 @@ int BasicHttpBinding_USCOREixinghaiProxy::Get_USCOREOrder_USCOREList(const char 
 	if (endpoint)
 		soap_endpoint = endpoint;
 	if (soap_endpoint == NULL)
-		soap_endpoint = "http://webservice.xinghaitour.com/WebService.svc";
+		soap_endpoint = "http://59.50.95.250:4417/WebService.svc";
 	if (soap_action == NULL)
 		soap_action = "http://tempuri.org/ixinghai/Get_Order_List";
 	soap_begin(soap);
