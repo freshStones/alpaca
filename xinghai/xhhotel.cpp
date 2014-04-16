@@ -5,6 +5,7 @@ xhhotel::xhhotel(QString customerID,QString signStr)
     this->customerID = customerID.toStdWString();
     this->signStr = signStr.toStdWString();
     soap = new BasicHttpBinding_USCOREixinghaiProxy();
+    soap_set_mode(soap->soap,SOAP_C_UTFSTRING);
 }
 
 QJsonObject xhhotel::jsonHandler(std::wstring* data)
@@ -33,8 +34,9 @@ void xhhotel::getHotelList(std::wstring lastAccessDate)
     req.SignStr = &signStr;
     soap->Get_USCOREHotel_USCOREList(&req,&res);
     qDebug()<<soap->soap_fault_detail();
-    //qDebug()<<res.Get_USCOREHotel_USCOREListResult->length();
-    //QJsonObject jsonobj = jsonHandler(res.Get_USCOREHotel_USCOREListResult);
+    qDebug()<<soap->soap_fault_string();
+    qDebug()<<res.Get_USCOREHotel_USCOREListResult->length();
+    QJsonObject jsonobj = jsonHandler(res.Get_USCOREHotel_USCOREListResult);
 
     QString hotelID,hotelName,hotelStatus,infoUpdate,priceUpdate,statusUpdate;
 }
