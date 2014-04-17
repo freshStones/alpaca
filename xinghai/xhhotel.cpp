@@ -25,44 +25,38 @@ QJsonObject xhhotel::jsonHandler(std::wstring* data)
     //return NULL;
 }
 
-void xhhotel::genquery(QString tbname,QJsonArray array,QString fkeyname)
+void xhhotel::genquery(QString tbname,QJsonArray array,QString pkeyname,QString fkeyname,QString fkeyval)
 {
     for (int i = 0; i < array.size(); i++)
     {
-        QMap<QString,QVariant> cur = array.at(i).toVariant().toMap();
-        genquery(tbname,cur,fkeyname);
+        QJsonObject cur = array.at(i).toObject();
+        if(fkeyname!="")
+        {
+            cur.insert(fkeyname,fkeyval);
+        }
+        genquery(tbname,cur,pkeyname);
     }
     //qDebug()<<sqlCollection;
 }
 
-void xhhotel::genquery(QString tbname,QJsonArray array,QString fkeyname,QString fkeyval)
-{
-    qDebug()<<array.size();
-    for (int i = 0; i < array.size(); i++)
-    {
-        QMap<QString,QVariant> cur = array.at(i).toVariant().toMap();
-        genquery(tbname,cur,fkeyname,fkeyval);
-    }
-}
-
-void xhhotel::genquery(QString tbname,QMap<QString,QVariant> map,QString fkeyname)
+void xhhotel::genquery(QString tbname,QJsonObject map,QString pkeyname)
 {
     QStringList key,value;
     QString keyval;
-    for (QMap<QString,QVariant>::Iterator it = map.begin();it != map.end(); it++)
+    for (QJsonObject::iterator it = map.end()-1;it != map.begin()-1; it--)
     {
-        if (it.key()==fkeyname)
+        if (it.key()==pkeyname)
         {
             keyval = it.value().toString();
         }
         if (it.key() == "RoomTypeList")
         {
-            genquery("hotelroomtypelist",it.value().toJsonArray(),fkeyname,keyval);
+            genquery("hotelroomtypelist",it.value().toArray(),"roomid",pkeyname,keyval);
         }
         else if (it.key() == "AdditionalProduct")
-            genquery("hoteladditionalproduct",it.value().toJsonArray(),fkeyname,keyval);
+            genquery("hoteladditionalproduct",it.value().toArray(),"productid",pkeyname,keyval);
         else if (it.key() == "SaleRemark")
-            genquery("hotelsaleremark",it.value().toJsonArray(),fkeyname,keyval);
+            genquery("hotelsaleremark",it.value().toArray(),"remarkid",pkeyname,keyval);
         else
         {
             value.append("'" + it.value().toString() + "'");
@@ -73,19 +67,6 @@ void xhhotel::genquery(QString tbname,QMap<QString,QVariant> map,QString fkeynam
     sqlCollection += query;
 }
 
-void xhhotel::genquery(QString tbname,QMap<QString,QVariant> map,QString fkey,QString fkeyval)
-{
-    QStringList key,value;
-    key.append(fkey);
-    value.append("'" + fkeyval + "'");
-    for (QMap<QString,QVariant>::Iterator it = map.begin();it != map.end(); it++)
-    {
-        value.append("'" + it.value().toString() + "'");
-        key.append(it.key());
-    }
-    QString query = QString("replace into %1(%2) values(%3); ").arg(tbname).arg(key.join(",")).arg(value.join(","));
-    sqlCollection += query;
-}
 
 void xhhotel::getHotelList(std::wstring lastAccessDate)
 {
@@ -112,7 +93,7 @@ void xhhotel::getHotelInfo(int hotelID)
     req.SignStr = &signStr;
     soap->Get_USCOREHotel_USCOREInfo(&req,&res);
     QJsonObject jsonobj = jsonHandler(res.Get_USCOREHotel_USCOREInfoResult);
-    genquery("hotelinfo",jsonobj.toVariantMap(),"hotelid");
+    genquery("hotelinfo",jsonobj,"hotelid");
     qDebug()<<sqlCollection;
     xhDatabase::instance()->insertOperation(sqlCollection);
     sqlCollection = "";
