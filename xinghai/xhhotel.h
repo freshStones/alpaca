@@ -7,6 +7,8 @@
 #include <QJsonObject>
 #include <QJsonParseError>
 #include <QJsonArray>
+#include <QStringList>
+#include "xhdatabase.h"
 
 class xhhotel
 {
@@ -20,6 +22,12 @@ public:
 private:
     BasicHttpBinding_USCOREixinghaiProxy *soap;
     std::wstring customerID,signStr;
+    void genquery(QString,QJsonArray,QString);
+    void genquery(QString,QJsonArray,QString,QString);
+    void genquery(QString,QMap<QString,QVariant>,QString);
+    void genquery(QString,QMap<QString,QVariant>,QString,QString);
+
+    static QString sqlCollection;
 };
 
 #endif // XHHOTEL_H

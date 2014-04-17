@@ -21,7 +21,8 @@ SOURCES += main.cpp \
     gsoap/soapC.cpp \
     gsoap/soapBasicHttpBinding_USCOREixinghaiProxy.cpp \
     gsoap/stdsoap2.cpp \
-    xhhotel.cpp
+    xhhotel.cpp \
+    xhdatabase.cpp
 
 HEADERS += \
     gsoap/soapStub.h \
@@ -29,4 +30,5 @@ HEADERS += \
     gsoap/soapBasicHttpBinding_USCOREixinghaiProxy.h \
     gsoap/stdsoap2.h \
     xhhotel.h \
-    gsoap/BasicHttpBinding_USCOREixinghai.nsmap
+    gsoap/BasicHttpBinding_USCOREixinghai.nsmap \
+    xhdatabase.h
