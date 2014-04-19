@@ -22,8 +22,8 @@ public:
 private:
     BasicHttpBinding_USCOREixinghaiProxy *soap;
     std::wstring customerID,signStr;
-    void genquery(QString tbname,QJsonArray array,QString pkeyname,QString fkeyname="",QString fkeyval ="");
-    void genquery(QString tbname,QJsonObject map,QString pkeyname);
+    void genquery(QString tbname,QJsonArray array,QString pkeyname,QString fkeyname="",QString fkeyval ="",int insertflag = 1);
+    void genquery(QString tbname,QJsonObject map,QString pkeyname,int insertflag = 1);
 
     static QString sqlCollection;
 };
