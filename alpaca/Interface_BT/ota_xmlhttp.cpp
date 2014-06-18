@@ -23,7 +23,7 @@ QString OTA_XMLHTTP::GetResponse(QString requestXML)
     req.setHeader(QNetworkRequest::ContentLengthHeader,content.length());
     QNetworkReply *rtn = networkManager->post(req,content);
 
-    QObject::connect(rtn, SIGNAL(readyRead()), this, SLOT(replyFinished(QNetworkReply*)));
+//    QObject::connect(rtn, SIGNAL(readyRead()), this, SLOT(replyFinished(QNetworkReply*)));
 }
 
 void OTA_XMLHTTP::replyFinished(QNetworkReply * rtn)

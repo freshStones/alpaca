@@ -9,9 +9,12 @@ void btDatabase::init()
     QSqlDatabase *db = new QSqlDatabase();
     *db = QSqlDatabase::addDatabase("QMYSQL");
     db->setHostName(server);
-    db->setDatabaseName("LH_AirTicket");
-    db->setUserName("remote");
-    db->setPassword("tm2022");
+//    db->setDatabaseName("LH_AirTicket");
+    db->setDatabaseName("lh");
+//    db->setUserName("remote");
+//    db->setPassword("tm2022");
+    db->setUserName("root");
+    db->setPassword("root");
     //qDebug()<<server<<username<<password;
     db->open();
 
@@ -103,7 +106,8 @@ int btDatabase::batchOperation(const QString sql)
 
 QString btDatabase::identify(const QString usr, const QString pwd)
 {
-    QString sql = QString("SELECT authorityType FROM LH_AirTicket.userList WHERE userAccount='%1' AND userPassport='%2';").arg(usr).arg(pwd);
+//    QString sql = QString("SELECT authorityType FROM LH_AirTicket.userList WHERE userAccount='%1' AND userPassport='%2';").arg(usr).arg(pwd);
+    QString sql = QString("SELECT authorityType FROM lh.userList WHERE userAccount='%1' AND userPassport='%2';").arg(usr).arg(pwd);
     QSqlQuery q(sql);
     //qDebug() << sql;
     try

@@ -114,6 +114,8 @@ void Login::on_loginButton_clicked()
     QString idRes = btDatabase::instance()->identify(this->username, this->password);
     if(idRes == "unauthorized id")
     {
+        qDebug() << this->username << this->password;
+
         QMessageBox::warning(this,QObject::tr("Warning"),QObject::tr("帐号密码错误！"),QMessageBox::Ok);
         ui->password->clear();
         ui->username->setFocus();
