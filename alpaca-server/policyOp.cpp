@@ -351,5 +351,6 @@ void policyOp::checkToStart()
 ////        GetAlterCommonPolicy("2014-01-21T17:30:00","0","0");
 ////        lasttime = QTime().currentTime().toString("hh:mm:ss");
 //    }
-    alterTimer->start(120000);
+    b_ifGetAllCommonPolicyDone = true;
+    alterTimer->start(60000);
 }
