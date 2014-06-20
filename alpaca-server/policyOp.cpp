@@ -209,7 +209,9 @@ bool policyOp::GetAlterCommonPolicyVisitor(QDomElement element)
 
     if(sqlCollection.count(";") >= 1000 )
     {
-        btDatabase::instance()->batchOperation(sqlCollection);
+//        btDatabase::instance()->batchOperation(sqlCollection);
+        btDatabase::instance()->execSQL(sqlCollection);
+        qDebug() << sqlCollection.count(";") << endl;
         sqlCollection = "";
     }
     //qDebug() << sqlCollection.count(";") << endl;
