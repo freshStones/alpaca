@@ -317,6 +317,7 @@ bool policyOp::GetInvalidationProvidersVisitor(QDomElement element)
 }
 void policyOp::alter()
 {
+    qDebug() << "alter";
     if(b_ifGetAllCommonPolicyDone == false) return;
     QString dt;
     QString date;
