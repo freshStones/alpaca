@@ -14,7 +14,7 @@ void btDatabase::init()
 //    db->setUserName("remote");
 //    db->setPassword("tm2022");
     db->setUserName("root");
-    db->setPassword("root");
+    db->setPassword("alpaca");
     if(db->open())
         qDebug() << "database opened.";
     else qDebug() << "database open failed.";
