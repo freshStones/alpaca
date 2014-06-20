@@ -334,7 +334,7 @@ void policyOp::alter()
 
 void policyOp::checkToStart()
 {
-//    qDebug() << "check to start...";
+    qDebug() << "check to start...";
     //update date
     if(curDate != QDate().currentDate()){
         b_ifGetAllCommonPolicyDone = false;
