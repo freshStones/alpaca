@@ -89,7 +89,7 @@ int btDatabase::batchOperation(const QString sql)
     if(db->driver()->hasFeature(QSqlDriver::Transactions))
     {
         db->transaction();
-//        qDebug() << "start sql op." ;
+        qDebug() << "start sql op." ;
         try{
             res = this->execSQL(sql);
             db->commit();
@@ -104,7 +104,7 @@ int btDatabase::batchOperation(const QString sql)
         }
 
 //        qDebug() << sql << endl;
-//        qDebug() << "sql op ended." << count << " rows affected.";
+        qDebug() << "sql op ended." << count << " rows affected.";
     }
     return res;
 }
