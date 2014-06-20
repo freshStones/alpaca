@@ -356,7 +356,7 @@ void policyOp::checkToStart()
 //    }
 
     qDebug() << "GetAlterCommonPolicy Start:" + QDateTime().currentDateTime().toString();
-     GetAlterCommonPolicy("2014-06-20T16:40:00","0","0");
+     GetAlterCommonPolicy("2014-06-20T17:30:00","0","0");
     qDebug() << "GetAlterCommonPolicy End:" + QDateTime().currentDateTime().toString();
 
 }
