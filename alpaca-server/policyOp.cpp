@@ -344,19 +344,19 @@ void policyOp::checkToStart()
     }
 
     //get all common policy
-//    if(QTime().currentTime() >= baseTime && b_ifGetAllCommonPolicyDone == false){
-//        server_log->writelog("GetAllCommonPolicy Start:" + QDateTime().currentDateTime().toString());
-//        if(this->GetAllCommonPolicy("0","0")){
-//            b_ifGetAllCommonPolicyDone = true;
-//            server_log->writelog("GetAllCommonPolicy End:" + QDateTime().currentDateTime().toString());
-//            alterTimer->start(300000);
-//        }
-////        GetAlterCommonPolicy("2014-01-21T17:30:00","0","0");
-////        lasttime = QTime().currentTime().toString("hh:mm:ss");
-//    }
+    if(QTime().currentTime() >= baseTime && b_ifGetAllCommonPolicyDone == false){
+        server_log->writelog("GetAllCommonPolicy Start:" + QDateTime().currentDateTime().toString());
+        if(this->GetAllCommonPolicy("0","0")){
+            b_ifGetAllCommonPolicyDone = true;
+            server_log->writelog("GetAllCommonPolicy End:" + QDateTime().currentDateTime().toString());
+            alterTimer->start(300000);
+        }
+//        GetAlterCommonPolicy("2014-01-21T17:30:00","0","0");
+//        lasttime = QTime().currentTime().toString("hh:mm:ss");
+    }
 
-    qDebug() << "GetAlterCommonPolicy Start:" + QDateTime().currentDateTime().toString();
-     GetAlterCommonPolicy("2014-06-20T17:30:00","0","0");
-    qDebug() << "GetAlterCommonPolicy End:" + QDateTime().currentDateTime().toString();
+//    qDebug() << "GetAlterCommonPolicy Start:" + QDateTime().currentDateTime().toString();
+//     GetAlterCommonPolicy("2014-06-20T17:30:00","0","0");
+//    qDebug() << "GetAlterCommonPolicy End:" + QDateTime().currentDateTime().toString();
 
 }
