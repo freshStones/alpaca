@@ -61,6 +61,10 @@ bool policyOp::xmlhandler(int callRes,QString xml,bool (*visitor)(QDomElement))
             return false;
         }
         else{
+            if(xml.contains("Error")){
+                qDebug() << xml;
+                return false;
+            }
 //            showDebugMsg("Parse Succeeded!");
         }
 
@@ -143,6 +147,11 @@ bool policyOp::GetAlterCommonPolicyVisitor(QDomElement element)
 {
     QStringList qsl = element.text().split("|");
 
+    //Modified on 2014/06/20 by lsl
+    if(qsl.count() == 1){
+        qDebug() << "policy error: " << qsl.at(0);
+        return true;
+    }
     QMap<QString,QString> map;
     map.insert("policy_uuid",element.attributes().namedItem("Id").nodeValue());
     map.insert("policyStatus",element.attributes().namedItem("State").nodeValue());
@@ -302,12 +311,12 @@ void policyOp::checkToStart()
     //get all common policy
     if(QTime().currentTime() >= baseTime && b_ifGetAllCommonPolicyDone == false){
         server_log->writelog("GetAllCommonPolicy Start:" + QDateTime().currentDateTime().toString());
-        this->GetAllCommonPolicy("0","0");
+        if(this->GetAllCommonPolicy("0","0")){
+            b_ifGetAllCommonPolicyDone = true;
+            server_log->writelog("GetAllCommonPolicy End:" + QDateTime().currentDateTime().toString());
+            alterTimer->start(300000);
+        }
 //        GetAlterCommonPolicy("2014-01-21T17:30:00","0","0");
 //        lasttime = QTime().currentTime().toString("hh:mm:ss");
-        b_ifGetAllCommonPolicyDone = true;
-        server_log->writelog("GetAllCommonPolicy End:" + QDateTime().currentDateTime().toString());
-        alterTimer->start(300000);
-//        alterTimer->start(20000);
     }
 }
