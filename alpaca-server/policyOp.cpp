@@ -152,30 +152,62 @@ bool policyOp::GetAlterCommonPolicyVisitor(QDomElement element)
         qDebug() << "policy error: " << qsl.at(0);
         return true;
     }
-    QMap<QString,QString> map;
-    map.insert("policy_uuid",element.attributes().namedItem("Id").nodeValue());
-    map.insert("policyStatus",element.attributes().namedItem("State").nodeValue());
-    map.insert("shouldChangePNR",element.attributes().namedItem("IsChangePnr").nodeValue());
-    map.insert("departureCityCodes",qsl.at(0));
-    map.insert("arrivalCityCodes",qsl.at((1)));
-    map.insert("airlineCode",qsl.at(2));
-    map.insert("flightType",qsl.at(3));
-    map.insert("applicableFlight",qsl.at(4));
-    map.insert("inapplicableFlight",qsl.at(5));
-    map.insert("timetableRestriction",qsl.at(6));
-    map.insert("ticketType",qsl.at(7));
-    map.insert("applicableSpaceCode",qsl.at(8));
-    map.insert("rebateRate",qsl.at(9));
-    map.insert("ticketingDateLimitStart",qsl.at(10).split(",").at(0));
-    map.insert("ticketingDateLimitEnd",qsl.at(10).split(",").at(1));
-    map.insert("supplierTTLofficeAccount",qsl.at(12));
-    map.insert("policyEntryDateTime",qsl.at(13));
-    map.insert("policyModifyDatetime",qsl.at(14));
-    map.insert("supplierCode",qsl.at(15));
-    map.insert("memo",qsl.at(16));
-    map.insert("autoTicketingEnabled",qsl.at(17));  //百拓的文档写错了，这里应该有
-    sqlCollection += genQuery("LH_AirTicket.policyDescripition", map);
-    if(sqlCollection.count(";") == 1000 )
+//    QMap<QString,QString> map;
+//    map.insert("policy_uuid",element.attributes().namedItem("Id").nodeValue());
+//    map.insert("policyStatus",element.attributes().namedItem("State").nodeValue());
+//    map.insert("shouldChangePNR",element.attributes().namedItem("IsChangePnr").nodeValue());
+//    map.insert("departureCityCodes",qsl.at(0));
+//    map.insert("arrivalCityCodes",qsl.at((1)));
+//    map.insert("airlineCode",qsl.at(2));
+//    map.insert("flightType",qsl.at(3));
+//    map.insert("applicableFlight",qsl.at(4));
+//    map.insert("inapplicableFlight",qsl.at(5));
+//    map.insert("timetableRestriction",qsl.at(6));
+//    map.insert("ticketType",qsl.at(7));
+//    map.insert("applicableSpaceCode",qsl.at(8));
+//    map.insert("rebateRate",qsl.at(9));
+//    map.insert("ticketingDateLimitStart",qsl.at(10).split(",").at(0));
+//    map.insert("ticketingDateLimitEnd",qsl.at(10).split(",").at(1));
+//    map.insert("supplierTTLofficeAccount",qsl.at(12));
+//    map.insert("policyEntryDateTime",qsl.at(13));
+//    map.insert("policyModifyDatetime",qsl.at(14));
+//    map.insert("supplierCode",qsl.at(15));
+//    map.insert("memo",qsl.at(16));
+//    map.insert("autoTicketingEnabled",qsl.at(17));  //百拓的文档写错了，这里应该有
+//    sqlCollection += genQuery("LH_AirTicket.policyDescripition", map);
+
+    int depCityCount = qsl.at(0).split(',').count();
+    int arrCityCount = qsl.at(1).split(',').count();
+
+    for(int i = 0; i < depCityCount; i++){
+        for(int j = 0; j < arrCityCount; j++){
+            QMap<QString,QString> map;
+            map.insert("policy_uuid",element.attributes().namedItem("Id").nodeValue());
+            map.insert("policyStatus",element.attributes().namedItem("State").nodeValue());
+            map.insert("shouldChangePNR",element.attributes().namedItem("IsChangePnr").nodeValue());
+            map.insert("departureCityCodes",qsl.at(0).split(',').at(i));
+            map.insert("arrivalCityCodes",qsl.at(1).split(',').at(j));
+            map.insert("airlineCode",qsl.at(2));
+            map.insert("flightType",qsl.at(3));
+            map.insert("applicableFlight",qsl.at(4));
+            map.insert("inapplicableFlight",qsl.at(5));
+            map.insert("timetableRestriction",qsl.at(6));
+            map.insert("ticketType",qsl.at(7));
+            map.insert("applicableSpaceCode",qsl.at(8));
+            map.insert("rebateRate",qsl.at(9));
+            map.insert("ticketingDateLimitStart",qsl.at(10).split(",").at(0));
+            map.insert("ticketingDateLimitEnd",qsl.at(10).split(",").at(1));
+            map.insert("supplierTTLofficeAccount",qsl.at(12));
+            map.insert("policyEntryDateTime",qsl.at(13));
+            map.insert("policyModifyDatetime",qsl.at(14));
+            map.insert("supplierCode",qsl.at(15));
+            map.insert("memo",qsl.at(16));
+            map.insert("autoTicketingEnabled",qsl.at(17));  //百拓的文档写错了，这里应该有
+            sqlCollection += genQuery("LH_AirTicket.policyDescripition", map);
+        }
+    }
+
+    if(sqlCollection.count(";") >= 1000 )
     {
         btDatabase::instance()->batchOperation(sqlCollection);
         sqlCollection = "";
