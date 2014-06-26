@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<PolicyList username="user" password="pass" execType="FULL" type="ROUNDCOMMON">
+  <Policy flightcode="CA" policyCode="T3" dpt="PEK" arr="CAN" returnpoint="12.12" returnprice="0" one_startdate="2014-05-02" one_enddate="2014-08-31" one_flightlimit="所有" one_limitnum="" gocabin="Y" one_daylimit="1" two_startdate="2014-05-02" two_enddate="2014-08-31" two_flightlimit="所有" two_limitnum="" backcabin="X" two_daylimit="1" beforeValidDay="0" short_stoptime="2" long_stoptime="0" startdate_ticket="2014-05-02" enfdate_ticket="2014-08-31" cabinnote="舱位说明"/>
+</PolicyList>

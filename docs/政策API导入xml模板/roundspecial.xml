@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<PolicyList username="pass" password="pass" execType="ADD" type="ROUNDSPECIAL">
+	<DeletePolicy type="ROUNDSPECIAL" policyCode="jpb-001,jpb-002,jpb-003"/>
+	<DeletePolicy type="ROUNDPREPAY" flightcode="MU" policyCode="" dpt="SHA" arr="PEK" gocabin="Y" backcabin="Y" startdate="2013-07-25" enddate="2013-09-25"/>
+	<Policy flightcode="MU" policyCode="" dpt="SHA" arr="CAN" disvalue="1000" returnpoint="0" returnprice="0" one_startdate="2013-06-01" one_enddate="2013-09-01" one_flightlimit="所有" one_limitnum="" gocabin="E" one_daylimit="1234567" two_startdate="2013-06-01" two_enddate="2013-09-01" two_flightlimit="所有" two_limitnum="" backcabin="E" two_daylimit="1234567" beforeValidDay="0" short_stoptime="2" long_stoptime="365" startdate_ticket="2013-06-01" enfdate_ticket="2013-09-01" backnote="不允许退改签" cabinnote="舱位说明" xcd="是"/>
+</PolicyList>

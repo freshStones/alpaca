@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<PolicyList username="pass" password="pass" execType="ADD" type="LOWPRICE" ext="common20131101">
+	<DeletePolicy type="COMMON" policyCode="jpb-001,jpb-002,jpb-003"/>
+	<DeletePolicy type="APPLY" flightcode="MU" policyCode="" dpt="SHA" arr="PEK" cabin="Y" startdate="2013-07-25" enddate="2013-09-25"/>
+  <Policy flightcode="MU" policyCode="" dpt="SHA" arr="CAN" flightNumLimit="所有" flightcondition="" daycondition="1234567" cabin="E" discountType="指定票面价" discountValue="500" returnpoint="0" returnprice="0" startdate_ticket="2013-06-01" enfdate_ticket="2013-10-01" startdate="2013-06-01" enddate="2013-10-01" beforeValidDay="0" backnote="不允许退签转" cabinnote="特价" autoTicket="否" costtype="指定成本价" costPrice="221" proxyPrice="0" backPrice="0" policySource="SYS" xcd="2" returnRule="20-0-30" changeRule="10-0-20" endorsement="否" flyerpoints ="否" cardType="0" maxAge="60" minAge="20"/>
+</PolicyList>
