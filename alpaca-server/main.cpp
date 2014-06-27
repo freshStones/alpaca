@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 
     QTimer *IDLEtimer = new QTimer;
     QObject::connect(IDLEtimer,SIGNAL(timeout()),op,SLOT(checkToStart()));
-    IDLEtimer->start(1000);
+    IDLEtimer->start(300000);
 
     return a.exec();
 }
