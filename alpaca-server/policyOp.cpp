@@ -14,6 +14,7 @@ policyOp::policyOp(QString _usrName, QString _pwd, QString _agentcode)
     b_ifGetAllCommonPolicyDone = true;
     curDate = QDate().currentDate();
     baseTime = QTime().fromString("06:00:00", "hh:mm:ss");
+    lasttime = baseTime;
     server_log = new sysLog("/lh_data_root/log/alpaca_server.log");
 
     qDebug() << "policy op loaded.";
