@@ -9,7 +9,7 @@ void spaceAccount::initMap()
 {
     spaceMap.clear();
 
-    spaceMap.insert("CZY","1.00");
+    spaceMap.insert("CZY","1");
     spaceMap.insert("CZB","0.90");
     spaceMap.insert("CZB","0.90");
     spaceMap.insert("CZM","0.80");
@@ -20,7 +20,7 @@ void spaceAccount::initMap()
     spaceMap.insert("CZV","0.45");
     spaceMap.insert("CZZ","0.40");
 
-    spaceMap.insert("G5Y","1.00");
+    spaceMap.insert("G5Y","1");
     spaceMap.insert("G5T","0.90");
     spaceMap.insert("G5K","0.85");
     spaceMap.insert("G5H","0.80");
@@ -33,7 +33,7 @@ void spaceAccount::initMap()
     spaceMap.insert("G5V","0.45");
     spaceMap.insert("G5R","0.40");
 
-    spaceMap.insert("EUY","1.00");          //EU's Y doesn't exist
+    spaceMap.insert("EUY","1");          //EU's Y doesn't exist
     spaceMap.insert("EUT","0.90");
     spaceMap.insert("EUK","0.85");
     spaceMap.insert("EUH","0.80");
@@ -46,7 +46,7 @@ void spaceAccount::initMap()
     spaceMap.insert("EUV","0.45");
     spaceMap.insert("EUR","0.40");
 
-    spaceMap.insert("3UY","1.00");
+    spaceMap.insert("3UY","1");
     spaceMap.insert("3UT","0.90");
     spaceMap.insert("3UH","0.80");
     spaceMap.insert("3UM","0.75");
@@ -58,7 +58,7 @@ void spaceAccount::initMap()
     spaceMap.insert("3UV","0.45");
     spaceMap.insert("3UR","0.40");
 
-    spaceMap.insert("NSY","1.00");
+    spaceMap.insert("NSY","1");
     spaceMap.insert("NST","0.90");
     spaceMap.insert("NSH","0.80");
     spaceMap.insert("NSM","0.75");
@@ -70,7 +70,7 @@ void spaceAccount::initMap()
     spaceMap.insert("NSV","0.45");
     spaceMap.insert("NSR","0.40");
 
-    spaceMap.insert("CAY","1.00");
+    spaceMap.insert("CAY","1");
     spaceMap.insert("CAB","0.90");
     spaceMap.insert("CAM","0.85");
     spaceMap.insert("CAH","0.80");
@@ -83,7 +83,7 @@ void spaceAccount::initMap()
     spaceMap.insert("CAV","0.45");
     spaceMap.insert("CAV1","0.40");
 
-    spaceMap.insert("ZHY","1.00");
+    spaceMap.insert("ZHY","1");
     spaceMap.insert("ZHB","0.90");
     spaceMap.insert("ZHM","0.85");
     spaceMap.insert("ZHH","0.80");
@@ -95,7 +95,7 @@ void spaceAccount::initMap()
     spaceMap.insert("ZHV","0.45");
     spaceMap.insert("ZHW","0.40");
 
-    spaceMap.insert("VDY","1.00");
+    spaceMap.insert("VDY","1");
     spaceMap.insert("VDB","0.90");
     spaceMap.insert("VDM","0.85");
     spaceMap.insert("VDH","0.80");
@@ -107,7 +107,7 @@ void spaceAccount::initMap()
     spaceMap.insert("VDV","0.45");
     spaceMap.insert("VDW","0.40");
 
-    spaceMap.insert("SCY","1.00");
+    spaceMap.insert("SCY","1");
     spaceMap.insert("SCB","0.90");
     spaceMap.insert("SCM","0.85");
     spaceMap.insert("SCH","0.80");
@@ -119,7 +119,7 @@ void spaceAccount::initMap()
     spaceMap.insert("SCU","0.45");
     spaceMap.insert("SCZ","0.40");
 
-    spaceMap.insert("HUY","1.00");
+    spaceMap.insert("HUY","1");
     spaceMap.insert("HUB","0.90");
     spaceMap.insert("HUH","0.85");
     spaceMap.insert("HUK","0.80");
@@ -130,7 +130,7 @@ void spaceAccount::initMap()
     spaceMap.insert("HUU","0.45");
     spaceMap.insert("HUE","0.40");
 
-    spaceMap.insert("GSY","1.00");
+    spaceMap.insert("GSY","1");
     spaceMap.insert("GSB","0.90");
     spaceMap.insert("GSH","0.85");
     spaceMap.insert("GSK","0.80");
@@ -141,7 +141,7 @@ void spaceAccount::initMap()
     spaceMap.insert("GSU","0.45");
     spaceMap.insert("GSE","0.40");
 
-    spaceMap.insert("CNY","1.00");
+    spaceMap.insert("CNY","1");
     spaceMap.insert("CNB","0.90");
     spaceMap.insert("CNH","0.85");
     spaceMap.insert("CNK","0.80");
@@ -152,7 +152,7 @@ void spaceAccount::initMap()
     spaceMap.insert("CNU","0.45");
     spaceMap.insert("CNE","0.40");
 
-    spaceMap.insert("PNY","1.00");
+    spaceMap.insert("PNY","1");
     spaceMap.insert("PNB","0.90");
     spaceMap.insert("PNH","0.85");
     spaceMap.insert("PNK","0.80");
@@ -163,7 +163,7 @@ void spaceAccount::initMap()
     spaceMap.insert("PNU","0.45");
     spaceMap.insert("PNE","0.40");
 
-    spaceMap.insert("8LY","1.00");
+    spaceMap.insert("8LY","1");
     spaceMap.insert("8LB","0.90");
     spaceMap.insert("8LH","0.85");
     spaceMap.insert("8LK","0.80");
@@ -174,7 +174,7 @@ void spaceAccount::initMap()
     spaceMap.insert("8LU","0.45");
     spaceMap.insert("8LE","0.40");
 
-    spaceMap.insert("JDY","1.00");
+    spaceMap.insert("JDY","1");
     spaceMap.insert("JDB","0.90");
     spaceMap.insert("JDH","0.85");
     spaceMap.insert("JDK","0.80");
@@ -187,7 +187,7 @@ void spaceAccount::initMap()
     spaceMap.insert("JDU","0.45");
     spaceMap.insert("JDE","0.40");
 
-    spaceMap.insert("MFY","1.00");
+    spaceMap.insert("MFY","1");
     spaceMap.insert("MFB","0.90");
     spaceMap.insert("MFH","0.85");
     spaceMap.insert("MFK","0.80");
@@ -200,7 +200,7 @@ void spaceAccount::initMap()
     spaceMap.insert("MFX","0.45");
     spaceMap.insert("MFR","0.40");
 
-    spaceMap.insert("BKY","1.00");
+    spaceMap.insert("BKY","1");
     spaceMap.insert("BKB","0.90");
     spaceMap.insert("BKH","0.85");
     spaceMap.insert("BKK","0.80");
@@ -213,7 +213,7 @@ void spaceAccount::initMap()
     spaceMap.insert("BKU","0.45");
     spaceMap.insert("BKT","0.40");
 
-    spaceMap.insert("MUY","1.00");
+    spaceMap.insert("MUY","1");
     spaceMap.insert("MUB","0.90");
     spaceMap.insert("MUM","0.85");
     spaceMap.insert("MUE","0.80");
@@ -226,7 +226,7 @@ void spaceAccount::initMap()
     spaceMap.insert("MUV","0.45");
     spaceMap.insert("MUT","0.40");
 
-    spaceMap.insert("KNY","1.00");
+    spaceMap.insert("KNY","1");
     spaceMap.insert("KNB","0.90");
     spaceMap.insert("KNM","0.85");
     spaceMap.insert("KNE","0.80");
@@ -239,7 +239,7 @@ void spaceAccount::initMap()
     spaceMap.insert("KNV","0.45");
     spaceMap.insert("KNT","0.40");
 
-    spaceMap.insert("FMY","1.00");
+    spaceMap.insert("FMY","1");
     spaceMap.insert("FMB","0.90");
     spaceMap.insert("FMM","0.85");
     spaceMap.insert("FME","0.80");
@@ -252,7 +252,7 @@ void spaceAccount::initMap()
     spaceMap.insert("FMV","0.45");
     spaceMap.insert("FMT","0.40");
 
-    spaceMap.insert("JRY","1.00");
+    spaceMap.insert("JRY","1");
     spaceMap.insert("JRB","0.90");
     spaceMap.insert("JRH","0.80");
     spaceMap.insert("JRL","0.75");
@@ -264,7 +264,7 @@ void spaceAccount::initMap()
     spaceMap.insert("JRT","0.45");
     spaceMap.insert("JRW","0.40");
 
-    spaceMap.insert("HOY","1.00");
+    spaceMap.insert("HOY","1");
     spaceMap.insert("HOB","0.90");
     spaceMap.insert("HOL","0.85");
     spaceMap.insert("HOM","0.80");
@@ -277,7 +277,7 @@ void spaceAccount::initMap()
     spaceMap.insert("HOR","0.45");
     spaceMap.insert("HOQ","0.40");
 
-    spaceMap.insert("TVY","1.00");
+    spaceMap.insert("TVY","1");
     spaceMap.insert("TVB","0.90");
     spaceMap.insert("TVM","0.85");
     spaceMap.insert("TVH","0.80");
