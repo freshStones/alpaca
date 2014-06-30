@@ -314,7 +314,7 @@ bool policyOp::GetInvalidationProviders(std::wstring usrname,std::wstring pwd,st
 }
 bool policyOp::GetInvalidationProvidersVisitor(QDomElement element)
 {
-
+    return true;
 }
 void policyOp::alter()
 {
