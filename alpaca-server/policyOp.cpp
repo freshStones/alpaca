@@ -11,7 +11,7 @@ policyOp::policyOp(QString _usrName, QString _pwd, QString _agentcode)
     usrName = _usrName;
     pwd = _pwd;
     agentCode = _agentcode;
-    b_ifGetAllCommonPolicyDone = true;
+    b_ifGetAllCommonPolicyDone = false;
     curDate = QDate().currentDate();
     baseTime = QTime().fromString("06:00:00", "hh:mm:ss");
     lasttime = baseTime;
