@@ -95,6 +95,7 @@ bool policyOp::xmlhandler(int callRes,QString xml,bool (*visitor)(QDomElement))
 }
 bool policyOp::GetAllCommonPolicy(QString tripType,QString ticketType)
 {
+	return 1;
     QString dt;
     QString date;
     QString time;

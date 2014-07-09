@@ -1,5 +1,6 @@
 #include "btdatabase.h"
 #include <QDebug>
+#include <QSqlError>
 btDatabase * btDatabase::_instance = 0;
 QString btDatabase::username;
 QString btDatabase::password;
@@ -17,7 +18,7 @@ void btDatabase::init()
     db->setPassword("alpaca");
     if(db->open())
         qDebug() << "database opened.";
-    else qDebug() << "database open failed.";
+    else qDebug() << "database open failed."<<db->lastError();
 
     this->db = db;
 }
