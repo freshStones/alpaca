@@ -1,0 +1,129 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions name="GetPolicyByPnrTxtServiceImpl_1_0Service" targetNamespace="http://getpolicybypnrtxt.b2b.service.version1_0.webservice.model.ltips.com/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://getpolicybypnrtxt.b2b.service.version1_0.webservice.model.ltips.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+<xs:schema elementFormDefault="unqualified" targetNamespace="http://getpolicybypnrtxt.b2b.service.version1_0.webservice.model.ltips.com/" version="1.0" xmlns:tns="http://getpolicybypnrtxt.b2b.service.version1_0.webservice.model.ltips.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="getPolicyByPnrTxt" type="tns:getPolicyByPnrTxt" />
+<xs:element name="getPolicyByPnrTxtReply" type="tns:getPolicyByPnrTxtReply" />
+<xs:element name="getPolicyByPnrTxtRequest" type="tns:getPolicyByPnrTxtRequest" />
+<xs:element name="getPolicyByPnrTxtResponse" type="tns:getPolicyByPnrTxtResponse" />
+<xs:complexType name="getPolicyByPnrTxt">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="request" type="tns:getPolicyByPnrTxtRequest" />
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getPolicyByPnrTxtRequest">
+    <xs:complexContent>
+      <xs:extension base="tns:abstractLiantuoRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="allowSwitchPnr" type="xs:int" />
+          <xs:element minOccurs="0" name="needSpePricePolicy" type="xs:int" />
+          <xs:element minOccurs="0" name="needSpeRulePolicy" type="xs:int" />
+          <xs:element minOccurs="0" name="onlyOnWorking" type="xs:int" />
+          <xs:element minOccurs="0" name="param1" type="xs:string" />
+          <xs:element minOccurs="0" name="param2" type="xs:string" />
+          <xs:element minOccurs="0" name="param3" type="xs:string" />
+          <xs:element minOccurs="0" name="param4" type="xs:string" />
+          <xs:element minOccurs="0" name="pataTxt" type="xs:string" />
+          <xs:element minOccurs="0" name="pnrTxt" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+<xs:complexType abstract="true" name="abstractLiantuoRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="agencyCode" type="xs:string" />
+      <xs:element minOccurs="0" name="sign" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getPolicyByPnrTxtResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:getPolicyByPnrTxtReply" />
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getPolicyByPnrTxtReply">
+    <xs:complexContent>
+      <xs:extension base="tns:abstractLiantuoReply">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="param1" type="xs:string" />
+          <xs:element minOccurs="0" name="param2" type="xs:string" />
+          <xs:element minOccurs="0" name="param3" type="xs:string" />
+          <xs:element minOccurs="0" name="param4" type="xs:string" />
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="policyList" nillable="true" type="tns:wsPolicyData" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+<xs:complexType abstract="true" name="abstractLiantuoReply">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="returnCode" type="xs:string" />
+      <xs:element minOccurs="0" name="returnMessage" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="wsPolicyData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="airlineCode" type="xs:string" />
+      <xs:element minOccurs="0" name="arrivalExclude" type="xs:string" />
+      <xs:element minOccurs="0" name="comment" type="xs:string" />
+      <xs:element minOccurs="0" name="commisionMoney" type="xs:double" />
+      <xs:element minOccurs="0" name="commisionPoint" type="xs:float" />
+      <xs:element minOccurs="0" name="departureExclude" type="xs:string" />
+      <xs:element minOccurs="0" name="expiredDate" type="xs:string" />
+      <xs:element minOccurs="0" name="flightCourse" type="xs:string" />
+      <xs:element minOccurs="0" name="flightCycle" type="xs:string" />
+      <xs:element minOccurs="0" name="flightNoExclude" type="xs:string" />
+      <xs:element minOccurs="0" name="flightNoIncluding" type="xs:string" />
+      <xs:element minOccurs="0" name="needSwitchPNR" type="xs:int" />
+      <xs:element minOccurs="0" name="param1" type="xs:string" />
+      <xs:element minOccurs="0" name="param2" type="xs:string" />
+      <xs:element minOccurs="0" name="param3" type="xs:string" />
+      <xs:element minOccurs="0" name="param4" type="xs:string" />
+      <xs:element minOccurs="0" name="policyBelongToFlag" type="xs:string" />
+      <xs:element minOccurs="0" name="policyId" type="xs:int" />
+      <xs:element minOccurs="0" name="policyType" type="xs:string" />
+      <xs:element minOccurs="0" name="printTicketExpiredDate" type="xs:string" />
+      <xs:element minOccurs="0" name="printTicketStartDate" type="xs:string" />
+      <xs:element minOccurs="0" name="productType" type="xs:int" />
+      <xs:element minOccurs="0" name="routeType" type="xs:string" />
+      <xs:element minOccurs="0" name="seatClass" type="xs:string" />
+      <xs:element minOccurs="0" name="startDate" type="xs:string" />
+      <xs:element minOccurs="0" name="supplyOfficeNo" type="xs:string" />
+      <xs:element minOccurs="0" name="ticketSpeed" type="xs:string" />
+      <xs:element minOccurs="0" name="vtWorkTime" type="xs:string" />
+      <xs:element minOccurs="0" name="workTime" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getPolicyByPnrTxtResponse">
+    <wsdl:part element="tns:getPolicyByPnrTxtResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getPolicyByPnrTxt">
+    <wsdl:part element="tns:getPolicyByPnrTxt" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="GetPolicyByPnrTxtService_1_0">
+    <wsdl:operation name="getPolicyByPnrTxt">
+      <wsdl:input message="tns:getPolicyByPnrTxt" name="getPolicyByPnrTxt">
+    </wsdl:input>
+      <wsdl:output message="tns:getPolicyByPnrTxtResponse" name="getPolicyByPnrTxtResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GetPolicyByPnrTxtServiceImpl_1_0ServiceSoapBinding" type="tns:GetPolicyByPnrTxtService_1_0">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getPolicyByPnrTxt">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getPolicyByPnrTxt">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getPolicyByPnrTxtResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GetPolicyByPnrTxtServiceImpl_1_0Service">
+    <wsdl:port binding="tns:GetPolicyByPnrTxtServiceImpl_1_0ServiceSoapBinding" name="GetPolicyByPnrTxtServiceImpl_1_0Port">
+      <soap:address location="http://wstest.51book.com:55779/ltips/services/getPolicyByPnrTxtService1.0" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
