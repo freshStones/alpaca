@@ -12,7 +12,7 @@
 #include <QDate>
 #include <QTimer>
 
-#include "btdatabase.h"
+#include "lhdatabase.h"
 #include "sysLog.h"
 
 namespace ns1 {

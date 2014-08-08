@@ -1,5 +1,5 @@
-#ifndef BTDATABASE_H
-#define BTDATABASE_H
+#ifndef lhdatabase_H
+#define lhdatabase_H
 
 #include <QSqlDatabase>
 #include <QSqlQuery>
@@ -8,11 +8,11 @@
 #include <QString>
 
 
-class btDatabase
+class lhdatabase
 {
 public:
 
-    static btDatabase* instance();
+    static lhdatabase* instance();
     static void setconfig(const QString, const QString, const QString);
     QString identify(const QString, const QString);
     void init();
@@ -27,10 +27,10 @@ public:
     void commitOperation();
 
 private:
-    static btDatabase* _instance;
+    static lhdatabase* _instance;
     static QString username,password,server;
-    btDatabase();
+    lhdatabase();
     QSqlDatabase *db;
 };
 
-#endif // BTDATABASE_H
+#endif // lhdatabase_H

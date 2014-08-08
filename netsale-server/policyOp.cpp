@@ -83,8 +83,8 @@ bool policyOp::xmlhandler(int callRes,QString xml,bool (*visitor)(QDomElement))
         }
 
 
-        btDatabase::instance()->batchOperation(sqlCollection);
-//        btDatabase::instance()->commitOperation();
+        lhdatabase::instance()->batchOperation(sqlCollection);
+//        lhdatabase::instance()->commitOperation();
         server_log->writelog(QString("%1 lines affected.").arg(itemCount));
         sqlCollection = "";
     }
@@ -95,7 +95,6 @@ bool policyOp::xmlhandler(int callRes,QString xml,bool (*visitor)(QDomElement))
 }
 bool policyOp::GetAllCommonPolicy(QString tripType,QString ticketType)
 {
-	return 1;
     QString dt;
     QString date;
     QString time;
@@ -208,8 +207,8 @@ bool policyOp::GetAlterCommonPolicyVisitor(QDomElement element)
 */
     if(sqlCollection.count(";") >= 1000 )
     {
-//        btDatabase::instance()->batchOperation(sqlCollection);
-        btDatabase::instance()->execSQL(sqlCollection);
+//        lhdatabase::instance()->batchOperation(sqlCollection);
+        lhdatabase::instance()->batchOperation(sqlCollection);
         qDebug() << sqlCollection.count(";") << endl;
         sqlCollection = "";
     }
@@ -326,7 +325,7 @@ void policyOp::alter()
     date = QDate().currentDate().toString("yyyy-MM-dd");
     time = QTime().currentTime().toString("hh:mm:ss");
     dt = date + "T" + time;
-    qDebug() << "alter";
+
     server_log->writelog("GetAlterCommonPolicy Start:" + QDateTime().currentDateTime().toString());
     GetAlterCommonPolicy(lasttime,"0","0");
     lasttime = dt;

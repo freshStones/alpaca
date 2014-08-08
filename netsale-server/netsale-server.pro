@@ -20,19 +20,19 @@ TEMPLATE = app
 
 SOURCES += main.cpp \
     policyOp.cpp \
-    btdatabase.cpp \
     gsoapForBaitour/stdsoap2.cpp \
     gsoapForBaitour/soapC.cpp \
     gsoapForBaitour/soapBaitourServiceSoapProxy.cpp \
-    sysLog.cpp
+    sysLog.cpp \
+    lhdatabase.cpp
 
 HEADERS += \
     policyOp.h \
-    btdatabase.h \
     gsoapForBaitour/stdsoap2.h \
     gsoapForBaitour/soapStub.h \
     gsoapForBaitour/soapH.h \
     gsoapForBaitour/soapBaitourServiceSoapProxy.h \
     gsoapForBaitour/BaitourServiceSoap.nsmap \
     gsoapForBaitour/temp.h \
-    sysLog.h
+    sysLog.h \
+    lhdatabase.h
