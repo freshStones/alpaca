@@ -79,7 +79,6 @@ void MainWindow::init()
     loginWindow = new Login(configIniRead);
 
     //---------------------PolicyOp initialize--------------------------------
-    this->op = new policyOp(configIniRead->value("/SQL_ACCOUNT/USERNAME").toString(),configIniRead->value("/SQL_ACCOUNT/PASSWORD").toString(),configIniRead->value("/AGENT_DESC/AGENTCODE").toString());
 
     this->signalConnection();
 

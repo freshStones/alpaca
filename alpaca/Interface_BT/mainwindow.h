@@ -12,7 +12,6 @@
 #include <QPair>
 #include <QVector>
 
-#include "policyOp.h"
 #include "btdatabase.h"
 #include "login.h"
 #include "adminwindow.h"
@@ -48,7 +47,6 @@ private:
     Login *loginWindow;
     AdminWindow *adminWindow;
     Ui::MainWindow *ui;
-    policyOp *op;
     QSqlTableModel *allPolicyModel;
     QVector<QPair<QString,QString> > qv[11];  //account from 0.9,0.85 to 0.4
 

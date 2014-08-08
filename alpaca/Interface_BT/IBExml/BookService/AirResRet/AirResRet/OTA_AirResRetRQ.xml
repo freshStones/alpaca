@@ -1,6 +1,0 @@
-<OTA_AirResRetRQ RetCreateTimeInd="true">
-	<POS>
-		<Source PseudoCityCode="CMS001"/>
-	</POS>
-	<BookingReferenceID ID="HP9PSW"/>
-</OTA_AirResRetRQ>

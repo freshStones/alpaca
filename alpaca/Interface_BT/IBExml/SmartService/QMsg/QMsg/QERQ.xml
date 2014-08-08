@@ -1,9 +1,0 @@
-<OTA_QMsgRQ>
-<ActionCode>OPQE</ActionCode>
-<Queue QueueType="RP" Office="BJS191"/>
-<Queue QueueType="RP" Office="BJS191">
-    <QueueInfo QType="8">
-        <Content>Test OPQE</Content>
-    </QueueInfo>
-</Queue>
-</OTA_QMsgRQ>

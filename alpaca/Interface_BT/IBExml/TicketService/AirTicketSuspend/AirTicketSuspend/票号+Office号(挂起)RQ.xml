@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TES_AirTicketSuspendRQ>
-  <POS>
-    <Source PseudoCityCode="bjs187"></Source>
-  </POS>
-  <eTicketNumber>999-3948887261</eTicketNumber>
-</TES_AirTicketSuspendRQ>

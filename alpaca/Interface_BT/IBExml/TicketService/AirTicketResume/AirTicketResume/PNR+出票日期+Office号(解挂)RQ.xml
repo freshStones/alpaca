@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TES_AirTicketResumeRQ>
-  <POS>
-    <Source PseudoCityCode="BJS187"></Source>
-  </POS>
- <BookingReferenceID ID="JTGTSE" ></BookingReferenceID>
-<issueDate>2013-05-20 08:37:00</issueDate>
-</TES_AirTicketResumeRQ>  
