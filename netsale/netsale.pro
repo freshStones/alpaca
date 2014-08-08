@@ -20,18 +20,18 @@ LIBS += -lWs2_32
 }
 SOURCES += main.cpp\
         mainwindow.cpp \
-    btdatabase.cpp \
     dump.cpp \
     login.cpp \
     adminwindow.cpp \
-    spaceaccount.cpp
+    spaceaccount.cpp \
+    lhdatabase.cpp
 
 HEADERS  += mainwindow.h \
-    btdatabase.h \
     dump.h \
     login.h \
     adminwindow.h \
-    spaceaccount.h
+    spaceaccount.h \
+    lhdatabase.h
 
 FORMS    += \
     mainwindow.ui \

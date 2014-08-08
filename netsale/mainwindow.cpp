@@ -111,7 +111,7 @@ void MainWindow::slotLoggedin(QString username, QString idRes){
 
 void MainWindow::on_queryButton_clicked()
 {
-    btDatabase::instance();
+    lhdatabase::instance();
     if (allPolicyModel == NULL)
     {
         allPolicyModel = new QSqlTableModel;

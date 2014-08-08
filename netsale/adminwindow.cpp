@@ -5,7 +5,7 @@
 #include <QSqlRecord>
 #include <QSqlError>
 #include <QString>
-#include "btdatabase.h"
+#include "lhdatabase.h"
 
 AdminWindow::AdminWindow(QWidget *parent) :
     QWidget(parent),

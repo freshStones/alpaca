@@ -277,7 +277,7 @@ void dump::save(){
            //获取数据
 
            QString query = "select * from qunarTable;";
-           QSqlQuery q = btDatabase::instance()->querySQL(query,1);
+           QSqlQuery q = lhdatabase::instance()->querySQL(query,1);
            while(q.next()){
                for(int i = 0; i < 34;i++){
                    QString str1 = q.value(i).toString();
@@ -321,7 +321,7 @@ void dump::saveAsExcel(QString filepath,QVector<QStringList> v){
                // cellY->dynamicCall("SetValue(const QVariant&)",QVariant(2));
             }
             //QString query = "select * from qunarTable;";
-            //QSqlQuery q = btDatabase::instance()->querySQL(query,1);
+            //QSqlQuery q = lhdatabase::instance()->querySQL(query,1);
             QVector<QStringList>::ConstIterator it;
             int row_count = 1;
             for (it =v.begin(); it!=v.end();it++)

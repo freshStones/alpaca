@@ -102,16 +102,16 @@ void Login::on_loginButton_clicked()
     this ->server = ui->server->text();
     this ->username = ui->username->text();
     this->password = ui->password->text();
-    btDatabase::setconfig(username,password,server);
+    lhdatabase::setconfig(username,password,server);
 
-    if(!btDatabase::instance()->isOpen()){
+    if(!lhdatabase::instance()->isOpen()){
         QMessageBox::warning(this,QObject::tr("Warning"),QObject::tr("数据库无法连接"),QMessageBox::Ok);
         ui->server->setFocus();
         ui->server->selectAll();
         return;
     }
 
-    QString idRes = btDatabase::instance()->identify(this->username, this->password);
+    QString idRes = lhdatabase::instance()->identify(this->username, this->password);
     if(idRes == "unauthorized id")
     {
         qDebug() << this->username << this->password;

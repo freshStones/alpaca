@@ -12,7 +12,7 @@
 #include <QPair>
 #include <QVector>
 
-#include "btdatabase.h"
+#include "lhdatabase.h"
 #include "login.h"
 #include "adminwindow.h"
 #include "dump.h"
