@@ -9,7 +9,7 @@ QT       += sql
 QT       -= gui
 QT       += xml
 
-TARGET = alpaca-server
+TARGET = netsale-server
 CONFIG   += console
 CONFIG   -= app_bundle
 win32{
@@ -21,18 +21,18 @@ TEMPLATE = app
 SOURCES += main.cpp \
     policyOp.cpp \
     btdatabase.cpp \
-    gsoap/stdsoap2.cpp \
-    gsoap/soapC.cpp \
-    gsoap/soapBaitourServiceSoapProxy.cpp \
+    gsoapForBaitour/stdsoap2.cpp \
+    gsoapForBaitour/soapC.cpp \
+    gsoapForBaitour/soapBaitourServiceSoapProxy.cpp \
     sysLog.cpp
 
 HEADERS += \
     policyOp.h \
     btdatabase.h \
-    gsoap/stdsoap2.h \
-    gsoap/soapStub.h \
-    gsoap/soapH.h \
-    gsoap/soapBaitourServiceSoapProxy.h \
-    gsoap/BaitourServiceSoap.nsmap \
-    gsoap/temp.h \
+    gsoapForBaitour/stdsoap2.h \
+    gsoapForBaitour/soapStub.h \
+    gsoapForBaitour/soapH.h \
+    gsoapForBaitour/soapBaitourServiceSoapProxy.h \
+    gsoapForBaitour/BaitourServiceSoap.nsmap \
+    gsoapForBaitour/temp.h \
     sysLog.h

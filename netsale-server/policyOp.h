@@ -1,8 +1,8 @@
 #ifndef POLICY_OP_H
 #define POLICY_OP_H
 
-#include <gsoap/soapBaitourServiceSoapProxy.h>
-//#include "gsoap/BaitourServiceSoap.nsmap"
+#include <gsoapForBaitour/soapBaitourServiceSoapProxy.h>
+//#include "gsoapForBaitour/BaitourServiceSoap.nsmap"
 #include <QDebug>
 #include <QString>
 #include <QStringList>

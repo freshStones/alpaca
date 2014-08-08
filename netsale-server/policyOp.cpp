@@ -1,5 +1,5 @@
 #include "policyOp.h"
-#include "gsoap/BaitourServiceSoap.nsmap"
+#include "gsoapForBaitour/BaitourServiceSoap.nsmap"
 #include <QTime>
 #include <QDate>
 

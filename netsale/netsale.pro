@@ -12,7 +12,7 @@ QT       += network
 #CONFIG   += qaxcontainer
 RC_ICONS = images/icon.ico
 ICON = images/icon.icns
-TARGET = Interface_BT
+TARGET = netsale
 TEMPLATE = app
 
 win32{
